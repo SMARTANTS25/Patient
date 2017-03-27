@@ -16,16 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="AA_DB_NAME"
-            android:value="mhealth" />
-
-        <activity android:name=".ResetPassword" />
-        <activity android:name=".ViewPatientProfile" />
-        <activity android:name=".ViewMedicalInfo" />
-        <activity android:name=".EditPatientProfile" />
-        <activity android:name=".EditMedicalInfo"></activity>
     </application>
 
 </manifest>
