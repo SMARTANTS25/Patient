@@ -37,8 +37,8 @@
         android:layout_height="wrap_content"
         android:text="Save Changes"
         android:layout_below="@+id/nameEditText"
-        android:layout_toRightOf="@+id/textView15"
-        android:layout_toEndOf="@+id/textView15"
+        android:layout_toRightOf="@+id/textViewHospitalEmail"
+        android:layout_toEndOf="@+id/textViewHospitalEmail"
         android:layout_marginTop="12dp" />
 
     <EditText
@@ -124,7 +124,7 @@
         android:inputType="phone" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textViewHospitalEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Emergency Number"
@@ -136,7 +136,7 @@
         android:id="@+id/emergencyEditText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/textView15"
+        android:layout_below="@+id/textViewHospitalEmail"
         android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/textView9"
         android:layout_toRightOf="@+id/textView9"

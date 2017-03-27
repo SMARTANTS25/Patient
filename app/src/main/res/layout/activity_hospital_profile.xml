@@ -151,7 +151,7 @@
         android:text="email" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textViewHospitalEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textViewHospitalPhone"
@@ -165,7 +165,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textViewHosEmail"
         android:layout_alignStart="@+id/textViewHosEmail"
-        android:layout_below="@+id/textView15"
+        android:layout_below="@+id/textViewHospitalEmail"
         android:layout_marginTop="28dp"
         android:text="Additional Information" />
 
