@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pifss.patient.HospitalProfile">
+
+    <ImageView
+        android:id="@+id/imageViewHospitalLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="14dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textViewHosName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageViewHospitalLogo"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_toEndOf="@+id/imageViewHospitalLogo"
+        android:layout_toRightOf="@+id/imageViewHospitalLogo"
+        android:text="Hospital name" />
+
+    <TextView
+        android:id="@+id/textViewHospitalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageViewHospitalLogo"
+        android:layout_alignLeft="@+id/textViewHosName"
+        android:layout_alignStart="@+id/textViewHosName"
+        android:layout_below="@+id/textViewHosName"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:text="                         " />
+
+    <TextView
+        android:id="@+id/TextViewHosType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewHosName"
+        android:layout_alignStart="@+id/textViewHosName"
+        android:layout_below="@+id/textViewHospitalName"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="15dp"
+        android:text="Type" />
+
+    <TextView
+        android:id="@+id/textViewHospitalType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textViewHospitalName"
+        android:layout_alignLeft="@+id/textViewHospitalName"
+        android:layout_alignRight="@+id/textViewHospitalName"
+        android:layout_alignStart="@+id/textViewHospitalName"
+        android:layout_below="@+id/TextViewHosType"
+        android:text="           " />
+
+    <TextView
+        android:id="@+id/textViewHosSpecailty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="Speciality"
+        android:layout_below="@+id/textViewHospitalType"
+        android:layout_toLeftOf="@+id/TextViewHosType"
+        android:layout_toStartOf="@+id/TextViewHosType" />
+
+    <TextView
+        android:id="@+id/textViewHositalSpeciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/textViewHosSpecailty"
+        android:layout_toLeftOf="@+id/textViewHospitalType"
+        android:layout_toStartOf="@+id/textViewHospitalType" />
+
+    <TextView
+        android:id="@+id/textViewHosWorkingH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:text="Working Hours"
+        android:layout_below="@+id/textViewHositalSpeciality"
+        android:layout_alignLeft="@+id/textViewHosSpecailty"
+        android:layout_alignStart="@+id/textViewHosSpecailty" />
+
+    <TextView
+        android:id="@+id/textViewHospitalWorkingHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewHositalSpeciality"
+        android:layout_alignStart="@+id/textViewHositalSpeciality"
+        android:layout_below="@+id/textViewHosWorkingH"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewHosPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewHosWorkingH"
+        android:layout_alignStart="@+id/textViewHosWorkingH"
+        android:layout_below="@+id/textViewHospitalWorkingHours"
+        android:layout_marginTop="17dp"
+        android:text="Phone #" />
+
+    <TextView
+        android:id="@+id/textViewHospitalPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewHospitalWorkingHours"
+        android:layout_alignStart="@+id/textViewHospitalWorkingHours"
+        android:layout_below="@+id/textViewHosPhone"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewHosAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewHosPhone"
+        android:layout_alignStart="@+id/textViewHosPhone"
+        android:layout_below="@+id/textViewHospitalPhone"
+        android:layout_marginTop="27dp"
+        android:text="Address" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/TextViewHosType"
+        android:layout_alignRight="@+id/TextViewHosType"
+        android:layout_below="@+id/textViewHosAddress"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewHosEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewHosAddress"
+        android:layout_alignStart="@+id/textViewHosAddress"
+        android:layout_below="@+id/textView12"
+        android:layout_marginTop="33dp"
+        android:text="email" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textViewHospitalPhone"
+        android:layout_alignRight="@+id/textViewHospitalPhone"
+        android:layout_below="@+id/textViewHosEmail"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewHosExtraInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewHosEmail"
+        android:layout_alignStart="@+id/textViewHosEmail"
+        android:layout_below="@+id/textView15"
+        android:layout_marginTop="28dp"
+        android:text="Additional Information" />
+
+    <TextView
+        android:id="@+id/textViewHospitalExtraInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewHosExtraInfo"
+        android:layout_toEndOf="@+id/textViewHosEmail"
+        android:layout_toRightOf="@+id/textViewHosEmail"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/imageViewHosSpeciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_above="@+id/textViewHosWorkingH"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textViewHosSpecailty"
+        android:layout_toStartOf="@+id/textViewHosSpecailty" />
+
+    <ImageView
+        android:id="@+id/imageViewHosWorkingHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewHosPhone"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/textViewHosWorkingH"
+        android:layout_toLeftOf="@+id/textViewHosWorkingH"
+        android:layout_toStartOf="@+id/textViewHosWorkingH" />
+
+    <ImageView
+        android:id="@+id/imageViewHosPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewHosAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/textViewHosPhone"
+        android:layout_toLeftOf="@+id/textViewHosPhone"
+        android:layout_toStartOf="@+id/textViewHosPhone" />
+
+    <ImageView
+        android:id="@+id/imageViewHosAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewHosEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/textViewHosAddress"
+        android:layout_toLeftOf="@+id/textViewHosAddress"
+        android:layout_toStartOf="@+id/textViewHosAddress" />
+
+    <ImageView
+        android:id="@+id/imageViewHosEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewHosExtraInfo"
+        android:layout_toLeftOf="@+id/textViewHosEmail"
+        android:layout_toStartOf="@+id/textViewHosEmail"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/imageViewHosExtraInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignBottom="@+id/textViewHospitalExtraInfo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textViewHosExtraInfo"
+        android:layout_toStartOf="@+id/textViewHosExtraInfo" />
+</RelativeLayout>
