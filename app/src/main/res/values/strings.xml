@@ -81,4 +81,6 @@
 
 
 
+    <string name="title_activity_my_doctors">MyDoctors</string>
+    <string name="title_activity_send_report">SendReport</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pifss.patient">
-<uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,13 +27,26 @@
         <activity android:name=".EditPatientProfile" />
         <activity android:name=".EditMedicalInfo" />
         <activity android:name=".RegistrationPage1" />
-        <activity android:name=".RegistrationPage2" android:exported="true"/>
+        <activity android:name=".RegistrationPage2" />
         <activity android:name=".RegistrationPage3" />
-        <activity android:name=".Home" />
-        <activity android:name=".utils.Login"
-            />
-
-
+        <activity
+            android:name=".utils.Login"
+            android:exported="true" />
+        <activity android:name=".Home"
+            android:exported="true"/>
+        <activity
+            android:name=".MyDoctors"
+            android:exported="true"
+            android:label="@string/title_activity_my_doctors"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AllDoctors"
+            android:exported="true" />
+        <activity
+            android:name=".SendReport"
+            android:exported="true"
+            android:label="@string/title_activity_send_report"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
