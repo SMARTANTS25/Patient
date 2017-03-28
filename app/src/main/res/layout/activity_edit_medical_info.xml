@@ -6,30 +6,39 @@
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.EditMedicalInfo">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar4"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="29dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/toolbar4"
+        android:layout_alignRight="@+id/textView22"
+        android:layout_alignEnd="@+id/textView22" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_alignTop="@+id/imageView5"
+        android:layout_below="@+id/toolbar4"
         android:layout_alignLeft="@+id/saveChangesMedicalButton"
         android:layout_alignStart="@+id/saveChangesMedicalButton" />
 
     <Button
         android:id="@+id/saveChangesMedicalButton"
-        android:layout_width="175dp"
+        android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -37,6 +46,7 @@
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:layout_marginTop="17dp"
+        android:background="@color/Buttons"
         android:text="Save Changes" />
 
     <TextView
@@ -44,24 +54,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Blood Type"
-        android:layout_marginRight="26dp"
-        android:layout_marginEnd="26dp"
         android:layout_below="@+id/saveChangesMedicalButton"
-        android:layout_toLeftOf="@+id/saveChangesMedicalButton"
-        android:layout_toStartOf="@+id/saveChangesMedicalButton" />
+        android:layout_alignLeft="@+id/bloodtypeEditText"
+        android:layout_alignStart="@+id/bloodtypeEditText"
+        android:layout_marginTop="13dp" />
 
     <EditText
         android:id="@+id/bloodtypeEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/textView21"
-        android:layout_alignStart="@+id/textView21"
-        android:layout_below="@+id/textView21"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="A+" />
+        android:text="A+"
+        android:layout_below="@+id/textView21"
+        android:layout_toRightOf="@+id/imageView14"
+        android:layout_toEndOf="@+id/imageView14" />
 
     <TextView
         android:id="@+id/textView22"
@@ -70,12 +77,12 @@
         android:text="Diabetes"
         android:layout_marginTop="11dp"
         android:layout_below="@+id/bloodtypeEditText"
-        android:layout_alignLeft="@+id/textView21"
-        android:layout_alignStart="@+id/textView21" />
+        android:layout_alignLeft="@+id/diabetesEditText"
+        android:layout_alignStart="@+id/diabetesEditText" />
 
     <EditText
         android:id="@+id/diabetesEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_alignLeft="@+id/bloodtypeEditText"
         android:layout_alignStart="@+id/bloodtypeEditText"
@@ -96,14 +103,14 @@
 
     <EditText
         android:id="@+id/asthmaEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="40dp"
+        android:layout_alignLeft="@+id/diabetesEditText"
+        android:layout_alignStart="@+id/diabetesEditText"
+        android:layout_below="@+id/textView23"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="No"
-        android:layout_below="@+id/textView23"
-        android:layout_alignLeft="@+id/diabetesEditText"
-        android:layout_alignStart="@+id/diabetesEditText" />
+        android:text="No" />
 
     <TextView
         android:id="@+id/textView24"
@@ -117,43 +124,88 @@
 
     <EditText
         android:id="@+id/allergiesEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/asthmaEditText"
-        android:layout_alignStart="@+id/asthmaEditText"
-        android:layout_below="@+id/textView24"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="No" />
+        android:text="No"
+        android:layout_below="@+id/textView24"
+        android:layout_alignLeft="@+id/textView24"
+        android:layout_alignStart="@+id/textView24" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="18dp"
         android:text="Medications"
         android:layout_below="@+id/allergiesEditText"
-        android:layout_alignLeft="@+id/textView23"
-        android:layout_alignStart="@+id/textView23" />
+        android:layout_toLeftOf="@+id/saveChangesMedicalButton"
+        android:layout_toStartOf="@+id/saveChangesMedicalButton" />
 
     <EditText
         android:id="@+id/medicationsEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/allergiesEditText"
-        android:layout_alignStart="@+id/allergiesEditText"
-        android:layout_below="@+id/textView25"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="No Medication" />
+        android:text="No Medication"
+        android:layout_below="@+id/textView25"
+        android:layout_alignLeft="@+id/allergiesEditText"
+        android:layout_alignStart="@+id/allergiesEditText" />
 
     <Button
         android:id="@+id/editGeneralInfoButton"
-        android:layout_width="wrap_content"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:layout_toEndOf="@+id/imageView5"
-        android:layout_toRightOf="@+id/imageView5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:background="@color/Buttons"
         android:text="Edit General Information" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/medicine_icon"
+        android:layout_alignTop="@+id/textView25"
+        android:layout_toLeftOf="@+id/textView25"
+        android:layout_toStartOf="@+id/textView25" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/blood_drop_icon"
+        android:layout_above="@+id/bloodtypeEditText"
+        android:layout_alignLeft="@+id/imageView10"
+        android:layout_alignStart="@+id/imageView10" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/diabity_icon"
+        android:layout_above="@+id/diabetesEditText"
+        android:layout_toLeftOf="@+id/textView22"
+        android:layout_toStartOf="@+id/textView22" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/diabetesEditText"
+        android:layout_toLeftOf="@+id/textView24"
+        android:layout_toStartOf="@+id/textView24"
+        app:srcCompat="@mipmap/asthma_icon" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/asthmaEditText"
+        android:layout_toLeftOf="@+id/textView24"
+        android:layout_toStartOf="@+id/textView24"
+        app:srcCompat="@mipmap/allergy_icon" />
 </RelativeLayout>

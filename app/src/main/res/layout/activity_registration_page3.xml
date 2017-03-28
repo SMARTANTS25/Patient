@@ -7,4 +7,287 @@
     tools:context="com.pifss.patient.RegistrationPage3">
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:text="Blood Type"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imageButton8"
+        android:layout_toStartOf="@+id/imageButton8" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/blood_drop_icon"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/toolbar3"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4" />
+
+    <ImageButton
+        android:id="@+id/aminImgButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/imageView26"
+        android:layout_alignStart="@+id/imageView26"
+        android:layout_below="@+id/textView26"
+        android:layout_marginTop="11dp"
+        android:adjustViewBounds="false"
+        android:background="@color/material_drawer_background"
+        app:srcCompat="@mipmap/ic_a_minus" />
+
+    <ImageButton
+        android:id="@+id/aplusImgButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/aminImgButton"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/aminImgButton"
+        android:layout_toRightOf="@+id/aminImgButton"
+        android:background="@color/material_drawer_background"
+        app:srcCompat="@mipmap/ic_a_plus" />
+
+    <ImageButton
+        android:id="@+id/abminImgButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/aplusImgButton"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/aplusImgButton"
+        android:layout_toRightOf="@+id/aplusImgButton"
+        android:background="@color/material_drawer_background"
+        app:srcCompat="@mipmap/ic_ab_minus" />
+
+    <ImageButton
+        android:id="@+id/abplusImgButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/abminImgButton"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/abminImgButton"
+        android:layout_toRightOf="@+id/abminImgButton"
+        android:background="@color/material_drawer_background"
+        app:srcCompat="@mipmap/ic_ab_plus" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/aminImgButton"
+        android:layout_alignStart="@+id/aminImgButton"
+        android:layout_below="@+id/aminImgButton"
+        android:layout_marginTop="13dp"
+        android:background="@color/material_drawer_background"
+        app:srcCompat="@mipmap/ic_b_minus" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/aplusImgButton"
+        android:layout_alignStart="@+id/aplusImgButton"
+        android:layout_alignTop="@+id/imageButton6"
+        android:background="@android:color/transparent"
+        app:srcCompat="@mipmap/b_plus" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/imageButton7"
+        android:layout_alignLeft="@+id/abminImgButton"
+        android:layout_alignStart="@+id/abminImgButton"
+        android:background="@color/material_drawer_background"
+        app:srcCompat="@mipmap/ic_o_minus" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/abplusImgButton"
+        android:layout_alignStart="@+id/abplusImgButton"
+        android:layout_alignTop="@+id/imageButton8"
+        android:background="@color/material_drawer_background"
+        app:srcCompat="@mipmap/ic_o_plus" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Diabetes"
+        android:layout_below="@+id/imageButton6"
+        android:layout_alignRight="@+id/radioButton"
+        android:layout_alignEnd="@+id/radioButton" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/diabity_icon"
+        android:layout_alignTop="@+id/radioButton"
+        android:layout_alignLeft="@+id/imageButton6"
+        android:layout_alignStart="@+id/imageButton6" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView27"
+        android:layout_toEndOf="@+id/imageView27"
+        android:layout_toRightOf="@+id/imageView27"
+        android:text="No" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type One"
+        android:layout_below="@+id/textView27"
+        android:layout_toRightOf="@+id/imageButton7"
+        android:layout_toEndOf="@+id/imageButton7" />
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type Two"
+        android:layout_alignBaseline="@+id/radioButton2"
+        android:layout_alignBottom="@+id/radioButton2"
+        android:layout_toRightOf="@+id/radioButton2"
+        android:layout_toEndOf="@+id/radioButton2"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asthma"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/radioButton3"
+        android:layout_alignRight="@+id/textView27"
+        android:layout_alignEnd="@+id/textView27"
+        android:layout_toEndOf="@+id/imageView28"
+        android:layout_toRightOf="@+id/imageView28" />
+
+    <ImageView
+        android:id="@+id/imageView28"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/asthma_icon"
+        android:layout_alignBottom="@+id/textView28"
+        android:layout_toLeftOf="@+id/radioButton"
+        android:layout_toStartOf="@+id/radioButton" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch"
+        android:layout_alignBaseline="@+id/textView28"
+        android:layout_alignBottom="@+id/textView28"
+        android:layout_alignLeft="@+id/radioButton3"
+        android:layout_alignStart="@+id/radioButton3" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Allergies"
+        android:layout_below="@+id/switch1"
+        android:layout_toRightOf="@+id/imageView29"
+        android:layout_toEndOf="@+id/imageView29" />
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/allergy_icon"
+        android:layout_alignBottom="@+id/textView29"
+        android:layout_alignLeft="@+id/imageView28"
+        android:layout_alignStart="@+id/imageView28" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/switch1"
+        android:layout_alignStart="@+id/switch1"
+        android:layout_alignTop="@+id/imageView29"
+        android:text="Switch" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/switch2"
+        android:layout_alignLeft="@+id/imageView29"
+        android:layout_alignRight="@+id/switch2"
+        android:layout_alignStart="@+id/imageView29"
+        android:layout_below="@+id/switch2"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView29"
+        android:layout_alignStart="@+id/textView29"
+        android:layout_below="@+id/editText"
+        android:layout_marginTop="11dp"
+        android:text="Medications" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/medicine_icon"
+        android:layout_alignBottom="@+id/textView30"
+        android:layout_toLeftOf="@+id/textView30"
+        android:layout_toStartOf="@+id/textView30" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView30"
+        android:layout_alignLeft="@+id/imageView30"
+        android:layout_alignStart="@+id/imageView30"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:background="@color/Buttons"
+        android:text="Register"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp" />
 </RelativeLayout>

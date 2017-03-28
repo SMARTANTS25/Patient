@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.utils.Login">
 
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+
+        android:layout_above="@+id/loginEmailText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@mipmap/mainlogo" />
+
     <EditText
         android:id="@+id/loginEmailText"
         android:layout_width="wrap_content"
@@ -13,9 +23,12 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="Enter your Email"
-        android:layout_alignBottom="@+id/passwordLoginText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp" />
+        android:layout_marginBottom="17dp"
+        android:layout_above="@+id/passwordLoginText"
+        android:layout_alignRight="@+id/forgetpasswordTV"
+        android:layout_alignEnd="@+id/forgetpasswordTV"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp" />
 
 
     <EditText
@@ -32,22 +45,21 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="180dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="94dp"
+        android:background="@color/Buttons"
         android:text="Login"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_below="@+id/passwordLoginText"
-        android:layout_alignLeft="@+id/passwordLoginText"
-        android:layout_alignStart="@+id/passwordLoginText" />
+        android:layout_below="@+id/loginEmailText"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/signupTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Signup"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/Buttons"
         android:layout_below="@+id/loginButton"
         android:layout_alignLeft="@+id/loginButton"
         android:layout_alignStart="@+id/loginButton" />
@@ -59,10 +71,29 @@
         android:text="Forget Password?"
         android:layout_marginRight="54dp"
         android:layout_marginEnd="54dp"
+        android:textColor="@color/Buttons"
         android:layout_alignBaseline="@+id/signupTextView"
         android:layout_alignBottom="@+id/signupTextView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@mipmap/email"
+        android:layout_alignBottom="@+id/loginEmailText"
+        android:layout_toLeftOf="@+id/loginEmailText"
+        android:layout_toStartOf="@+id/loginEmailText" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/imageView24"
+        android:layout_alignStart="@+id/imageView24"
+        android:layout_alignTop="@+id/passwordLoginText"
+        app:srcCompat="@mipmap/password" />
 
 
 </RelativeLayout>

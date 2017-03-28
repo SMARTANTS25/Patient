@@ -26,12 +26,12 @@
         <activity android:name=".ViewMedicalInfo" />
         <activity android:name=".EditPatientProfile" />
         <activity android:name=".EditMedicalInfo" />
-        <activity android:name=".RegistrationPage1" />
+        <activity android:name=".RegistrationPage1" android:exported="true"/>
         <activity android:name=".RegistrationPage2" />
         <activity android:name=".RegistrationPage3" />
         <activity android:name=".Home" />
         <activity android:name=".utils.Login"
-            android:exported="true"/>
+            />
 
 
     </application>
