@@ -7,49 +7,61 @@
     tools:context="com.pifss.patient.ViewMedicalInfo">
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar6"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/toolbar6"
+        android:layout_alignRight="@+id/textView12"
+        android:layout_alignEnd="@+id/textView12"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_marginLeft="45dp"
-        android:layout_marginStart="45dp"
-        android:layout_alignTop="@+id/imageView3"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_alignBaseline="@+id/textView17"
+        android:layout_alignBottom="@+id/textView17"
+        android:layout_toRightOf="@+id/textView17"
+        android:layout_toEndOf="@+id/textView17" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="175dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/imageView3"
+        android:layout_below="@+id/textView3"
         android:layout_marginEnd="61dp"
         android:layout_marginRight="61dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/Buttons"
         android:text="Edit Profile" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="16dp"
         android:text="BloodType"
-        android:layout_marginRight="31dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_below="@+id/button"
         android:layout_toLeftOf="@+id/button"
         android:layout_toStartOf="@+id/button" />
@@ -137,38 +149,85 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/allergiesViewText"
-        android:layout_alignStart="@+id/allergiesViewText"
-        android:layout_below="@+id/textView16"
-        android:layout_marginTop="20dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_toRightOf="@+id/textView18"
+        android:layout_toEndOf="@+id/textView18" />
 
     <TextView
         android:id="@+id/medicationViewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:text="No Medication"
-        android:layout_below="@+id/textView18"
+        android:layout_below="@+id/imageView35"
         android:layout_alignLeft="@+id/allergiesViewText"
         android:layout_alignStart="@+id/allergiesViewText" />
 
     <Button
         android:id="@+id/mydrMedicalInfoButton"
-        android:layout_width="match_parent"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
+        android:background="@color/Buttons"
         android:text="My Doctors"
+        android:layout_marginBottom="11dp"
         android:layout_above="@+id/generalinfoViewButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/generalinfoViewButton"
-        android:layout_width="match_parent"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
+        android:background="@color/Buttons"
         android:text="General Information"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/mydrMedicalInfoButton"
+        android:layout_alignStart="@+id/mydrMedicalInfoButton"
+        android:layout_marginBottom="15dp" />
+
+    <ImageView
+        android:id="@+id/imageView31"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/blood_drop_icon"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toLeftOf="@+id/textView5"
+        android:layout_toStartOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/diabetes"
+        android:layout_below="@+id/bloodtypeViewText"
+        android:layout_toLeftOf="@+id/textView11"
+        android:layout_toStartOf="@+id/textView11" />
+
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/diabeteViewText"
+        android:layout_toLeftOf="@+id/textView12"
+        android:layout_toStartOf="@+id/textView12"
+        app:srcCompat="@mipmap/asthma" />
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/allergies"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_toLeftOf="@+id/textView14"
+        android:layout_toStartOf="@+id/textView14" />
+
+    <ImageView
+        android:id="@+id/imageView35"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/allergiesViewText"
+        android:layout_toLeftOf="@+id/textView18"
+        android:layout_toStartOf="@+id/textView18"
+        app:srcCompat="@mipmap/medicine_icon" />
 
 </RelativeLayout>

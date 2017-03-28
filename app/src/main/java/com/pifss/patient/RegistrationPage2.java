@@ -16,6 +16,7 @@ public class RegistrationPage2 extends AppCompatActivity {
       EditText civilId;
      EditText phone;
      EditText emergencyNumber;
+    Button regButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class RegistrationPage2 extends AppCompatActivity {
         final String phoneValue= phone.getText().toString();
         final String emergencyNoValue= emergencyNumber.getText().toString();
 
-        Button regButton = (Button) findViewById(R.id.BtnToMedicalReg);
+          regButton = (Button) findViewById(R.id.BtnToMedicalReg);
 
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +108,7 @@ public class RegistrationPage2 extends AppCompatActivity {
 //                    startActivity(i_register);
 //                    //finish();
 //                }
-
+                regButton.setEnabled(false);
                 break;
         }
     }
