@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pifss.patient.ViewPatientProfile">
+
+    <ImageView
+        android:id="@+id/profileImgView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/profilePatientNameText"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_alignTop="@+id/profileImgView"
+        android:layout_alignRight="@+id/editPersonalInfoButton"
+        android:layout_alignEnd="@+id/editPersonalInfoButton" />
+
+    <Button
+        android:id="@+id/editPersonalInfoButton"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Edit Profile"
+        android:layout_below="@+id/profilePatientNameText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="38dp"
+        android:layout_marginEnd="38dp" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="Gender"
+        android:layout_below="@+id/editPersonalInfoButton"
+        android:layout_toRightOf="@+id/profileImgView"
+        android:layout_toEndOf="@+id/profileImgView" />
+
+    <TextView
+        android:id="@+id/genderViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birth Date"
+        android:layout_below="@+id/genderViewText"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/birthdateViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="14/2/2012"
+        android:layout_below="@+id/textView4"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Email"
+        android:layout_below="@+id/birthdateViewText"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/emailViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test@gmail.com"
+        android:layout_below="@+id/textView6"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Phone"
+        android:layout_below="@+id/emailViewText"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/phoneViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emailViewText"
+        android:layout_alignStart="@+id/emailViewText"
+        android:layout_below="@+id/textView8"
+        android:layout_marginTop="17dp"
+        android:text="66666666" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
+        android:layout_below="@+id/phoneViewText"
+        android:layout_marginTop="16dp"
+        android:text="Emergency Number" />
+
+    <TextView
+        android:id="@+id/emergencyNoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/phoneViewText"
+        android:layout_alignStart="@+id/phoneViewText"
+        android:layout_below="@+id/textView10"
+        android:layout_marginTop="18dp"
+        android:text="77777777" />
+
+    <Button
+        android:id="@+id/mydrGeneralInfoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Doctors"
+        android:layout_above="@+id/medicalInfoViewButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/medicalInfoViewButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Medical Information" />
+
+
+</RelativeLayout>
