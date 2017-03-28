@@ -28,7 +28,15 @@
         <activity android:name=".EditMedicalInfo" />
         <activity android:name=".RegistrationPage1" />
         <activity android:name=".RegistrationPage2" />
-        <activity android:name=".RegistrationPage3"></activity>
+        <activity android:name=".RegistrationPage3" />
+        <activity
+            android:name=".MyDoctors"
+            android:exported="true"
+            android:label="@string/title_activity_my_doctors"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".AllDoctors"
+            android:exported="true"
+            ></activity>
     </application>
 
 </manifest>
