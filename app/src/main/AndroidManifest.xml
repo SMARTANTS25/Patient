@@ -28,7 +28,8 @@
         <activity android:name=".EditMedicalInfo" />
         <activity android:name=".RegistrationPage1" />
         <activity android:name=".RegistrationPage2" />
-        <activity android:name=".RegistrationPage3"></activity>
+        <activity android:name=".RegistrationPage3" />
+        <activity android:name=".NewDoctorProfile"></activity>
     </application>
 
 </manifest>

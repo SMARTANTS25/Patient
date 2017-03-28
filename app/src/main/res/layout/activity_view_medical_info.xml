@@ -84,7 +84,7 @@
         android:layout_marginTop="12dp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textViewHospitalAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="No"
-        android:layout_below="@+id/textView12"
+        android:layout_below="@+id/textViewHospitalAddress"
         android:layout_alignLeft="@+id/diabeteViewText"
         android:layout_alignStart="@+id/diabeteViewText" />
 
@@ -109,8 +109,8 @@
         android:layout_height="wrap_content"
         android:text="Allergies"
         android:layout_below="@+id/asthmaViewText"
-        android:layout_alignLeft="@+id/textView12"
-        android:layout_alignStart="@+id/textView12"
+        android:layout_alignLeft="@+id/textViewHospitalAddress"
+        android:layout_alignStart="@+id/textViewHospitalAddress"
         android:layout_marginTop="13dp" />
 
     <TextView

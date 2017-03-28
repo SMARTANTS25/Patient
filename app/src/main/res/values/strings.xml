@@ -1,4 +1,27 @@
 <resources>
     <string name="app_name">Patient</string>
     <string name="title_activity_home">Home</string>
+    <string name="TextViewHosName">Hospital name</string>
+    <string name="textViewHosEmail">Email</string>
+    <string name="textViewHosSpecaility"> Speciality</string>
+    <string name="textViewHosWorkingH"> Working Hours</string>
+    <string name="textViewHosPhone"> Phone #</string>
+    <string name="textViewHosAddress"> Address</string>
+    <string name="textViewHosExtraInfo"> Additional Information</string>
+
+
+    <string name="textViewDocName"> Doctor Name</string>
+    <string name="textViewDocSpeciality"> Doctor Speciality</string>
+    <string name="textViewDocEmail"> Email</string>
+    <string name="textViewDocNationality"> Nationality</string>
+    <string name="textViewDocCV"> CV</string>
+    <string name="buttonSendDoctorRequest"> Send Request</string>
+
+
+
+
+
+
+
+
 </resources>
