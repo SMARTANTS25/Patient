@@ -28,6 +28,7 @@ public class SearchHospital extends AppCompatActivity {
 
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
 
+
         SearchView svHospital = (SearchView) findViewById(R.id.searchViewHospital);
 
         final ArrayList<String> model = new ArrayList<>();
