@@ -27,6 +27,7 @@ public class MyDoctors extends AppCompatActivity {
 
         final ArrayList<Doctor> model = new ArrayList<>();
 
+        //
         Doctor d = new Doctor();
 
         d.setFirstName("Ahmad");
