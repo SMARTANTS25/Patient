@@ -9,5 +9,7 @@ public class RegistrationPage3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page3);
+
+        //hello its me
     }
 }
