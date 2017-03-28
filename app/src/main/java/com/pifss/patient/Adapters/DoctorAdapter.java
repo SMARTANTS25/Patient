@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pifss.patient.utils.Doctor;
 import com.pifss.patient.R;
+import com.pifss.patient.utils.Doctor;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
