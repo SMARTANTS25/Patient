@@ -8,28 +8,26 @@
 
     <Button
         android:id="@+id/Reg1Btn"
-        android:layout_width="match_parent"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:background="@android:color/holo_blue_light"
-        android:text="Button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="Register" />
 
     <EditText
         android:id="@+id/Reg_EmailTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginRight="59dp"
+        android:layout_marginTop="166dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="EXAMPLE@GMAIL.COM"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="73dp"
-        android:layout_marginEnd="73dp" />
+        android:layout_alignRight="@+id/Reg1Btn"
+        android:layout_alignEnd="@+id/Reg1Btn" />
 
     <EditText
         android:id="@+id/Reg_PasswordTF"
@@ -40,8 +38,7 @@
         android:layout_below="@+id/Reg_EmailTF"
         android:layout_marginTop="14dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="******" />
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/Reg_ConfirmPassTF"
@@ -52,71 +49,63 @@
         android:layout_below="@+id/Reg_PasswordTF"
         android:layout_marginTop="19dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="******" />
+        android:inputType="textPassword" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="25dp"
-        app:srcCompat="@mipmap/male"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@mipmap/gender_icon"
+        android:layout_alignTop="@+id/MaleRegMaleRadioButton"
+        android:layout_toLeftOf="@+id/Reg_ConfirmPassTF"
+        android:layout_toStartOf="@+id/Reg_ConfirmPassTF" />
+
+    <RadioButton
+        android:id="@+id/MaleRegMaleRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
         android:layout_below="@+id/Reg_ConfirmPassTF"
-        android:layout_alignLeft="@+id/Reg_ConfirmPassTF"
-        android:layout_alignStart="@+id/Reg_ConfirmPassTF" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_alignEnd="@+id/Reg_ConfirmPassTF"
-        android:layout_alignRight="@+id/Reg_ConfirmPassTF"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
-        app:srcCompat="@mipmap/female" />
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_marginTop="19dp" />
 
     <RadioButton
-        android:id="@+id/MaleRegRadioButton"
+        android:id="@+id/RegFemaleRadioBu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_below="@+id/imageView"
-        android:text="Male" />
-
-    <RadioButton
-        android:id="@+id/FemaleRegRadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_below="@+id/imageView2"
-        android:text="Female" />
+        android:text="Female"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignLeft="@+id/MaleRegMaleRadioButton"
+        android:layout_alignStart="@+id/MaleRegMaleRadioButton" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
 
-        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/imageView11"
+        android:layout_alignLeft="@+id/Reg_EmailTF"
+        android:layout_alignStart="@+id/Reg_EmailTF"
+        android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/mainlogo" />
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:srcCompat="@mipmap/email"
-        android:layout_above="@+id/Reg_PasswordTF"
-        android:layout_toLeftOf="@+id/Reg_EmailTF"
-        android:layout_toStartOf="@+id/Reg_EmailTF" />
+        android:layout_alignTop="@+id/Reg_EmailTF"
+        android:layout_alignLeft="@+id/imageView12"
+        android:layout_alignStart="@+id/imageView12" />
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignTop="@+id/Reg_PasswordTF"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
@@ -126,8 +115,8 @@
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/imageView12"
         android:layout_alignStart="@+id/imageView12"
         android:layout_alignTop="@+id/Reg_ConfirmPassTF"

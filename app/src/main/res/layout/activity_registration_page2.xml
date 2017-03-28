@@ -6,28 +6,37 @@
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.RegistrationPage2">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="17dp"
         android:text="First Name"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignBottom="@+id/imageView8"
+        android:layout_toRightOf="@+id/imageView8"
+        android:layout_toEndOf="@+id/imageView8" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_marginLeft="114dp"
-        android:layout_marginStart="114dp"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:text="Last Name" />
+        android:text="Last Name"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_above="@+id/Reg_FirstNameTF"
+        android:layout_toRightOf="@+id/imageView9"
+        android:layout_toEndOf="@+id/imageView9" />
 
     <EditText
         android:id="@+id/Reg_LastNameTF"
@@ -35,9 +44,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_above="@+id/imageView4"
+        android:layout_alignRight="@+id/Reg_CivilIDTF"
+        android:layout_alignEnd="@+id/Reg_CivilIDTF" />
 
     <EditText
         android:id="@+id/Reg_FirstNameTF"
@@ -46,33 +55,30 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp" />
+        android:layout_alignLeft="@+id/imageView6"
+        android:layout_alignStart="@+id/imageView6" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="14dp"
         android:text="Civil ID"
         android:layout_below="@+id/Reg_FirstNameTF"
-        android:layout_toLeftOf="@+id/textView3"
-        android:layout_toStartOf="@+id/textView3" />
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8" />
 
     <EditText
         android:id="@+id/Reg_CivilIDTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Reg_FirstNameTF"
-        android:layout_alignStart="@+id/Reg_FirstNameTF"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="number"
-        android:layout_alignRight="@+id/Reg_LastNameTF"
-        android:layout_alignEnd="@+id/Reg_LastNameTF" />
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignRight="@+id/Reg_BirthDateTF"
+        android:layout_alignEnd="@+id/Reg_BirthDateTF" />
 
     <TextView
         android:id="@+id/textView5"
@@ -90,71 +96,61 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="date"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/Reg_CivilIDTF"
-        android:layout_alignStart="@+id/Reg_CivilIDTF"
-        android:layout_alignRight="@+id/Reg_CivilIDTF"
-        android:layout_alignEnd="@+id/Reg_CivilIDTF" />
+        android:layout_below="@+id/imageView5"
+        android:layout_alignLeft="@+id/imageView6"
+        android:layout_alignStart="@+id/imageView6"
+        android:layout_alignRight="@+id/Reg_PhoneNumberTF"
+        android:layout_alignEnd="@+id/Reg_PhoneNumberTF" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
         android:layout_marginTop="19dp"
         android:text="Phone Number"
         android:layout_below="@+id/Reg_BirthDateTF"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5" />
+        android:layout_toRightOf="@+id/imageView7"
+        android:layout_toEndOf="@+id/imageView7" />
 
     <EditText
         android:id="@+id/Reg_PhoneNumberTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Reg_BirthDateTF"
-        android:layout_alignStart="@+id/Reg_BirthDateTF"
-        android:layout_below="@+id/textView7"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="phone"
-        android:layout_alignRight="@+id/Reg_BirthDateTF"
-        android:layout_alignEnd="@+id/Reg_BirthDateTF" />
+        android:layout_below="@+id/textView7"
+        android:layout_alignLeft="@+id/imageView6"
+        android:layout_alignStart="@+id/imageView6"
+        android:layout_alignRight="@+id/Reg_EmergencyNumberTF"
+        android:layout_alignEnd="@+id/Reg_EmergencyNumberTF" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView7"
-        android:layout_alignStart="@+id/textView7"
-        android:layout_below="@+id/Reg_PhoneNumberTF"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="16dp"
-        android:text="Emergency Number" />
+        android:text="Emergency Number"
+        android:layout_alignBottom="@+id/imageView7"
+        android:layout_toRightOf="@+id/imageView7"
+        android:layout_toEndOf="@+id/imageView7" />
 
     <EditText
         android:id="@+id/Reg_EmergencyNumberTF"
-        android:layout_width="wrap_content"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/Reg_PhoneNumberTF"
-        android:layout_alignLeft="@+id/Reg_PhoneNumberTF"
-        android:layout_alignRight="@+id/Reg_PhoneNumberTF"
-        android:layout_alignStart="@+id/Reg_PhoneNumberTF"
-        android:layout_below="@+id/textView8"
-        android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:layout_below="@+id/textView8"
+        android:layout_alignLeft="@+id/BtnToMedicalReg"
+        android:layout_alignStart="@+id/BtnToMedicalReg" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:srcCompat="@mipmap/id"
         android:layout_above="@+id/Reg_CivilIDTF"
         android:layout_alignLeft="@+id/Reg_FirstNameTF"
-        android:layout_alignStart="@+id/Reg_FirstNameTF" />
+        android:layout_alignStart="@+id/Reg_FirstNameTF"
+        app:srcCompat="@mipmap/id_card" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -169,45 +165,48 @@
         android:id="@+id/imageView6"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignTop="@+id/textView7"
+        app:srcCompat="@mipmap/phone_icon"
+        android:layout_alignBottom="@+id/textView7"
         android:layout_toLeftOf="@+id/textView7"
-        android:layout_toStartOf="@+id/textView7"
-        app:srcCompat="@mipmap/phone" />
+        android:layout_toStartOf="@+id/textView7" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_alignTop="@+id/textView8"
-        app:srcCompat="@mipmap/emergencynum" />
+        app:srcCompat="@mipmap/emergencynum"
+        android:layout_below="@+id/Reg_PhoneNumberTF"
+        android:layout_alignLeft="@+id/Reg_EmergencyNumberTF"
+        android:layout_alignStart="@+id/Reg_EmergencyNumberTF"
+        android:layout_marginTop="10dp" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@mipmap/name" />
+        app:srcCompat="@mipmap/profile_icon"
+        android:layout_below="@+id/toolbar2"
+        android:layout_alignLeft="@+id/Reg_FirstNameTF"
+        android:layout_alignStart="@+id/Reg_FirstNameTF" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:srcCompat="@mipmap/name"
+        app:srcCompat="@mipmap/profile_icon"
         android:layout_above="@+id/Reg_LastNameTF"
-        android:layout_toLeftOf="@+id/Reg_LastNameTF"
-        android:layout_toStartOf="@+id/Reg_LastNameTF" />
+        android:layout_alignLeft="@+id/Reg_LastNameTF"
+        android:layout_alignStart="@+id/Reg_LastNameTF" />
 
     <Button
         android:id="@+id/BtnToMedicalReg"
-        android:layout_width="match_parent"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:background="@color/Buttons"
+        android:text="Continue"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Button" />
+        android:layout_centerHorizontal="true" />
 
 
 
