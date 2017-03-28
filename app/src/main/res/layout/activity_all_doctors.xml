@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pifss.patient.Home">
+    tools:context="com.pifss.patient.AllDoctors">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/AllDoctorToolbar"
@@ -23,7 +23,7 @@
         android:layout_below="@+id/AllDoctorToolbar" />
 
     <SearchView
-        android:id="@+id/homeSearchView"
+        android:id="@+id/AllDoctorSearchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/AllDoctorList"
@@ -33,15 +33,5 @@
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp" />
 
-   <android.support.design.widget.FloatingActionButton
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/sendReportButton"
-       android:layout_alignParentBottom="true"
-       android:layout_alignParentRight="true"
-       android:layout_marginBottom="20dp"
-       android:layout_marginRight="10dp"
-
-       />
 
 </RelativeLayout>

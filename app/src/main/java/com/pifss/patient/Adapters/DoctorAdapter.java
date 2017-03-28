@@ -59,6 +59,7 @@ public class DoctorAdapter extends BaseAdapter {
 
         Doctor m=model.get(position);
 
+        // omg its a change
         //docProfile.setImageResource(m.getImageUrl());
         Picasso.with(context).load(m.getImageUrl()).into(docProfile);
         docSpecialty.setText(m.getSpecialityId());
