@@ -10,12 +10,12 @@
         android:id="@+id/Reg1Btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_marginBottom="25dp"
         android:background="@android:color/holo_blue_light"
-        android:text="Button" />
+        android:text="Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/Reg_EmailTF"
