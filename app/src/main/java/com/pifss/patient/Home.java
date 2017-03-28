@@ -29,7 +29,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
         //setSupportActionBar(toolbar);
 
         // MaterialDrawer Creation
@@ -96,7 +96,7 @@ public class Home extends AppCompatActivity {
         model.add(d2);
 
 
-        ListView lv = (ListView) findViewById(R.id.homeDoctorList);
+        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(model, this);
 
@@ -175,7 +175,7 @@ public class Home extends AppCompatActivity {
         }
 
 
-        ListView lv = (ListView) findViewById(R.id.homeDoctorList);
+        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(parsedModel, this);
 
