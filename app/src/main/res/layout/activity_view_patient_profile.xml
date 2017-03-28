@@ -6,17 +6,27 @@
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.ViewPatientProfile">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar7"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
     <ImageView
         android:id="@+id/profileImgView"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="64dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp" />
+        android:layout_alignLeft="@+id/mydrGeneralInfoButton"
+        android:layout_alignStart="@+id/mydrGeneralInfoButton" />
 
     <TextView
         android:id="@+id/profilePatientNameText"
@@ -29,15 +39,16 @@
 
     <Button
         android:id="@+id/editPersonalInfoButton"
-        android:layout_width="175dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Edit Profile"
-        android:layout_below="@+id/profilePatientNameText"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/profilePatientNameText"
+        android:layout_marginEnd="38dp"
         android:layout_marginRight="38dp"
-        android:layout_marginEnd="38dp" />
+        android:background="@color/Buttons"
+        android:layout_marginTop="12dp"
+        android:text="Edit Profile" />
 
 
     <TextView
@@ -140,20 +151,66 @@
 
     <Button
         android:id="@+id/mydrGeneralInfoButton"
-        android:layout_width="match_parent"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:text="My Doctors"
         android:layout_above="@+id/medicalInfoViewButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:background="@color/Buttons"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/medicalInfoViewButton"
-        android:layout_width="match_parent"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
+        android:background="@color/Buttons"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Medical Information" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2"
+        app:srcCompat="@mipmap/gender_icon" />
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/calender"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_toStartOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/imageView38"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/textView8"
+        android:layout_toStartOf="@+id/textView6"
+        app:srcCompat="@mipmap/email"
+        android:layout_toLeftOf="@+id/textView6" />
+
+    <ImageView
+        android:id="@+id/imageView39"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/textView8"
+        android:layout_toLeftOf="@+id/textView8"
+        android:layout_toStartOf="@+id/textView8"
+        app:srcCompat="@mipmap/phone_icon" />
+
+    <ImageView
+        android:id="@+id/imageView41"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_toLeftOf="@+id/textView10"
+        android:layout_toStartOf="@+id/textView10"
+        app:srcCompat="@mipmap/emergencynum" />
 
 
 </RelativeLayout>
