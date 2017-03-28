@@ -7,7 +7,7 @@
     tools:context="com.pifss.patient.ViewPatientProfile">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profileImgView"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
@@ -23,7 +23,7 @@
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_alignTop="@+id/imageView"
+        android:layout_alignTop="@+id/profileImgView"
         android:layout_alignRight="@+id/editPersonalInfoButton"
         android:layout_alignEnd="@+id/editPersonalInfoButton" />
 
@@ -47,8 +47,8 @@
         android:layout_marginTop="29dp"
         android:text="Gender"
         android:layout_below="@+id/editPersonalInfoButton"
-        android:layout_toRightOf="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
+        android:layout_toRightOf="@+id/profileImgView"
+        android:layout_toEndOf="@+id/profileImgView" />
 
     <TextView
         android:id="@+id/genderViewText"
@@ -129,7 +129,7 @@
         android:text="Emergency Number" />
 
     <TextView
-        android:id="@+id/profileEmergencyNumber"
+        android:id="@+id/emergencyNoView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/phoneViewText"

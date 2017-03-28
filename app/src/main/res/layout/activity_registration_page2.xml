@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pifss.patient.RegistrationPage2">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:text="First Name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginLeft="114dp"
+        android:layout_marginStart="114dp"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="Last Name" />
+
+    <EditText
+        android:id="@+id/Reg_LastNameTF"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/Reg_FirstNameTF"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Civil ID"
+        android:layout_below="@+id/Reg_FirstNameTF"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/Reg_CivilIDTF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Reg_FirstNameTF"
+        android:layout_alignStart="@+id/Reg_FirstNameTF"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_alignRight="@+id/Reg_LastNameTF"
+        android:layout_alignEnd="@+id/Reg_LastNameTF" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/Reg_CivilIDTF"
+        android:layout_marginTop="19dp"
+        android:text="Birth Date" />
+
+    <EditText
+        android:id="@+id/Reg_BirthDateTF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/Reg_CivilIDTF"
+        android:layout_alignStart="@+id/Reg_CivilIDTF"
+        android:layout_alignRight="@+id/Reg_CivilIDTF"
+        android:layout_alignEnd="@+id/Reg_CivilIDTF" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="19dp"
+        android:text="Phone Number"
+        android:layout_below="@+id/Reg_BirthDateTF"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/Reg_PhoneNumberTF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Reg_BirthDateTF"
+        android:layout_alignStart="@+id/Reg_BirthDateTF"
+        android:layout_below="@+id/textView7"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:layout_alignRight="@+id/Reg_BirthDateTF"
+        android:layout_alignEnd="@+id/Reg_BirthDateTF" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/Reg_PhoneNumberTF"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
+        android:text="Emergency Number" />
+
+    <EditText
+        android:id="@+id/Reg_EmergencyNumberTF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Reg_PhoneNumberTF"
+        android:layout_alignLeft="@+id/Reg_PhoneNumberTF"
+        android:layout_alignRight="@+id/Reg_PhoneNumberTF"
+        android:layout_alignStart="@+id/Reg_PhoneNumberTF"
+        android:layout_below="@+id/textView8"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/id"
+        android:layout_above="@+id/Reg_CivilIDTF"
+        android:layout_alignLeft="@+id/Reg_FirstNameTF"
+        android:layout_alignStart="@+id/Reg_FirstNameTF" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/calender"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_alignLeft="@+id/Reg_BirthDateTF"
+        android:layout_alignStart="@+id/Reg_BirthDateTF" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/textView7"
+        android:layout_toLeftOf="@+id/textView7"
+        android:layout_toStartOf="@+id/textView7"
+        app:srcCompat="@mipmap/phone" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignTop="@+id/textView8"
+        app:srcCompat="@mipmap/emergencynum" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@mipmap/name" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/name"
+        android:layout_above="@+id/Reg_LastNameTF"
+        android:layout_toLeftOf="@+id/Reg_LastNameTF"
+        android:layout_toStartOf="@+id/Reg_LastNameTF" />
+
+    <Button
+        android:id="@+id/BtnToMedicalReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Button" />
+
+
+
+
+
+
+
+</RelativeLayout>

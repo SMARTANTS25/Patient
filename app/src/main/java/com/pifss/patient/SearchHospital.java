@@ -24,9 +24,10 @@ public class SearchHospital extends AppCompatActivity {
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbarHospitalSearch);
 
-        toolbar.setTitle("My App");
+        toolbar.setTitle("Hospitals");
 
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
+
 
         SearchView svHospital = (SearchView) findViewById(R.id.searchViewHospital);
 
@@ -59,6 +60,10 @@ public class SearchHospital extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+
+                ArrayList<String> model1 = new ArrayList<String>();
+                model1.add(newText);
+                HospitalAdapter hospitalA = new HospitalAdapter(model1 , SearchHospital.this);
 
 
 

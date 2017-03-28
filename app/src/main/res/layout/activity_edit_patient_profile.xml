@@ -32,7 +32,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/saveChangesGIButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save Changes"
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gender"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/saveChangesGIButton"
         android:layout_alignRight="@+id/imageButton"
         android:layout_alignEnd="@+id/imageButton" />
 
