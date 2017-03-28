@@ -29,6 +29,9 @@
         <activity android:name=".RegistrationPage1" />
         <activity android:name=".RegistrationPage2" />
         <activity android:name=".RegistrationPage3" />
+        <activity android:name=".utils.Login"
+            android:exported="true"/>
+        <activity android:name=".Home" />
         <activity
             android:name=".MyDoctors"
             android:exported="true"
