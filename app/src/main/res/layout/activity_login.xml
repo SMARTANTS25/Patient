@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pifss.patient.utils.Login">
+
+    <EditText
+        android:id="@+id/loginEmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Enter your Email"
+        android:layout_alignBottom="@+id/passwordLoginText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp" />
+
+
+    <EditText
+        android:id="@+id/passwordLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="Enter your Password"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/loginEmailText"
+        android:layout_alignStart="@+id/loginEmailText" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/passwordLoginText"
+        android:layout_alignLeft="@+id/passwordLoginText"
+        android:layout_alignStart="@+id/passwordLoginText" />
+
+    <TextView
+        android:id="@+id/signupTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/loginButton"
+        android:layout_alignLeft="@+id/loginButton"
+        android:layout_alignStart="@+id/loginButton" />
+
+    <TextView
+        android:id="@+id/forgetpasswordTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forget Password?"
+        android:layout_marginRight="54dp"
+        android:layout_marginEnd="54dp"
+        android:layout_alignBaseline="@+id/signupTextView"
+        android:layout_alignBottom="@+id/signupTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>
