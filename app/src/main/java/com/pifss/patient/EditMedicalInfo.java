@@ -21,7 +21,7 @@ public class EditMedicalInfo extends AppCompatActivity {
         EditText medications=(EditText) findViewById(R.id.medicationsEditText);
 
 
-        
+
 
     }
 }
