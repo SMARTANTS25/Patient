@@ -1,4 +1,4 @@
-package com.pifss.patient;
+package com.pifss.patient.utils;
 
 /**
  * Created by abraral-failakawi on 3/27/17.

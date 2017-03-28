@@ -90,6 +90,7 @@ String email;
     String hospitalId;
 
     public Hospital(String s) {
+
     }
 
     public String getEmail() {

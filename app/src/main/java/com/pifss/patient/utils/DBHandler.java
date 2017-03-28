@@ -1,7 +1,6 @@
-package com.pifss.patient;
+package com.pifss.patient.utils;
 
 import android.app.Application;
-import android.content.res.Configuration;
 
 /**
  * Created by abraral-failakawi on 3/27/17.

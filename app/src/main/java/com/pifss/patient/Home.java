@@ -2,10 +2,7 @@ package com.pifss.patient;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,6 +18,8 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.pifss.patient.Adapters.DoctorAdapter;
+import com.pifss.patient.utils.Doctor;
 
 import java.util.ArrayList;
 
@@ -36,7 +35,6 @@ public class Home extends AppCompatActivity {
         // MaterialDrawer Creation
 
         PrimaryDrawerItem myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.ic_launcher_round).withName("My Doctors").withBadge("4").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
-        ;
         PrimaryDrawerItem findDoctorsItem = new PrimaryDrawerItem().withIdentifier(2).withIcon(R.mipmap.ic_launcher_round).withName("Find Doctors");
         PrimaryDrawerItem hospitalsItem = new PrimaryDrawerItem().withIdentifier(3).withIcon(R.mipmap.ic_launcher_round).withName("Hospitals");
         PrimaryDrawerItem reportItem = new PrimaryDrawerItem().withIdentifier(4).withIcon(R.mipmap.ic_launcher_round).withName("My Reports");
