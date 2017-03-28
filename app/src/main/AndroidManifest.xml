@@ -10,18 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".SearchHospital">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HospitalProfile">
 
-        </activity>
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="mhealth" />
+
+        <activity android:name=".ResetPassword" />
+        <activity android:name=".ViewPatientProfile" />
+        <activity android:name=".ViewMedicalInfo" />
+        <activity android:name=".EditPatientProfile" />
+        <activity android:name=".EditMedicalInfo" />
+        <activity android:name=".RegistrationPage1" />
+        <activity android:name=".RegistrationPage2" />
+        <activity android:name=".RegistrationPage3"></activity>
     </application>
 
 </manifest>
