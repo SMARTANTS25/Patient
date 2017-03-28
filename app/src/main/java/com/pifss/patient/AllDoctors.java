@@ -23,6 +23,14 @@ public class AllDoctors extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
         toolbar.setTitle("All Doctors");
         //setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.mipmap.aplus);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // Doctor List
 
