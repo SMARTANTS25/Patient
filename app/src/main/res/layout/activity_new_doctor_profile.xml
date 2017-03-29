@@ -23,7 +23,7 @@
         android:id="@+id/textViewDocName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Doctor name"
+        android:text="@string/textView_DocName"
         android:layout_below="@+id/imageViewDoctorLogo"
         android:layout_alignLeft="@+id/imageViewDoctorLogo"
         android:layout_alignStart="@+id/imageViewDoctorLogo"
@@ -51,7 +51,7 @@
         android:layout_alignStart="@+id/textViewDocName"
         android:layout_below="@+id/textViewDoctorName"
         android:layout_marginTop="28dp"
-        android:text="Speciality" />
+        android:text="@string/textView_DocSpeciality" />
 
     <TextView
         android:id="@+id/textViewDoctorSpeciality"
@@ -71,7 +71,7 @@
         android:layout_alignStart="@+id/textViewDocSpeciality"
         android:layout_below="@+id/textViewDoctorSpeciality"
         android:layout_marginTop="29dp"
-        android:text="Email" />
+        android:text="@string/textView_DocEmail" />
 
     <TextView
         android:id="@+id/textViewDoctorEmail"
@@ -90,7 +90,7 @@
         android:layout_alignStart="@+id/textViewDocEmail"
         android:layout_below="@+id/textViewDoctorEmail"
         android:layout_marginTop="25dp"
-        android:text="Nationality" />
+        android:text="@string/textView_DocNationality" />
 
     <TextView
         android:id="@+id/textViewDoctorNationality"
@@ -110,7 +110,7 @@
         android:layout_alignStart="@+id/textViewDocNationality"
         android:layout_below="@+id/textViewDoctorNationality"
         android:layout_marginTop="20dp"
-        android:text="CV" />
+        android:text="@string/textView_DocCV" />
 
     <TextView
         android:id="@+id/textViewDoctorCV"
@@ -127,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
-        android:text="Send Request"
+        android:text="@string/buttonSend_DoctorRequest"
         android:layout_below="@+id/textViewDoctorCV"
         android:layout_toRightOf="@+id/textViewDoctorName"
         android:layout_toEndOf="@+id/textViewDoctorName" />

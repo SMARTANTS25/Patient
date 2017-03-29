@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:background="@android:color/holo_blue_light"
-        android:text="Register" />
+        android:text="@string/Reg1_Btn" />
 
     <EditText
         android:id="@+id/Reg_EmailTF"
@@ -68,7 +68,7 @@
         android:id="@+id/MaleRegMaleRadioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Male"
+        android:text="@string/MaleReg_RadioButton"
         android:layout_marginLeft="29dp"
         android:layout_marginStart="29dp"
         android:layout_below="@+id/Reg_ConfirmPassTF"
@@ -80,7 +80,7 @@
         android:id="@+id/RegFemaleRadioBu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Female"
+        android:text="@string/FemaleReg_RadioButton"
         android:layout_alignBottom="@+id/imageView"
         android:layout_alignLeft="@+id/MaleRegMaleRadioButton"
         android:layout_alignStart="@+id/MaleRegMaleRadioButton" />

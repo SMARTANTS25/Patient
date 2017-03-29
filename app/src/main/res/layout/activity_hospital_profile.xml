@@ -27,7 +27,7 @@
         android:layout_marginStart="32dp"
         android:layout_toEndOf="@+id/imageViewHospitalLogo"
         android:layout_toRightOf="@+id/imageViewHospitalLogo"
-        android:text="Hospital name" />
+        android:text="@string/TextView_HosName" />
 
     <TextView
         android:id="@+id/textViewHospitalName"
@@ -69,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
-        android:text="Speciality"
+        android:text="@string/textView_HosSpeciality"
         android:layout_below="@+id/textViewHospitalType"
         android:layout_toLeftOf="@+id/TextViewHosType"
         android:layout_toStartOf="@+id/TextViewHosType" />
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
-        android:text="Working Hours"
+        android:text="@string/textView_HosWorkingH"
         android:layout_below="@+id/textViewHositalSpeciality"
         android:layout_alignLeft="@+id/textViewHosSpecaility"
         android:layout_alignStart="@+id/textViewHosSpecaility" />
@@ -110,7 +110,7 @@
         android:layout_alignStart="@+id/textViewHosWorkingH"
         android:layout_below="@+id/textViewHospitalWorkingHours"
         android:layout_marginTop="17dp"
-        android:text="Phone #" />
+        android:text="@string/textView_HosPhone" />
 
     <TextView
         android:id="@+id/textViewHospitalPhone"
@@ -129,7 +129,7 @@
         android:layout_alignStart="@+id/textViewHosPhone"
         android:layout_below="@+id/textViewHospitalPhone"
         android:layout_marginTop="27dp"
-        android:text="Address" />
+        android:text="@string/textView_HosAddress" />
 
     <TextView
         android:id="@+id/textViewHospitalAddress"
@@ -148,7 +148,7 @@
         android:layout_alignStart="@+id/textViewHosAddress"
         android:layout_below="@+id/textViewHospitalAddress"
         android:layout_marginTop="33dp"
-        android:text="email" />
+        android:text="@string/textView_HosEmail" />
 
     <TextView
         android:id="@+id/textViewHospitalEmail"
@@ -167,7 +167,7 @@
         android:layout_alignStart="@+id/textViewHosEmail"
         android:layout_below="@+id/textViewHospitalEmail"
         android:layout_marginTop="28dp"
-        android:text="Additional Information" />
+        android:text="@string/textView_HosExtraInfo" />
 
     <TextView
         android:id="@+id/textViewHospitalExtraInfo"
@@ -186,8 +186,8 @@
         android:layout_above="@+id/textViewHosWorkingH"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/textViewHosSpecailty"
-        android:layout_toStartOf="@+id/textViewHosSpecailty" />
+        android:layout_toLeftOf="@+id/textViewHosSpecaility"
+        android:layout_toStartOf="@+id/textViewHosSpecaility" />
 
     <ImageView
         android:id="@+id/imageViewHosWorkingHours"
