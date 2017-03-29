@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pifss.patient.NewDoctorProfile">
+
+
+    <ImageView
+        android:id="@+id/imageViewDoctorLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="14dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textViewDocName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_DocName"
+        android:layout_below="@+id/imageViewDoctorLogo"
+        android:layout_alignLeft="@+id/imageViewDoctorLogo"
+        android:layout_alignStart="@+id/imageViewDoctorLogo"
+        android:layout_marginTop="31dp" />
+
+    <TextView
+        android:id="@+id/textViewDoctorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="                         "
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_below="@+id/textViewDocName"
+        android:layout_alignLeft="@+id/textViewDocName"
+        android:layout_alignStart="@+id/textViewDocName"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:id="@+id/textViewDocSpeciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textViewDocName"
+        android:layout_alignLeft="@+id/textViewDocName"
+        android:layout_alignRight="@+id/textViewDocName"
+        android:layout_alignStart="@+id/textViewDocName"
+        android:layout_below="@+id/textViewDoctorName"
+        android:layout_marginTop="28dp"
+        android:text="@string/textView_DocSpeciality" />
+
+    <TextView
+        android:id="@+id/textViewDoctorSpeciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/textViewDocSpeciality"
+        android:layout_alignLeft="@+id/textViewDoctorName"
+        android:layout_alignStart="@+id/textViewDoctorName"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:id="@+id/textViewDocEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewDocSpeciality"
+        android:layout_alignStart="@+id/textViewDocSpeciality"
+        android:layout_below="@+id/textViewDoctorSpeciality"
+        android:layout_marginTop="29dp"
+        android:text="@string/textView_DocEmail" />
+
+    <TextView
+        android:id="@+id/textViewDoctorEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/textViewDocEmail"
+        android:layout_alignLeft="@+id/textViewDoctorSpeciality"
+        android:layout_alignStart="@+id/textViewDoctorSpeciality" />
+
+    <TextView
+        android:id="@+id/textViewDocNationality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewDocEmail"
+        android:layout_alignStart="@+id/textViewDocEmail"
+        android:layout_below="@+id/textViewDoctorEmail"
+        android:layout_marginTop="25dp"
+        android:text="@string/textView_DocNationality" />
+
+    <TextView
+        android:id="@+id/textViewDoctorNationality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        android:layout_below="@+id/textViewDocNationality"
+        android:layout_alignLeft="@+id/textViewDoctorEmail"
+        android:layout_alignStart="@+id/textViewDoctorEmail" />
+
+    <TextView
+        android:id="@+id/textViewDocCV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewDocNationality"
+        android:layout_alignStart="@+id/textViewDocNationality"
+        android:layout_below="@+id/textViewDoctorNationality"
+        android:layout_marginTop="20dp"
+        android:text="@string/textView_DocCV" />
+
+    <TextView
+        android:id="@+id/textViewDoctorCV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewDocCV"
+        android:layout_marginTop="11dp"
+        android:layout_toEndOf="@+id/textViewDocEmail"
+        android:layout_toRightOf="@+id/textViewDocEmail"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/buttonSendDoctorRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="@string/buttonSend_DoctorRequest"
+        android:layout_below="@+id/textViewDoctorCV"
+        android:layout_toRightOf="@+id/textViewDoctorName"
+        android:layout_toEndOf="@+id/textViewDoctorName" />
+
+
+</RelativeLayout>

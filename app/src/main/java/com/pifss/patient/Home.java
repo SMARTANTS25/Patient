@@ -50,7 +50,7 @@ public class Home extends AppCompatActivity {
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(android.R.drawable.menuitem_background)
+                .withHeaderBackground(R.mipmap.navigation_drawer_icon)
                 .addProfiles(
                         new ProfileDrawerItem().withName("PatientName").withTextColor(Color.BLUE).withEmail("mikepenz@gmail.com")
                 )
@@ -60,6 +60,7 @@ public class Home extends AppCompatActivity {
                         return false;
                     }
                 })
+
                 .build();
 
         // Drawer creation + navigation (listener)
@@ -85,10 +86,14 @@ public class Home extends AppCompatActivity {
                             } else if (drawerItem.getIdentifier() == 2) {
                                 intent = new Intent(Home.this, AllDoctors.class);
                             } else if (drawerItem.getIdentifier() == 3) {
-                                //intent = new Intent(Home.this, SearchHospital.class);
+                                intent = new Intent(Home.this, SearchHospital.class);
                             } else if (drawerItem.getIdentifier() == 4) {
                               //  intent = new Intent(Home.this, SendReport.class);
+                            } else if (drawerItem.getIdentifier() == 5) {
+                                // intent = new Intent(Home.this, Settings.class);
                             }
+
+
                             if (intent != null) {
                                 startActivity(intent);
                             }

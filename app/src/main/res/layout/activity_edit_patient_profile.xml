@@ -34,10 +34,10 @@
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:background="@color/Buttons"
         android:layout_alignParentTop="true"
-        android:background="@color/Buttons">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
     </android.support.v7.widget.Toolbar>
 
@@ -89,7 +89,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gender"
+        android:text="@string/RegGender_RadioButton"
         android:layout_below="@+id/saveChangesGIButton"
         android:layout_alignRight="@+id/imageButton"
         android:layout_alignEnd="@+id/imageButton"
@@ -100,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Birth Date"
+        android:text="@string/Reg2_BirthDate"
         android:layout_below="@+id/genderEditText"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
@@ -109,7 +109,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/textView_DocEmail"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/birthdateEditText"
         android:layout_alignLeft="@+id/birthdateEditText"
@@ -120,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Phone Number"
+        android:text="@string/Reg2_Phone"
         android:layout_below="@+id/emailEditText"
         android:layout_toRightOf="@+id/imageView19"
         android:layout_toEndOf="@+id/imageView19" />
@@ -139,7 +139,7 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Emergency Number"
+        android:text="@string/Reg2_EmergencyPhone"
         android:layout_above="@+id/emergencyEditText"
         android:layout_alignLeft="@+id/phoneEditText"
         android:layout_alignStart="@+id/phoneEditText" />
@@ -158,7 +158,7 @@
         android:id="@+id/button3"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:text="Edit Medical Info"
+        android:text="@string/PatientProfile_EditProfile"
         android:background="@color/Buttons"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

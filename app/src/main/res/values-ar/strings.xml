@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">المريض</string>
+    <string name="title_activity_home">المنزل</string>
+    <!--<string name="title_activity_my_doctors">Home</string>-->
+
+
+    //Hospital profile page
+    <string name="TextView_HosName">أسم المستشفى</string>
+    <string name="textView_HosEmail">الأيميل</string>
+    <string name="textView_HosSpeciality">" التخصص"</string>
+    <string name="textView_HosWorkingH">ساعات العمل</string>
+    <string name="textView_HosPhone">"رقم الهاتف "</string>
+    <string name="textView_HosAddress">" العنوان"</string>
+    <string name="textView_HosExtraInfo">" معلومات إضافية"</string>
+
+    //new Doctor profile page
+    <string name="textView_DocName">" أسم الدكتور"</string>
+    <string name="textView_DocSpeciality">تخصص الدكتور</string>
+    <string name="textView_DocEmail">" الأيميل"</string>
+    <string name="textView_DocNationality">" الجنسية"</string>
+    <string name="textView_DocCV">" السيرة الذاتية"</string>
+    <string name="buttonSend_DoctorRequest">" أرسل طلب"</string>
+
+
+    //Login page
+    <string name="login_EmailText">أدخل الأيميل</string>
+    <string name="password_LoginText">أدخل الباسوورد</string>
+    <string name="login_Button">" تسجيل دخول"</string>
+    <string name="signUp_TextView">تسجيل</string>
+    <string name="forget_PasswordTV">نسيت الباسوورد؟</string>
+
+
+    //Register1 page
+    <string name="RegGender_RadioButton"> الجنس</string>
+
+    <string name="MaleReg_RadioButton">" ذكر"</string>
+    <string name="FemaleReg_RadioButton">" أنثى"</string>
+    <string name="Reg1_Btn">" تالي"</string>
+
+
+    //Register2 page
+    <string name="Reg2_FirstName">الأسم الأول</string>
+    <string name="Reg2_LastName">" الأسم الأخير"</string>
+    <string name="Reg2_CivilID">الرقم المدني</string>
+    <string name="Reg2_BirthDate">تاريخ الميلاد</string>
+    <string name="Reg2_Phone">رقم الهاتف</string>
+    <string name="Reg2_EmergencyPhone">رقم الطوارىء</string>
+
+
+    //Register3 page
+    <string name="Reg3_BloodType">" فصيلة الدم"</string>
+    <string name="Reg3_Diabetes">" السكري"</string>
+    <string name="Reg3_DiabetesNo">" لا"</string>
+    <string name="Reg3_DiabetesTypeOne">النوع الأول</string>
+    <string name="Reg3_DiabetesTypeTwo">" النوع الثاني"</string>
+    <string name="Reg3_Allergies">" الحساسية"</string>
+    <string name="Reg3_AllergiesYes">" نعم"</string>
+    <string name="Reg3_AllergiesNo">" لا"</string>
+    <string name="Reg3_Medications">" الأدوية"</string>
+    <string name="Reg3_MedicationsYes">" نعم"</string>
+    <string name="Reg3_MedicationsNo">" لا"</string>
+    <string name="Reg3_RegisterButton">" تسجيل"</string>
+
+
+
+
+
+
+    //Reset password page
+    <string name="Forgetpassword_Submit">" أرسل"</string>
+    <string name="Forgetpassword_EnterEmail"> الرجاء إدخال الإيميل </string>
+
+
+    //Patient General Profile page
+
+    //Some of them are the Same As Reg2Page Strings ex:BirthDate
+    <string name="PatientProfile_MyDoctors">أطبائي</string>
+    <string name="PatientProfile_MedicalInfo">\" المعلومات الطبية\"</string>
+    <string name="PatientProfile_EditProfile">تحرير البروفايل</string>
+
+
+
+    //Patient Medical info Page
+    <string name="PatientMedicalInfo_BloodType">فصيلة الدم</string>
+    <string name="PatientMedicalInfo_Diabetes">" السكري"</string>
+    <string name="PatientMedicalInfo_Asthma">" الربو"</string>
+    <string name="PatientMedicalInfo_Allergies">" الحساسية"</string>
+    <string name="PatientMedicalInfo_Medications">" الأدوية"</string>
+    <string name="PatientMedicalInfo_GeneralInfo">المعلومات العامة</string>
+
+
+    //Settings page
+    <string name="Settings_Language">" اللغة"</string>
+    <string name="Settings_LanguageEng"> English</string>
+    <string name="Settings_LanguageArb"> العربية</string>
+
+
+
+
+
+    <string name="title_activity_my_doctors">أطبائي</string>
+    <string name="title_activity_send_report">إرسال تقرير</string>
+</resources>
+

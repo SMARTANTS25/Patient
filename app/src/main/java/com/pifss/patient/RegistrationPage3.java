@@ -15,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.pifss.patient.MySingleton;
 
+
 public class RegistrationPage3 extends AppCompatActivity {
 
     EditText medications;

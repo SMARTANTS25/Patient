@@ -1,7 +1,13 @@
 package com.pifss.patient;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -15,11 +21,12 @@ import java.util.ArrayList;
 
 public class SearchHospital extends AppCompatActivity {
 
+    Location currentLocation = new Location("");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_hospital);
-
 
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbarHospitalSearch);
@@ -85,6 +92,14 @@ public class SearchHospital extends AppCompatActivity {
 
             }
         });
+    }
+
+    public float distanceBetweenUserAndHospital(double latA, double longA) {
+        Location loc1 = new Location("");
+        loc1.setLatitude(latA);
+        loc1.setLongitude(longA);
+
+        return currentLocation.distanceTo(loc1);
     }
 
 
