@@ -85,9 +85,9 @@ public class Home extends AppCompatActivity {
                             } else if (drawerItem.getIdentifier() == 2) {
                                 intent = new Intent(Home.this, AllDoctors.class);
                             } else if (drawerItem.getIdentifier() == 3) {
-                                //intent = new Intent(Home.this, SearchHospital.class);
+                                intent = new Intent(Home.this, SearchHospital.class);
                             } else if (drawerItem.getIdentifier() == 4) {
-                                intent = new Intent(Home.this, SendReport.class);
+                              //  intent = new Intent(Home.this, SendReport.class);
                             }
                             if (intent != null) {
                                 startActivity(intent);
