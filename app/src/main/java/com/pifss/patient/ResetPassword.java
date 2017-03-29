@@ -15,7 +15,7 @@ public class ResetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
-        EditText email = (EditText) findViewById(R.id.ResetPassword_emailTF);
+        /*EditText email = (EditText) findViewById(R.id.ResetPassword_emailTF);
         Button submit = (Button) findViewById(R.id.Reset_Button);
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -25,6 +25,6 @@ public class ResetPassword extends AppCompatActivity {
                 Toast.makeText(ResetPassword.this, "Check your email", Toast.LENGTH_LONG).show();
 
             }
-        });
+        });*/
     }
 }

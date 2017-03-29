@@ -21,7 +21,15 @@ public class MyDoctors extends AppCompatActivity {
         setContentView(R.layout.activity_my_doctors);
         Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
         toolbar.setTitle("My Doctors");
+        toolbar.setNavigationIcon(R.mipmap.aplus);
         setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // Doctor List
 

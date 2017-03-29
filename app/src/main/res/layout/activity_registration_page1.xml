@@ -27,6 +27,7 @@
         android:inputType="textPersonName"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/Reg1Btn"
+        android:hint="Example@example.com"
         android:layout_alignEnd="@+id/Reg1Btn" />
 
     <EditText
@@ -38,12 +39,14 @@
         android:layout_below="@+id/Reg_EmailTF"
         android:layout_marginTop="14dp"
         android:ems="10"
+        android:hint="*******"
         android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/Reg_ConfirmPassTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="*******"
         android:layout_alignLeft="@+id/Reg_PasswordTF"
         android:layout_alignStart="@+id/Reg_PasswordTF"
         android:layout_below="@+id/Reg_PasswordTF"
