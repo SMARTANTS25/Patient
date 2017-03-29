@@ -65,7 +65,7 @@
         android:text="           " />
 
     <TextView
-        android:id="@+id/textViewHosSpecailty"
+        android:id="@+id/textViewHosSpecaility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_below="@+id/textViewHosSpecailty"
+        android:layout_below="@+id/textViewHosSpecaility"
         android:layout_toLeftOf="@+id/textViewHospitalType"
         android:layout_toStartOf="@+id/textViewHospitalType" />
 
@@ -90,8 +90,8 @@
         android:layout_marginTop="31dp"
         android:text="Working Hours"
         android:layout_below="@+id/textViewHositalSpeciality"
-        android:layout_alignLeft="@+id/textViewHosSpecailty"
-        android:layout_alignStart="@+id/textViewHosSpecailty" />
+        android:layout_alignLeft="@+id/textViewHosSpecaility"
+        android:layout_alignStart="@+id/textViewHosSpecaility" />
 
     <TextView
         android:id="@+id/textViewHospitalWorkingHours"
@@ -132,7 +132,7 @@
         android:text="Address" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textViewHospitalAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/TextViewHosType"
@@ -146,7 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textViewHosAddress"
         android:layout_alignStart="@+id/textViewHosAddress"
-        android:layout_below="@+id/textView12"
+        android:layout_below="@+id/textViewHospitalAddress"
         android:layout_marginTop="33dp"
         android:text="email" />
 
