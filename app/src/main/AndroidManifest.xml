@@ -22,15 +22,16 @@
             android:value="mhealth" />
 
         <activity android:name=".ResetPassword" />
-        <activity android:name=".ViewPatientProfile" />
+        <activity android:name=".ViewPatientProfile" android:exported="true"/>
         <activity android:name=".ViewMedicalInfo" />
         <activity android:name=".EditPatientProfile" />
         <activity android:name=".EditMedicalInfo" />
-        <activity android:name=".RegistrationPage1" />
+        <activity android:name=".RegistrationPage1"
+            />
         <activity android:name=".RegistrationPage2" />
         <activity android:name=".RegistrationPage3" />
         <activity
-            android:name=".utils.Login"
+            android:name=".Login"
             android:exported="true" />
         <activity android:name=".Home"
             android:exported="true"/>

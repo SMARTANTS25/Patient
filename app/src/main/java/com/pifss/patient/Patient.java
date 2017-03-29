@@ -9,6 +9,7 @@ public class Patient {
             private String firstName;
             private String middleName;
             private String lastName;
+            private String email;
             private String dateOfBirth;
             private String phoneNumber;
             private String emergencyNumber;
@@ -105,5 +106,13 @@ public class Patient {
 
     public void setBloodType(String bloodType) {
         this.bloodType = bloodType;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
