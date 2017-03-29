@@ -27,7 +27,6 @@ public class ViewPatientProfile extends AppCompatActivity {
         TextView birthdate=(TextView) findViewById(R.id.birthdateViewText);
         TextView email=(TextView) findViewById(R.id.emailViewText);
         TextView phone=(TextView) findViewById(R.id.phoneViewText);
-
         TextView emergencyNo=(TextView) findViewById(R.id.emergencyNoView);
 
         editButton.setOnClickListener(new View.OnClickListener() {
