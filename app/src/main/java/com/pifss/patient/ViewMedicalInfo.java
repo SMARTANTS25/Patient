@@ -28,9 +28,9 @@ public class ViewMedicalInfo extends AppCompatActivity {
 
         Button myDoctor = (Button) findViewById(R.id.mydrMedicalInfoButton);
 
-        String url="http://34.196.107.188:8081/MhealthWeb/webresources/schedule/branch/1/day/2017-03-11/2017-03-12";
+        String url="";
         RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

@@ -37,7 +37,7 @@ public class RegistrationPage3 extends AppCompatActivity {
 
         String url="";
          RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);
-         StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
              @Override
              public void onResponse(String response) {
 

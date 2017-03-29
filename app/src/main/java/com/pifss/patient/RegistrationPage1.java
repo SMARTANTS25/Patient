@@ -52,6 +52,7 @@ public class RegistrationPage1 extends AppCompatActivity {
                     i.putExtra(email.getText().toString(), "email");
                     i.putExtra(password.getText().toString(), "password");
                     i.putExtra(confirmPassword.getText().toString(), "confirmPassword");
+
                     startActivity(i);
                 }
             }

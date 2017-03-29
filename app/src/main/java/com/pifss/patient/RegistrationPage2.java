@@ -40,6 +40,7 @@ public class RegistrationPage2 extends AppCompatActivity {
         final String phoneValue= phone.getText().toString();
         final String emergencyNoValue= emergencyNumber.getText().toString();
 
+
           regButton = (Button) findViewById(R.id.BtnToMedicalReg);
 
         regButton.setOnClickListener(new View.OnClickListener() {
