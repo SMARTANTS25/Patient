@@ -22,7 +22,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="First Name"
+        android:text="@string/Reg2_FirstName"
         android:layout_alignBottom="@+id/imageView8"
         android:layout_toRightOf="@+id/imageView8"
         android:layout_toEndOf="@+id/imageView8" />
@@ -31,7 +31,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Last Name"
+        android:text="@string/Reg2_LastName"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_above="@+id/Reg_FirstNameTF"
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="Civil ID"
+        android:text="@string/Reg2_CivilID"
         android:layout_below="@+id/Reg_FirstNameTF"
         android:layout_alignLeft="@+id/textView8"
         android:layout_alignStart="@+id/textView8" />
@@ -88,7 +88,7 @@
         android:layout_alignStart="@+id/textView4"
         android:layout_below="@+id/Reg_CivilIDTF"
         android:layout_marginTop="19dp"
-        android:text="Birth Date" />
+        android:text="@string/Reg2_BirthDate" />
 
     <EditText
         android:id="@+id/Reg_BirthDateTF"
@@ -107,7 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        android:text="Phone Number"
+        android:text="@string/Reg2_Phone"
         android:layout_below="@+id/Reg_BirthDateTF"
         android:layout_toRightOf="@+id/imageView7"
         android:layout_toEndOf="@+id/imageView7" />
@@ -128,7 +128,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Emergency Number"
+        android:text="@string/Reg2_EmergencyPhone"
         android:layout_alignBottom="@+id/imageView7"
         android:layout_toRightOf="@+id/imageView7"
         android:layout_toEndOf="@+id/imageView7" />
@@ -204,7 +204,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:background="@color/Buttons"
-        android:text="Continue"
+        android:text="@string/Reg1_Btn"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

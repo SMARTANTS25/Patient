@@ -48,7 +48,7 @@
         android:layout_marginRight="38dp"
         android:background="@color/Buttons"
         android:layout_marginTop="12dp"
-        android:text="Edit Profile" />
+        android:text="@string/PatientProfile_EditProfile" />
 
 
     <TextView
@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
-        android:text="Gender"
+        android:text="@string/RegGender_RadioButton"
         android:layout_below="@+id/editPersonalInfoButton"
         android:layout_toRightOf="@+id/profileImgView"
         android:layout_toEndOf="@+id/profileImgView" />
@@ -65,7 +65,7 @@
         android:id="@+id/genderViewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Male"
+        android:text="@string/MaleReg_RadioButton"
         android:textSize="18sp"
         android:layout_below="@+id/textView2"
         android:layout_toRightOf="@+id/textView6"
@@ -75,7 +75,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Birth Date"
+        android:text="@string/Reg2_BirthDate"
         android:layout_below="@+id/genderViewText"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
@@ -95,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Email"
+        android:text="@string/textView_DocEmail"
         android:layout_below="@+id/birthdateViewText"
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignStart="@+id/textView4" />
@@ -114,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="Phone"
+        android:text="@string/Reg2_Phone"
         android:layout_below="@+id/emailViewText"
         android:layout_alignLeft="@+id/textView6"
         android:layout_alignStart="@+id/textView6" />
@@ -137,7 +137,7 @@
         android:layout_alignStart="@+id/textView8"
         android:layout_below="@+id/phoneViewText"
         android:layout_marginTop="16dp"
-        android:text="Emergency Number" />
+        android:text="@string/Reg2_EmergencyPhone" />
 
     <TextView
         android:id="@+id/emergencyNoView"
@@ -153,7 +153,7 @@
         android:id="@+id/mydrGeneralInfoButton"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:text="My Doctors"
+        android:text="@string/PatientProfile_MyDoctors"
         android:layout_above="@+id/medicalInfoViewButton"
         android:background="@color/Buttons"
         android:layout_centerHorizontal="true" />
@@ -165,7 +165,7 @@
         android:background="@color/Buttons"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Medical Information" />
+        android:text="@string/PatientProfile_MedicalInfo" />
 
     <ImageView
         android:id="@+id/imageView36"
