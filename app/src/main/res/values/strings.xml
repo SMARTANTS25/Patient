@@ -4,7 +4,7 @@
     <!--<string name="title_activity_my_doctors">Home</string>-->
 
 
-//Hospital profile page
+    //Hospital profile page
     <string name="TextView_HosName">Hospital name</string>
     <string name="textView_HosEmail">Email</string>
     <string name="textView_HosSpeciality"> Speciality</string>
@@ -13,7 +13,7 @@
     <string name="textView_HosAddress"> Address</string>
     <string name="textView_HosExtraInfo"> Additional Information</string>
 
-//new Doctor profile page
+    //new Doctor profile page
     <string name="textView_DocName"> Doctor Name</string>
     <string name="textView_DocSpeciality"> Doctor Speciality</string>
     <string name="textView_DocEmail"> Email</string>
@@ -22,7 +22,7 @@
     <string name="buttonSend_DoctorRequest"> Send Request</string>
 
 
-//Login page
+    //Login page
     <string name="login_EmailText"> Enter your email</string>
     <string name="password_LoginText"> Enter your password</string>
     <string name="login_Button"> Login</string>
@@ -30,14 +30,14 @@
     <string name="forget_PasswordTV"> Forgot password?</string>
 
 
-//Register1 page
+    //Register1 page
     <string name="RegGender_RadioButton"> Gender</string>
     <string name="MaleReg_RadioButton"> male</string>
     <string name="FemaleReg_RadioButton"> Female</string>
     <string name="Reg1_Btn"> Next</string>
 
 
-//Register2 page
+    //Register2 page
     <string name="Reg2_FirstName"> First name</string>
     <string name="Reg2_LastName"> Last name</string>
     <string name="Reg2_CivilID"> Civil ID</string>
@@ -46,7 +46,7 @@
     <string name="Reg2_EmergencyPhone"> Emergency phone</string>
 
 
-//Register3 page
+    //Register3 page
     <string name="Reg3_BloodType"> Blood type</string>
     <string name="Reg3_Diabetes"> Diabetes</string>
     <string name="Reg3_DiabetesNo"> No</string>
@@ -59,41 +59,27 @@
     <string name="Reg3_RegisterButton"> Register</string>
 
 
-
-
-
-
-//Reset password page
+    //Reset password page
     <string name="Forgetpassword_Submit"> Submit</string>
     <string name="Forgetpassword_EnterEmail"> Please Enter your email</string>
 
 
-//Patient General Profile page
+    //Patient General Profile page
 
-                //Some of them are the Same As Reg2Page Strings ex:BirthDate
+    //Some of them are the Same As Reg2Page Strings ex:BirthDate
 
     <string name="PatientProfile_MyDoctors"> My Doctors</string>
     <string name="PatientProfile_MedicalInfo"> Medical Information</string>
     <string name="PatientProfile_EditProfile"> Edit Profile</string>
 
 
-
-//Patient Medical info Page
+    //Patient Medical info Page
     <string name="PatientMedicalInfo_BloodType"> Blood Type</string>
     <string name="PatientMedicalInfo_Diabetes"> Diabetes</string>
     <string name="PatientMedicalInfo_Asthma"> Asthma</string>
     <string name="PatientMedicalInfo_Allergies"> Allergies</string>
     <string name="PatientMedicalInfo_Medications"> Medications</string>
     <string name="PatientMedicalInfo_GeneralInfo"> General Information</string>
-
-
-
-
-
-
-
-
-
 
 
     <string name="title_activity_my_doctors">MyDoctors</string>

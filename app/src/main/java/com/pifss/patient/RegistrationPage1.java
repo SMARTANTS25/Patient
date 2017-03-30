@@ -39,11 +39,15 @@ public class RegistrationPage1 extends AppCompatActivity {
         String passwordValue = password.getText().toString();
         String confirmPassValue = confirmPassword.getText().toString();
         final Button regButton = (Button) findViewById(R.id.Reg1Btn);
+
+
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(validReg()== false){
                     regButton.setEnabled(false);
+
+
                 }  //validReg();
 
                 else {
