@@ -29,7 +29,7 @@ public class RegistrationPage1 extends AppCompatActivity {
 //        final EditText confirmPasswordf = (EditText) findViewById(R.id.Reg_ConfirmPassTF);
 //        RadioButton male = (RadioButton) findViewById(R.id.MaleRegMaleRadioButton);
 //        RadioButton female = (RadioButton) findViewById(R.id.RegFemaleRadioBu);
-    email= (EditText) findViewById(R.id.Reg_EmailTF);
+         email= (EditText) findViewById(R.id.Reg_EmailTF);
         password = (EditText) findViewById(R.id.Reg_PasswordTF);
         confirmPassword = (EditText) findViewById(R.id.Reg_ConfirmPassTF);
 
@@ -52,6 +52,7 @@ public class RegistrationPage1 extends AppCompatActivity {
                     i.putExtra(email.getText().toString(), "email");
                     i.putExtra(password.getText().toString(), "password");
                     i.putExtra(confirmPassword.getText().toString(), "confirmPassword");
+
                     startActivity(i);
                 }
             }
@@ -65,17 +66,24 @@ public class RegistrationPage1 extends AppCompatActivity {
         String passwordValue = password.getText().toString();
         String confirmPassValue = confirmPassword.getText().toString();
 
-        if (emailValue.isEmpty()) {
+        if (emailValue.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(emailValue).matches()) {
             invalid = true;
-            Toast.makeText(getApplicationContext(), "Enter your email ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Enter a valid email", Toast.LENGTH_SHORT).show();
 
-        } else if (passwordValue.isEmpty()) {
+        }
+        else if (passwordValue.isEmpty()){
             invalid = true;
-            Toast.makeText(getApplicationContext(), "Please enter the password", Toast.LENGTH_SHORT).show();
-        } else if (confirmPassValue.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "please enter the password", Toast.LENGTH_SHORT).show();
+        }
+        else if (confirmPassValue.isEmpty()) {
             invalid = true;
             Toast.makeText(getApplicationContext(), "Please enter the confirm password", Toast.LENGTH_SHORT).show();
-        } else if (!confirmPassValue.equals(passwordValue)) {
+        }
+        else if ( password.length() < 6 || password.length() > 10 || confirmPassword.length() < 6 || confirmPassword.length()>10 ) {
+            invalid = true;
+            Toast.makeText(getApplicationContext(), "your passwords should be between 6 - 10 characters", Toast.LENGTH_SHORT).show();
+        }
+        else if (!confirmPassValue.equals(passwordValue)) {
             invalid = true;
             Toast.makeText(getApplicationContext(), "Passwords Dont Match", Toast.LENGTH_SHORT).show();
         }

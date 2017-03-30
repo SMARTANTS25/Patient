@@ -1,4 +1,4 @@
-package com.pifss.patient.utils;
+package com.pifss.patient;
 
 import android.content.Context;
 

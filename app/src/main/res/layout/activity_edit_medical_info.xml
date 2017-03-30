@@ -28,7 +28,7 @@
         android:layout_alignEnd="@+id/textView22" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/PNameTF"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView20"
+        android:layout_below="@+id/PNameTF"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:layout_marginTop="17dp"
