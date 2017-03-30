@@ -29,7 +29,7 @@ public class RegistrationPage1 extends AppCompatActivity {
 //        final EditText confirmPasswordf = (EditText) findViewById(R.id.Reg_ConfirmPassTF);
 //        RadioButton male = (RadioButton) findViewById(R.id.MaleRegMaleRadioButton);
 //        RadioButton female = (RadioButton) findViewById(R.id.RegFemaleRadioBu);
-    email= (EditText) findViewById(R.id.Reg_EmailTF);
+         email= (EditText) findViewById(R.id.Reg_EmailTF);
         password = (EditText) findViewById(R.id.Reg_PasswordTF);
         confirmPassword = (EditText) findViewById(R.id.Reg_ConfirmPassTF);
 
@@ -70,16 +70,19 @@ public class RegistrationPage1 extends AppCompatActivity {
             invalid = true;
             Toast.makeText(getApplicationContext(), "Enter a valid email", Toast.LENGTH_SHORT).show();
 
-        } else if (passwordValue.isEmpty()  || password.length() < 6 || password.length() > 10) {
+        }
+        else if (passwordValue.isEmpty()){
             invalid = true;
-            Toast.makeText(getApplicationContext(), "your password should be between 6 - 10 characters", Toast.LENGTH_SHORT).show();
-        } else if (confirmPassValue.isEmpty() || password.length() < 6 || password.length() > 10) {
+            Toast.makeText(getApplicationContext(), "please enter the password", Toast.LENGTH_SHORT).show();
+        }
+        else if (confirmPassValue.isEmpty()) {
             invalid = true;
             Toast.makeText(getApplicationContext(), "Please enter the confirm password", Toast.LENGTH_SHORT).show();
         }
-
-
-
+        else if ( password.length() < 6 || password.length() > 10 || confirmPassword.length() < 6 || confirmPassword.length()>10 ) {
+            invalid = true;
+            Toast.makeText(getApplicationContext(), "your passwords should be between 6 - 10 characters", Toast.LENGTH_SHORT).show();
+        }
         else if (!confirmPassValue.equals(passwordValue)) {
             invalid = true;
             Toast.makeText(getApplicationContext(), "Passwords Dont Match", Toast.LENGTH_SHORT).show();

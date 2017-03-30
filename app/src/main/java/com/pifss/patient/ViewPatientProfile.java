@@ -37,7 +37,7 @@ public class ViewPatientProfile extends AppCompatActivity {
         final TextView phoneText=(TextView) findViewById(R.id.phoneViewText);
         final TextView emergencyNoText=(TextView) findViewById(R.id.emergencyNoView);
 
-
+//should be changed??abrar
         String url="http://34.196.107.188:8081/MhealthWeb/webresources/schedule/branch/1/day/2017-03-11/2017-03-12";
         RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);
         StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {

@@ -27,61 +27,34 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button login = (Button) findViewById(R.id.loginButton);
+       final Button login = (Button) findViewById(R.id.loginButton);
         final EditText emailText = (EditText) findViewById(R.id.loginEmailText);
         final EditText passwordText = (EditText) findViewById(R.id.passwordLoginText);
         TextView signup = (TextView) findViewById(R.id.signupTextView);
         TextView forgetPassword = (TextView) findViewById(R.id.forgetpasswordTV);
 
-
-
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login";
-        RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
-
-        JSONObject obj = new JSONObject();
-        try {
-            obj.put("email", emailText.getText().toString());
-
-            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-
-
-
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                }
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (emailText.getText().toString().equals("admin") && passwordText.getText().toString().equals("admin")) {
 
-                    //Toast.makeText(Login.this,"You Have been Loggned in Successfuly", Toast.LENGTH_LONG);
+                login(emailText.getText().toString(), passwordText.getText().toString());
+                //Toast.makeText(Login.this,"You Have been Loggned in Successfuly", Toast.LENGTH_LONG);
 
-                    Intent i = new Intent(Login.this, Home.class);
+//                            Intent i = new Intent(Login.this, Home.class);
+//
+//
+//                            startActivity(i);
+//
+//
+//
+//                            Toast.makeText(Login.this, "Invalid email or password", Toast.LENGTH_LONG);
+//                            login.setEnabled(false);
 
-
-                    startActivity(i);
-                } else {
-
-                    Toast.makeText(Login.this, "Invalid email or password", Toast.LENGTH_LONG);
-                }
             }
         });
+
+
 
 
                     signup.setOnClickListener(new View.OnClickListener() {
@@ -102,5 +75,36 @@ public class Login extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void login(String emailText, String passwordText) {
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login";
+
+        RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
+
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("email", emailText);
+            obj.put("password", passwordText);
+
+
+            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(final JSONObject response) {
+
+                    Toast.makeText(Login.this, "inaha al 5od3a", Toast.LENGTH_SHORT).show();
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    Toast.makeText(Login.this, "error", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
