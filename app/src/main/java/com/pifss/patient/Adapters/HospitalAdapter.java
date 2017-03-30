@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.pifss.patient.R;
+import com.pifss.patient.utils.Hospital;
 
 import java.util.ArrayList;
 
@@ -18,9 +19,9 @@ import java.util.ArrayList;
 public class HospitalAdapter extends BaseAdapter {
 
     private final LayoutInflater inflater;
-    ArrayList<String> model;
+    ArrayList<Hospital> model;
     Activity context;
-    public HospitalAdapter(ArrayList<String> model, Activity context) {
+    public HospitalAdapter(ArrayList<Hospital> model, Activity context) {
 
 
         this.model = model;
@@ -55,11 +56,11 @@ public class HospitalAdapter extends BaseAdapter {
 
 
        // ImageView imgHospitsl= (ImageView) view.findViewById(R.id.imageViewHospital);
-        TextView tvHospitalTitle= (TextView) view.findViewById(R.id.textViewHospitalTitle);
-        TextView tvHospitalDescription= (TextView) view.findViewById(R.id.textViewDescription);
-        TextView tvHospitalEmail= (TextView) view.findViewById(R.id.textViewYear);
+        TextView tvHospitalTitle = (TextView) view.findViewById(R.id.textViewHospitalTitle);
+        TextView tvHospitalDescription = (TextView) view.findViewById(R.id.textViewDescription);
+        TextView tvHospitalEmail = (TextView) view.findViewById(R.id.textViewYear);
 
-        String pos = model.get(position);
+        Hospital pos = model.get(position);
 
 
       //  imgHospitsl.setImageResource(hospital.getI);
