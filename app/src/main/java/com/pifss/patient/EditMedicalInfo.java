@@ -20,7 +20,7 @@ public class EditMedicalInfo extends AppCompatActivity {
         EditText allergies=(EditText) findViewById(R.id.allergiesEditText);
         EditText medications=(EditText) findViewById(R.id.medicationsEditText);
 
-        
+
 
 
 

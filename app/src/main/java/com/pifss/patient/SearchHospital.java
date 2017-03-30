@@ -1,21 +1,28 @@
 package com.pifss.patient;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.pifss.patient.Adapters.HospitalAdapter;
+import com.pifss.patient.utils.Hospital;
+import com.pifss.patient.utils.MySingleton;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -38,25 +45,15 @@ public class SearchHospital extends AppCompatActivity {
 
         SearchView svHospital = (SearchView) findViewById(R.id.searchViewHospital);
 
-        final ArrayList<String> model = new ArrayList<>();
+
+
+  //      final ArrayList<Hospital> model = getHospitals();
+
+
+
 
 
       //  Hospital hospital = new Hospital("aa@aa", "kuwait kuwait","this is the hospital we are looking for","21212", "alfrwania","55656565","www.waleed.wees","24/7","bone","22.4","43.1","1");
-
-
-
-//        model.add(new Hospital("walsa","this is the hospital we are looking for","ss@weed.com"));
-
-
-        model.add("walsa");
-
-        model.add("this is the hospital we are looking for");
-        model.add("ss@weed.com");
-       // model.add(new Hospital("aa@aa", "kuwait kuwait","this is the hospital we are looking for","21212", "alfrwania","55656565","www.waleed.wees","24/7","bone","22.4","43.1","1"));
-
-
-
-        ListView lv= (ListView) findViewById(R.id.hospitalListView);
 
 
         svHospital.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -68,18 +65,20 @@ public class SearchHospital extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
 
-                ArrayList<String> model1 = new ArrayList<String>();
-                model1.add(newText);
-                HospitalAdapter hospitalA = new HospitalAdapter(model1 , SearchHospital.this);
+//                ArrayList<String> model1 = new ArrayList<String>();
+//                model1.add(newText);
+              //  HospitalAdapter hospitalA = new HospitalAdapter(model1 , SearchHospital.this);
 
 
 
                 return false;
             }
         });
-        HospitalAdapter hospitalAdapter = new HospitalAdapter(model ,this);
 
-        lv.setAdapter(hospitalAdapter);
+
+
+        final ListView lv= (ListView) findViewById(R.id.hospitalListView);
+
 
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -88,10 +87,56 @@ public class SearchHospital extends AppCompatActivity {
 
                 Intent i = new Intent(SearchHospital.this, HospitalProfile.class);
 
+
+            //    i.putExtra();
                 startActivity(i);
 
             }
         });
+    }
+
+    private ArrayList<Hospital> getHospitals () {
+        final ArrayList<Hospital> hospitals = new ArrayList<>();
+
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/hospital/";
+
+
+        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(SearchHospital.this);
+
+
+        final JsonObjectRequest jsonReq=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+               // Toast.makeText(SearchHospital.this, "Al khaiyat is in the house and likes weed", Toast.LENGTH_SHORT).show();
+
+
+                ArrayList<Hospital> hospitalsData =new Gson().fromJson(response.toString(),new TypeToken<ArrayList<Hospital>>(){}.getType());
+                Toast.makeText(SearchHospital.this, response.toString(), Toast.LENGTH_SHORT).show();
+
+                for (int i=0; i < hospitalsData.size(); i++) {
+                    hospitals.add(hospitalsData.get(i));
+                    Toast.makeText(SearchHospital.this, hospitals.get(i).getHospitalName(), Toast.LENGTH_SHORT).show();
+                }
+
+
+                HospitalAdapter hospitalAdapter = new HospitalAdapter(hospitalsData , SearchHospital.this);
+                lv.setAdapter(hospitalAdapter);
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                //Toast.makeText(SearchHospital.this, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(jsonReq);
+
+
+        return hospitals;
     }
 
     public float distanceBetweenUserAndHospital(double latA, double longA) {
