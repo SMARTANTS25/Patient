@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.pifss.patient.Hospital;
 import com.pifss.patient.R;
-import com.pifss.patient.utils.Hospital;
 
 import java.util.ArrayList;
 
@@ -55,7 +55,7 @@ public class HospitalAdapter extends BaseAdapter {
         View view = inflater.inflate(R.layout.listhospitalview,null);
 
 
-       // ImageView imgHospitsl= (ImageView) view.findViewById(R.id.imageViewHospital);
+        //ImageView imgHospitsl= (ImageView) view.findViewById(R.id.imageViewHospital);
         TextView tvHospitalTitle = (TextView) view.findViewById(R.id.textViewHospitalTitle);
         TextView tvHospitalDescription = (TextView) view.findViewById(R.id.textViewDescription);
         TextView tvHospitalEmail = (TextView) view.findViewById(R.id.textViewYear);
@@ -63,11 +63,12 @@ public class HospitalAdapter extends BaseAdapter {
         Hospital pos = model.get(position);
 
 
-      //  imgHospitsl.setImageResource(hospital.getI);
+        //imgHospitsl.setImageResource(pos.getLogoUrl());
 
-        tvHospitalTitle.setText(pos.toString());
-        tvHospitalDescription.setText(pos.toString());
-        tvHospitalEmail.setText(pos.toString());
+        tvHospitalTitle.setText(pos.getHospitalName());
+        tvHospitalDescription.setText(pos.getExtraInfo());
+        tvHospitalEmail.setText(pos.getEmail());
+
         return view;
     }
 }

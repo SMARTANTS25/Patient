@@ -10,8 +10,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class ViewMedicalInfo extends AppCompatActivity {
 
@@ -30,30 +34,44 @@ public class ViewMedicalInfo extends AppCompatActivity {
 
         String url="";
         RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+        String link = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/";
 
-               // Patient p=new Patient();
+        RequestQueue regQue = MySingleton.getInstance().getRequestQueue(this);
 
-                Patient p=new Gson().fromJson(response,Patient.class);
-
-                bloodtypeText.setText(p.getBloodType());
-                diabetesText.setText(p.getDiabetes());
-                asthmaText.setText(p.getAsthma());
-                allergiesText.setText(p.getAllergies());
-                medicationsText.setText(p.getMedications());
-
-                Toast.makeText(ViewMedicalInfo.this, p.getBloodType(), Toast.LENGTH_LONG).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("bloodType", bloodtypeText);
+            obj.put("diabetes", diabetesText);
+            obj.put("astha", asthmaText);
+            obj.put("allergies", allergiesText);
+            obj.put("medications", medicationsText);
 
 
+            JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, link, obj, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(final JSONObject response) {
+
+                    Patient p=new Gson().fromJson(response.toString(), Patient.class);
+                    bloodtypeText.setText(p.getBloodType());
+                    diabetesText.setText(p.getDiabetes()+"");
+                    asthmaText.setText(p.getAsthma()+"");
+                    allergiesText.setText(p.getAllergies());
+                    medicationsText.setText(p.getMedications());
+
+                    Toast.makeText(ViewMedicalInfo.this, "", Toast.LENGTH_SHORT).show();
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    Toast.makeText(ViewMedicalInfo.this, "error", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 
     }
