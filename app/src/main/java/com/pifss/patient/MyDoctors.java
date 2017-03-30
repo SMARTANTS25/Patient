@@ -3,25 +3,28 @@ package com.pifss.patient;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.pifss.patient.Adapters.DoctorAdapter;
 import com.pifss.patient.utils.Doctor;
-import com.pifss.patient.MySingleton;
-
-import org.json.JSONObject;
+//import com.pifss.patient.utils.MySingleton;
 
 import java.util.ArrayList;
 
 public class MyDoctors extends AppCompatActivity {
+
+    ArrayList<Doctor> model;
+    private ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,9 @@ public class MyDoctors extends AppCompatActivity {
         toolbar.setTitle("My Doctors");
         toolbar.setNavigationIcon(R.mipmap.abplus);
         setSupportActionBar(toolbar);
+       // OMG PUSH
 
+        
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,27 +46,11 @@ public class MyDoctors extends AppCompatActivity {
 
         // Doctor List
 
-        final ArrayList<Doctor> model = new ArrayList<>();
-
-        //
-        Doctor d = new Doctor();
-
-        d.setFirstName("Ahmad");
-        d.setMiddleName("Ahmad");
-        d.setLastName("Ahmad");
-        d.setImageUrl("http://images.pocketgamer.co.uk/artwork/na-wrds/mario-2.png");
-        d.setSpecialityId("eye doctor");
-        d.setGender("f");
-
-        model.add(d);
+        updateModel();
 
 
-        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
+         lv = (ListView) findViewById(R.id.MyDoctorList);
 
-        DoctorAdapter adapter = new DoctorAdapter(model, this);
-
-
-        lv.setAdapter(adapter);
 
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -123,7 +112,7 @@ public class MyDoctors extends AppCompatActivity {
         }
 
 
-        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
+        ListView lv = (ListView) findViewById(R.id.MyDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(parsedModel, this);
 
@@ -143,37 +132,35 @@ public class MyDoctors extends AppCompatActivity {
         });
     }
 
-    private ArrayList<Doctor> getMyDoctors() {
-        ArrayList<Doctor> myDoctors = new ArrayList<>();
-        final ArrayList<JSONObject> myDoctorsJSON = new ArrayList<>();
+    private void updateModel () {
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/2";
 
-        final String url = "http://httpbin.org/get?param1=hello";
 
-        // prepare the Request
-        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>()
-                {
+        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(MyDoctors.this);
+
+        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        //myDoctorsJSON = response;
-                        // display response
-                        Log.d("Response", response.toString());
+                    public void onResponse(String response) {
+
+                        System.out.println(response);
+                        model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
+
+                        DoctorAdapter adapter = new DoctorAdapter(model, MyDoctors.this);
+
+                        lv.setAdapter(adapter);
+
+
                     }
                 },
-                new Response.ErrorListener()
-                {
+                new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        //Log.d("Error.Response", response);
-                        //Toast.makeText().
+                        // Handle error
                     }
-                }
-        );
+                });
 
-        // add it to the RequestQueue
-         MySingleton.getInstance().requestQueue.add(getRequest);
-
-        return myDoctors;
+        queue.add(jsonReq);
     }
 
 }
