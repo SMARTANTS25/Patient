@@ -1,88 +1,29 @@
+
 package com.pifss.patient;
 
-/**
- * Created by abraral-failakawi on 3/27/17.
- */
 
 public class Patient {
 
-            private String firstName;
-            private String middleName;
-            private String lastName;
-            private String email;
-            private String dateOfBirth;
-            private String phoneNumber;
-            private String emergencyNumber;
-            private String diabetes;
-            private String asthma;
-            private String allergies;
-            private String medications;
-            private String bloodType;
-
-
-    public String getDiabetes() {
-        return diabetes;
-    }
-
-    public void setDiabetes(String diabetes) {
-        this.diabetes = diabetes;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmergencyNumber() {
-        return emergencyNumber;
-    }
-
-    public void setEmergencyNumber(String emergencyNumber) {
-        this.emergencyNumber = emergencyNumber;
-    }
-
-    public String getAsthma() {
-        return asthma;
-    }
-
-    public void setAsthma(String asthma) {
-        this.asthma = asthma;
-    }
+    private String allergies;
+    private Boolean asthma;
+    private String bloodType;
+    private String civilId;
+    private String dateOfBirth;
+    private Integer deleted;
+    private Boolean diabetes;
+    private String email;
+    private String emergencyNumber;
+    private String firstName;
+    private String gender;
+    private String imageUrl;
+    private String lastName;
+    private String medications;
+    private String middleName;
+    private String nationality;
+    private String password;
+    private Integer patientId;
+    private String phoneNumber;
+    private Boolean status;
 
     public String getAllergies() {
         return allergies;
@@ -92,12 +33,12 @@ public class Patient {
         this.allergies = allergies;
     }
 
-    public String getMedications() {
-        return medications;
+    public Boolean getAsthma() {
+        return asthma;
     }
 
-    public void setMedications(String medications) {
-        this.medications = medications;
+    public void setAsthma(Boolean asthma) {
+        this.asthma = asthma;
     }
 
     public String getBloodType() {
@@ -108,6 +49,38 @@ public class Patient {
         this.bloodType = bloodType;
     }
 
+    public String getCivilId() {
+        return civilId;
+    }
+
+    public void setCivilId(String civilId) {
+        this.civilId = civilId;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public Integer getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
+    }
+
+    public Boolean getDiabetes() {
+        return diabetes;
+    }
+
+    public void setDiabetes(Boolean diabetes) {
+        this.diabetes = diabetes;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -115,4 +88,101 @@ public class Patient {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getEmergencyNumber() {
+        return emergencyNumber;
+    }
+
+    public void setEmergencyNumber(String emergencyNumber) {
+        this.emergencyNumber = emergencyNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getMedications() {
+        return medications;
+    }
+
+    public void setMedications(String medications) {
+        this.medications = medications;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(Integer patientId) {
+        this.patientId = patientId;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
 }
