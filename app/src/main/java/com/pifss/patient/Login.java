@@ -41,26 +41,24 @@ public class Login extends AppCompatActivity {
                 login(emailText.getText().toString(), passwordText.getText().toString());
 
 
-                login.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+
                         String username =emailText.getText().toString();
                         String password=passwordText.getText().toString();
                         login( username,  password);
-                    }
-                });
+
+
 
                 //Toast.makeText(Login.this,"You Have been Loggned in Successfuly", Toast.LENGTH_LONG);
 
-//                            Intent i = new Intent(Login.this, Home.class);
-//
-//
-//                            startActivity(i);
-//
-//
-//
-//                            Toast.makeText(Login.this, "Invalid email or password", Toast.LENGTH_LONG);
-//                            login.setEnabled(false);
+                            Intent i = new Intent(Login.this, Home.class);
+
+
+                            startActivity(i);
+
+
+
+                            Toast.makeText(Login.this, "Invalid email or password", Toast.LENGTH_LONG);
+                           // login.setEnabled(false);
 
             }
         });

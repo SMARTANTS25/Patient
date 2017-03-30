@@ -1,7 +1,9 @@
 package com.pifss.patient;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +33,34 @@ public class ViewMedicalInfo extends AppCompatActivity {
         final TextView medicationsText = (TextView) findViewById(R.id.medicationViewText);
 
         Button myDoctor = (Button) findViewById(R.id.mydrMedicalInfoButton);
+        Button viewGeneralInfo=(Button) findViewById(R.id.generalinfoViewButton);
+        Button editMedicalInfobutton=(Button) findViewById(R.id.EditMedicalInfoButton);
+        editMedicalInfobutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i= new Intent(ViewMedicalInfo.this, EditMedicalInfo .class);
+                startActivity(i);
+            }
+        });
+
+        viewGeneralInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i= new Intent(ViewMedicalInfo.this, ViewPatientProfile.class);
+                startActivity(i);
+            }
+        });
+
+        myDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i= new Intent(ViewMedicalInfo.this, MyDoctors.class);
+                startActivity(i);
+            }
+        });
 
         String url="";
         RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);

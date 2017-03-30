@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,8 @@ public class RegistrationPage3 extends AppCompatActivity {
         reg3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent i=new Intent(RegistrationPage3.this, Home.class);
                 Toast.makeText(RegistrationPage3.this, "hello", Toast.LENGTH_LONG).show();
             }
         });
