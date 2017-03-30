@@ -90,7 +90,7 @@ public class Home extends AppCompatActivity {
                             } else if (drawerItem.getIdentifier() == 4) {
                               //  intent = new Intent(Home.this, SendReport.class);
                             } else if (drawerItem.getIdentifier() == 5) {
-                                // intent = new Intent(Home.this, Settings.class);
+                                intent = new Intent(Home.this, Settings.class);
                             }
 
 

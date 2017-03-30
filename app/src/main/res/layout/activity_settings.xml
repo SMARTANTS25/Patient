@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pifss.doctor.Activitys.SettingsActivity">
+    tools:context="com.pifss.patient.Settings">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/mytoolbar"
+        android:id="@+id/settingsToolbar"
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         android:layout_marginTop="80dp"
         android:text="English"
         tools:text="العربية"
-        android:layout_below="@+id/mytoolbar"
+        android:layout_below="@+id/settingsToolbar"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

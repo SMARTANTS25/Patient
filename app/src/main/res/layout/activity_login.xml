@@ -18,64 +18,70 @@
 
     <EditText
         android:id="@+id/loginEmailText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="example@example.com"
         android:inputType="textEmailAddress"
-        android:text="@string/login_EmailText"
-        android:layout_marginBottom="17dp"
         android:layout_above="@+id/passwordLoginText"
-        android:layout_alignRight="@+id/forgetpasswordTV"
-        android:layout_alignEnd="@+id/forgetpasswordTV"
-        android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp" />
 
 
     <EditText
         android:id="@+id/passwordLoginText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:text="@string/password_LoginText"
-        android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/loginEmailText"
-        android:layout_alignStart="@+id/loginEmailText" />
+        android:layout_alignStart="@+id/loginEmailText"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="******"
+        android:inputType="textPassword" />
 
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="94dp"
         android:background="@color/Buttons"
+        android:fontFamily="monospace"
+        android:textColor="@color/md_white_1000"
         android:text="@string/login_Button"
-        android:layout_below="@+id/loginEmailText"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
 
     <TextView
         android:id="@+id/signupTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/signUp_TextView"
-        android:layout_marginTop="17dp"
         android:textColor="@color/Buttons"
-        android:layout_below="@+id/loginButton"
-        android:layout_alignLeft="@+id/loginButton"
-        android:layout_alignStart="@+id/loginButton" />
+        android:textSize="18sp"
+        android:fontFamily="monospace"
+        android:layout_below="@+id/passwordLoginText"
+        android:layout_alignLeft="@+id/passwordLoginText"
+        android:layout_alignStart="@+id/passwordLoginText" />
 
     <TextView
         android:id="@+id/forgetpasswordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/forget_PasswordTV"
-        android:layout_marginRight="54dp"
-        android:layout_marginEnd="54dp"
         android:textColor="@color/Buttons"
-        android:layout_alignBaseline="@+id/signupTextView"
-        android:layout_alignBottom="@+id/signupTextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textSize="18sp"
+        android:layout_below="@+id/passwordLoginText"
+        android:layout_alignRight="@+id/passwordLoginText"
+        android:layout_alignEnd="@+id/passwordLoginText" />
 
     <ImageView
         android:id="@+id/imageView24"
@@ -84,7 +90,8 @@
         app:srcCompat="@mipmap/email"
         android:layout_alignBottom="@+id/loginEmailText"
         android:layout_toLeftOf="@+id/loginEmailText"
-        android:layout_toStartOf="@+id/loginEmailText" />
+        android:layout_toStartOf="@+id/loginEmailText"
+        android:fontFamily="monospace"/>
 
     <ImageView
         android:id="@+id/imageView25"

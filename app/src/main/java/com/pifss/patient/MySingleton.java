@@ -14,13 +14,13 @@ public class MySingleton {
     
 
     public RequestQueue requestQueue;
-    public static final MySingleton ourInstance = new MySingleton();
+    private static final MySingleton ourInstance = new MySingleton();
 
     public static MySingleton getInstance() {
         return ourInstance;
     }
 
-    public MySingleton() {
+    private MySingleton() {
     }
 
     public  RequestQueue getRequestQueue(Context context) {

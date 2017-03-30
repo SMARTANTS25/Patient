@@ -3,13 +3,21 @@ package com.pifss.patient;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.pifss.patient.Adapters.DoctorAdapter;
 import com.pifss.patient.utils.Doctor;
+import com.pifss.patient.utils.MySingleton;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -21,7 +29,7 @@ public class MyDoctors extends AppCompatActivity {
         setContentView(R.layout.activity_my_doctors);
         Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
         toolbar.setTitle("My Doctors");
-        toolbar.setNavigationIcon(R.mipmap.aplus);
+        toolbar.setNavigationIcon(R.mipmap.abplus);
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -133,6 +141,39 @@ public class MyDoctors extends AppCompatActivity {
 
             }
         });
+    }
+
+    private ArrayList<Doctor> getMyDoctors() {
+        ArrayList<Doctor> myDoctors = new ArrayList<>();
+        final ArrayList<JSONObject> myDoctorsJSON = new ArrayList<>();
+
+        final String url = "http://httpbin.org/get?param1=hello";
+
+        // prepare the Request
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>()
+                {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //myDoctorsJSON = response;
+                        // display response
+                        Log.d("Response", response.toString());
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //Log.d("Error.Response", response);
+                        //Toast.makeText().
+                    }
+                }
+        );
+
+        // add it to the RequestQueue
+         MySingleton.getInstance().requestQueue.add(getRequest);
+
+        return myDoctors;
     }
 
 }
