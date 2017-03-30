@@ -58,7 +58,7 @@ public class AllDoctors extends AppCompatActivity {
         model.add(d2);
 
 
-        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
+        ListView lv = (ListView) findViewById(R.id.MyDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(model, this);
 
@@ -116,7 +116,7 @@ public class AllDoctors extends AppCompatActivity {
         }
 
 
-        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
+        ListView lv = (ListView) findViewById(R.id.MyDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(parsedModel, this);
 

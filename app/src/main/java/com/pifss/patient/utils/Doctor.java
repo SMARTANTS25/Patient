@@ -4,15 +4,18 @@ package com.pifss.patient.utils;
  * Created by HelgenHills on 3/27/17.
  */
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class Doctor {
 
-    private Integer bDay;
-    private Integer bMonth;
-    private Integer bYear;
+    private int BDay;
+    private int BMonth;
+    private int BYear;
     private String civilId;
     private String cvUrl;
-    private Integer drId;
+    private int deleted;
+    private int drId;
     private String email;
     private String extraInfo;
     private String firstName;
@@ -23,31 +26,33 @@ public class Doctor {
     private String middleName;
     private String nationality;
     private String password;
+    private String phoneNumber;
     private String specialityId;
-    private Boolean status;
+    private boolean status;
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public Integer getBDay() {
-        return bDay;
+    public int getBDay() {
+        return BDay;
     }
 
-    public void setBDay(Integer bDay) {
-        this.bDay = bDay;
+    public void setBDay(int bDay) {
+        this.BDay = bDay;
     }
 
-    public Integer getBMonth() {
-        return bMonth;
+    public int getBMonth() {
+        return BMonth;
     }
 
-    public void setBMonth(Integer bMonth) {
-        this.bMonth = bMonth;
+    public void setBMonth(int bMonth) {
+        this.BMonth = bMonth;
     }
 
-    public Integer getBYear() {
-        return bYear;
+    public int getBYear() {
+        return BYear;
     }
 
-    public void setBYear(Integer bYear) {
-        this.bYear = bYear;
+    public void setBYear(int bYear) {
+        this.BYear = bYear;
     }
 
     public String getCivilId() {
@@ -66,11 +71,19 @@ public class Doctor {
         this.cvUrl = cvUrl;
     }
 
-    public Integer getDrId() {
+    public int getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(int deleted) {
+        this.deleted = deleted;
+    }
+
+    public int getDrId() {
         return drId;
     }
 
-    public void setDrId(Integer drId) {
+    public void setDrId(int drId) {
         this.drId = drId;
     }
 
@@ -154,6 +167,14 @@ public class Doctor {
         this.password = password;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getSpecialityId() {
         return specialityId;
     }
@@ -162,12 +183,20 @@ public class Doctor {
         this.specialityId = specialityId;
     }
 
-    public Boolean getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 
 }
