@@ -22,46 +22,46 @@
         android:id="@+id/profileImgView"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/profilePatientNameText"
-        android:layout_alignLeft="@+id/mydrGeneralInfoButton"
-        android:layout_alignStart="@+id/mydrGeneralInfoButton" />
+        android:layout_below="@+id/toolbar7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/profilePatientNameText"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_marginTop="12dp"
+        android:textSize="18dp"
         android:layout_below="@+id/toolbar7"
-        android:layout_alignRight="@+id/editPersonalInfoButton"
-        android:layout_alignEnd="@+id/editPersonalInfoButton" />
+        android:layout_toRightOf="@+id/emergencyNoView"
+        android:layout_toEndOf="@+id/emergencyNoView" />
 
     <Button
         android:id="@+id/editPersonalInfoButton"
-        android:layout_width="190dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/profilePatientNameText"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
         android:background="@color/Buttons"
-        android:layout_marginTop="12dp"
-        android:text="@string/PatientProfile_EditProfile" />
+        android:fontFamily="monospace"
+        android:text="@string/PatientProfile_EditProfile"
+        android:textSize="18dp"
+        android:textColor="@color/md_white_1000"
+        android:layout_alignBottom="@+id/profileImgView"
+        android:layout_toRightOf="@+id/phoneViewText"
+        android:layout_toEndOf="@+id/phoneViewText" />
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:text="@string/RegGender_RadioButton"
-        android:layout_below="@+id/profileImgView"
-        android:layout_alignRight="@+id/profileImgView"
-        android:layout_alignEnd="@+id/profileImgView" />
+        android:textSize="18dp"
+        android:layout_alignBottom="@+id/imageView36"
+        android:layout_alignLeft="@+id/phoneViewText"
+        android:layout_alignStart="@+id/phoneViewText" />
 
     <TextView
         android:id="@+id/genderViewText"
@@ -70,53 +70,57 @@
         android:text="@string/MaleReg_RadioButton"
         android:textSize="18sp"
         android:layout_below="@+id/textView2"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg2_BirthDate"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/genderViewText"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="15dp" />
+        android:layout_toRightOf="@+id/imageView37"
+        android:layout_toEndOf="@+id/imageView37" />
 
     <TextView
         android:id="@+id/birthdateViewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="14/2/2012"
+        android:textSize="18dp"
         android:layout_below="@+id/textView4"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+        android:layout_toRightOf="@+id/imageView37" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:textSize="18dp"
         android:text="@string/textView_DocEmail"
         android:layout_below="@+id/birthdateViewText"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4" />
+        android:layout_alignLeft="@+id/birthdateViewText"
+        android:layout_alignStart="@+id/birthdateViewText"
+        android:layout_marginTop="14dp" />
 
     <TextView
         android:id="@+id/emailViewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="test@gmail.com"
+        android:textSize="20dp"
         android:layout_below="@+id/textView6"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+        android:layout_toRightOf="@+id/imageView38"
+        android:layout_toEndOf="@+id/imageView38" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
         android:text="@string/Reg2_Phone"
+        android:textSize="18dp"
+        android:layout_marginTop="16dp"
         android:layout_below="@+id/emailViewText"
         android:layout_alignLeft="@+id/textView6"
         android:layout_alignStart="@+id/textView6" />
@@ -125,47 +129,54 @@
         android:id="@+id/phoneViewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/emailViewText"
-        android:layout_alignStart="@+id/emailViewText"
+        android:textSize="18dp"
+        android:text="66666666"
         android:layout_below="@+id/textView8"
-        android:layout_marginTop="17dp"
-        android:text="66666666" />
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8"
+        android:textSize="18dp"
+
+        android:text="@string/Reg2_EmergencyPhone"
         android:layout_below="@+id/phoneViewText"
-        android:layout_marginTop="16dp"
-        android:text="@string/Reg2_EmergencyPhone" />
+        android:layout_alignLeft="@+id/emergencyNoView"
+        android:layout_alignStart="@+id/emergencyNoView"
+        android:layout_marginTop="28dp" />
 
     <TextView
         android:id="@+id/emergencyNoView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/phoneViewText"
-        android:layout_alignStart="@+id/phoneViewText"
+        android:textSize="18dp"
+        android:text="77777777"
         android:layout_below="@+id/textView10"
-        android:layout_marginTop="18dp"
-        android:text="77777777" />
+        android:layout_alignRight="@+id/birthdateViewText"
+        android:layout_alignEnd="@+id/birthdateViewText" />
 
     <Button
         android:id="@+id/mydrGeneralInfoButton"
-        android:layout_width="365dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/PatientProfile_MyDoctors"
         android:background="@color/Buttons"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
+        android:textColor="@color/md_white_1000"
         android:layout_above="@+id/medicalInfoViewButton"
-        android:layout_alignLeft="@+id/medicalInfoViewButton"
-        android:layout_alignStart="@+id/medicalInfoViewButton"
-        android:layout_marginBottom="11dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/medicalInfoViewButton"
-        android:layout_width="365dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
+        android:textColor="@color/md_white_1000"
         android:background="@color/Buttons"
         android:text="@string/PatientProfile_MedicalInfo"
         android:layout_alignParentBottom="true"
@@ -175,10 +186,10 @@
         android:id="@+id/imageView36"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2"
-        app:srcCompat="@mipmap/gender_icon" />
+        app:srcCompat="@mipmap/gender_icon"
+        android:layout_below="@+id/editPersonalInfoButton"
+        android:layout_alignLeft="@+id/imageView37"
+        android:layout_alignStart="@+id/imageView37" />
 
     <ImageView
         android:id="@+id/imageView37"
@@ -186,35 +197,35 @@
         android:layout_height="30dp"
         app:srcCompat="@mipmap/calender"
         android:layout_alignTop="@+id/textView4"
-        android:layout_toLeftOf="@+id/textView4"
-        android:layout_toStartOf="@+id/textView4" />
+        android:layout_alignLeft="@+id/imageView38"
+        android:layout_alignStart="@+id/imageView38" />
 
     <ImageView
         android:id="@+id/imageView38"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_above="@+id/textView8"
-        android:layout_toStartOf="@+id/textView6"
         app:srcCompat="@mipmap/email"
-        android:layout_toLeftOf="@+id/textView6" />
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignLeft="@+id/profileImgView"
+        android:layout_alignStart="@+id/profileImgView" />
 
     <ImageView
         android:id="@+id/imageView39"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignTop="@+id/textView8"
+        app:srcCompat="@mipmap/phone_icon"
+        android:layout_alignBottom="@+id/textView8"
         android:layout_toLeftOf="@+id/textView8"
-        android:layout_toStartOf="@+id/textView8"
-        app:srcCompat="@mipmap/phone_icon" />
+        android:layout_toStartOf="@+id/textView8" />
 
     <ImageView
         android:id="@+id/imageView41"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignTop="@+id/textView10"
+        app:srcCompat="@mipmap/emergencynum"
+        android:layout_alignBottom="@+id/textView10"
         android:layout_toLeftOf="@+id/textView10"
-        android:layout_toStartOf="@+id/textView10"
-        app:srcCompat="@mipmap/emergencynum" />
+        android:layout_toStartOf="@+id/textView10" />
 
 
 </RelativeLayout>

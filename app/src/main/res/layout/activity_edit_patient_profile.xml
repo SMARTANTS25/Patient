@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="21dp"
         android:layout_marginStart="21dp"
+
         app:srcCompat="@mipmap/ic_launcher"
         android:layout_below="@+id/toolbar5"
         android:layout_alignLeft="@+id/EditMedicalInfoBtn"
@@ -24,6 +25,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:layout_marginTop="55dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/textView7"
@@ -43,18 +46,25 @@
 
     <Button
         android:id="@+id/saveChangesGIButton"
-        android:layout_width="205dp"
+     android:textColor="@color/md_white_1000"
+        android:textSize="18dp"
+        android:fontFamily="monospace"
+
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:text="Save Changes"
+        
         android:background="@color/Buttons"
         android:layout_below="@+id/nameEditText"
-        android:layout_alignRight="@+id/nameEditText"
-        android:layout_alignEnd="@+id/nameEditText" />
+        android:layout_alignRight="@+id/genderEditText"
+        android:layout_alignEnd="@+id/genderEditText" />
 
     <EditText
         android:id="@+id/genderEditText"
         android:layout_width="300dp"
         android:layout_height="40dp"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:layout_alignLeft="@+id/emailEditText"
         android:layout_alignStart="@+id/emailEditText"
         android:layout_below="@+id/textView"
@@ -68,6 +78,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:inputType="textPersonName"
         android:text="14/2/2012"
         android:layout_below="@+id/textView7"
@@ -79,6 +91,8 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:ems="10"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:inputType="textEmailAddress"
         android:text="test@gmail.com"
         android:layout_below="@+id/textView9"
@@ -90,6 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/RegGender_RadioButton"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:layout_below="@+id/saveChangesGIButton"
         android:layout_alignRight="@+id/imageButton"
         android:layout_alignEnd="@+id/imageButton"
@@ -101,6 +117,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="@string/Reg2_BirthDate"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:layout_below="@+id/genderEditText"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
@@ -111,6 +129,8 @@
         android:layout_height="wrap_content"
         android:text="@string/textView_DocEmail"
         android:layout_marginTop="10dp"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:layout_below="@+id/birthdateEditText"
         android:layout_alignLeft="@+id/birthdateEditText"
         android:layout_alignStart="@+id/birthdateEditText" />
@@ -121,6 +141,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/Reg2_Phone"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:layout_below="@+id/emailEditText"
         android:layout_toRightOf="@+id/imageView19"
         android:layout_toEndOf="@+id/imageView19" />
@@ -130,6 +152,8 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:ems="10"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:inputType="phone"
         android:layout_toEndOf="@+id/imageView19"
         android:layout_below="@+id/textView13"
@@ -140,6 +164,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg2_EmergencyPhone"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:layout_above="@+id/emergencyEditText"
         android:layout_alignLeft="@+id/phoneEditText"
         android:layout_alignStart="@+id/phoneEditText" />
@@ -150,6 +176,8 @@
         android:layout_height="40dp"
         android:ems="10"
         android:inputType="phone"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
         android:layout_below="@+id/imageView18"
         android:layout_toRightOf="@+id/imageView18"
         android:layout_toEndOf="@+id/imageView18" />
@@ -160,6 +188,9 @@
         android:layout_height="wrap_content"
         android:text="@string/PatientProfile_EditProfile"
         android:background="@color/Buttons"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
+        android:textColor="@color/md_white_1000"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp" />
