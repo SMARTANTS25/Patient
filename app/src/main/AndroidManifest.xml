@@ -28,22 +28,20 @@
         <activity android:name=".EditMedicalInfo" />
         <activity android:name=".RegistrationPage1" />
         <activity android:name=".RegistrationPage2" />
-        <!--<activity android:name=".Home"/>-->
+        <!-- <activity android:name=".Home"/> -->
         <activity android:name=".RegistrationPage3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-    <activity
+        <activity
             android:name=".utils.Login"
             android:exported="true" />
-        <activity android:name=".Home"
-            android:exported="true"/>
+        <activity
+            android:name=".Home"
+            android:exported="true" />
         <activity
             android:name=".MyDoctors"
             android:exported="true"
@@ -52,11 +50,12 @@
         <activity
             android:name=".AllDoctors"
             android:exported="true" />
-        <!--<activity-->
-            <!--android:name=".SendReport"-->
-            <!--android:exported="true"-->
-            <!--android:label="@string/title_activity_send_report"-->
-            <!--android:theme="@style/AppTheme"></activity>-->
+        <!-- <activity -->
+        <!-- android:name=".SendReport" -->
+        <!-- android:exported="true" -->
+        <!-- android:label="@string/title_activity_send_report" -->
+        <!-- android:theme="@style/AppTheme"></activity> -->
+        <activity android:name=".Settings"></activity>
     </application>
 
 </manifest>

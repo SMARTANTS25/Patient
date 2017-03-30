@@ -9,14 +9,14 @@ import com.android.volley.toolbox.Volley;
  * Created by SMARTANS on 3/27/2017.
  */
 
-class MySingleton {
+public class MySingleton {
 
     
 
-    private RequestQueue requestQueue;
+    public RequestQueue requestQueue;
     private static final MySingleton ourInstance = new MySingleton();
 
-    static MySingleton getInstance() {
+    public static MySingleton getInstance() {
         return ourInstance;
     }
 
