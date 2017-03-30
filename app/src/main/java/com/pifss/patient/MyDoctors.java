@@ -34,7 +34,7 @@ public class MyDoctors extends AppCompatActivity {
         toolbar.setTitle("My Doctors");
         toolbar.setNavigationIcon(R.mipmap.abplus);
         setSupportActionBar(toolbar);
-//
+       // OMG PUSH
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
