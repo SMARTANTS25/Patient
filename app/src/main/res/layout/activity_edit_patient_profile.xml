@@ -49,7 +49,10 @@
         android:background="@color/Buttons"
         android:layout_below="@+id/nameEditText"
         android:layout_alignRight="@+id/nameEditText"
-        android:layout_alignEnd="@+id/nameEditText" />
+        android:layout_alignEnd="@+id/nameEditText"
+        android:textColor="@color/md_white_1000"
+        android:fontFamily="monospace"
+        android:textSize="18sp"/>
 
     <EditText
         android:id="@+id/genderEditText"
@@ -162,7 +165,9 @@
         android:background="@color/Buttons"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/md_white_1000"
+        />
 
     <ImageView
         android:id="@+id/imageView18"

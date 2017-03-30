@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
 
         <meta-data
             android:name="AA_DB_NAME"
@@ -20,24 +18,16 @@
         <activity android:name=".ResetPassword" />
         <activity android:name=".ViewPatientProfile" />
         <activity android:name=".ViewMedicalInfo" />
-
         <activity android:name=".EditPatientProfile" />
-        <activity android:name=".EditMedicalInfo"  />
-        <activity android:name=".RegistrationPage1"/>
+        <activity android:name=".EditMedicalInfo" />
+        <activity android:name=".RegistrationPage1" />
         <activity android:name=".RegistrationPage2" />
-        <activity android:name=".RegistrationPage3" android:exported="true"
-            />
         <activity
             android:name=".Login"
-            android:exported="true">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
-        <activity android:name=".Home"
-            android:exported="true"/>
+            android:exported="true"></activity>
+        <activity
+            android:name=".Home"
+            android:exported="true" />
         <activity
             android:name=".MyDoctors"
             android:exported="true"
@@ -46,11 +36,12 @@
         <activity
             android:name=".AllDoctors"
             android:exported="true" />
-        <activity
-            android:name=".SendReport"
-            android:exported="true"
-            android:label="@string/title_activity_send_report"
-            android:theme="@style/AppTheme"></activity>
+        <!-- <activity -->
+        <!-- android:name=".SendReport" -->
+        <!-- android:exported="true" -->
+        <!-- android:label="@string/title_activity_send_report" -->
+        <!-- android:theme="@style/AppTheme"></activity> -->
+        <activity android:name=".RegistrationPage3" android:exported="true"></activity>
     </application>
 
 </manifest>

@@ -309,7 +309,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="13dp"
         android:background="@color/Buttons"
-        android:text="@string/Reg3_RegisterButton" />
+        android:text="@string/Reg3_RegisterButton"
+        android:textColor="@color/md_white_1000"
+        android:fontFamily="monospace"
+        android:textSize="18sp"/>
 
 
 
