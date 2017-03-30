@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 public class AllDoctors extends AppCompatActivity {
 
+
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
