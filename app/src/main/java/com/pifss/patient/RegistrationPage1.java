@@ -46,6 +46,8 @@ public class RegistrationPage1 extends AppCompatActivity {
             public void onClick(View v) {
                 if(validReg()== false){
                     regButton.setEnabled(false);
+//                    Intent i=new Intent(RegistrationPage1.this, RegistrationPage2.class);
+//                    startActivity(i);
 
 
                 }  //validReg();

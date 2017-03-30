@@ -33,7 +33,7 @@
         android:id="@+id/patientNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/EditMedicalInfoButton"
         android:layout_marginLeft="23dp"
         android:layout_marginStart="23dp"
         android:layout_toEndOf="@+id/textView18"
@@ -43,7 +43,7 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/EditMedicalInfoButton"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="23dp"
@@ -66,7 +66,7 @@
 
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/EditMedicalInfoButton"
         android:layout_alignLeft="@+id/mydrMedicalInfoButton"
         android:layout_alignStart="@+id/mydrMedicalInfoButton"
         android:layout_marginLeft="55dp"

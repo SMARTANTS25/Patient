@@ -15,7 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.pifss.patient.Adapters.DoctorAdapter;
 import com.pifss.patient.utils.Doctor;
-import com.pifss.patient.utils.MySingleton;
+import com.pifss.patient.MySingleton;
 
 import org.json.JSONObject;
 
