@@ -1,5 +1,8 @@
+package com.pifss.patient.utils;
+
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -7,12 +10,20 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.NotificationCompat;
+
+import com.pifss.patient.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by HelgenHills on 3/29/17.
  */
 
+
 public class LocationHelper {
+
+    private static int BLOOD_CAMPAIGN_NOTIFICATION_ID = 003;
 
     Activity activity;
 
@@ -90,6 +101,35 @@ public class LocationHelper {
     }
 
     public Location getCurrentLocation() { return currentLocation; }
+
+    public void sendNotificationBloodCampaigns() {
+        /*
+        int notificationId = BLOOD_CAMPAIGN_NOTIFICATION_ID;
+        // Build intent for notification content
+        Intent viewIntent = new Intent(this, ViewEventActivity.class);
+        viewIntent.putExtra(EXTRA_EVENT_ID, eventId);
+        PendingIntent viewPendingIntent =
+                PendingIntent.getActivity(this, 0, viewIntent, 0);
+
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_event)
+                        .setContentTitle(eventTitle)
+                        .setContentText(eventLocation)
+                        .setContentIntent(viewPendingIntent);
+        // Get an instance of the NotificationManager service
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(this);
+
+        // Issue the notification with notification manager.
+        notificationManager.notify(notificationId, notificationBuilder.build());
+        */
+
+    }
+
+    public ArrayList<Location> getNearbyBloodCampaigns() {
+        return null;
+    }
 
 
 }

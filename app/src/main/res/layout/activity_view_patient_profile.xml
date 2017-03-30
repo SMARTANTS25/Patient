@@ -20,11 +20,12 @@
 
     <ImageView
         android:id="@+id/profileImgView"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_marginTop="64dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/profilePatientNameText"
         android:layout_alignLeft="@+id/mydrGeneralInfoButton"
         android:layout_alignStart="@+id/mydrGeneralInfoButton" />
 
@@ -33,7 +34,8 @@
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_alignTop="@+id/profileImgView"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/toolbar7"
         android:layout_alignRight="@+id/editPersonalInfoButton"
         android:layout_alignEnd="@+id/editPersonalInfoButton" />
 
@@ -55,11 +57,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="25dp"
         android:text="@string/RegGender_RadioButton"
-        android:layout_below="@+id/editPersonalInfoButton"
-        android:layout_toRightOf="@+id/profileImgView"
-        android:layout_toEndOf="@+id/profileImgView" />
+        android:layout_below="@+id/profileImgView"
+        android:layout_alignRight="@+id/profileImgView"
+        android:layout_alignEnd="@+id/profileImgView" />
 
     <TextView
         android:id="@+id/genderViewText"
@@ -154,18 +156,20 @@
         android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:text="@string/PatientProfile_MyDoctors"
-        android:layout_above="@+id/medicalInfoViewButton"
         android:background="@color/Buttons"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/medicalInfoViewButton"
+        android:layout_alignLeft="@+id/medicalInfoViewButton"
+        android:layout_alignStart="@+id/medicalInfoViewButton"
+        android:layout_marginBottom="11dp" />
 
     <Button
         android:id="@+id/medicalInfoViewButton"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:background="@color/Buttons"
+        android:text="@string/PatientProfile_MedicalInfo"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/PatientProfile_MedicalInfo" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/imageView36"

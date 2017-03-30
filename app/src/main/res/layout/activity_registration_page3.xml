@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Reg3_button"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.RegistrationPage3">
@@ -23,33 +24,33 @@
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:text="@string/Reg3_BloodType"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/imageButton8"
-        android:layout_toStartOf="@+id/imageButton8" />
+        android:layout_marginTop="61dp"
+        android:layout_toLeftOf="@+id/ominImageButton"
+        android:layout_toStartOf="@+id/ominImageButton"
+        android:text="@string/Reg3_BloodType" />
 
     <ImageView
         android:id="@+id/imageView26"
         android:layout_width="30dp"
         android:layout_height="25dp"
-        app:srcCompat="@mipmap/blood_drop_icon"
+        android:layout_alignLeft="@+id/Reg3_button"
+        android:layout_alignStart="@+id/Reg3_button"
+        android:layout_below="@+id/toolbar3"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_below="@+id/toolbar3"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4" />
+        app:srcCompat="@mipmap/blood_drop_icon" />
 
     <ImageButton
         android:id="@+id/aminImgButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_alignLeft="@+id/imageView26"
+        android:layout_alignStart="@+id/imageView26"
+        android:layout_below="@+id/imageView26"
         android:adjustViewBounds="false"
         android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_a_minus"
-        android:layout_below="@+id/imageView26"
-        android:layout_alignLeft="@+id/imageView26"
-        android:layout_alignStart="@+id/imageView26" />
+        app:srcCompat="@mipmap/ic_a_minus" />
 
     <ImageButton
         android:id="@+id/aplusImgButton"
@@ -79,16 +80,16 @@
         android:id="@+id/abplusImgButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignTop="@+id/abminImgButton"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_toEndOf="@+id/abminImgButton"
-        android:layout_toRightOf="@+id/abminImgButton"
         android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_ab_plus" />
+        app:srcCompat="@mipmap/ic_ab_plus"
+        android:layout_alignTop="@+id/abminImgButton"
+        android:layout_toRightOf="@+id/abminImgButton"
+        android:layout_toEndOf="@+id/abminImgButton"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/bminImageButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignLeft="@+id/aminImgButton"
@@ -99,32 +100,32 @@
         app:srcCompat="@mipmap/ic_b_minus" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/bplusImageButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignLeft="@+id/aplusImgButton"
         android:layout_alignStart="@+id/aplusImgButton"
-        android:layout_alignTop="@+id/imageButton6"
+        android:layout_alignTop="@+id/bminImageButton"
         android:background="@android:color/transparent"
         app:srcCompat="@mipmap/b_plus" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/ominImageButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/imageButton7"
+        android:layout_alignBottom="@+id/bplusImageButton"
         android:layout_alignLeft="@+id/abminImgButton"
         android:layout_alignStart="@+id/abminImgButton"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_o_minus" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/oplusImageButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignLeft="@+id/abplusImgButton"
         android:layout_alignStart="@+id/abplusImgButton"
-        android:layout_alignTop="@+id/imageButton8"
+        android:layout_alignTop="@+id/ominImageButton"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_o_plus" />
 
@@ -132,23 +133,23 @@
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/NoDiabetesRB"
+        android:layout_alignRight="@+id/NoDiabetesRB"
+        android:layout_below="@+id/bminImageButton"
         android:layout_marginTop="26dp"
-        android:text="@string/Reg3_Diabetes"
-        android:layout_below="@+id/imageButton6"
-        android:layout_alignRight="@+id/radioButton"
-        android:layout_alignEnd="@+id/radioButton" />
+        android:text="@string/Reg3_Diabetes" />
 
     <ImageView
         android:id="@+id/imageView27"
         android:layout_width="30dp"
         android:layout_height="25dp"
-        app:srcCompat="@mipmap/diabity_icon"
-        android:layout_alignTop="@+id/radioButton"
-        android:layout_alignLeft="@+id/imageButton6"
-        android:layout_alignStart="@+id/imageButton6" />
+        android:layout_alignLeft="@+id/bminImageButton"
+        android:layout_alignStart="@+id/bminImageButton"
+        android:layout_alignTop="@+id/NoDiabetesRB"
+        app:srcCompat="@mipmap/diabity_icon" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/NoDiabetesRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView27"
@@ -157,89 +158,88 @@
         android:text="@string/Reg3_AllergiesNo" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/TypeOneDiabetesRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Reg3_DiabetesTypeOne"
         android:layout_below="@+id/textView27"
-        android:layout_toRightOf="@+id/imageButton7"
-        android:layout_toEndOf="@+id/imageButton7" />
+        android:layout_toEndOf="@+id/bplusImageButton"
+        android:layout_toRightOf="@+id/bplusImageButton"
+        android:text="@string/Reg3_DiabetesTypeOne" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/TypeTwoDiabetesRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Reg3_DiabetesTypeTwo"
-        android:layout_alignBaseline="@+id/radioButton2"
-        android:layout_alignBottom="@+id/radioButton2"
-        android:layout_toRightOf="@+id/radioButton2"
-        android:layout_toEndOf="@+id/radioButton2"
+        android:layout_alignBaseline="@+id/TypeOneDiabetesRB"
+        android:layout_alignBottom="@+id/TypeOneDiabetesRB"
         android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp" />
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/TypeOneDiabetesRB"
+        android:layout_toRightOf="@+id/TypeOneDiabetesRB"
+        android:text="@string/Reg3_DiabetesTypeTwo" />
 
     <TextView
         android:id="@+id/textView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/PatientMedicalInfo_Asthma"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/radioButton3"
-        android:layout_alignRight="@+id/textView27"
         android:layout_alignEnd="@+id/textView27"
+        android:layout_alignRight="@+id/textView27"
+        android:layout_below="@+id/TypeTwoDiabetesRB"
+        android:layout_marginTop="30dp"
         android:layout_toEndOf="@+id/imageView28"
-        android:layout_toRightOf="@+id/imageView28" />
+        android:layout_toRightOf="@+id/imageView28"
+        android:text="@string/PatientMedicalInfo_Asthma" />
 
     <ImageView
         android:id="@+id/imageView28"
         android:layout_width="30dp"
         android:layout_height="25dp"
-        app:srcCompat="@mipmap/asthma_icon"
         android:layout_alignBottom="@+id/textView28"
-        android:layout_toLeftOf="@+id/radioButton"
-        android:layout_toStartOf="@+id/radioButton" />
+        android:layout_toLeftOf="@+id/NoDiabetesRB"
+        android:layout_toStartOf="@+id/NoDiabetesRB"
+        app:srcCompat="@mipmap/asthma_icon" />
 
     <Switch
         android:id="@+id/switchAsthma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView28"
-        android:layout_alignBottom="@+id/textView28"
-        android:layout_alignLeft="@+id/radioButton3"
-        android:layout_alignStart="@+id/radioButton3"
         android:text="@string/Reg3_AllergiesYes"
-        tools:text="@string/Reg3_DiabetesNo" />
+        tools:text="@string/Reg3_DiabetesNo"
+        android:layout_alignTop="@+id/imageView28"
+        android:layout_alignLeft="@+id/switchAllergies"
+        android:layout_alignStart="@+id/switchAllergies" />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:text="@string/Reg3_Allergies"
         android:layout_below="@+id/switchAsthma"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/imageView29"
         android:layout_toRightOf="@+id/imageView29"
-        android:layout_toEndOf="@+id/imageView29" />
+        android:text="@string/Reg3_Allergies" />
 
     <ImageView
         android:id="@+id/imageView29"
         android:layout_width="30dp"
         android:layout_height="25dp"
-        app:srcCompat="@mipmap/allergy_icon"
         android:layout_alignBottom="@+id/textView29"
         android:layout_alignLeft="@+id/imageView28"
-        android:layout_alignStart="@+id/imageView28" />
+        android:layout_alignStart="@+id/imageView28"
+        app:srcCompat="@mipmap/allergy_icon" />
 
     <Switch
         android:id="@+id/switchAllergies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/switchAsthma"
-        android:layout_alignStart="@+id/switchAsthma"
-        android:layout_alignTop="@+id/imageView29"
         android:text="@string/Reg3_AllergiesYes"
-        tools:text="@string/Reg3_AllergiesNo" />
+        tools:text="@string/Reg3_AllergiesNo"
+        android:layout_alignBottom="@+id/textView29"
+        android:layout_alignRight="@+id/Reg3_button"
+        android:layout_alignEnd="@+id/Reg3_button" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/Reg_AllergiesET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/switchAllergies"
@@ -249,6 +249,7 @@
         android:layout_below="@+id/switchAllergies"
         android:layout_marginTop="15dp"
         android:ems="10"
+        android:hint="If so , please specify"
         android:inputType="textPersonName" />
 
     <TextView
@@ -257,7 +258,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView29"
         android:layout_alignStart="@+id/textView29"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/Reg_AllergiesET"
         android:layout_marginTop="11dp"
         android:text="@string/Reg3_Medications" />
 
@@ -265,30 +266,30 @@
         android:id="@+id/imageView30"
         android:layout_width="30dp"
         android:layout_height="25dp"
-        app:srcCompat="@mipmap/medicine_icon"
         android:layout_alignBottom="@+id/textView30"
         android:layout_toLeftOf="@+id/textView30"
-        android:layout_toStartOf="@+id/textView30" />
+        android:layout_toStartOf="@+id/textView30"
+        app:srcCompat="@mipmap/medicine_icon" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/Reg_MedicationsET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/textView30"
+        android:layout_alignEnd="@+id/Reg_AllergiesET"
         android:layout_alignLeft="@+id/imageView30"
+        android:layout_alignRight="@+id/Reg_AllergiesET"
         android:layout_alignStart="@+id/imageView30"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_below="@+id/textView30"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/Reg3_button"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:background="@color/Buttons"
-        android:text="@string/Reg3_RegisterButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="13dp" />
+        android:layout_marginBottom="13dp"
+        android:background="@color/Buttons"
+        android:text="@string/Reg3_RegisterButton" />
 </RelativeLayout>

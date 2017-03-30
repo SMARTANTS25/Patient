@@ -3,6 +3,8 @@ package com.pifss.patient;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +12,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Date;
 
 public class RegistrationPage2 extends AppCompatActivity {
 
@@ -33,14 +46,44 @@ public class RegistrationPage2 extends AppCompatActivity {
         phone= (EditText) findViewById(R.id.Reg_PhoneNumberTF);
         emergencyNumber= (EditText) findViewById(R.id.Reg_EmergencyNumberTF);
 
+
         final String fnameValue= fname.getText().toString();
         final String lnameValue= lname.getText().toString();
         final String birthdateValue= birthDate.getText().toString();
         final String civilIdValue= birthDate.getText().toString();
         final String phoneValue= phone.getText().toString();
-        final String emergencyNoValue= emergencyNumber.getText().toString();
-
+        final String emergencyNumValue= emergencyNumber.getText().toString();
           regButton = (Button) findViewById(R.id.BtnToMedicalReg);
+
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/";
+        RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
+
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("fname", fnameValue);
+            obj.put("lname", lnameValue);
+            obj.put("birthDate" , birthdateValue);
+            obj.put("civilId" , civilIdValue);
+            obj.put("phone",phoneValue);
+            obj.put("emergencyNumber" , emergencyNumValue);
+            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
 
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +96,7 @@ public class RegistrationPage2 extends AppCompatActivity {
 //                break;
                           if(validReg()== false){
                               regButton.setEnabled(false);
-                          }  //validReg();
+                          }
 
                            else {
                               Intent i = new Intent(RegistrationPage2.this, RegistrationPage3.class);
@@ -63,7 +106,7 @@ public class RegistrationPage2 extends AppCompatActivity {
                               i.putExtra(birthdateValue, "birthDate");
                               i.putExtra(civilIdValue, "civilID");
                               i.putExtra(phoneValue, "phoneNumber");
-                              i.putExtra(emergencyNoValue, "emergencyNumber");
+                              i.putExtra(emergencyNumValue, "emergencyNumber");
 
                               startActivity(i);
                           }
@@ -79,9 +122,9 @@ public class RegistrationPage2 extends AppCompatActivity {
         String fnameValue = fname.getText().toString();
         String lnameValue = lname.getText().toString();
         String birthdateValue = birthDate.getText().toString();
-        String civilIdValue = birthDate.getText().toString();
+        String civilIdValue = civilId.getText().toString();
         String phoneValue = phone.getText().toString();
-        String emergencyNoValue = emergencyNumber.getText().toString();
+        String emergencyNumValue = emergencyNumber.getText().toString();
 
         if (fnameValue.isEmpty()) {
             invalid = true;
@@ -100,7 +143,7 @@ public class RegistrationPage2 extends AppCompatActivity {
         } else if (phoneValue.isEmpty()) {
             invalid = true;
             Toast.makeText(getApplicationContext(), "Please enter your phone number", Toast.LENGTH_SHORT).show();
-        } else if (emergencyNoValue.isEmpty()) {
+        } else if (emergencyNumValue.isEmpty()) {
             invalid = true;
             Toast.makeText(getApplicationContext(), "Please enter your emergency phone number", Toast.LENGTH_SHORT).show();
         }
