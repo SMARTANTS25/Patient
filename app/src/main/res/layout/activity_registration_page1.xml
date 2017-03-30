@@ -14,7 +14,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:background="@android:color/holo_blue_light"
-        android:text="@string/Reg1_Btn" />
+        android:text="@string/Reg1_Btn"
+        android:fontFamily="monospace"
+        android:textSize="18sp"
+        android:textColor="@color/md_white_1000"/>
 
     <EditText
         android:id="@+id/Reg_EmailTF"
@@ -28,7 +31,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/Reg1Btn"
         android:hint="Example@example.com"
-        android:layout_alignEnd="@+id/Reg1Btn" />
+        android:layout_alignEnd="@+id/Reg1Btn"
+        android:fontFamily="monospace"
+        />
 
     <EditText
         android:id="@+id/Reg_PasswordTF"
@@ -74,7 +79,8 @@
         android:layout_below="@+id/Reg_ConfirmPassTF"
         android:layout_toRightOf="@+id/imageView"
         android:layout_toEndOf="@+id/imageView"
-        android:layout_marginTop="19dp" />
+        android:layout_marginTop="19dp"
+        android:fontFamily="monospace"/>
 
     <RadioButton
         android:id="@+id/RegFemaleRadioBu"
@@ -83,7 +89,8 @@
         android:text="@string/FemaleReg_RadioButton"
         android:layout_alignBottom="@+id/imageView"
         android:layout_alignLeft="@+id/MaleRegMaleRadioButton"
-        android:layout_alignStart="@+id/MaleRegMaleRadioButton" />
+        android:layout_alignStart="@+id/MaleRegMaleRadioButton"
+        android:fontFamily="monospace"/>
 
     <ImageView
         android:id="@+id/imageView3"
