@@ -39,6 +39,17 @@ public class Login extends AppCompatActivity {
 
 
                 login(emailText.getText().toString(), passwordText.getText().toString());
+
+
+                login.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String username =emailText.getText().toString();
+                        String password=passwordText.getText().toString();
+                        login( username,  password);
+                    }
+                });
+
                 //Toast.makeText(Login.this,"You Have been Loggned in Successfuly", Toast.LENGTH_LONG);
 
 //                            Intent i = new Intent(Login.this, Home.class);
@@ -78,16 +89,13 @@ public class Login extends AppCompatActivity {
     }
 
     private void login(String emailText, String passwordText) {
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login";
-
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login/";
         RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
-
+        System.out.println("Start Omar");
         JSONObject obj = new JSONObject();
         try {
             obj.put("username", emailText);
             obj.put("password", passwordText);
-
-
             JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(final JSONObject response) {
