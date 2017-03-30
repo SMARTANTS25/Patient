@@ -14,26 +14,31 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="65dp"
         android:text="Report:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-    <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:fontFamily="monospace"
+        android:textSize="18dp"/>
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="18dp"
         app:srcCompat="@mipmap/id"
-        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="79dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/editText4"
+        android:layout_alignStart="@+id/editText4" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar9"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:id="@+id/SendReportTextView"
@@ -47,6 +52,7 @@
         android:layout_marginTop="52dp"
         android:layout_toRightOf="@+id/imageView10"
         android:text="Name:"
+        android:fontFamily="monospace"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <TextView
@@ -57,27 +63,30 @@
         android:layout_alignStart="@+id/SendReportTextView"
         android:layout_below="@+id/SendReportTextView"
         android:layout_marginTop="21dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:fontFamily="monospace"/>
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="315dp"
         android:layout_height="125dp"
-        android:layout_alignLeft="@+id/imageView10"
-        android:layout_alignStart="@+id/imageView10"
-        android:layout_below="@+id/SendReport_ReportLabel"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="53dp"
         android:ems="10"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:fontFamily="monospace"
+        android:layout_below="@+id/SendReport_ReportLabel"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/SendReportButton"
-        android:layout_width="wrap_content"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Send Report" />
+
+        android:background="@color/Buttons"
+        android:fontFamily="monospace"
+        android:text="Send Report"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/imageView14"

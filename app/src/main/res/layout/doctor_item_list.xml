@@ -42,9 +42,7 @@
         android:text="Male"
         android:layout_alignBottom="@+id/homeDocProfile"
         android:layout_alignLeft="@+id/homeGenderIcon"
-        android:layout_alignStart="@+id/homeGenderIcon"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp" />
+        android:layout_alignStart="@+id/homeGenderIcon" />
 
     <ImageView
         android:id="@+id/homeSpecialtyIcon"
