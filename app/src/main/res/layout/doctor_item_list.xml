@@ -7,23 +7,39 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar10"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
     <TextView
         android:id="@+id/homeDocSpecialtyTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/homeDocProfile"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="22dp"
         android:text="Orthopedic"
         android:textSize="14sp"
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_alignBottom="@+id/homeSpecialtyIcon"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/homeDocProfile"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_margin="5dp"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@mipmap/doctor"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_below="@+id/toolbar10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/homeDocNameTextView"
@@ -44,30 +60,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Male"
-        android:layout_alignRight="@+id/homeGenderIcon"
-        android:layout_alignEnd="@+id/homeGenderIcon"
-        android:layout_alignBottom="@+id/homeDocProfile"
         android:textSize="14sp"
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_alignBottom="@+id/homeGenderIcon"
+        android:layout_alignRight="@+id/homeDocNameTextView"
+        android:layout_alignEnd="@+id/homeDocNameTextView"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp" />
 
     <ImageView
         android:id="@+id/homeSpecialtyIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/homeGenderIcon"
-        android:layout_toEndOf="@+id/homeDocProfile"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@+id/homeDocProfile"
+        android:layout_toLeftOf="@+id/homeDocSpecialtyTextView"
         android:layout_toRightOf="@+id/homeDocProfile"
-        app:srcCompat="@android:drawable/star_big_on" />
+        android:layout_toStartOf="@+id/homeDocSpecialtyTextView"
+        app:srcCompat="@mipmap/stethoscope" />
 
     <ImageView
         android:id="@+id/homeGenderIcon"
         android:layout_width="35dp"
         android:layout_height="35dp"
+        app:srcCompat="@mipmap/gender_icon"
         android:layout_alignBottom="@+id/homeDocSpecialtyTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        app:srcCompat="@mipmap/gender_icon" />
+        android:layout_toLeftOf="@+id/homeDocGenderTextView"
+        android:layout_toStartOf="@+id/homeDocGenderTextView" />
 
 </RelativeLayout>

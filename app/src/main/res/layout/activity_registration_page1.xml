@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.RegistrationPage1">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar11"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
     <Button
         android:id="@+id/Reg1Btn"
         android:layout_width="365dp"
@@ -29,10 +41,9 @@
         android:fontFamily="monospace"
         android:hint="Example@example.com"
         android:inputType="textPersonName"
-        android:layout_below="@+id/imageView3"
+        android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/imageView11"
-        android:layout_toEndOf="@+id/imageView11"
-        android:layout_marginTop="30dp" />
+        android:layout_toEndOf="@+id/imageView11" />
 
     <EditText
         android:id="@+id/Reg_PasswordTF"
@@ -41,9 +52,10 @@
         android:ems="10"
         android:hint="*******"
         android:inputType="textPassword"
-        android:layout_alignTop="@+id/imageView12"
+        android:layout_below="@+id/Reg_EmailTF"
         android:layout_toRightOf="@+id/imageView11"
-        android:layout_toEndOf="@+id/imageView11" />
+        android:layout_toEndOf="@+id/imageView11"
+        android:layout_marginTop="11dp" />
 
     <EditText
         android:id="@+id/Reg_ConfirmPassTF"
@@ -52,7 +64,7 @@
         android:ems="10"
         android:hint="*******"
         android:inputType="textPassword"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/Reg_PasswordTF"
         android:layout_toRightOf="@+id/imageView13"
         android:layout_toEndOf="@+id/imageView13" />
@@ -62,7 +74,7 @@
         android:layout_width="40dp"
         android:layout_height="55dp"
         app:srcCompat="@mipmap/gender_icon"
-        android:layout_alignTop="@+id/MaleRegMaleRadioButton"
+        android:layout_alignBottom="@+id/RegFemaleRadioBu"
         android:layout_toLeftOf="@+id/Reg_ConfirmPassTF"
         android:layout_toStartOf="@+id/Reg_ConfirmPassTF" />
 
@@ -71,11 +83,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/MaleReg_RadioButton"
-        android:layout_marginTop="23dp"
         android:fontFamily="monospace"
         android:layout_below="@+id/Reg_ConfirmPassTF"
-        android:layout_alignLeft="@+id/imageView3"
-        android:layout_alignStart="@+id/imageView3" />
+        android:layout_alignLeft="@+id/RegFemaleRadioBu"
+        android:layout_alignStart="@+id/RegFemaleRadioBu" />
 
     <RadioButton
         android:id="@+id/RegFemaleRadioBu"
@@ -83,40 +94,44 @@
         android:layout_height="wrap_content"
         android:text="@string/FemaleReg_RadioButton"
         android:fontFamily="monospace"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
         android:layout_below="@+id/MaleRegMaleRadioButton"
-        android:layout_alignLeft="@+id/MaleRegMaleRadioButton"
-        android:layout_alignStart="@+id/MaleRegMaleRadioButton" />
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="200dp"
         android:layout_height="150dp"
 
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="79dp"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/heartlogo"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageView12"
-        android:layout_toEndOf="@+id/imageView12" />
+        android:layout_alignLeft="@+id/Reg_EmailTF"
+        android:layout_alignStart="@+id/Reg_EmailTF"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@mipmap/email"
         android:layout_alignBottom="@+id/Reg_EmailTF"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="22dp"
-        android:layout_marginStart="22dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@mipmap/email" />
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:srcCompat="@mipmap/password"
-        android:layout_centerVertical="true"
+        android:layout_alignBottom="@+id/Reg_PasswordTF"
         android:layout_toLeftOf="@+id/Reg_PasswordTF"
         android:layout_toStartOf="@+id/Reg_PasswordTF" />
 

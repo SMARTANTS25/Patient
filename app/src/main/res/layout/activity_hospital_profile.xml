@@ -212,16 +212,16 @@
 
     <ImageView
         android:id="@+id/imageViewHosSpeciality"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:textSize="18dp"
-        android:fontFamily="monospace"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_above="@+id/textViewHosWorkingH"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/textViewHosSpecaility"
-        android:layout_toStartOf="@+id/textViewHosSpecaility" />
+        android:layout_toStartOf="@+id/textViewHosSpecaility"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
+        app:srcCompat="@mipmap/stethoscope" />
 
     <ImageView
         android:id="@+id/imageViewHosWorkingHours"
