@@ -14,7 +14,9 @@
         android:layout_alignBottom="@+id/homeDocProfile"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="22dp"
-        android:text="Orthopedic" />
+        android:text="Orthopedic"
+        android:textSize="14sp"
+        android:fontFamily="monospace"/>
 
     <ImageView
         android:id="@+id/homeDocProfile"
@@ -33,7 +35,9 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_toRightOf="@+id/homeDocProfile"
-        android:layout_toEndOf="@+id/homeDocProfile" />
+        android:layout_toEndOf="@+id/homeDocProfile"
+
+        android:fontFamily="monospace"/>
 
     <TextView
         android:id="@+id/homeDocGenderTextView"
@@ -42,7 +46,9 @@
         android:text="Male"
         android:layout_alignRight="@+id/homeGenderIcon"
         android:layout_alignEnd="@+id/homeGenderIcon"
-        android:layout_alignBottom="@+id/homeDocProfile" />
+        android:layout_alignBottom="@+id/homeDocProfile"
+        android:textSize="14sp"
+        android:fontFamily="monospace"/>
 
     <ImageView
         android:id="@+id/homeSpecialtyIcon"
