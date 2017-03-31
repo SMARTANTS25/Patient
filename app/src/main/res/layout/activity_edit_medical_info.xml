@@ -23,7 +23,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_below="@+id/toolbar4"
+        android:layout_alignTop="@+id/PNameTF"
         android:layout_alignRight="@+id/textView22"
         android:layout_alignEnd="@+id/textView22" />
 
@@ -34,30 +34,33 @@
         android:text="TextView"
         android:layout_below="@+id/toolbar4"
         android:layout_alignLeft="@+id/saveChangesMedicalButton"
-        android:layout_alignStart="@+id/saveChangesMedicalButton" />
+        android:layout_alignStart="@+id/saveChangesMedicalButton"
+        android:layout_marginTop="14dp" />
 
     <Button
         android:id="@+id/saveChangesMedicalButton"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/PNameTF"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
         android:background="@color/Buttons"
-        android:text="Save Changes" />
+        android:text="Save Changes"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
+        android:textColor="@color/md_white_1000"
+        android:layout_below="@+id/PNameTF"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PatientMedicalInfo_BloodType"
-        android:layout_below="@+id/saveChangesMedicalButton"
-        android:layout_alignLeft="@+id/bloodtypeEditText"
-        android:layout_alignStart="@+id/bloodtypeEditText"
-        android:layout_marginTop="13dp" />
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/imageView5"
+        android:layout_toRightOf="@+id/imageView14"
+        android:layout_toEndOf="@+id/imageView14" />
 
     <EditText
         android:id="@+id/bloodtypeEditText"
@@ -158,11 +161,16 @@
         android:id="@+id/editGeneralInfoButton"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"
         android:background="@color/Buttons"
-        android:text="Edit General Information" />
+        android:text="Edit General Information"
+        android:layout_alignParentLeft="true"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
+        android:textColor="@color/md_white_1000"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <ImageView
         android:id="@+id/imageView10"
