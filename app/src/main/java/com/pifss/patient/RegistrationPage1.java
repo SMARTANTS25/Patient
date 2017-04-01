@@ -1,18 +1,14 @@
 package com.pifss.patient;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Patterns;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class RegistrationPage1 extends AppCompatActivity {
+public class  RegistrationPage1 extends AppCompatActivity {
 
          EditText email;
          EditText password;
