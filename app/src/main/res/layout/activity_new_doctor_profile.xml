@@ -9,59 +9,55 @@
 
     <ImageView
         android:id="@+id/imageViewDoctorLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="14dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@mipmap/doctor" />
 
     <TextView
         android:id="@+id/textViewDocName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView_DocName"
-        android:layout_below="@+id/imageViewDoctorLogo"
-        android:layout_alignLeft="@+id/imageViewDoctorLogo"
-        android:layout_alignStart="@+id/imageViewDoctorLogo"
-        android:layout_marginTop="31dp" />
+        android:layout_alignTop="@+id/imageViewDoctorLogo"
+        android:layout_toRightOf="@+id/imageViewDoctorLogo"
+        android:layout_toEndOf="@+id/imageViewDoctorLogo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp" />
 
     <TextView
         android:id="@+id/textViewDoctorName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="                         "
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
         android:layout_below="@+id/textViewDocName"
-        android:layout_alignLeft="@+id/textViewDocName"
-        android:layout_alignStart="@+id/textViewDocName"
-        android:layout_marginTop="11dp" />
+        android:layout_alignRight="@+id/textViewDocName"
+        android:layout_alignEnd="@+id/textViewDocName"
+        android:layout_marginTop="13dp" />
 
     <TextView
         android:id="@+id/textViewDocSpeciality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textViewDocName"
-        android:layout_alignLeft="@+id/textViewDocName"
-        android:layout_alignRight="@+id/textViewDocName"
-        android:layout_alignStart="@+id/textViewDocName"
-        android:layout_below="@+id/textViewDoctorName"
-        android:layout_marginTop="28dp"
-        android:text="@string/textView_DocSpeciality" />
+        android:layout_marginTop="38dp"
+        android:text="@string/textView_DocSpeciality"
+        android:layout_below="@+id/imageViewDoctorLogo"
+        android:layout_alignLeft="@+id/imageViewDoctorLogo"
+        android:layout_alignStart="@+id/imageViewDoctorLogo" />
 
     <TextView
         android:id="@+id/textViewDoctorSpeciality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_below="@+id/textViewDocSpeciality"
-        android:layout_alignLeft="@+id/textViewDoctorName"
-        android:layout_alignStart="@+id/textViewDoctorName"
-        android:layout_marginTop="13dp" />
+        android:layout_alignLeft="@+id/textViewDocSpeciality"
+        android:layout_alignStart="@+id/textViewDocSpeciality"
+        android:layout_below="@+id/textViewDocSpeciality" />
 
     <TextView
         android:id="@+id/textViewDocEmail"
@@ -96,11 +92,10 @@
         android:id="@+id/textViewDoctorNationality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
         android:text="TextView"
         android:layout_below="@+id/textViewDocNationality"
-        android:layout_alignLeft="@+id/textViewDoctorEmail"
-        android:layout_alignStart="@+id/textViewDoctorEmail" />
+        android:layout_alignLeft="@+id/textViewDocNationality"
+        android:layout_alignStart="@+id/textViewDocNationality" />
 
     <TextView
         android:id="@+id/textViewDocCV"
@@ -116,21 +111,65 @@
         android:id="@+id/textViewDoctorCV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="TextView"
         android:layout_below="@+id/textViewDocCV"
-        android:layout_marginTop="11dp"
-        android:layout_toEndOf="@+id/textViewDocEmail"
-        android:layout_toRightOf="@+id/textViewDocEmail"
-        android:text="TextView" />
+        android:layout_alignLeft="@+id/textViewDocCV"
+        android:layout_alignStart="@+id/textViewDocCV" />
 
     <Button
         android:id="@+id/buttonSendDoctorRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
         android:text="@string/buttonSend_DoctorRequest"
-        android:layout_below="@+id/textViewDoctorCV"
-        android:layout_toRightOf="@+id/textViewDoctorName"
-        android:layout_toEndOf="@+id/textViewDoctorName" />
+        android:layout_alignParentLeft="true"
+        android:textSize="18dp"
+        android:fontFamily="monospace"
+        android:background="@color/Buttons"
+        android:textColor="@color/md_white_1000"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/imageView43"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/textViewDocEmail"
+        android:layout_toLeftOf="@+id/textViewDocSpeciality"
+        android:layout_toStartOf="@+id/textViewDocSpeciality"
+        app:srcCompat="@mipmap/stethoscope" />
+
+    <ImageView
+        android:id="@+id/imageView44"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/email"
+        android:layout_above="@+id/textViewDocNationality"
+        android:layout_toLeftOf="@+id/textViewDocEmail"
+        android:layout_toStartOf="@+id/textViewDocEmail" />
+
+    <ImageView
+        android:id="@+id/imageView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView44"
+        android:layout_alignStart="@+id/imageView44"
+        android:layout_alignTop="@+id/textViewDocNationality"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_above="@+id/textViewDocCV"
+        android:layout_toLeftOf="@+id/textViewDocNationality"
+        android:layout_toStartOf="@+id/textViewDocNationality" />
+
+    <ImageView
+        android:id="@+id/imageView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewDocCV"
+        android:layout_toStartOf="@+id/textViewDocCV"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignBottom="@+id/textViewDoctorCV"
+        android:layout_toLeftOf="@+id/textViewDocCV" />
 
 
 </RelativeLayout>

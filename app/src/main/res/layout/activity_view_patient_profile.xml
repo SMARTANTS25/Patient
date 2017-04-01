@@ -20,12 +20,12 @@
 
     <ImageView
         android:id="@+id/profileImgView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_below="@+id/toolbar7"
+        android:layout_alignBottom="@+id/editPersonalInfoButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -36,8 +36,9 @@
         android:text="TextView"
         android:textSize="18dp"
         android:layout_below="@+id/toolbar7"
-        android:layout_toRightOf="@+id/emergencyNoView"
-        android:layout_toEndOf="@+id/emergencyNoView" />
+        android:layout_toRightOf="@+id/birthdateViewText"
+        android:layout_toEndOf="@+id/birthdateViewText"
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/editPersonalInfoButton"
@@ -48,9 +49,9 @@
         android:text="@string/PatientProfile_EditProfile"
         android:textSize="18dp"
         android:textColor="@color/md_white_1000"
-        android:layout_alignBottom="@+id/profileImgView"
-        android:layout_toRightOf="@+id/phoneViewText"
-        android:layout_toEndOf="@+id/phoneViewText" />
+        android:layout_below="@+id/profilePatientNameText"
+        android:layout_alignLeft="@+id/profilePatientNameText"
+        android:layout_alignStart="@+id/profilePatientNameText" />
 
 
     <TextView
@@ -59,9 +60,9 @@
         android:layout_height="wrap_content"
         android:text="@string/RegGender_RadioButton"
         android:textSize="18dp"
-        android:layout_alignBottom="@+id/imageView36"
-        android:layout_alignLeft="@+id/phoneViewText"
-        android:layout_alignStart="@+id/phoneViewText" />
+        android:layout_alignTop="@+id/imageView36"
+        android:layout_toRightOf="@+id/imageView36"
+        android:layout_toEndOf="@+id/imageView36" />
 
     <TextView
         android:id="@+id/genderViewText"
@@ -142,10 +143,10 @@
         android:textSize="18dp"
 
         android:text="@string/Reg2_EmergencyPhone"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/phoneViewText"
-        android:layout_alignLeft="@+id/emergencyNoView"
-        android:layout_alignStart="@+id/emergencyNoView"
-        android:layout_marginTop="28dp" />
+        android:layout_alignRight="@+id/emailViewText"
+        android:layout_alignEnd="@+id/emailViewText" />
 
     <TextView
         android:id="@+id/emergencyNoView"
@@ -166,6 +167,8 @@
         android:fontFamily="monospace"
         android:textSize="18dp"
         android:textColor="@color/md_white_1000"
+
+        android:layout_marginBottom="11dp"
         android:layout_above="@+id/medicalInfoViewButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -187,9 +190,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/gender_icon"
-        android:layout_below="@+id/editPersonalInfoButton"
-        android:layout_alignLeft="@+id/imageView37"
-        android:layout_alignStart="@+id/imageView37" />
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/profileImgView"
+        android:layout_toLeftOf="@+id/phoneViewText"
+        android:layout_toStartOf="@+id/phoneViewText" />
 
     <ImageView
         android:id="@+id/imageView37"

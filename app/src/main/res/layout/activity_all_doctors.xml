@@ -10,12 +10,12 @@
         android:id="@+id/AllDoctorToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/md_blue_600">
+        android:background="@color/Buttons">
 
     </android.support.v7.widget.Toolbar>
 
     <ListView
-        android:id="@+id/MyDoctorList"
+        android:id="@+id/AllDoctorList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -26,10 +26,11 @@
         android:id="@+id/AllDoctorSearchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/MyDoctorList"
+        android:layout_above="@+id/AllDoctorList"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:background="@color/Buttons"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp" />
 

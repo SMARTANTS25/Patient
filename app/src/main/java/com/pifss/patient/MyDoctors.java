@@ -36,7 +36,7 @@ public class MyDoctors extends AppCompatActivity {
         setSupportActionBar(toolbar);
        // OMG PUSH
 
-        
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +49,7 @@ public class MyDoctors extends AppCompatActivity {
         updateModel();
 
 
-         lv = (ListView) findViewById(R.id.MyDoctorList);
+         lv = (ListView) findViewById(R.id.AllDoctorList);
 
 
 
@@ -112,7 +112,7 @@ public class MyDoctors extends AppCompatActivity {
         }
 
 
-        ListView lv = (ListView) findViewById(R.id.MyDoctorList);
+        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(parsedModel, this);
 

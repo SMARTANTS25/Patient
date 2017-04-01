@@ -7,41 +7,50 @@
     tools:context="com.pifss.patient.Home">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/AllDoctorToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/md_blue_600">
-
-    </android.support.v7.widget.Toolbar>
-
-    <ListView
-        android:id="@+id/MyDoctorList"
+        android:id="@+id/toolbar8"
+        style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/AllDoctorToolbar" />
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/AllDoctorList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:layout_below="@+id/toolbar8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <SearchView
         android:id="@+id/homeSearchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/MyDoctorList"
+        android:layout_above="@+id/AllDoctorList"
+        android:background="@color/Buttons"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+
         android:layout_alignParentTop="true"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp" />
 
-   <android.support.design.widget.FloatingActionButton
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/sendReportButton"
-       android:layout_alignParentBottom="true"
-       android:layout_alignParentRight="true"
-       android:layout_marginBottom="20dp"
-       android:layout_marginRight="10dp"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/sendReportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
 
-       />
+        android:layout_marginRight="10dp"
+        android:background="@color/Buttons"
+
+        app:backgroundTint="@color/Buttons" />
 
 </RelativeLayout>
