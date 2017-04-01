@@ -13,8 +13,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class ViewPatientProfile extends AppCompatActivity {
 
@@ -37,28 +41,43 @@ public class ViewPatientProfile extends AppCompatActivity {
         final TextView phoneText=(TextView) findViewById(R.id.phoneViewText);
         final TextView emergencyNoText=(TextView) findViewById(R.id.emergencyNoView);
 
-//should be changed??abrar
-        String url="http://34.196.107.188:8081/MhealthWeb/webresources/schedule/branch/1/day/2017-03-11/2017-03-12";
+
+        String url="";
         RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
 
-                Patient p=new Gson().fromJson(response,Patient.class);
-                nameText.setText(p.getFirstName());
-                birthdateText.setText(p.getDateOfBirth());
-                emailText.setText(p.getEmail());
-                phoneText.setText(p.getPhoneNumber());
-                emergencyNoText.setText(p.getEmergencyNumber());
+        JSONObject obj = new JSONObject();
+        try {
 
-                Toast.makeText(ViewPatientProfile.this, response, Toast.LENGTH_LONG).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+            obj.put("fName", nameText);
+            obj.put("gender", genderText);
+            obj.put("birthDate", birthdateText);
+            obj.put("email", emailText);
+            obj.put("phoneNumber", phoneText);
+            obj.put("emergencyNumber", emergencyNoText);
+            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(final JSONObject response) {
 
-            }
-        });
+                    Patient p=new Gson().fromJson(response.toString(),Patient.class);
+                    nameText.setText(p.getFirstName());
+                    birthdateText.setText(p.getDateOfBirth());
+                    emailText.setText(p.getEmail());
+                    phoneText.setText(p.getPhoneNumber());
+                    emergencyNoText.setText(p.getEmergencyNumber());
+                    Toast.makeText(ViewPatientProfile.this, "View profile", Toast.LENGTH_SHORT).show();
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    Toast.makeText(ViewPatientProfile.this, "error", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
