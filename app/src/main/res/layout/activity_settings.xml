@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.Settings">
 
+    <ImageView
+        android:id="@+id/imageView40"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+
+        android:background="@color/material_drawer_background"
+        app:srcCompat="@mipmap/heartlogo"
+        android:layout_below="@+id/settingsToolbar"
+        android:layout_alignLeft="@+id/textViewSettingLanguage"
+        android:layout_alignStart="@+id/textViewSettingLanguage"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="52dp" />
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/settingsToolbar"
         style="@style/AppTheme.Toolbar"
@@ -22,23 +36,28 @@
         android:id="@+id/switchAsthma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="78dp"
-        android:layout_marginRight="78dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginRight="73dp"
         android:text="English"
+        android:textSize="18dp"
+        android:fontFamily="monospace"
+
         tools:text="العربية"
-        android:layout_below="@+id/settingsToolbar"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="241dp" />
 
     <TextView
         android:id="@+id/textViewSettingLanguage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:text="Language"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
+        android:layout_alignBottom="@+id/switchAsthma"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/switchAsthma"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
-        android:text="Language" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
