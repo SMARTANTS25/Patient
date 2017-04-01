@@ -11,8 +11,12 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        // k
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.settingsToolbar);
         toolbar.setTitle("Settings");
         toolbar.setNavigationIcon(R.mipmap.abplus);
+
+
     }
 }

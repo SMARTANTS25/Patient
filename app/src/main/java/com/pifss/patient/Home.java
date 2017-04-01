@@ -10,6 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -27,12 +34,15 @@ import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 
+    ArrayList<Doctor> model;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
         toolbar.setTitle("Home");
+        //
         //setSupportActionBar(toolbar);
 
         // MaterialDrawer Creation
@@ -112,36 +122,11 @@ public class Home extends AppCompatActivity {
 
         // Doctor List
 
-        final ArrayList<Doctor> model = new ArrayList<>();
-
-        Doctor d = new Doctor();
-
-        d.setFirstName("Ahmad");
-        d.setMiddleName("Ahmad");
-        d.setLastName("Ahmad");
-        d.setImageUrl("http://images.pocketgamer.co.uk/artwork/na-wrds/mario-2.png");
-        d.setSpecialityId("eye doctor");
-        d.setGender("f");
-
-        Doctor d2 = new Doctor();
-
-        d2.setFirstName("mahmod");
-        d2.setMiddleName("Ahmad");
-        d2.setLastName("Ahmad");
-        d2.setImageUrl("http://images.pocketgamer.co.uk/artwork/na-wrds/mario-2.png");
-        d2.setSpecialityId("eye doctor");
-        d2.setGender("m");
-
-        model.add(d);
-        model.add(d2);
+        updateModel();
 
 
-        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
+        ListView lv = (ListView) findViewById(R.id.HomeDoctorList);
 
-        DoctorAdapter adapter = new DoctorAdapter(model, this);
-
-
-        lv.setAdapter(adapter);
 
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -179,30 +164,9 @@ public class Home extends AppCompatActivity {
 
 
     private void initAdapterWithFilter(String filter) {
-        // Doctor List
-
-        final ArrayList<Doctor> model = new ArrayList<>();
-
-        Doctor d = new Doctor();
-
-        d.setFirstName("Ahmad");
-        d.setMiddleName("Ahmad");
-        d.setLastName("Ahmad");
-        d.setImageUrl("http://images.pocketgamer.co.uk/artwork/na-wrds/mario-2.png");
-        d.setSpecialityId("eye doctor");
-        d.setGender("f");
-
-        Doctor d2 = new Doctor();
-
-        d2.setFirstName("mahmod");
-        d2.setMiddleName("Ahmad");
-        d2.setLastName("Ahmad");
-        d2.setImageUrl("http://images.pocketgamer.co.uk/artwork/na-wrds/mario-2.png");
-        d2.setSpecialityId("eye doctor");
-        d2.setGender("f");
-
-        model.add(d);
-        model.add(d2);
+        if (model == null || model.size() <= 0) {
+            return;
+        }
 
         ArrayList<Doctor> parsedModel = new ArrayList<>();
 
@@ -215,7 +179,7 @@ public class Home extends AppCompatActivity {
         }
 
 
-        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
+        ListView lv = (ListView) findViewById(R.id.HomeDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(parsedModel, this);
 
@@ -229,11 +193,44 @@ public class Home extends AppCompatActivity {
 
                 Doctor m = model.get(position);
 
-                Toast.makeText(Home.this, m.getFirstName(), Toast.LENGTH_SHORT).show();
+                // move to doc profile
 
             }
         });
     }
 
+    private void updateModel () {
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor";
+
+
+        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(Home.this);
+
+        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        Toast.makeText(Home.this, response, Toast.LENGTH_LONG);
+                        model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
+
+                        ListView lv = (ListView) findViewById(R.id.HomeDoctorList);
+
+                        DoctorAdapter adapter = new DoctorAdapter(model, Home.this);
+
+                        lv.setAdapter(adapter);
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle error
+                        Toast.makeText(Home.this, error.getMessage(), Toast.LENGTH_LONG);
+                    }
+                });
+
+        queue.add(jsonReq);
+    }
 
 }

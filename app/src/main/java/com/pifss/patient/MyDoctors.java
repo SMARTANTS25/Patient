@@ -34,7 +34,6 @@ public class MyDoctors extends AppCompatActivity {
         toolbar.setTitle("My Doctors");
         toolbar.setNavigationIcon(R.mipmap.abplus);
         setSupportActionBar(toolbar);
-       // OMG PUSH
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -49,7 +48,7 @@ public class MyDoctors extends AppCompatActivity {
         updateModel();
 
 
-         lv = (ListView) findViewById(R.id.AllDoctorList);
+         lv = (ListView) findViewById(R.id.MyDoctorList);
 
 
 
@@ -79,7 +78,7 @@ public class MyDoctors extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
 
 
-                initAdapterWithFilter(newText.toLowerCase(), model);
+                initAdapterWithFilter(newText.toLowerCase());
 
                 return false;
             }
@@ -96,10 +95,10 @@ public class MyDoctors extends AppCompatActivity {
         });*/
     }
 
-    private void initAdapterWithFilter(String filter, ArrayList<Doctor> ar) {
-        // Doctor List
-
-        final ArrayList<Doctor> model = ar;
+    private void initAdapterWithFilter(String filter) {
+        if (model == null || model.size() <= 0) {
+            return;
+        }
 
         ArrayList<Doctor> parsedModel = new ArrayList<>();
 
@@ -112,7 +111,7 @@ public class MyDoctors extends AppCompatActivity {
         }
 
 
-        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
+        ListView lv = (ListView) findViewById(R.id.MyDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(parsedModel, this);
 
@@ -126,7 +125,7 @@ public class MyDoctors extends AppCompatActivity {
 
                 Doctor m = model.get(position);
 
-                Toast.makeText(MyDoctors.this, m.getFirstName(), Toast.LENGTH_SHORT).show();
+                // move to doc profile
 
             }
         });
