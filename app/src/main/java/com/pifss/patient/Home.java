@@ -42,6 +42,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.HomeToolbar);
         toolbar.setTitle("Home");
+        //
         //setSupportActionBar(toolbar);
 
         // MaterialDrawer Creation
