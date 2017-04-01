@@ -76,7 +76,7 @@ public class AllDoctors extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
 
 
-                initAdapterWithFilter(newText.toLowerCase(), model);
+                initAdapterWithFilter(newText.toLowerCase());
 
                 return false;
             }
@@ -84,10 +84,10 @@ public class AllDoctors extends AppCompatActivity {
 
     }
 
-    private void initAdapterWithFilter(String filter, ArrayList<Doctor> ar) {
-        // Doctor List
-
-        final ArrayList<Doctor> model = ar;
+    private void initAdapterWithFilter(String filter) {
+        if (model == null || model.size() <= 0) {
+            return;
+        }
 
         ArrayList<Doctor> parsedModel = new ArrayList<>();
 
@@ -114,11 +114,12 @@ public class AllDoctors extends AppCompatActivity {
 
                 Doctor m = model.get(position);
 
-                Toast.makeText(AllDoctors.this, m.getFirstName(), Toast.LENGTH_SHORT).show();
+                // move to doc profile
 
             }
         });
     }
+
 
     private void updateModel () {
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor";

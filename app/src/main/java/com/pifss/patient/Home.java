@@ -40,7 +40,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.HomeToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
         toolbar.setTitle("Home");
         //
         //setSupportActionBar(toolbar);
@@ -164,30 +164,9 @@ public class Home extends AppCompatActivity {
 
 
     private void initAdapterWithFilter(String filter) {
-        // Doctor List
-
-        final ArrayList<Doctor> model = new ArrayList<>();
-
-        Doctor d = new Doctor();
-
-        d.setFirstName("Ahmad");
-        d.setMiddleName("Ahmad");
-        d.setLastName("Ahmad");
-        d.setImageUrl("http://images.pocketgamer.co.uk/artwork/na-wrds/mario-2.png");
-        d.setSpecialityId("eye doctor");
-        d.setGender("f");
-
-        Doctor d2 = new Doctor();
-
-        d2.setFirstName("mahmod");
-        d2.setMiddleName("Ahmad");
-        d2.setLastName("Ahmad");
-        d2.setImageUrl("http://images.pocketgamer.co.uk/artwork/na-wrds/mario-2.png");
-        d2.setSpecialityId("eye doctor");
-        d2.setGender("f");
-
-        model.add(d);
-        model.add(d2);
+        if (model == null || model.size() <= 0) {
+            return;
+        }
 
         ArrayList<Doctor> parsedModel = new ArrayList<>();
 
@@ -200,7 +179,7 @@ public class Home extends AppCompatActivity {
         }
 
 
-        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
+        ListView lv = (ListView) findViewById(R.id.HomeDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(parsedModel, this);
 
@@ -214,7 +193,7 @@ public class Home extends AppCompatActivity {
 
                 Doctor m = model.get(position);
 
-                Toast.makeText(Home.this, m.getFirstName(), Toast.LENGTH_SHORT).show();
+                // move to doc profile
 
             }
         });
