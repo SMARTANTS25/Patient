@@ -131,9 +131,8 @@ public class AllDoctors extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        System.out.println(response);
+                        Toast.makeText(AllDoctors.this, response, Toast.LENGTH_LONG);
                         model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
-
 
                         ListView lv = (ListView) findViewById(R.id.AllDoctorList);
 
@@ -148,6 +147,7 @@ public class AllDoctors extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle error
+                        Toast.makeText(AllDoctors.this, error.getMessage(), Toast.LENGTH_LONG);
                     }
                 });
 
