@@ -17,7 +17,7 @@ public class AllDoctors extends AppCompatActivity {
 
 
 
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,7 @@ public class AllDoctors extends AppCompatActivity {
 
         final ArrayList<Doctor> model = new ArrayList<>();
 
+        
         Doctor d = new Doctor();
 
         d.setFirstName("Ahmad");
@@ -61,7 +62,7 @@ public class AllDoctors extends AppCompatActivity {
         model.add(d2);
 
 
-        ListView lv = (ListView) findViewById(R.id.MyDoctorList);
+        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(model, this);
 
@@ -119,7 +120,7 @@ public class AllDoctors extends AppCompatActivity {
         }
 
 
-        ListView lv = (ListView) findViewById(R.id.MyDoctorList);
+        ListView lv = (ListView) findViewById(R.id.AllDoctorList);
 
         DoctorAdapter adapter = new DoctorAdapter(parsedModel, this);
 
