@@ -136,7 +136,7 @@
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="14dp"
         android:text="@string/Reg3_Diabetes"
         android:textSize="18sp"
         android:fontFamily="monospace"
@@ -152,7 +152,15 @@
         android:layout_alignBottom="@+id/textView27"
         android:layout_alignLeft="@+id/bminImageButton"
         android:layout_alignStart="@+id/bminImageButton" />
+<android.support.v7.widget.FitWindowsLinearLayout
 
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+
+    android:layout_below="@id/textView27"
+    android:id="@+id/fitWindowsLinearLayout">
     <RadioButton
         android:id="@+id/NoDiabetesRB"
         android:layout_width="wrap_content"
@@ -161,34 +169,11 @@
         android:layout_below="@+id/imageView27"
         android:layout_toRightOf="@+id/imageView27"
         android:layout_toEndOf="@+id/imageView27"
-        android:layout_marginTop="11dp" />
-
-    <RadioButton
-        android:id="@+id/TypeOneDiabetesRB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg3_DiabetesTypeOne"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_alignBaseline="@+id/NoDiabetesRB"
-        android:layout_alignBottom="@+id/NoDiabetesRB"
-        android:layout_toRightOf="@+id/textView28"
-        android:layout_toEndOf="@+id/textView28" />
+        android:layout_marginTop="11dp"
+        android:onClick="onRadioButtonClicked" />
 
 
-    <RadioButton
-        android:id="@+id/TypeTwoDiabetesRB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TypeOneDiabetesRB"
-        android:layout_alignBottom="@+id/TypeOneDiabetesRB"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_toEndOf="@+id/TypeOneDiabetesRB"
-        android:layout_toRightOf="@+id/TypeOneDiabetesRB"
-        android:text="@string/Reg3_DiabetesTypeTwo" />
-
-
+</android.support.v7.widget.FitWindowsLinearLayout>
     <TextView
         android:id="@+id/textView28"
         android:layout_width="wrap_content"
@@ -196,19 +181,21 @@
         android:text="@string/PatientMedicalInfo_Asthma"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_marginTop="17dp"
-        android:layout_below="@+id/NoDiabetesRB"
-        android:layout_toRightOf="@+id/imageView28"
-        android:layout_toEndOf="@+id/imageView28" />
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/fitWindowsLinearLayout"
+        android:layout_alignLeft="@+id/textView27"
+        android:layout_alignStart="@+id/textView27" />
 
     <ImageView
         android:id="@+id/imageView28"
         android:layout_width="30dp"
         android:layout_height="25dp"
+        app:srcCompat="@mipmap/asthma_icon"
         android:layout_alignBottom="@+id/textView28"
-        android:layout_toLeftOf="@+id/NoDiabetesRB"
-        android:layout_toStartOf="@+id/NoDiabetesRB"
-        app:srcCompat="@mipmap/asthma_icon" />
+        android:layout_alignLeft="@+id/Reg_AllergiesET"
+        android:layout_alignStart="@+id/Reg_AllergiesET"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
 
 
     <Switch
@@ -313,8 +300,25 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <RadioButton
+        android:id="@+id/TypeTwoDiabetesRB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fitWindowsLinearLayout"
+        android:layout_toEndOf="@+id/ominImageButton"
+        android:layout_toRightOf="@+id/ominImageButton"
+        android:onClick="onRadioButtonClicked"
+        android:text="@string/Reg3_DiabetesTypeTwo" />
 
-
+    <RadioButton
+        android:id="@+id/TypeOneDiabetesRB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fitWindowsLinearLayout"
+        android:layout_toEndOf="@+id/textView27"
+        android:layout_toRightOf="@+id/textView27"
+        android:onClick="onRadioButtonClicked"
+        android:text="@string/Reg3_DiabetesTypeOne" />
 
 
 </RelativeLayout>
