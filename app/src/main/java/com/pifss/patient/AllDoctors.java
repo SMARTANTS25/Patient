@@ -57,7 +57,7 @@ public class AllDoctors extends AppCompatActivity {
 
                 Doctor m = model.get(position);
 
-                Intent intent = new Intent(getBaseContext(), NewDoctorProfile.class);
+                Intent intent = new Intent(AllDoctors.this, NewDoctorProfile.class);
                 intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
                 intent.putExtra("gender", m.getGender());
                 intent.putExtra("specialty", m.getSpecialityId());

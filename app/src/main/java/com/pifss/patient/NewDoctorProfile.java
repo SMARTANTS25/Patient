@@ -23,15 +23,15 @@ public class NewDoctorProfile extends AppCompatActivity {
 
 
 
-        ImageView imageViewDoctor = (ImageView) findViewById(R.id.imageViewDoctorLogo);
+        /*ImageView imageViewDoctor = (ImageView) findViewById(R.id.imageViewDoctorLogo);
         TextView textViewDocName = (TextView) findViewById(R.id.textViewDoctorName);
         TextView textViewEmail = (TextView) findViewById(R.id.textViewDoctorEmail);
         TextView textViewSpeciality = (TextView) findViewById(R.id.textViewDoctorSpeciality);
         TextView textViewNationality = (TextView) findViewById(R.id.textViewDoctorNationality);
         TextView textViewCV = (TextView) findViewById(R.id.textViewDoctorCV);
-        Button buttonRequest = (Button) findViewById(R.id.buttonSendDoctorRequest);
+        Button buttonRequest = (Button) findViewById(R.id.buttonSendDoctorRequest);*/
 
-        textViewDocName.setText(name);
+        //textViewDocName.setText(name);
 
 
 
