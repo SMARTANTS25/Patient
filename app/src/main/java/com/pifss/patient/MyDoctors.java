@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -58,7 +59,16 @@ public class MyDoctors extends AppCompatActivity {
 
                 Doctor m = model.get(position);
 
-                Toast.makeText(MyDoctors.this, m.getFirstName(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MyDoctors.this, MyDoctorProfile.class);
+                intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
+                intent.putExtra("gender", m.getGender());
+                intent.putExtra("specialty", m.getSpecialityId());
+                intent.putExtra("nationality", m.getNationality());
+                intent.putExtra("email", m.getEmail());
+                intent.putExtra("cvURL", m.getCvUrl());
+
+                startActivity(intent);
 
             }
         });
