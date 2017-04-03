@@ -43,6 +43,7 @@ public class RegistrationPage2 extends AppCompatActivity {
         final String emergencyNumValue = emergencyNumber.getText().toString();
           regButton = (Button) findViewById(R.id.BtnToMedicalReg);
 
+        
 //        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/";
 //        RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
 //
