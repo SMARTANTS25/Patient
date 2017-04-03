@@ -60,24 +60,27 @@
         android:id="@+id/textViewDocSpeciality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="41dp"
         android:text="@string/textView_DocSpeciality"
         android:textSize="18sp"
         android:fontFamily="monospace"
         android:layout_below="@+id/imageViewDoctorLogo"
-        android:layout_alignRight="@+id/textViewDocName"
-        android:layout_alignEnd="@+id/textViewDocName" />
+        android:layout_alignLeft="@+id/imageViewDoctorLogo"
+        android:layout_alignStart="@+id/imageViewDoctorLogo"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp" />
 
     <TextView
         android:id="@+id/textViewDoctorSpeciality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_alignLeft="@+id/textViewDocSpeciality"
-        android:layout_alignStart="@+id/textViewDocSpeciality"
-        android:layout_below="@+id/textViewDocSpeciality"
         android:textSize="14sp"
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textViewDocSpeciality"
+        android:layout_toRightOf="@+id/textViewDocCV"
+        android:layout_toEndOf="@+id/textViewDocCV" />
 
     <TextView
         android:id="@+id/textViewDocEmail"
@@ -96,11 +99,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_below="@+id/textViewDocEmail"
-        android:layout_alignLeft="@+id/textViewDoctorSpeciality"
-        android:layout_alignStart="@+id/textViewDoctorSpeciality"
         android:textSize="14sp"
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_below="@+id/imageView44"
+        android:layout_alignLeft="@+id/textViewDoctorSpeciality"
+        android:layout_alignStart="@+id/textViewDoctorSpeciality" />
 
     <TextView
         android:id="@+id/textViewDocNationality"
@@ -119,11 +122,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_below="@+id/textViewDocNationality"
-        android:layout_alignLeft="@+id/textViewDocNationality"
-        android:layout_alignStart="@+id/textViewDocNationality"
         android:textSize="14sp"
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_below="@+id/imageView45"
+        android:layout_toRightOf="@+id/textViewDocCV"
+        android:layout_toEndOf="@+id/textViewDocCV" />
 
     <TextView
         android:id="@+id/textViewDocCV"
@@ -142,11 +145,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_below="@+id/textViewDocCV"
-        android:layout_alignLeft="@+id/textViewDocCV"
-        android:layout_alignStart="@+id/textViewDocCV"
         android:textSize="14sp"
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_below="@+id/imageView46"
+        android:layout_toRightOf="@+id/textViewDocCV"
+        android:layout_toEndOf="@+id/textViewDocCV" />
 
     <Button
         android:id="@+id/buttonSendDoctorRequest"
@@ -169,41 +172,37 @@
         android:id="@+id/imageView43"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_above="@+id/textViewDocEmail"
-        android:layout_toLeftOf="@+id/textViewDocSpeciality"
-        android:layout_toStartOf="@+id/textViewDocSpeciality"
-        app:srcCompat="@mipmap/stethoscope" />
+        app:srcCompat="@mipmap/stethoscope"
+        android:layout_above="@+id/textViewDoctorSpeciality"
+        android:layout_alignLeft="@+id/imageViewDoctorLogo"
+        android:layout_alignStart="@+id/imageViewDoctorLogo" />
 
     <ImageView
         android:id="@+id/imageView44"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/email"
-        android:layout_above="@+id/textViewDocNationality"
-        android:layout_toLeftOf="@+id/textViewDocEmail"
-        android:layout_toStartOf="@+id/textViewDocEmail" />
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/imageView43"
+        android:layout_alignStart="@+id/imageView43" />
 
     <ImageView
         android:id="@+id/imageView45"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView44"
-        android:layout_alignStart="@+id/imageView44"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/imageView44"
+        android:layout_alignRight="@+id/imageView44"
         android:layout_alignTop="@+id/textViewDocNationality"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_above="@+id/textViewDocCV"
-        android:layout_toLeftOf="@+id/textViewDocNationality"
-        android:layout_toStartOf="@+id/textViewDocNationality" />
+        app:srcCompat="@mipmap/big_flag_icon" />
 
     <ImageView
         android:id="@+id/imageView46"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/imageView45"
+        android:layout_alignStart="@+id/imageView45"
         android:layout_alignTop="@+id/textViewDocCV"
-        android:layout_toStartOf="@+id/textViewDocCV"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignBottom="@+id/textViewDoctorCV"
-        android:layout_toLeftOf="@+id/textViewDocCV" />
+        app:srcCompat="@mipmap/medical_report_icon" />
 
 
 </RelativeLayout>

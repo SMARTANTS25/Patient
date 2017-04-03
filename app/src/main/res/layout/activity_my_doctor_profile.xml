@@ -177,10 +177,10 @@
         android:id="@+id/imageView52"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignLeft="@+id/imageView48"
-        android:layout_alignStart="@+id/imageView48"
+        app:srcCompat="@mipmap/big_flag_icon"
         android:layout_alignTop="@+id/textView34"
-        app:srcCompat="@mipmap/profile_icon" />
+        android:layout_alignLeft="@+id/imageView50"
+        android:layout_alignStart="@+id/imageView50" />
 
     <ImageView
         android:id="@+id/imageView53"
