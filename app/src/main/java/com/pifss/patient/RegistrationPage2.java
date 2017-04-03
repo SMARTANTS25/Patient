@@ -1,10 +1,12 @@
 package com.pifss.patient;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -37,47 +39,38 @@ public class RegistrationPage2 extends AppCompatActivity {
 
         final String fnameValue = fname.getText().toString();
         final String lnameValue = lname.getText().toString();
-        final String birthdateValue = birthDate.getText().toString();
+       // final String birthdateValue = birthDate.getText().toString();
         final String civilIdValue = birthDate.getText().toString();
         final String phoneValue = phone.getText().toString();
         final String emergencyNumValue = emergencyNumber.getText().toString();
           regButton = (Button) findViewById(R.id.BtnToMedicalReg);
 
-        
-//        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/";
-//        RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
-//
-//        JSONObject obj = new JSONObject();
-//        try {
-//            obj.put("", RegEmail);
-//            obj.put("", Regpassword);
-//            obj.put("fname", fnameValue);
-//            obj.put("lname", lnameValue);
-//            obj.put("birthDate" , birthdateValue);
-//            obj.put("civilId" , civilIdValue);
-//            obj.put("phone",phoneValue);
-//            obj.put("emergencyNumber", emergencyNumValue);
-//            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
-//                @Override
-//                public void onResponse(JSONObject response) {
-//
-//                    Toast.makeText(RegistrationPage2.this, response.toString(), Toast.LENGTH_SHORT).show();
-//
-//
-//                }
-//            }, new Response.ErrorListener() {
-//                @Override
-//                public void onErrorResponse(VolleyError error) {
-//
-//                    Toast.makeText(RegistrationPage2.this, error.toString(), Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+
+         final String birthdateV = "";
 
 
+        birthDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                DatePickerDialog d = new DatePickerDialog(RegistrationPage2.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+                      birthdateV.valueOf( year + "-" + month + "-" + dayOfMonth );
+
+
+                        Toast.makeText(RegistrationPage2.this, year + "/" + month + "/" + dayOfMonth, Toast.LENGTH_SHORT).show();
+
+                    }
+                }, 1995, 2, 23);
+
+                d.show();
+
+            }});
+
+        birthDate.setText(birthdateV);
+        Toast.makeText(this, birthDate.getText(), Toast.LENGTH_SHORT).show();
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,11 +90,10 @@ public class RegistrationPage2 extends AppCompatActivity {
 
                               i.putExtra(fnameValue, "firstName");
                               i.putExtra(lnameValue, "lastName");
-                              i.putExtra(birthdateValue, "birthDate");
+                              i.putExtra(birthdateV, "birthDate");
                               i.putExtra(civilIdValue, "civilID");
                               i.putExtra(phoneValue, "phoneNumber");
                               i.putExtra(emergencyNumValue, "emergencyNumber");
-
                               Toast.makeText(RegistrationPage2.this, "done with Reg2, Welcome to Reg3", Toast.LENGTH_SHORT).show();
                               startActivity(i);
                           }
@@ -128,10 +120,10 @@ public class RegistrationPage2 extends AppCompatActivity {
         } else if (lnameValue.isEmpty()) {
             invalid = false;
             Toast.makeText(getApplicationContext(), "Please enter your Lastname", Toast.LENGTH_SHORT).show();
-        } else if (birthdateValue.isEmpty()) {
-            invalid = false;
-            Toast.makeText(getApplicationContext(), "Please enter your Birth Date", Toast.LENGTH_SHORT).show();
-        } else if (civilIdValue.isEmpty()) {
+//        } else if (birthdateValue.isEmpty()) {
+//            invalid = false;
+//            //Toast.makeText(getApplicationContext(), "Please enter your Birth Date", Toast.LENGTH_SHORT).show();
+//        } else if (civilIdValue.isEmpty()) {
             invalid = false;
             Toast.makeText(getApplicationContext(), "Please enter your civil id", Toast.LENGTH_SHORT).show();
 

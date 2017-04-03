@@ -35,7 +35,7 @@ public class RegistrationPage3 extends AppCompatActivity {
 
         String RegEmail = getIntent().getStringExtra("email");
         String Regpassword = getIntent().getStringExtra("password");
-        String fname = getIntent().getStringExtra("firstName");
+        final String fname = getIntent().getStringExtra("firstName");
         String lname = getIntent().getStringExtra("lastName");
         String bDate = getIntent().getStringExtra("birthDate");
         String civilID = getIntent().getStringExtra("civilID");
@@ -176,7 +176,7 @@ public class RegistrationPage3 extends AppCompatActivity {
                         .commit();
 
                 Intent i=new Intent(RegistrationPage3.this, Home.class);
-                Toast.makeText(RegistrationPage3.this, "hello & you are done", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegistrationPage3.this, "hello & you are done" + fname, Toast.LENGTH_LONG).show();
                 startActivity(i);
             }
         });
