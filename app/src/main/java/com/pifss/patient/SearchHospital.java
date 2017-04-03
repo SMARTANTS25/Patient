@@ -16,9 +16,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.pifss.patient.Adapters.DoctorAdapter;
 import com.pifss.patient.Adapters.HospitalAdapter;
+import com.pifss.patient.utils.Doctor;
 
 import org.json.JSONObject;
 
@@ -26,6 +29,7 @@ import java.util.ArrayList;
 
 public class SearchHospital extends AppCompatActivity {
 
+    ArrayList<com.pifss.patient.Hospital> model;
     ListView lv;
     Location currentLocation = new Location("");
 
@@ -44,6 +48,23 @@ public class SearchHospital extends AppCompatActivity {
 
         SearchView svHospital = (SearchView) findViewById(R.id.searchViewHospital);
 
+        lv = (ListView) findViewById(R.id.hospitalListView);
+
+
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                com.pifss.patient.Hospital h = model.get(position);
+
+                Toast.makeText(SearchHospital.this, h.getHospitalName(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        updateModel();
+
 
         //      final ArrayList<Hospital> model = getHospitals();
 
@@ -60,9 +81,7 @@ public class SearchHospital extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
 
-//                ArrayList<String> model1 = new ArrayList<String>();
-//                model1.add(newText);
-                //  HospitalAdapter hospitalA = new HospitalAdapter(model1 , SearchHospital.this);
+                initAdapterWithFilter(newText);
 
 
                 return false;
@@ -88,67 +107,78 @@ public class SearchHospital extends AppCompatActivity {
 
 
 
-        final ArrayList<com.pifss.patient.Hospital> hospitals = new ArrayList<>();
+    }
 
+    private void initAdapterWithFilter(String filter) {
+        if (model == null || model.size() <= 0) {
+            return;
+        }
+
+        ArrayList<com.pifss.patient.Hospital> parsedModel = new ArrayList<>();
+
+        for (int i = 0; i < model.size(); i++) {
+            com.pifss.patient.Hospital curHospital = model.get(i);
+            String fullName = curHospital.getHospitalName();
+            if ( fullName.toLowerCase().contains(filter) ) {
+                parsedModel.add(curHospital);
+            }
+        }
+
+
+        ListView lv = (ListView) findViewById(R.id.hospitalListView);
+
+        HospitalAdapter adapter = new HospitalAdapter(parsedModel, this);
+
+
+        lv.setAdapter(adapter);
+
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                com.pifss.patient.Hospital m = model.get(position);
+
+                // move to doc profile
+
+            }
+        });
+    }
+
+
+    private void updateModel () {
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/hospital/";
 
 
-        final RequestQueue queue = MySingleton.getInstance().getRequestQueue(SearchHospital.this);
+        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(SearchHospital.this);
+
+        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        model = new Gson().fromJson(response, new TypeToken<ArrayList<com.pifss.patient.Hospital>>(){}.getType());
+
+                        ListView lv = (ListView) findViewById(R.id.hospitalListView);
+
+                        HospitalAdapter adapter = new HospitalAdapter(model, SearchHospital.this);
+
+                        lv.setAdapter(adapter);
 
 
-        final JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-
-
-
-
-                final ArrayList<com.pifss.patient.Hospital> hospitalsData = new Gson().fromJson(response.toString(), new TypeToken<ArrayList<com.pifss.patient.Hospital>>() {
-                }.getType());
-
-                HospitalAdapter hospitalAdapter = new HospitalAdapter(hospitalsData, SearchHospital.this);
-                lv.setAdapter(hospitalAdapter);
-
-                Toast.makeText(SearchHospital.this, response.toString(), Toast.LENGTH_SHORT).show();
-
-
-
-            }
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Toast.makeText(SearchHospital.this, error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle error
+                        Toast.makeText(SearchHospital.this, error.getMessage(), Toast.LENGTH_LONG);
+                    }
+                });
 
         queue.add(jsonReq);
-
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    public float distanceBetweenUserAndHospital(double latA, double longA) {
-        Location loc1 = new Location("");
-        loc1.setLatitude(latA);
-        loc1.setLongitude(longA);
-
-        return currentLocation.distanceTo(loc1);
-    }
 
 
 }

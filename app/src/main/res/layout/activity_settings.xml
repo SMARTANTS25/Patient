@@ -33,20 +33,20 @@
     </android.support.v7.widget.Toolbar>
 
     <Switch
-        android:id="@+id/switchAsthma"
+        android:id="@+id/switchLanguage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="241dp"
         android:layout_marginEnd="73dp"
+
         android:layout_marginRight="73dp"
+        android:fontFamily="monospace"
         android:text="English"
         android:textSize="18dp"
-        android:fontFamily="monospace"
-
-        tools:text="العربية"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="241dp" />
+        tools:text="العربية" />
 
     <TextView
         android:id="@+id/textViewSettingLanguage"
