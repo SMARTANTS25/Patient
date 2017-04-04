@@ -40,10 +40,15 @@ public class SearchHospital extends AppCompatActivity {
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarHospitalSearch);
-
         toolbar.setTitle("Hospitals");
 
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
         SearchView svHospital = (SearchView) findViewById(R.id.searchViewHospital);

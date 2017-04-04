@@ -3,6 +3,8 @@ package com.pifss.patient;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +15,17 @@ public class MyDoctorProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_doctor_profile);
+
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.);
+        toolbar.setTitle("Hospitals");
+
+        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });*/
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
