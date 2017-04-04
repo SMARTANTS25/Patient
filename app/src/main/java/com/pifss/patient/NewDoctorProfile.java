@@ -22,7 +22,7 @@ public class NewDoctorProfile extends AppCompatActivity {
         String cvURL = intent.getStringExtra("cvURL");
 
 
-
+        //
         /*ImageView imageViewDoctor = (ImageView) findViewById(R.id.imageViewDoctorLogo);
         TextView textViewDocName = (TextView) findViewById(R.id.textViewDoctorName);
         TextView textViewEmail = (TextView) findViewById(R.id.textViewDoctorEmail);
