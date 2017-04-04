@@ -1,21 +1,13 @@
 package com.pifss.patient;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,42 +34,61 @@ public class ViewPatientProfile extends AppCompatActivity {
         final TextView emergencyNoText=(TextView) findViewById(R.id.emergencyNoView);
 
 
-        String url="";
-        RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);
+//        String url="";
+//        RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);
+//
+//        JSONObject obj = new JSONObject();
+//        try {
+//
+//            obj.put("fName", nameText);
+//            obj.put("gender", genderText);
+//            obj.put("birthDate", birthdateText);
+//            obj.put("email", emailText);
+//            obj.put("phoneNumber", phoneText);
+//            obj.put("emergencyNumber", emergencyNoText);
+//            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
+//                @Override
+//                public void onResponse(final JSONObject response) {
+//
+//                    Patient p=new Gson().fromJson(response.toString(),Patient.class);
+//                    nameText.setText(p.getFirstName());
+//                    birthdateText.setText(p.getDateOfBirth());
+//                    emailText.setText(p.getEmail());
+//                    phoneText.setText(p.getPhoneNumber());
+//                    emergencyNoText.setText(p.getEmergencyNumber());
+//                    Toast.makeText(ViewPatientProfile.this, "View profile", Toast.LENGTH_SHORT).show();
+//
+//
+//                }
+//            }, new Response.ErrorListener() {
+//                @Override
+//                public void onErrorResponse(VolleyError error) {
+//
+//                    Toast.makeText(ViewPatientProfile.this, "error", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
-        JSONObject obj = new JSONObject();
+        String movieSTR=getSharedPreferences("PatientData",MODE_PRIVATE).getString("Patient"," ");
+
+        // Step 2 converting String to Json Object
+
         try {
+            JSONObject obj=new JSONObject(movieSTR);
 
-            obj.put("fName", nameText);
-            obj.put("gender", genderText);
-            obj.put("birthDate", birthdateText);
-            obj.put("email", emailText);
-            obj.put("phoneNumber", phoneText);
-            obj.put("emergencyNumber", emergencyNoText);
-            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(final JSONObject response) {
+            String fname=obj.getString("fname");
 
-                    Patient p=new Gson().fromJson(response.toString(),Patient.class);
-                    nameText.setText(p.getFirstName());
-                    birthdateText.setText(p.getDateOfBirth());
-                    emailText.setText(p.getEmail());
-                    phoneText.setText(p.getPhoneNumber());
-                    emergencyNoText.setText(p.getEmergencyNumber());
-                    Toast.makeText(ViewPatientProfile.this, "View profile", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ViewPatientProfile.this, "the patient name: "+fname, Toast.LENGTH_SHORT).show();
 
-
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                    Toast.makeText(ViewPatientProfile.this, "error", Toast.LENGTH_SHORT).show();
-                }
-            });
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
+
+
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
