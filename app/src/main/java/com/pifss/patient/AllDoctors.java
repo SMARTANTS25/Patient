@@ -33,7 +33,7 @@ public class AllDoctors extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
         toolbar.setTitle("All Doctors");
         //setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.mipmap.aplus);
+        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

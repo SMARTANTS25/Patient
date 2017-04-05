@@ -45,13 +45,13 @@
         android:layout_toEndOf="@+id/imageViewHospital" />
 
     <TextView
-        android:id="@+id/textViewDescription"
+        android:id="@+id/textViewDistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:layout_below="@+id/textViewHospitalTitle"
-        android:layout_toRightOf="@+id/textViewYear"
-        android:layout_toEndOf="@+id/textViewYear"
+        android:layout_toRightOf="@+id/textViewType"
+        android:layout_toEndOf="@+id/textViewType"
         android:layout_marginLeft="55dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="39dp"
@@ -59,13 +59,13 @@
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/textViewYear"
+        android:id="@+id/textViewType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:fontFamily="monospace"
         android:textSize="18sp"
-        android:layout_alignTop="@+id/textViewDescription"
+        android:layout_alignTop="@+id/textViewDistance"
         android:layout_alignLeft="@+id/textViewHospitalTitle"
         android:layout_alignStart="@+id/textViewHospitalTitle" />
 </RelativeLayout>

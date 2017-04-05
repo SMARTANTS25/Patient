@@ -23,7 +23,7 @@ public class Settings extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.settingsToolbar);
         toolbar.setTitle("Settings");
-        toolbar.setNavigationIcon(R.mipmap.abplus);
+        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

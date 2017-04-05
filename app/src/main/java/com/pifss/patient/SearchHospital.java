@@ -40,10 +40,15 @@ public class SearchHospital extends AppCompatActivity {
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarHospitalSearch);
-
         toolbar.setTitle("Hospitals");
 
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
         SearchView svHospital = (SearchView) findViewById(R.id.searchViewHospital);
@@ -65,8 +70,7 @@ public class SearchHospital extends AppCompatActivity {
 
         updateModel();
 
-
-        //      final ArrayList<Hospital> model = getHospitals();
+        //R.id.textViewHospitalAddress
 
 
         //  Hospital hospital = new Hospital("aa@aa", "kuwait kuwait","this is the hospital we are looking for","21212", "alfrwania","55656565","www.waleed.wees","24/7","bone","22.4","43.1","1");

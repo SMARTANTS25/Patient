@@ -57,8 +57,8 @@ public class HospitalAdapter extends BaseAdapter {
 
         //ImageView imgHospitsl= (ImageView) view.findViewById(R.id.imageViewHospital);
         TextView tvHospitalTitle = (TextView) view.findViewById(R.id.textViewHospitalTitle);
-        TextView tvHospitalDescription = (TextView) view.findViewById(R.id.textViewDescription);
-        TextView tvHospitalEmail = (TextView) view.findViewById(R.id.textViewYear);
+        TextView tvHospitalDescription = (TextView) view.findViewById(R.id.textViewDistance);
+        TextView tvHospitalEmail = (TextView) view.findViewById(R.id.textViewType);
 
         Hospital pos = model.get(position);
 
