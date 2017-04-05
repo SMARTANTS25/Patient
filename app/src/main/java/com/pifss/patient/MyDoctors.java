@@ -67,6 +67,7 @@ public class MyDoctors extends AppCompatActivity {
                 intent.putExtra("nationality", m.getNationality());
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
+                intent.putExtra("imageURL", m.getImageUrl());
 
                 startActivity(intent);
 

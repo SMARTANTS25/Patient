@@ -1,6 +1,7 @@
 package com.pifss.patient.Adapters;
 
 import android.app.Activity;
+import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import com.pifss.patient.Hospital;
 import com.pifss.patient.R;
+import com.pifss.patient.SearchHospital;
+import com.pifss.patient.utils.LocationHelper;
 
 import java.util.ArrayList;
 
@@ -57,17 +60,25 @@ public class HospitalAdapter extends BaseAdapter {
 
         //ImageView imgHospitsl= (ImageView) view.findViewById(R.id.imageViewHospital);
         TextView tvHospitalTitle = (TextView) view.findViewById(R.id.textViewHospitalTitle);
-        TextView tvHospitalDescription = (TextView) view.findViewById(R.id.textViewDistance);
-        TextView tvHospitalEmail = (TextView) view.findViewById(R.id.textViewType);
+        TextView tvHospitalDistance = (TextView) view.findViewById(R.id.textViewDistance);
+        TextView tvHospitalType = (TextView) view.findViewById(R.id.textViewType);
 
         Hospital pos = model.get(position);
 
 
         //imgHospitsl.setImageResource(pos.getLogoUrl());
 
+        LocationHelper helper = new LocationHelper(context);
+
+        float latitude = Float.valueOf(pos.getHospitalAlt());
+        float longitude = Float.valueOf(pos.getHospitalLang());
+
+        float distance = helper.distanceBetweenUserAndHospital(latitude, longitude);
+
         tvHospitalTitle.setText(pos.getHospitalName());
-        tvHospitalDescription.setText(pos.getExtraInfo());
-        tvHospitalEmail.setText(pos.getEmail());
+        tvHospitalDistance.setText(String.valueOf(distance));
+        tvHospitalType.setText(pos.getType());
+
 
         return view;
     }
