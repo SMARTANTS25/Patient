@@ -71,9 +71,6 @@ public class SearchHospital extends AppCompatActivity {
         updateModel();
 
 
-        //      final ArrayList<Hospital> model = getHospitals();
-
-
         //  Hospital hospital = new Hospital("aa@aa", "kuwait kuwait","this is the hospital we are looking for","21212", "alfrwania","55656565","www.waleed.wees","24/7","bone","22.4","43.1","1");
 
 
