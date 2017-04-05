@@ -26,6 +26,7 @@ public class RegistrationPage2 extends AppCompatActivity {
         setContentView(R.layout.activity_registration_page2);
 
 
+        
 
 
 
