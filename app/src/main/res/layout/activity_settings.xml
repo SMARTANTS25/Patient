@@ -52,12 +52,12 @@
         android:id="@+id/textViewSettingLanguage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginStart="64dp"
         android:text="Language"
         android:fontFamily="monospace"
         android:textSize="18dp"
-        android:layout_alignBottom="@+id/switchAsthma"
+        android:layout_alignBottom="@+id/switchLanguage"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
