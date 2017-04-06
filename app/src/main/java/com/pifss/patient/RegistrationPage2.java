@@ -26,7 +26,7 @@ public class RegistrationPage2 extends AppCompatActivity {
         setContentView(R.layout.activity_registration_page2);
 
 
-        
+
 
 
 
@@ -38,12 +38,12 @@ public class RegistrationPage2 extends AppCompatActivity {
         emergencyNumber= (EditText) findViewById(R.id.Reg_EmergencyNumberTF);
 
 
-        final String fnameValue = fname.getText().toString();
-        final String lnameValue = lname.getText().toString();
-       // final String birthdateValue = birthDate.getText().toString();
-        final String civilIdValue = birthDate.getText().toString();
-        final String phoneValue = phone.getText().toString();
-        final String emergencyNumValue = emergencyNumber.getText().toString();
+//        final String fnameValue = fname.getText().toString();
+//        final String lnameValue = lname.getText().toString();
+//       // final String birthdateValue = birthDate.getText().toString();
+//        final String civilIdValue = birthDate.getText().toString();
+//        final String phoneValue = phone.getText().toString();
+//        final String emergencyNumValue = emergencyNumber.getText().toString();
           regButton = (Button) findViewById(R.id.BtnToMedicalReg);
 
 
@@ -61,7 +61,7 @@ public class RegistrationPage2 extends AppCompatActivity {
                       birthdateV.valueOf( year + "-" + month + "-" + dayOfMonth );
 
 
-                        Toast.makeText(RegistrationPage2.this, year + "/" + month + "/" + dayOfMonth, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrationPage2.this, year + "-" + month + "-" + dayOfMonth, Toast.LENGTH_SHORT).show();
 
                     }
                 }, 1995, 2, 23);
@@ -76,6 +76,8 @@ public class RegistrationPage2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Toast.makeText(RegistrationPage2.this, fname.getText()+" "+lname.getText(), Toast.LENGTH_SHORT).show();
+
 //            case R.id.canc:
 //                Intent i = new Intent(getBaseContext(), LoginActivity.class);
 //                startActivity(i);
@@ -89,12 +91,12 @@ public class RegistrationPage2 extends AppCompatActivity {
                            else {
                               Intent i = new Intent(RegistrationPage2.this, RegistrationPage3.class);
 
-                              i.putExtra(fnameValue, "firstName");
-                              i.putExtra(lnameValue, "lastName");
+                              i.putExtra(String.valueOf(fname.getText()), "firstName");
+                              i.putExtra(String.valueOf(lname.getText()), "lastName");
                               i.putExtra(birthdateV, "birthDate");
-                              i.putExtra(civilIdValue, "civilID");
-                              i.putExtra(phoneValue, "phoneNumber");
-                              i.putExtra(emergencyNumValue, "emergencyNumber");
+                              i.putExtra(String.valueOf(civilId.getText()), "civilID");
+                              i.putExtra(String.valueOf(phone.getText()), "phoneNumber");
+                              i.putExtra(String.valueOf(emergencyNumber.getText()), "emergencyNumber");
                               Toast.makeText(RegistrationPage2.this, "done with Reg2, Welcome to Reg3", Toast.LENGTH_SHORT).show();
                               startActivity(i);
                           }
