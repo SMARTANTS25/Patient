@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -45,6 +46,14 @@ public class Home extends AppCompatActivity {
         //
         //setSupportActionBar(toolbar);
 
+        // Get Patient data
+
+        SharedPreferences sharedpreferences = getSharedPreferences("patient", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        // put info (shared preferences
+        String username = sharedpreferences.getString("username", "ERROR");
+        String firstName = sharedpreferences.getString("firstName", "ERROR");
+
         // MaterialDrawer Creation
 
         int myDoctorsAmount = 1;
@@ -62,7 +71,7 @@ public class Home extends AppCompatActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.mipmap.navigation_drawer_icon)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("PatientName").withTextColor(Color.BLUE).withEmail("mikepenz@gmail.com")
+                        new ProfileDrawerItem().withName(firstName).withTextColor(Color.BLUE).withEmail("mikepenz@gmail.com")
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override

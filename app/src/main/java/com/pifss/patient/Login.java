@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +29,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-       final Button login = (Button) findViewById(R.id.loginButton);
+        final Button login = (Button) findViewById(R.id.loginButton);
         final EditText emailText = (EditText) findViewById(R.id.loginEmailText);
         final EditText passwordText = (EditText) findViewById(R.id.passwordLoginText);
         TextView signup = (TextView) findViewById(R.id.signupTextView);
@@ -86,10 +88,10 @@ public class Login extends AppCompatActivity {
 
     }
 
-    private void login(String emailText, String passwordText) {
+    private void login(final String emailText, String passwordText) {
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login/";
         RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
-        System.out.println("Start Omar");
+
         JSONObject obj = new JSONObject();
         try {
             obj.put("username", emailText);
@@ -97,9 +99,20 @@ public class Login extends AppCompatActivity {
             JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(final JSONObject response) {
+                    Toast.makeText(Login.this, "response received (login)", Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(Login.this, "inaha al 5od3a", Toast.LENGTH_SHORT).show();
+                    SharedPreferences sharedpreferences = getSharedPreferences("patient", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    // put info (shared preferences
+                    Patient p = new Gson().fromJson(response.toString(), Patient.class);
+                    editor.putString("username", p.getEmail());
+                    editor.putString("firstName", p.getFirstName());
+                    editor.putString("middleName", p.getMiddleName());
+                    editor.putString("lastName", p.getLastName());
+                    editor.commit();
 
+                    Intent intent = new Intent(Login.this, Home.class);
+                    startActivity(intent);
 
                 }
             }, new Response.ErrorListener() {
