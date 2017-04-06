@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class MyDoctorProfile extends AppCompatActivity {
 
     @Override
@@ -16,8 +18,8 @@ public class MyDoctorProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_doctor_profile);
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.);
-        toolbar.setTitle("Hospitals");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.MyDoctorProfile_toolbar);
+
 
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -25,7 +27,7 @@ public class MyDoctorProfile extends AppCompatActivity {
             public void onClick(View view) {
                 finish();
             }
-        });*/
+        });
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
@@ -33,17 +35,29 @@ public class MyDoctorProfile extends AppCompatActivity {
         String nationality = intent.getStringExtra("nationality");
         String email = intent.getStringExtra("email");
         String cvURL = intent.getStringExtra("cvURL");
+        String specialty = intent.getStringExtra("specialty");
+        String profileImg = intent.getStringExtra("imageURL");
 
-        /*ImageView imageViewDoctor = (ImageView) findViewById(R.id.imageViewDoctorLogo);
-        TextView textViewDocName = (TextView) findViewById(R.id.textViewDoctorName);
-        TextView textViewEmail = (TextView) findViewById(R.id.textViewDoctorEmail);
-        TextView textViewSpeciality = (TextView) findViewById(R.id.textViewDoctorSpeciality);
-        TextView textViewNationality = (TextView) findViewById(R.id.textViewDoctorNationality);
-        TextView textViewCV = (TextView) findViewById(R.id.textViewDoctorCV);
-        Button buttonRequest = (Button) findViewById(R.id.buttonSendDoctorRequest);*/
+        toolbar.setTitle(name);
 
-        TextView textViewDocName = (TextView) findViewById(R.id.textView17);
+        ImageView imageViewDoctor = (ImageView) findViewById(R.id.MyDoctorProfile_doctorImage);
+        TextView textViewDocName = (TextView) findViewById(R.id.MyDoctorProfile_doctorName);
+        TextView textViewEmail = (TextView) findViewById(R.id.MyDoctorProfile_doctorEmail);
+        TextView textViewSpeciality = (TextView) findViewById(R.id.MyDoctorProfile_doctorSpecialty);
+        TextView textViewNationality = (TextView) findViewById(R.id.MyDoctorProfile_doctorNationality);
+        TextView textViewCV = (TextView) findViewById(R.id.MyDoctorProfile_doctorCVUrl);
+        //Button buttonRequest = (Button) findViewById(R.id.buttonSendDoctorRequest);
+
 
         textViewDocName.setText(name);
+        textViewCV.setText(cvURL);
+        textViewEmail.setText(email);
+        textViewNationality.setText(nationality);
+        textViewSpeciality.setText(specialty);
+
+        if (profileImg != null && profileImg.length() >= 1 ) {
+            Picasso.with(this).load(profileImg).into(imageViewDoctor);
+        }
+
     }
 }
