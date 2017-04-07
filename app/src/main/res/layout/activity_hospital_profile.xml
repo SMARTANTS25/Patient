@@ -154,7 +154,7 @@
         android:text="@string/textView_HosAddress" />
 
     <TextView
-        android:id="@+id/HospitalProfile_AddressTV"
+        android:id="@+id/ViewMedicalInfo_AsthmaTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
@@ -172,7 +172,7 @@
         android:fontFamily="monospace"
         android:layout_alignLeft="@+id/HospitalProfile_AddressTitle"
         android:layout_alignStart="@+id/HospitalProfile_AddressTitle"
-        android:layout_below="@+id/HospitalProfile_AddressTV"
+        android:layout_below="@+id/ViewMedicalInfo_AsthmaTitle"
         android:layout_marginTop="33dp"
         android:text="@string/textView_HosEmail" />
 

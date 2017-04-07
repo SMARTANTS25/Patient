@@ -173,7 +173,7 @@
         android:layout_alignParentEnd="true" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/SendReport_DoctorImage"
         android:layout_width="30dp"
         android:layout_height="25dp"
         app:srcCompat="@mipmap/medicine_icon"
@@ -187,8 +187,8 @@
         android:layout_height="25dp"
         app:srcCompat="@mipmap/blood_drop_icon"
         android:layout_above="@+id/bloodtypeEditText"
-        android:layout_alignLeft="@+id/imageView10"
-        android:layout_alignStart="@+id/imageView10" />
+        android:layout_alignLeft="@+id/SendReport_DoctorImage"
+        android:layout_alignStart="@+id/SendReport_DoctorImage" />
 
     <ImageView
         android:id="@+id/imageView15"

@@ -81,9 +81,9 @@
         android:textSize="18dp"
         android:inputType="textPersonName"
         android:text="14/2/2012"
-        android:layout_below="@+id/editPatientProfile_birthDateTV"
-        android:layout_alignLeft="@+id/editPatientProfile_birthDateTV"
-        android:layout_alignStart="@+id/editPatientProfile_birthDateTV" />
+        android:layout_below="@+id/Reg2_PhoneNumberTitle"
+        android:layout_alignLeft="@+id/Reg2_PhoneNumberTitle"
+        android:layout_alignStart="@+id/Reg2_PhoneNumberTitle" />
 
     <EditText
         android:id="@+id/editPatientProfile_emailEditText"
@@ -112,7 +112,7 @@
         android:layout_alignStart="@+id/editPatientInfo_Img" />
 
     <TextView
-        android:id="@+id/editPatientProfile_birthDateTV"
+        android:id="@+id/Reg2_PhoneNumberTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -229,7 +229,7 @@
         android:layout_width="30dp"
         android:layout_height="25dp"
         android:layout_below="@+id/editPatientProfile_genderEditText"
-        android:layout_toLeftOf="@+id/editPatientProfile_birthDateTV"
+        android:layout_toLeftOf="@+id/Reg2_PhoneNumberTitle"
         app:srcCompat="@mipmap/calender"
         android:layout_alignLeft="@+id/imageView22"
         android:layout_alignStart="@+id/imageView22" />

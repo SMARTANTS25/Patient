@@ -19,7 +19,7 @@
     </android.support.v7.widget.Toolbar>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/ViewPatientProfile_GenderTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg2_FirstName"
@@ -37,8 +37,8 @@
 
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignBaseline="@+id/ViewPatientProfile_GenderTitle"
+        android:layout_alignBottom="@+id/ViewPatientProfile_GenderTitle"
         android:layout_toRightOf="@+id/imageView9"
         android:layout_toEndOf="@+id/imageView9" />
 
@@ -49,8 +49,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_below="@+id/textView3"
-        android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8" />
+        android:layout_toRightOf="@+id/Reg2_PhoneNumberTitle"
+        android:layout_toEndOf="@+id/Reg2_PhoneNumberTitle" />
 
     <EditText
         android:id="@+id/Reg_FirstNameTF"
@@ -58,12 +58,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/ViewPatientProfile_GenderTitle"
         android:layout_alignLeft="@+id/imageView5"
         android:layout_alignStart="@+id/imageView5" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/ViewPatientProfile_BirthDateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
@@ -80,14 +80,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/ViewPatientProfile_BirthDateTitle"
         android:layout_alignLeft="@+id/imageView4"
         android:layout_alignStart="@+id/imageView4"
         android:layout_alignRight="@+id/Reg_BirthDateTF"
         android:layout_alignEnd="@+id/Reg_BirthDateTF" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/ViewMedicalInfo_BloodTypeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -105,14 +105,14 @@
         android:ems="10"
         android:inputType="date"
         android:hint="dd/mm/yyyy"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/ViewMedicalInfo_BloodTypeTitle"
         android:layout_alignLeft="@+id/imageView6"
         android:layout_alignStart="@+id/imageView6"
-        android:layout_alignRight="@+id/Reg_PhoneNumberTF"
-        android:layout_alignEnd="@+id/Reg_PhoneNumberTF" />
+        android:layout_alignRight="@+id/Reg2_PhoneNumberTF"
+        android:layout_alignEnd="@+id/Reg2_PhoneNumberTF" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/Reg2_PhoneNumberTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -120,40 +120,40 @@
         android:textSize="18sp"
         android:fontFamily="monospace"
         android:layout_below="@+id/Reg_BirthDateTF"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
+        android:layout_alignLeft="@+id/Reg2_PhoneNumberTitle"
+        android:layout_alignStart="@+id/Reg2_PhoneNumberTitle" />
 
     <EditText
-        android:id="@+id/Reg_PhoneNumberTF"
+        android:id="@+id/Reg2_PhoneNumberTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"
-        android:layout_below="@+id/textView7"
+        android:layout_below="@+id/Reg2_PhoneNumberTitle"
         android:layout_alignLeft="@+id/imageView6"
         android:layout_alignStart="@+id/imageView6"
-        android:layout_alignRight="@+id/Reg_EmergencyNumberTF"
-        android:layout_alignEnd="@+id/Reg_EmergencyNumberTF" />
+        android:layout_alignRight="@+id/Reg2_EmergencyNumberTF"
+        android:layout_alignEnd="@+id/Reg2_EmergencyNumberTF" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/Reg2_PhoneNumberTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:text="Emergency Phone"
         android:textSize="18sp"
-        android:layout_below="@+id/Reg_PhoneNumberTF"
+        android:layout_below="@+id/Reg2_PhoneNumberTF"
         android:layout_toRightOf="@+id/imageView7"
         android:layout_toEndOf="@+id/imageView7"
         android:layout_marginTop="19dp" />
 
     <EditText
-        android:id="@+id/Reg_EmergencyNumberTF"
+        android:id="@+id/Reg2_EmergencyNumberTF"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"
-        android:layout_below="@+id/textView8"
+        android:layout_below="@+id/Reg2_PhoneNumberTitle"
         android:layout_centerHorizontal="true" />
 
     <ImageView
@@ -170,7 +170,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/calender"
-        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignBottom="@+id/ViewMedicalInfo_BloodTypeTitle"
         android:layout_alignLeft="@+id/Reg_BirthDateTF"
         android:layout_alignStart="@+id/Reg_BirthDateTF" />
 
@@ -179,19 +179,18 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/phone_icon"
-        android:layout_alignBottom="@+id/textView7"
-        android:layout_toLeftOf="@+id/textView7"
-        android:layout_toStartOf="@+id/textView7" />
+        android:layout_alignBottom="@+id/Reg2_PhoneNumberTitle"
+        android:layout_toLeftOf="@+id/Reg2_PhoneNumberTitle"
+        android:layout_toStartOf="@+id/Reg2_PhoneNumberTitle" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/emergencynum"
-        android:layout_marginTop="33dp"
-        android:layout_below="@+id/Reg_PhoneNumberTF"
-        android:layout_alignLeft="@+id/Reg_EmergencyNumberTF"
-        android:layout_alignStart="@+id/Reg_EmergencyNumberTF" />
+        android:layout_alignTop="@+id/Reg2_PhoneNumberTitle"
+        android:layout_alignLeft="@+id/Reg2_EmergencyNumberTF"
+        android:layout_alignStart="@+id/Reg2_EmergencyNumberTF" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -213,19 +212,19 @@
         android:layout_alignStart="@+id/Reg_LastNameTF" />
 
     <Button
-        android:id="@+id/BtnToMedicalReg"
+        android:id="@+id/Reg2_NextButton"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:background="@color/Buttons"
-        android:text="@string/Reg1_Btn"
-        android:fontFamily="monospace"
-        android:textSize="18sp"
-        android:textColor="@color/md_white_1000"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:background="@color/Buttons"
+        android:fontFamily="monospace"
+        android:text="@string/Reg1_Btn"
+        android:textColor="@color/md_white_1000"
+        android:textSize="18sp" />
 
 
 

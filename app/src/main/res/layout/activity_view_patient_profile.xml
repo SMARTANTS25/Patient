@@ -19,34 +19,34 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/profileImgView"
+        android:id="@+id/ViewPatientProfile_PatientImage"
         android:layout_width="100dp"
         android:layout_height="75dp"
         android:layout_marginLeft="19dp"
         android:layout_marginStart="19dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignBottom="@+id/editPersonalInfoButton"
+        android:layout_below="@+id/toolbar7"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/profilePatientNameText"
+        android:id="@+id/ViewPatientProfile_PatientNameTV"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="18dp"
         android:layout_below="@+id/toolbar7"
-        android:layout_toRightOf="@+id/birthdateViewText"
-        android:layout_toEndOf="@+id/birthdateViewText"
+        android:layout_toRightOf="@+id/ViewPatientProfile_BirthDateVT"
+        android:layout_toEndOf="@+id/ViewPatientProfile_BirthDateVT"
         android:layout_marginTop="12dp" />
 
     <Button
-        android:id="@+id/editPersonalInfoButton"
-        android:layout_width="match_parent"
+        android:id="@+id/ViewPatientProfile_editPersonalInfoButton"
+        android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/profilePatientNameText"
-        android:layout_alignStart="@+id/profilePatientNameText"
-        android:layout_below="@+id/profilePatientNameText"
+        android:layout_below="@+id/ViewPatientProfile_PatientNameTV"
+        android:layout_toEndOf="@+id/ViewPatientProfile_PatientImage"
+        android:layout_toRightOf="@+id/ViewPatientProfile_PatientImage"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
         android:text="@string/PatientProfile_EditProfile"
@@ -55,7 +55,7 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/ViewPatientProfile_GenderTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/RegGender_RadioButton"
@@ -65,115 +65,116 @@
         android:layout_toEndOf="@+id/imageView36" />
 
     <TextView
-        android:id="@+id/genderViewText"
+        android:id="@+id/ViewPatientProfile_GenderVT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/MaleReg_RadioButton"
         android:textSize="18sp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_below="@+id/ViewPatientProfile_GenderTitle"
+        android:layout_alignLeft="@+id/ViewPatientProfile_GenderTitle"
+        android:layout_alignStart="@+id/ViewPatientProfile_GenderTitle" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/ViewPatientProfile_BirthDateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg2_BirthDate"
         android:textSize="18dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/genderViewText"
+        android:layout_below="@+id/ViewPatientProfile_GenderVT"
         android:layout_toRightOf="@+id/imageView37"
         android:layout_toEndOf="@+id/imageView37" />
 
     <TextView
-        android:id="@+id/birthdateViewText"
+        android:id="@+id/ViewPatientProfile_BirthDateVT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="14/2/2012"
         android:textSize="18dp"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/ViewPatientProfile_BirthDateTitle"
         android:layout_toRightOf="@+id/imageView37" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/ViewPatientProfile_EmailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:text="@string/textView_DocEmail"
-        android:layout_below="@+id/birthdateViewText"
-        android:layout_alignLeft="@+id/birthdateViewText"
-        android:layout_alignStart="@+id/birthdateViewText"
+        android:layout_below="@+id/ViewPatientProfile_BirthDateVT"
+        android:layout_alignLeft="@+id/ViewPatientProfile_BirthDateVT"
+        android:layout_alignStart="@+id/ViewPatientProfile_BirthDateVT"
         android:layout_marginTop="14dp" />
 
     <TextView
-        android:id="@+id/emailViewText"
+        android:id="@+id/ViewPatientProfile_emailVT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="test@gmail.com"
         android:textSize="20dp"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/ViewPatientProfile_EmailTitle"
         android:layout_toRightOf="@+id/imageView38"
         android:layout_toEndOf="@+id/imageView38" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/Reg2_PhoneNumberTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg2_Phone"
         android:textSize="18dp"
         android:layout_marginTop="16dp"
-        android:layout_below="@+id/emailViewText"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6" />
+        android:layout_below="@+id/ViewPatientProfile_emailVT"
+        android:layout_alignLeft="@+id/ViewPatientProfile_EmailTitle"
+        android:layout_alignStart="@+id/ViewPatientProfile_EmailTitle" />
 
     <TextView
-        android:id="@+id/phoneViewText"
+        android:id="@+id/ViewPatientProfile_phoneVT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:text="66666666"
-        android:layout_below="@+id/textView8"
-        android:layout_alignLeft="@+id/textView10"
-        android:layout_alignStart="@+id/textView10" />
+        android:layout_below="@+id/Reg2_PhoneNumberTitle"
+        android:layout_alignLeft="@+id/ViewPatientProfile_EmergencyPhoneTitle"
+        android:layout_alignStart="@+id/ViewPatientProfile_EmergencyPhoneTitle" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/ViewPatientProfile_EmergencyPhoneTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
 
         android:text="@string/Reg2_EmergencyPhone"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/phoneViewText"
-        android:layout_alignRight="@+id/emailViewText"
-        android:layout_alignEnd="@+id/emailViewText" />
+        android:layout_below="@+id/ViewPatientProfile_phoneVT"
+        android:layout_alignRight="@+id/ViewPatientProfile_emailVT"
+        android:layout_alignEnd="@+id/ViewPatientProfile_emailVT" />
 
     <TextView
-        android:id="@+id/emergencyNoView"
+        android:id="@+id/ViewPatientProfile_emergencyNumberTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:layout_alignEnd="@+id/ViewPatientProfile_BirthDateVT"
+        android:layout_alignRight="@+id/ViewPatientProfile_BirthDateVT"
+        android:layout_below="@+id/ViewPatientProfile_EmergencyPhoneTitle"
         android:text="77777777"
-        android:layout_below="@+id/textView10"
-        android:layout_alignRight="@+id/birthdateViewText"
-        android:layout_alignEnd="@+id/birthdateViewText" />
+        android:textSize="18dp" />
 
     <Button
-        android:id="@+id/mydrGeneralInfoButton"
+        android:id="@+id/ViewPatientProfile_myDoctorsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/PatientProfile_MyDoctors"
-        android:background="@color/Buttons"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:textColor="@color/md_white_1000"
-
-        android:layout_above="@+id/medicalInfoViewButton"
+        android:layout_above="@+id/ViewPatientProfile_medicalInfoViewButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
+        android:background="@color/Buttons"
+
+        android:fontFamily="monospace"
+        android:text="@string/PatientProfile_MyDoctors"
+        android:textColor="@color/md_white_1000"
+        android:textSize="18dp" />
 
     <Button
-        android:id="@+id/medicalInfoViewButton"
+        android:id="@+id/ViewPatientProfile_medicalInfoViewButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
@@ -190,16 +191,16 @@
         android:layout_height="30dp"
         app:srcCompat="@mipmap/gender_icon"
         android:layout_marginTop="22dp"
-        android:layout_below="@+id/profileImgView"
-        android:layout_toLeftOf="@+id/phoneViewText"
-        android:layout_toStartOf="@+id/phoneViewText" />
+        android:layout_below="@+id/ViewPatientProfile_PatientImage"
+        android:layout_toLeftOf="@+id/ViewPatientProfile_phoneVT"
+        android:layout_toStartOf="@+id/ViewPatientProfile_phoneVT" />
 
     <ImageView
         android:id="@+id/imageView37"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/calender"
-        android:layout_alignTop="@+id/textView4"
+        android:layout_alignTop="@+id/ViewPatientProfile_BirthDateTitle"
         android:layout_alignLeft="@+id/imageView38"
         android:layout_alignStart="@+id/imageView38" />
 
@@ -208,27 +209,27 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/email"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/profileImgView"
-        android:layout_alignStart="@+id/profileImgView" />
+        android:layout_alignBottom="@+id/ViewPatientProfile_EmailTitle"
+        android:layout_alignLeft="@+id/ViewPatientProfile_PatientImage"
+        android:layout_alignStart="@+id/ViewPatientProfile_PatientImage" />
 
     <ImageView
         android:id="@+id/imageView39"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/phone_icon"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_toLeftOf="@+id/textView8"
-        android:layout_toStartOf="@+id/textView8" />
+        android:layout_alignBottom="@+id/Reg2_PhoneNumberTitle"
+        android:layout_toLeftOf="@+id/Reg2_PhoneNumberTitle"
+        android:layout_toStartOf="@+id/Reg2_PhoneNumberTitle" />
 
     <ImageView
         android:id="@+id/imageView41"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/emergencynum"
-        android:layout_alignBottom="@+id/textView10"
-        android:layout_toLeftOf="@+id/textView10"
-        android:layout_toStartOf="@+id/textView10" />
+        android:layout_alignBottom="@+id/ViewPatientProfile_EmergencyPhoneTitle"
+        android:layout_toLeftOf="@+id/ViewPatientProfile_EmergencyPhoneTitle"
+        android:layout_toStartOf="@+id/ViewPatientProfile_EmergencyPhoneTitle" />
 
 
 </RelativeLayout>

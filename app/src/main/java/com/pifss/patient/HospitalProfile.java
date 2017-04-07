@@ -13,7 +13,7 @@ public class HospitalProfile extends AppCompatActivity {
         setContentView(R.layout.activity_hospital_profile);
 
 
-        ImageView imageViewHosLogo = (ImageView) findViewById(R.id.imageViewHospital);
+        ImageView imageViewHosLogo = (ImageView) findViewById(R.id.ListHospitalView_HospitalImageView);
         TextView textViewHosName = (TextView) findViewById(R.id.HospitalProfile_TypeTV);
         TextView textViewHosEmail = (TextView) findViewById(R.id.HospitalProfile_EmailTV);
         TextView textViewPhone = (TextView) findViewById(R.id.HospitalProfile_PhoneNumberTV);
