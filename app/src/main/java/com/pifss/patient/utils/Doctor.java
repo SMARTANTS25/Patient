@@ -6,7 +6,7 @@ package com.pifss.patient.utils;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//
 public class Doctor {
 
     private int BDay;
