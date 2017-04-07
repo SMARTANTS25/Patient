@@ -40,7 +40,7 @@ public class NewDoctorProfile extends AppCompatActivity {
 
         toolbar.setTitle(name);
 
-        //ImageView imageViewDoctor = (ImageView) findViewById(R.id.NewDoctorProfile_DoctorIm);
+        ImageView imageViewDoctor = (ImageView) findViewById(R.id.NewDoctorProfile_DoctorLogo);
         TextView textViewDocName = (TextView) findViewById(R.id.NewDoctorProfile_DoctorNameTV);
         TextView textViewEmail = (TextView) findViewById(R.id.NewDoctorProfile_DoctorEmailTV);
         TextView textViewSpeciality = (TextView) findViewById(R.id.NewDoctorProfile_DoctorSpecialityTV);
@@ -55,11 +55,9 @@ public class NewDoctorProfile extends AppCompatActivity {
         textViewNationality.setText(nationality);
         textViewSpeciality.setText(specialty);
 
-        /*if (profileImg != null && profileImg.length() >= 1 ) {
-            Picasso.with(this).load(profileImg).into(imageViewDoctor);
-        }*/
-
-
+        if (profileImg != null && profileImg.length() >= 4 &&  profileImg.isEmpty() == false ) {
+            Picasso.with(NewDoctorProfile.this).load(profileImg).into(imageViewDoctor);
+        }
 
 
 

@@ -149,13 +149,13 @@ public class Home extends AppCompatActivity {
                 Doctor m = model.get(position);
 
                 Intent intent = new Intent(Home.this, NewDoctorProfile.class);
-                intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
+                intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
                 intent.putExtra("gender", m.getGender());
                 intent.putExtra("specialty", m.getSpecialityId());
                 intent.putExtra("nationality", m.getNationality());
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
-
+                intent.putExtra("imageURL", m.getImageUrl());
 
                 startActivity(intent);
 
@@ -216,13 +216,13 @@ public class Home extends AppCompatActivity {
                 Doctor m = model.get(position);
 
                 Intent intent = new Intent(Home.this, NewDoctorProfile.class);
-                intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
+                intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
                 intent.putExtra("gender", m.getGender());
                 intent.putExtra("specialty", m.getSpecialityId());
                 intent.putExtra("nationality", m.getNationality());
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
-
+                intent.putExtra("imageURL", m.getImageUrl());
 
                 startActivity(intent);
 

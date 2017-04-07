@@ -93,7 +93,11 @@ public class LocationHelper {
 
     public float distanceBetweenUserAndHospital(double latHospital, double longHospital) {
 
-        Location loc1 = new Location("");
+        if (currentLocation == null) {
+            return -1;
+        }
+
+        Location loc1 = new Location("hospital");
         loc1.setLatitude(latHospital);
         loc1.setLongitude(longHospital);
 

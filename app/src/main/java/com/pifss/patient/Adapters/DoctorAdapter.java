@@ -70,12 +70,12 @@ public class DoctorAdapter extends BaseAdapter {
         docName.setText(m.getFirstName() + " " + m.getMiddleName() + " " +m.getLastName());
 
 
-        docProfile.setOnClickListener(new View.OnClickListener() {
+        /*docProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Doctor in the HOUSE", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         return v;
     }

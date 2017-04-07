@@ -20,7 +20,7 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/imageViewDoctorLogo"
+        android:id="@+id/NewDoctorProfile_DoctorLogo"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginLeft="38dp"
@@ -36,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView_DocName"
-        android:layout_alignTop="@+id/imageViewDoctorLogo"
-        android:layout_toRightOf="@+id/imageViewDoctorLogo"
-        android:layout_toEndOf="@+id/imageViewDoctorLogo"
+        android:layout_alignTop="@+id/NewDoctorProfile_DoctorLogo"
+        android:layout_toRightOf="@+id/NewDoctorProfile_DoctorLogo"
+        android:layout_toEndOf="@+id/NewDoctorProfile_DoctorLogo"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
         android:textSize="18sp"
@@ -64,9 +64,9 @@
         android:text="@string/textView_DocSpeciality"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/imageViewDoctorLogo"
-        android:layout_alignLeft="@+id/imageViewDoctorLogo"
-        android:layout_alignStart="@+id/imageViewDoctorLogo"
+        android:layout_below="@+id/NewDoctorProfile_DoctorLogo"
+        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorLogo"
+        android:layout_alignStart="@+id/NewDoctorProfile_DoctorLogo"
         android:layout_marginLeft="42dp"
         android:layout_marginStart="42dp" />
 
@@ -174,8 +174,8 @@
         android:layout_height="30dp"
         app:srcCompat="@mipmap/stethoscope"
         android:layout_above="@+id/NewDoctorProfile_DoctorSpecialityTV"
-        android:layout_alignLeft="@+id/imageViewDoctorLogo"
-        android:layout_alignStart="@+id/imageViewDoctorLogo" />
+        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorLogo"
+        android:layout_alignStart="@+id/NewDoctorProfile_DoctorLogo" />
 
     <ImageView
         android:id="@+id/imageView44"
