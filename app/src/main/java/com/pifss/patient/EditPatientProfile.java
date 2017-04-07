@@ -44,11 +44,11 @@ public class EditPatientProfile extends AppCompatActivity {
                  startActivity(i);
             }
         });
-        final EditText genderText=(EditText) findViewById(R.id.editPatientProfile_genderEditText);
-        final EditText birthDateText=(EditText) findViewById(R.id.editPatientProfile_birthDateEditText);
-        final EditText emailText=(EditText) findViewById(R.id.editPatientProfile_emailEditText);
-        final EditText phoneText=(EditText) findViewById(R.id.editPatientProfile_phoneNumberEditText);
-        final EditText emergencyText=(EditText) findViewById(R.id.editPatientProfile_emergencyNumberEditText);
+        final EditText genderText=(EditText) findViewById(R.id.editPatientProfile_genderET);
+        final EditText birthDateText=(EditText) findViewById(R.id.editPatientProfile_birthDateET);
+        final EditText emailText=(EditText) findViewById(R.id.editPatientProfile_emailET);
+        final EditText phoneText=(EditText) findViewById(R.id.editPatientProfile__phoneNumberET);
+        final EditText emergencyText=(EditText) findViewById(R.id.editPatientProfile_emergencyNumberET);
 
 //change URL
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/";

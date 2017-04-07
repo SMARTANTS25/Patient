@@ -31,9 +31,9 @@ public class ViewMedicalInfo extends AppCompatActivity {
         final TextView allergiesText = (TextView) findViewById(R.id.ViewMedicalInfo_AllergiesTV);
         final TextView medicationsText = (TextView) findViewById(R.id.ViewMedicalInfo_medicationVT);
 
-        Button myDoctor = (Button) findViewById(R.id.mydrMedicalInfoButton);
+        Button myDoctor = (Button) findViewById(R.id.ViewMedicalInfo_mydoctorsButton);
         Button viewGeneralInfo=(Button) findViewById(R.id.ViewMedicalInfo_generalInfoButton);
-        Button editMedicalInfobutton=(Button) findViewById(R.id.EditMedicalInfoButton);
+        Button editMedicalInfobutton=(Button) findViewById(R.id.ViewMedicalInfo_EditProfileButton);
         editMedicalInfobutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

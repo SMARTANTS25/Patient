@@ -22,7 +22,8 @@
         <activity android:name=".ResetPassword" />
         <activity android:name=".ViewPatientProfile"
             android:exported="true"/>
-        <activity android:name=".ViewMedicalInfo" />
+        <activity android:name=".ViewMedicalInfo"
+            android:exported="true"/>
         <activity android:name=".EditPatientProfile" />
         <activity android:name=".EditMedicalInfo" />
         <activity android:name=".RegistrationPage1" >

@@ -30,10 +30,10 @@ public class RegistrationPage2 extends AppCompatActivity {
 
 
 
-        fname= (EditText) findViewById(R.id.Reg_FirstNameTF);
-        lname= (EditText) findViewById(R.id.Reg_LastNameTF);
-        birthDate= (EditText) findViewById(R.id.Reg_BirthDateTF);
-        civilId= (EditText) findViewById(R.id.Reg_CivilIDTF);
+        fname= (EditText) findViewById(R.id.Reg2_FirstNameTF);
+        lname= (EditText) findViewById(R.id.Reg2_LastNameTF);
+        birthDate= (EditText) findViewById(R.id.Reg2_BirthDateTF);
+        civilId= (EditText) findViewById(R.id.Reg2_CivilIDTF);
         phone= (EditText) findViewById(R.id.Reg2_PhoneNumberTF);
         emergencyNumber= (EditText) findViewById(R.id.Reg2_EmergencyNumberTF);
 
@@ -44,7 +44,7 @@ public class RegistrationPage2 extends AppCompatActivity {
 //        final String civilIdValue = birthDate.getText().toString();
 //        final String phoneValue = phone.getText().toString();
 //        final String emergencyNumValue = emergencyNumber.getText().toString();
-          regButton = (Button) findViewById(R.id.BtnToMedicalReg);
+         // regButton = (Button) findViewById(R.id.BtnToMedicalReg);
 
 
          final String birthdateV = "";

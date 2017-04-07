@@ -7,18 +7,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar10"
-        style="@style/AppTheme.Toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/Buttons">
-
-    </android.support.v7.widget.Toolbar>
-
     <TextView
         android:id="@+id/DoctorItemList_DoctorSpecialtyTV"
         android:layout_width="wrap_content"
@@ -31,29 +19,29 @@
 
     <ImageView
         android:id="@+id/DoctorItemList_DoctorProfileImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@mipmap/doctor"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_below="@+id/toolbar10"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@mipmap/doctor" />
 
     <TextView
         android:id="@+id/DoctorItemList_DoctorNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/DoctorItemList_DoctorProfileImage"
         android:text="Mohammad Aziz Mohammad"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_toRightOf="@+id/DoctorItemList_DoctorProfileImage"
-        android:layout_toEndOf="@+id/DoctorItemList_DoctorProfileImage"
 
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_alignTop="@+id/DoctorItemList_DoctorProfileImage"
+        android:layout_alignLeft="@+id/homeSpecialtyIcon"
+        android:layout_alignStart="@+id/homeSpecialtyIcon" />
 
     <TextView
         android:id="@+id/DoctorItemList_DoctorGenderTV"
@@ -70,21 +58,22 @@
 
     <ImageView
         android:id="@+id/homeSpecialtyIcon"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:srcCompat="@mipmap/stethoscope"
         android:layout_alignBottom="@+id/DoctorItemList_DoctorProfileImage"
         android:layout_toLeftOf="@+id/DoctorItemList_DoctorSpecialtyTV"
-        android:layout_toRightOf="@+id/DoctorItemList_DoctorProfileImage"
-        android:layout_toStartOf="@+id/DoctorItemList_DoctorSpecialtyTV"
-        app:srcCompat="@mipmap/stethoscope" />
+        android:layout_toStartOf="@+id/DoctorItemList_DoctorSpecialtyTV" />
 
     <ImageView
         android:id="@+id/homeGenderIcon"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        app:srcCompat="@mipmap/gender_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_alignBottom="@+id/DoctorItemList_DoctorSpecialtyTV"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
         android:layout_toLeftOf="@+id/DoctorItemList_DoctorGenderTV"
-        android:layout_toStartOf="@+id/DoctorItemList_DoctorGenderTV" />
+        android:layout_toStartOf="@+id/DoctorItemList_DoctorGenderTV"
+        app:srcCompat="@mipmap/gender_icon" />
 
 </RelativeLayout>

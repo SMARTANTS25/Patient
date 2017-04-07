@@ -88,6 +88,7 @@ android:textColor="@color/md_white_1000"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
         android:text="Send Report"
+        android:textSize="14sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
@@ -99,7 +100,7 @@ android:textColor="@color/md_white_1000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/SendReport_Button"
-        android:layout_toStartOf="@+id/SendReport_Button"
+
         app:srcCompat="@android:drawable/ic_dialog_email"
         android:layout_alignBottom="@+id/SendReport_Button" />
 

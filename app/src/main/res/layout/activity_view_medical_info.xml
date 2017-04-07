@@ -21,52 +21,52 @@
 
     <ImageView
         android:id="@+id/ViewMedicalInfo_PatientImage"
-        android:layout_width="100dp"
+        android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginTop="14dp"
-        app:srcCompat="@mipmap/my_patient_icon"
-        android:layout_below="@+id/toolbar6"
-        android:layout_alignRight="@+id/ViewMedicalInfo_AsthmaTitle"
         android:layout_alignEnd="@+id/ViewMedicalInfo_AsthmaTitle"
+        android:layout_alignRight="@+id/ViewMedicalInfo_AsthmaTitle"
+        android:layout_below="@+id/toolbar6"
+        android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
-        android:layout_marginEnd="18dp" />
+        android:layout_marginTop="14dp"
+        app:srcCompat="@mipmap/my_patient_icon" />
 
     <TextView
         android:id="@+id/ViewMedicalInfo_patientNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/ViewMedicalInfo_PatientImage"
-        android:layout_toEndOf="@+id/ViewMedicalInfo_BloodTypeTitle"
-        android:layout_toRightOf="@+id/ViewMedicalInfo_BloodTypeTitle"
         android:fontFamily="monospace"
         android:text="TextView"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/ViewMedicalInfo_PatientImage"
+        android:layout_toRightOf="@+id/ViewMedicalInfo_DiabetesTitle"
+        android:layout_toEndOf="@+id/ViewMedicalInfo_DiabetesTitle" />
 
     <Button
         android:id="@+id/ViewMedicalInfo_EditProfileButton"
-        android:layout_width="190dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ViewMedicalInfo_PatientImage"
-        android:layout_toEndOf="@+id/ViewMedicalInfo_DiabetesTitle"
-        android:layout_toRightOf="@+id/ViewMedicalInfo_DiabetesTitle"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
         android:text="@string/PatientProfile_EditProfile"
         android:textColor="@color/md_white_1000"
-        android:textSize="18sp" />
+        android:textSize="14sp"
+        android:layout_above="@+id/Reg2_BirthDateTitle"
+        android:layout_toRightOf="@+id/ViewMedicalInfo_PatientImage"
+        android:layout_toEndOf="@+id/ViewMedicalInfo_PatientImage" />
 
     <TextView
-        android:id="@+id/ViewMedicalInfo_BloodTypeTitle"
+        android:id="@+id/Reg2_BirthDateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PatientMedicalInfo_BloodType"
 
         android:textSize="18sp"
         android:fontFamily="monospace"
+        android:layout_marginTop="27dp"
         android:layout_below="@+id/ViewMedicalInfo_PatientImage"
         android:layout_toRightOf="@+id/imageView31"
-        android:layout_toEndOf="@+id/imageView31"
-        android:layout_marginTop="19dp" />
+        android:layout_toEndOf="@+id/imageView31" />
 
     <TextView
         android:id="@+id/ViewMedicalInfo_bloodTypeTV"
@@ -75,7 +75,7 @@
         android:text="A+"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/ViewMedicalInfo_BloodTypeTitle"
+        android:layout_below="@+id/Reg2_BirthDateTitle"
         android:layout_toRightOf="@+id/imageView34"
         android:layout_toEndOf="@+id/imageView34" />
 
@@ -133,8 +133,8 @@
         android:textSize="18sp"
         android:fontFamily="monospace"
         android:layout_below="@+id/ViewMedicalInfo_asthmaTV"
-        android:layout_alignRight="@+id/ViewMedicalInfo_BloodTypeTitle"
-        android:layout_alignEnd="@+id/ViewMedicalInfo_BloodTypeTitle" />
+        android:layout_alignRight="@+id/Reg2_BirthDateTitle"
+        android:layout_alignEnd="@+id/Reg2_BirthDateTitle" />
 
     <TextView
         android:id="@+id/ViewMedicalInfo_AllergiesTV"
@@ -174,15 +174,14 @@
         android:id="@+id/ViewMedicalInfo_mydoctorsButton"
         android:layout_width="390dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ViewMedicalInfo_generalInfoButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="15dp"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
         android:text="@string/PatientProfile_MyDoctors"
         android:textColor="@color/md_white_1000"
-        android:textSize="18sp" />
+        android:textSize="14sp"
+        android:layout_above="@+id/ViewMedicalInfo_generalInfoButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/ViewMedicalInfo_generalInfoButton"
@@ -190,7 +189,7 @@
         android:layout_height="wrap_content"
         android:background="@color/Buttons"
         android:text="@string/PatientMedicalInfo_GeneralInfo"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:fontFamily="monospace"
         android:textColor="@color/md_white_1000"
         android:layout_alignParentLeft="true"
@@ -206,7 +205,7 @@
         app:srcCompat="@mipmap/blood_drop_icon"
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
-        android:layout_alignTop="@+id/ViewMedicalInfo_BloodTypeTitle"
+        android:layout_alignTop="@+id/Reg2_BirthDateTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

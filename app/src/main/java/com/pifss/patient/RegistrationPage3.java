@@ -45,7 +45,7 @@ public class RegistrationPage3 extends AppCompatActivity {
         ImageView bloodAMinus = (ImageView) findViewById(R.id.Reg3_aminImgButton);
         ImageView bloodABPlus = (ImageView) findViewById(R.id.Reg3_abplusImgButton);
         ImageView bloodABMinus = (ImageView) findViewById(R.id.Reg3_abminImgButton);
-        ImageView bloodOPlus = (ImageView) findViewById(R.id.oplusImageButton);
+        ImageView bloodOPlus = (ImageView) findViewById(R.id.Reg3_oplusImageButton);
         ImageView bloodOMinus = (ImageView) findViewById(R.id.Reg3_ominImageButton);
 
 
@@ -55,9 +55,9 @@ public class RegistrationPage3 extends AppCompatActivity {
         Switch SAsthma = (Switch) findViewById(R.id.switchAsthma);
         Switch SAllergies = (Switch) findViewById(R.id.switchAllergies);
 
-        RadioButton RDiabetesNo = (RadioButton) findViewById(R.id.NoDiabetesRB);
-        final RadioButton RDiabetesTOne = (RadioButton) findViewById(R.id.TypeOneDiabetesRB);
-        RadioButton RDiabetesTTwo = (RadioButton) findViewById(R.id.TypeTwoDiabetesRB);
+        RadioButton RDiabetesNo = (RadioButton) findViewById(R.id.Reg3_NoDiabetesRB);
+        final RadioButton RDiabetesTOne = (RadioButton) findViewById(R.id.Reg3_TypeOneDiabetesRB);
+        RadioButton RDiabetesTTwo = (RadioButton) findViewById(R.id.Reg3_TypeTwoDiabetesRB);
 
         BloodType = "";
 
@@ -188,17 +188,17 @@ public class RegistrationPage3 extends AppCompatActivity {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.NoDiabetesRB:
+            case R.id.Reg3_NoDiabetesRB:
                 if (checked)
                     // Pirates are the best
                     diabetes = "No";
                 break;
-            case R.id.TypeOneDiabetesRB:
+            case R.id.Reg3_TypeOneDiabetesRB:
                 if (checked)
                     diabetes = "Type One";
                     // Ninjas rule
                 break;
-            case R.id.TypeTwoDiabetesRB:
+            case R.id.Reg3_TypeTwoDiabetesRB:
                 if(checked)
                     diabetes = "Type Two";
                     break;

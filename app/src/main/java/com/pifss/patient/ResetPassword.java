@@ -16,7 +16,7 @@ public class ResetPassword extends AppCompatActivity {
         setContentView(R.layout.activity_reset_password);
         //
         EditText email = (EditText) findViewById(R.id.ResetPassword_emailTF);
-        Button submit = (Button) findViewById(R.id.Reset_Button);
+        Button submit = (Button) findViewById(R.id.ResetPassword_Button);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

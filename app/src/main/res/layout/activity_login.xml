@@ -11,13 +11,13 @@
         android:layout_width="200dp"
         android:layout_height="150dp"
 
-        android:layout_above="@+id/loginEmailText"
+        android:layout_above="@+id/login_EmailTF"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         app:srcCompat="@mipmap/heartlogo" />
 
     <EditText
-        android:id="@+id/loginEmailText"
+        android:id="@+id/login_EmailTF"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -25,7 +25,7 @@
         android:fontFamily="monospace"
         android:hint="example@example.com"
         android:inputType="textEmailAddress"
-        android:layout_above="@+id/passwordLoginText"
+        android:layout_above="@+id/Login_PasswordTV"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="25dp"
@@ -33,7 +33,7 @@
 
 
     <EditText
-        android:id="@+id/passwordLoginText"
+        android:id="@+id/Login_PasswordTV"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -61,36 +61,36 @@
         />
 
     <TextView
-        android:id="@+id/signupTextView"
+        android:id="@+id/Login_signupTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/signUp_TextView"
         android:textColor="@color/Buttons"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/passwordLoginText"
-        android:layout_alignLeft="@+id/passwordLoginText"
-        android:layout_alignStart="@+id/passwordLoginText" />
+        android:layout_below="@+id/Login_PasswordTV"
+        android:layout_alignLeft="@+id/Login_PasswordTV"
+        android:layout_alignStart="@+id/Login_PasswordTV" />
 
     <TextView
-        android:id="@+id/forgetpasswordTV"
+        android:id="@+id/Login_forgetpasswordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Login_signupTV"
+        android:layout_alignStart="@+id/Login_signupTV"
+        android:layout_below="@+id/Login_signupTV"
+        android:layout_marginTop="12dp"
         android:text="@string/forget_PasswordTV"
         android:textColor="@color/Buttons"
-        android:textSize="18sp"
-        android:layout_below="@+id/signupTextView"
-        android:layout_alignLeft="@+id/signupTextView"
-        android:layout_alignStart="@+id/signupTextView"
-        android:layout_marginTop="12dp" />
+        android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/imageView24"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/loginEmailText"
-        android:layout_toLeftOf="@+id/loginEmailText"
-        android:layout_toStartOf="@+id/loginEmailText"
+        android:layout_alignBottom="@+id/login_EmailTF"
+        android:layout_toLeftOf="@+id/login_EmailTF"
+        android:layout_toStartOf="@+id/login_EmailTF"
         android:fontFamily="monospace"
         app:srcCompat="@mipmap/email" />
 
@@ -100,7 +100,7 @@
         android:layout_height="40dp"
         android:layout_alignLeft="@+id/imageView24"
         android:layout_alignStart="@+id/imageView24"
-        android:layout_alignTop="@+id/passwordLoginText"
+        android:layout_alignTop="@+id/Login_PasswordTV"
         app:srcCompat="@mipmap/password" />
 
 
