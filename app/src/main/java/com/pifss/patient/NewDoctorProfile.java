@@ -16,7 +16,7 @@ public class NewDoctorProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_doctor_profile);
+        setContentView(R.layout.activity_new_doctor_profile); //
 
         /*Toolbar toolbar = (Toolbar) findViewById(R.id.MyDoctorProfile_toolbar);
 
