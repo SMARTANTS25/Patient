@@ -18,7 +18,7 @@ public class NewDoctorProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_doctor_profile); //
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.MyDoctorProfile_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.NewDoctorProfile_toolbar);
 
 
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
@@ -40,7 +40,7 @@ public class NewDoctorProfile extends AppCompatActivity {
 
         toolbar.setTitle(name);
 
-        ImageView imageViewDoctor = (ImageView) findViewById(R.id.NewDoctorProfile_image);
+        /*ImageView imageViewDoctor = (ImageView) findViewById(R.id.NewDoctorProfile_image);
         TextView textViewDocName = (TextView) findViewById(R.id.NewDoctorProfile_name);
         TextView textViewEmail = (TextView) findViewById(R.id.NewDoctorProfile_email);
         TextView textViewSpeciality = (TextView) findViewById(R.id.NewDoctorProfile_specialty);
