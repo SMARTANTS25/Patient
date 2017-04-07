@@ -23,8 +23,8 @@ public class EditPatientProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_patient_profile);
 
-        Button saveChanges= (Button) findViewById(R.id.saveChangesGIButton);
-        Button goToEditMedical = (Button) findViewById(R.id.EditMedicalInfoBtn);
+        Button saveChanges= (Button) findViewById(R.id.editPatientInfo_SaveChangesButton);
+        Button goToEditMedical = (Button) findViewById(R.id.editPatientProfile_editMedicalInfoButton);
 
 
         saveChanges.setOnClickListener(new View.OnClickListener() {
@@ -44,11 +44,11 @@ public class EditPatientProfile extends AppCompatActivity {
                  startActivity(i);
             }
         });
-        final EditText genderText=(EditText) findViewById(R.id.genderEditText);
-        final EditText birthDateText=(EditText) findViewById(R.id.birthdateEditText);
-        final EditText emailText=(EditText) findViewById(R.id.emailEditText);
-        final EditText phoneText=(EditText) findViewById(R.id.phoneEditText);
-        final EditText emergencyText=(EditText) findViewById(R.id.emergencyEditText);
+        final EditText genderText=(EditText) findViewById(R.id.editPatientProfile_genderEditText);
+        final EditText birthDateText=(EditText) findViewById(R.id.editPatientProfile_birthDateEditText);
+        final EditText emailText=(EditText) findViewById(R.id.editPatientProfile_emailEditText);
+        final EditText phoneText=(EditText) findViewById(R.id.editPatientProfile_phoneNumberEditText);
+        final EditText emergencyText=(EditText) findViewById(R.id.editPatientProfile_emergencyNumberEditText);
 
 //change URL
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/";

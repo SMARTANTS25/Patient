@@ -14,12 +14,12 @@ public class HospitalProfile extends AppCompatActivity {
 
 
         ImageView imageViewHosLogo = (ImageView) findViewById(R.id.imageViewHospital);
-        TextView textViewHosName = (TextView) findViewById(R.id.textViewHospitalName);
-        TextView textViewHosEmail = (TextView) findViewById(R.id.textViewHospitalEmail);
-        TextView textViewPhone = (TextView) findViewById(R.id.textViewHospitalPhone);
+        TextView textViewHosName = (TextView) findViewById(R.id.HospitalProfile_TypeTV);
+        TextView textViewHosEmail = (TextView) findViewById(R.id.HospitalProfile_EmailTV);
+        TextView textViewPhone = (TextView) findViewById(R.id.HospitalProfile_PhoneNumberTV);
         TextView textViewType = (TextView) findViewById(R.id.textViewHospitalType);
-        TextView textViewWorkingH = (TextView) findViewById(R.id.textViewHospitalWorkingHours);
-        TextView textViewExtraInfo = (TextView) findViewById(R.id.textViewHospitalExtraInfo);
+        TextView textViewWorkingH = (TextView) findViewById(R.id.HospitalProfile_WorkingHourseTV);
+        TextView textViewExtraInfo = (TextView) findViewById(R.id.HospitalProfile_AdditionalInfoTV);
 
 
 
