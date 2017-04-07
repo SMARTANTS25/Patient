@@ -55,7 +55,7 @@ public class Home extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedpreferences.edit();
         // put info (shared preferences
         String username = sharedpreferences.getString("username", "ERROR");
-        String firstName = sharedpreferences.getString("firstName", "ERROR");
+        String fullName = sharedpreferences.getString("firstName", "ERROR") + sharedpreferences.getString("lastName", "ERROR");
 
         // MaterialDrawer Creation
 
@@ -74,7 +74,7 @@ public class Home extends AppCompatActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.mipmap.navigation_drawer_icon)
                 .addProfiles(
-                        new ProfileDrawerItem().withName(firstName).withTextColor(Color.BLUE).withEmail("mikepenz@gmail.com")
+                        new ProfileDrawerItem().withName(fullName).withTextColor(Color.BLUE).withEmail("mikepenz@gmail.com")
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
@@ -148,7 +148,16 @@ public class Home extends AppCompatActivity {
 
                 Doctor m = model.get(position);
 
-                Toast.makeText(Home.this, m.getFirstName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Home.this, NewDoctorProfile.class);
+                intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
+                intent.putExtra("gender", m.getGender());
+                intent.putExtra("specialty", m.getSpecialityId());
+                intent.putExtra("nationality", m.getNationality());
+                intent.putExtra("email", m.getEmail());
+                intent.putExtra("cvURL", m.getCvUrl());
+
+
+                startActivity(intent);
 
             }
         });
@@ -206,7 +215,16 @@ public class Home extends AppCompatActivity {
 
                 Doctor m = model.get(position);
 
-                // move to doc profile
+                Intent intent = new Intent(Home.this, NewDoctorProfile.class);
+                intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
+                intent.putExtra("gender", m.getGender());
+                intent.putExtra("specialty", m.getSpecialityId());
+                intent.putExtra("nationality", m.getNationality());
+                intent.putExtra("email", m.getEmail());
+                intent.putExtra("cvURL", m.getCvUrl());
+
+
+                startActivity(intent);
 
             }
         });

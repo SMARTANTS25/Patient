@@ -62,7 +62,7 @@ public class DoctorAdapter extends BaseAdapter {
         // omg its a change
         //docProfile.setImageResource(m.getImageUrl());
 
-        if (m.getImageUrl() != null && m.getImageUrl().length() >= 1 ) {
+        if (m.getImageUrl() != null && m.getImageUrl().length() >= 4 &&  m.getImageUrl().isEmpty() == false ) {
             Picasso.with(context).load(m.getImageUrl()).into(docProfile);
         }
         docSpecialty.setText(m.getSpecialityId());
