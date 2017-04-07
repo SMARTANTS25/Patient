@@ -1,5 +1,4 @@
 package com.pifss.patient;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,13 +11,11 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,7 +33,7 @@ public class RegistrationPage3 extends AppCompatActivity {
         String RegEmail = getIntent().getStringExtra("email");
         String Regpassword = getIntent().getStringExtra("password");
         final String fname = getIntent().getStringExtra("firstName");
-        String lname = getIntent().getStringExtra("lastName");
+        final String lname = getIntent().getStringExtra("lastName");
         String bDate = getIntent().getStringExtra("birthDate");
         String civilID = getIntent().getStringExtra("civilID");
         String phoneNum = getIntent().getStringExtra("phoneNumber");
@@ -132,14 +129,14 @@ public class RegistrationPage3 extends AppCompatActivity {
         JsonObjectRequest req = null;
         final JSONObject obj = new JSONObject();
         try {
-            obj.put("email", RegEmail);
-            obj.put("password", Regpassword);
-            obj.put("fname", fname);
-            obj.put("lname", lname);
-            obj.put("birthDate" , bDate);
-            obj.put("civilId" , civilID);
-            obj.put("phone",phoneNum);
-            obj.put("emergencyNumber", emergencyNum);
+            obj.put("email", getIntent().getStringExtra("email"));
+            obj.put("password", getIntent().getStringExtra("password"));
+            obj.put("fname", getIntent().getStringExtra("firstName"));
+            obj.put("lname", getIntent().getStringExtra("lastName"));
+            obj.put("birthDate" , getIntent().getStringExtra("birthDate"));
+            obj.put("civilId" , getIntent().getStringExtra("civilID"));
+            obj.put("phone",getIntent().getStringExtra("phoneNumber"));
+            obj.put("emergencyNumber", getIntent().getStringExtra("emergencyNumber"));
             obj.put("bloodType",BloodType.toString());
 
              req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
@@ -155,6 +152,7 @@ public class RegistrationPage3 extends AppCompatActivity {
                 public void onErrorResponse(VolleyError error) {
 
                     Toast.makeText(RegistrationPage3.this, error.toString(), Toast.LENGTH_SHORT).show();
+
                 }
             });
         } catch (JSONException e) {
@@ -169,14 +167,14 @@ public class RegistrationPage3 extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                SharedPreferences pref=getSharedPreferences("PatientData",MODE_PRIVATE);
+                SharedPreferences pref = getSharedPreferences("PatientData",MODE_PRIVATE);
 
                 pref.edit()
                         .putString("Patient",obj.toString())
                         .commit();
 
-                Intent i=new Intent(RegistrationPage3.this, Home.class);
-                Toast.makeText(RegistrationPage3.this, "hello & you are done" + fname, Toast.LENGTH_LONG).show();
+                Intent i = new Intent(RegistrationPage3.this, Home.class);
+                Toast.makeText(RegistrationPage3.this, "hello & you are done " + getIntent().getStringExtra("firstName") + " "+ getIntent().getStringExtra("lastName"), Toast.LENGTH_LONG).show();
                 startActivity(i);
             }
         });
