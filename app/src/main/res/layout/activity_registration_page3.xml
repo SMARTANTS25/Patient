@@ -7,7 +7,7 @@
     tools:context="com.pifss.patient.RegistrationPage3">
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/Reg3_BloodTypeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg3_BloodType"
@@ -24,8 +24,8 @@
 
         app:srcCompat="@mipmap/blood_drop_icon"
         android:layout_below="@+id/toolbar13"
-        android:layout_alignLeft="@+id/Reg_AllergiesET"
-        android:layout_alignStart="@+id/Reg_AllergiesET" />
+        android:layout_alignLeft="@+id/Reg3_AllergiesET"
+        android:layout_alignStart="@+id/Reg3_AllergiesET" />
 
 
     <android.support.v7.widget.Toolbar
@@ -41,117 +41,117 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageButton
-        android:id="@+id/aminImgButton"
+        android:id="@+id/Reg3_aminImgButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
         android:adjustViewBounds="false"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_a_minus"
         android:layout_marginTop="11dp"
-        android:layout_below="@+id/textView26"
+        android:layout_below="@+id/Reg3_BloodTypeTitle"
         android:layout_alignLeft="@+id/imageView26"
         android:layout_alignStart="@+id/imageView26" />
 
 
     <ImageButton
-        android:id="@+id/aplusImgButton"
+        android:id="@+id/Reg3_aplusImgButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_a_plus"
-        android:layout_alignTop="@+id/aminImgButton"
-        android:layout_toRightOf="@+id/textView28"
-        android:layout_toEndOf="@+id/textView28" />
+        android:layout_alignTop="@+id/Reg3_aminImgButton"
+        android:layout_alignLeft="@+id/Reg3_bplusImageButton"
+        android:layout_alignStart="@+id/Reg3_bplusImageButton" />
 
 
     <ImageButton
-        android:id="@+id/abminImgButton"
+        android:id="@+id/Reg3_abminImgButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_ab_minus"
-        android:layout_alignTop="@+id/aplusImgButton"
-        android:layout_toLeftOf="@+id/abplusImgButton"
-        android:layout_toStartOf="@+id/abplusImgButton"
+        android:layout_alignTop="@+id/Reg3_aplusImgButton"
+        android:layout_toLeftOf="@+id/Reg3_abplusImgButton"
+        android:layout_toStartOf="@+id/Reg3_abplusImgButton"
         android:layout_marginRight="19dp"
         android:layout_marginEnd="19dp" />
 
 
     <ImageButton
-        android:id="@+id/abplusImgButton"
+        android:id="@+id/Reg3_abplusImgButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_ab_plus"
-        android:layout_alignTop="@+id/abminImgButton"
-        android:layout_alignRight="@+id/Reg_MedicationsET"
-        android:layout_alignEnd="@+id/Reg_MedicationsET"
+        android:layout_alignTop="@+id/Reg3_abminImgButton"
+        android:layout_alignRight="@+id/Reg3_MedicationsET"
+        android:layout_alignEnd="@+id/Reg3_MedicationsET"
         android:layout_marginRight="21dp"
         android:layout_marginEnd="21dp" />
 
     <ImageButton
-        android:id="@+id/bminImageButton"
+        android:id="@+id/Reg3_bminImageButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
         android:layout_marginTop="18dp"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_b_minus"
-        android:layout_below="@+id/aminImgButton"
-        android:layout_alignLeft="@+id/aminImgButton"
-        android:layout_alignStart="@+id/aminImgButton" />
+        android:layout_below="@+id/Reg3_aminImgButton"
+        android:layout_alignLeft="@+id/Reg3_aminImgButton"
+        android:layout_alignStart="@+id/Reg3_aminImgButton" />
 
     <ImageButton
-        android:id="@+id/bplusImageButton"
+        android:id="@+id/Reg3_bplusImageButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
         android:background="@android:color/transparent"
         app:srcCompat="@mipmap/b_plus"
-        android:layout_alignTop="@+id/bminImageButton"
-        android:layout_alignLeft="@+id/aplusImgButton"
-        android:layout_alignStart="@+id/aplusImgButton" />
+        android:layout_above="@+id/Reg3_DiabetesTitle"
+        android:layout_alignRight="@+id/Reg3_MedicatoinsTitle"
+        android:layout_alignEnd="@+id/Reg3_MedicatoinsTitle" />
 
     <ImageButton
-        android:id="@+id/ominImageButton"
+        android:id="@+id/Reg3_ominImageButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_o_minus"
         android:layout_marginLeft="13dp"
         android:layout_marginStart="13dp"
-        android:layout_alignTop="@+id/bplusImageButton"
-        android:layout_toRightOf="@+id/aplusImgButton"
-        android:layout_toEndOf="@+id/aplusImgButton" />
+        android:layout_alignTop="@+id/Reg3_bplusImageButton"
+        android:layout_toRightOf="@+id/Reg3_aplusImgButton"
+        android:layout_toEndOf="@+id/Reg3_aplusImgButton" />
 
     <ImageButton
-        android:id="@+id/oplusImageButton"
+        android:id="@+id/Reg3_oplusImageButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
+        android:layout_alignLeft="@+id/Reg3_abplusImgButton"
+        android:layout_alignStart="@+id/Reg3_abplusImgButton"
+        android:layout_alignTop="@+id/Reg3_ominImageButton"
         android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_o_plus"
-        android:layout_alignTop="@+id/ominImageButton"
-        android:layout_alignLeft="@+id/abplusImgButton"
-        android:layout_alignStart="@+id/abplusImgButton" />
+        app:srcCompat="@mipmap/ic_o_plus" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/Reg3_DiabetesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:text="@string/Reg3_Diabetes"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/bminImageButton"
-        android:layout_alignRight="@+id/textView29"
-        android:layout_alignEnd="@+id/textView29" />
+        android:layout_below="@+id/Reg3_bminImageButton"
+        android:layout_alignRight="@+id/Reg3_AllergiesTitle"
+        android:layout_alignEnd="@+id/Reg3_AllergiesTitle" />
 
     <ImageView
         android:id="@+id/imageView27"
         android:layout_width="30dp"
         android:layout_height="25dp"
         app:srcCompat="@mipmap/diabity_icon"
-        android:layout_alignBottom="@+id/textView27"
-        android:layout_alignLeft="@+id/bminImageButton"
-        android:layout_alignStart="@+id/bminImageButton" />
+        android:layout_alignBottom="@+id/Reg3_DiabetesTitle"
+        android:layout_alignLeft="@+id/Reg3_bminImageButton"
+        android:layout_alignStart="@+id/Reg3_bminImageButton" />
 <android.support.v7.widget.FitWindowsLinearLayout
 
 
@@ -159,23 +159,24 @@
     android:layout_height="wrap_content"
 
 
-    android:layout_below="@id/textView27"
+    android:layout_below="@id/Reg3_DiabetesTitle"
     android:id="@+id/fitWindowsLinearLayout">
+
     <RadioButton
-        android:id="@+id/NoDiabetesRB"
+        android:id="@+id/Reg3_NoDiabetesRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Reg3_AllergiesNo"
         android:layout_below="@+id/imageView27"
-        android:layout_toRightOf="@+id/imageView27"
-        android:layout_toEndOf="@+id/imageView27"
         android:layout_marginTop="11dp"
-        android:onClick="onRadioButtonClicked" />
+        android:layout_toEndOf="@+id/imageView27"
+        android:layout_toRightOf="@+id/imageView27"
+        android:onClick="onRadioButtonClicked"
+        android:text="@string/Reg3_AllergiesNo" />
 
 
 </android.support.v7.widget.FitWindowsLinearLayout>
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/Reg3_AsthmaTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PatientMedicalInfo_Asthma"
@@ -183,17 +184,17 @@
         android:fontFamily="monospace"
         android:layout_marginTop="29dp"
         android:layout_below="@+id/fitWindowsLinearLayout"
-        android:layout_alignLeft="@+id/textView27"
-        android:layout_alignStart="@+id/textView27" />
+        android:layout_alignLeft="@+id/Reg3_DiabetesTitle"
+        android:layout_alignStart="@+id/Reg3_DiabetesTitle" />
 
     <ImageView
         android:id="@+id/imageView28"
         android:layout_width="30dp"
         android:layout_height="25dp"
         app:srcCompat="@mipmap/asthma_icon"
-        android:layout_alignBottom="@+id/textView28"
-        android:layout_alignLeft="@+id/Reg_AllergiesET"
-        android:layout_alignStart="@+id/Reg_AllergiesET"
+        android:layout_alignBottom="@+id/Reg3_AsthmaTitle"
+        android:layout_alignLeft="@+id/Reg3_AllergiesET"
+        android:layout_alignStart="@+id/Reg3_AllergiesET"
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp" />
 
@@ -210,7 +211,7 @@
 
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/Reg3_AllergiesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -226,7 +227,7 @@
         android:id="@+id/imageView29"
         android:layout_width="30dp"
         android:layout_height="25dp"
-        android:layout_alignBottom="@+id/textView29"
+        android:layout_alignBottom="@+id/Reg3_AllergiesTitle"
         android:layout_alignLeft="@+id/imageView28"
         android:layout_alignStart="@+id/imageView28"
         app:srcCompat="@mipmap/allergy_icon" />
@@ -237,31 +238,31 @@
         android:layout_height="wrap_content"
         android:text="@string/Reg3_AllergiesYes"
         tools:text="@string/Reg3_AllergiesNo"
-        android:layout_alignBottom="@+id/textView29"
+        android:layout_alignBottom="@+id/Reg3_AllergiesTitle"
         android:layout_alignRight="@+id/Reg3_button"
         android:layout_alignEnd="@+id/Reg3_button" />
 
 
     <EditText
-        android:id="@+id/Reg_AllergiesET"
+        android:id="@+id/Reg3_AllergiesET"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="If so , please specify"
         android:inputType="textPersonName"
-        android:layout_below="@+id/textView29"
+        android:layout_below="@+id/Reg3_AllergiesTitle"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/Reg3_MedicatoinsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg3_Medications"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/Reg_AllergiesET"
+        android:layout_below="@+id/Reg3_AllergiesET"
         android:layout_toRightOf="@+id/imageView29"
         android:layout_toEndOf="@+id/imageView29" />
 
@@ -269,19 +270,19 @@
         android:id="@+id/imageView30"
         android:layout_width="30dp"
         android:layout_height="25dp"
-        android:layout_alignBottom="@+id/textView30"
-        android:layout_toLeftOf="@+id/textView30"
-        android:layout_toStartOf="@+id/textView30"
+        android:layout_alignBottom="@+id/Reg3_MedicatoinsTitle"
+        android:layout_toLeftOf="@+id/Reg3_MedicatoinsTitle"
+        android:layout_toStartOf="@+id/Reg3_MedicatoinsTitle"
         app:srcCompat="@mipmap/medicine_icon" />
 
 
     <EditText
-        android:id="@+id/Reg_MedicationsET"
+        android:id="@+id/Reg3_MedicationsET"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_below="@+id/textView30"
+        android:layout_below="@+id/Reg3_MedicatoinsTitle"
         android:layout_centerHorizontal="true" />
 
 
@@ -301,22 +302,22 @@
         android:layout_alignParentEnd="true" />
 
     <RadioButton
-        android:id="@+id/TypeTwoDiabetesRB"
+        android:id="@+id/Reg3_TypeTwoDiabetesRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/fitWindowsLinearLayout"
-        android:layout_toEndOf="@+id/ominImageButton"
-        android:layout_toRightOf="@+id/ominImageButton"
+        android:layout_toEndOf="@+id/Reg3_ominImageButton"
+        android:layout_toRightOf="@+id/Reg3_ominImageButton"
         android:onClick="onRadioButtonClicked"
         android:text="@string/Reg3_DiabetesTypeTwo" />
 
     <RadioButton
-        android:id="@+id/TypeOneDiabetesRB"
+        android:id="@+id/Reg3_TypeOneDiabetesRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/fitWindowsLinearLayout"
-        android:layout_toEndOf="@+id/textView27"
-        android:layout_toRightOf="@+id/textView27"
+        android:layout_above="@+id/Reg3_AsthmaTitle"
+        android:layout_toLeftOf="@+id/Reg3_abminImgButton"
+        android:layout_toStartOf="@+id/Reg3_abminImgButton"
         android:onClick="onRadioButtonClicked"
         android:text="@string/Reg3_DiabetesTypeOne" />
 

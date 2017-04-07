@@ -19,18 +19,18 @@ public class ViewPatientProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_patient_profile);
 
-        ImageView imageProfile = (ImageView) findViewById(R.id.profileImgView);
+        ImageView imageProfile = (ImageView) findViewById(R.id.ViewPatientProfile_PatientImage);
 
         Button editButton=(Button) findViewById(R.id.editPersonalInfoButton);
         Button myDrButton=(Button) findViewById(R.id.mydrGeneralInfoButton);
-        Button medicalProfileButton = (Button) findViewById(R.id.medicalInfoViewButton);
+        Button medicalProfileButton = (Button) findViewById(R.id.ViewPatientProfile_medicalInfoViewButton);
 
 
-        final TextView nameText=(TextView) findViewById(R.id.profilePatientNameText);
-        TextView genderText=(TextView) findViewById(R.id.genderViewText);
-        final TextView birthdateText=(TextView) findViewById(R.id.birthdateViewText);
-        final TextView emailText=(TextView) findViewById(R.id.emailViewText);
-        final TextView phoneText=(TextView) findViewById(R.id.phoneViewText);
+        final TextView nameText=(TextView) findViewById(R.id.ViewPatientProfile_PatientNameTV);
+        TextView genderText=(TextView) findViewById(R.id.ViewPatientProfile_GenderVT);
+        final TextView birthdateText=(TextView) findViewById(R.id.ViewPatientProfile_BirthDateVT);
+        final TextView emailText=(TextView) findViewById(R.id.ViewPatientProfile_emailVT);
+        final TextView phoneText=(TextView) findViewById(R.id.ViewPatientProfile_phoneVT);
         final TextView emergencyNoText=(TextView) findViewById(R.id.emergencyNoView);
 
 

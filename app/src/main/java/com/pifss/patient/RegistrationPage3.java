@@ -39,18 +39,18 @@ public class RegistrationPage3 extends AppCompatActivity {
         String phoneNum = getIntent().getStringExtra("phoneNumber");
         String emergencyNum = getIntent().getStringExtra("emergencyNumber");
 
-        ImageView bloodBPlus = (ImageView) findViewById(R.id.bplusImageButton);
-        ImageView bloodBMinus = (ImageView) findViewById(R.id.bminImageButton);
-        ImageView bloodAPlus = (ImageView) findViewById(R.id.aplusImgButton);
-        ImageView bloodAMinus = (ImageView) findViewById(R.id.aminImgButton);
-        ImageView bloodABPlus = (ImageView) findViewById(R.id.abplusImgButton);
-        ImageView bloodABMinus = (ImageView) findViewById(R.id.abminImgButton);
+        ImageView bloodBPlus = (ImageView) findViewById(R.id.Reg3_bplusImageButton);
+        ImageView bloodBMinus = (ImageView) findViewById(R.id.Reg3_bminImageButton);
+        ImageView bloodAPlus = (ImageView) findViewById(R.id.Reg3_aplusImgButton);
+        ImageView bloodAMinus = (ImageView) findViewById(R.id.Reg3_aminImgButton);
+        ImageView bloodABPlus = (ImageView) findViewById(R.id.Reg3_abplusImgButton);
+        ImageView bloodABMinus = (ImageView) findViewById(R.id.Reg3_abminImgButton);
         ImageView bloodOPlus = (ImageView) findViewById(R.id.oplusImageButton);
-        ImageView bloodOMinus = (ImageView) findViewById(R.id.ominImageButton);
+        ImageView bloodOMinus = (ImageView) findViewById(R.id.Reg3_ominImageButton);
 
 
-        EditText allergies = (EditText) findViewById(R.id.Reg_AllergiesET);
-        EditText medications = (EditText) findViewById(R.id.Reg_MedicationsET);
+        EditText allergies = (EditText) findViewById(R.id.Reg3_AllergiesET);
+        EditText medications = (EditText) findViewById(R.id.Reg3_MedicationsET);
 
         Switch SAsthma = (Switch) findViewById(R.id.switchAsthma);
         Switch SAllergies = (Switch) findViewById(R.id.switchAllergies);

@@ -1,8 +1,6 @@
 package com.pifss.patient;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -30,7 +28,7 @@ public class SendReport extends AppCompatActivity {
 
         // ---------------------------------------
 
-        Button b = (Button) findViewById(R.id.SendReportButton);
+        Button b = (Button) findViewById(R.id.SendReport_Button);
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

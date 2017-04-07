@@ -17,7 +17,7 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/imageViewHospital"
+        android:id="@+id/ListHospitalView_HospitalImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
@@ -29,7 +29,7 @@
         app:srcCompat="@mipmap/hospital" />
 
     <TextView
-        android:id="@+id/textViewHospitalTitle"
+        android:id="@+id/ListHospitalView_HospitalTitleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -40,18 +40,18 @@
         android:fontFamily="monospace"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
-        android:layout_alignTop="@+id/imageViewHospital"
-        android:layout_toRightOf="@+id/imageViewHospital"
-        android:layout_toEndOf="@+id/imageViewHospital" />
+        android:layout_alignTop="@+id/ListHospitalView_HospitalImageView"
+        android:layout_toRightOf="@+id/ListHospitalView_HospitalImageView"
+        android:layout_toEndOf="@+id/ListHospitalView_HospitalImageView" />
 
     <TextView
-        android:id="@+id/textViewDistance"
+        android:id="@+id/ListHospitalView_DistanceTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_below="@+id/textViewHospitalTitle"
-        android:layout_toRightOf="@+id/textViewType"
-        android:layout_toEndOf="@+id/textViewType"
+        android:layout_below="@+id/ListHospitalView_HospitalTitleTV"
+        android:layout_toRightOf="@+id/ListHospitalView_HospitalTypeTV"
+        android:layout_toEndOf="@+id/ListHospitalView_HospitalTypeTV"
         android:layout_marginLeft="55dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="39dp"
@@ -59,13 +59,13 @@
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/textViewType"
+        android:id="@+id/ListHospitalView_HospitalTypeTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:fontFamily="monospace"
         android:textSize="18sp"
-        android:layout_alignTop="@+id/textViewDistance"
-        android:layout_alignLeft="@+id/textViewHospitalTitle"
-        android:layout_alignStart="@+id/textViewHospitalTitle" />
+        android:layout_alignTop="@+id/ListHospitalView_DistanceTV"
+        android:layout_alignLeft="@+id/ListHospitalView_HospitalTitleTV"
+        android:layout_alignStart="@+id/ListHospitalView_HospitalTitleTV" />
 </RelativeLayout>

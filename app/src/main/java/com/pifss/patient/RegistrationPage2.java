@@ -34,8 +34,8 @@ public class RegistrationPage2 extends AppCompatActivity {
         lname= (EditText) findViewById(R.id.Reg_LastNameTF);
         birthDate= (EditText) findViewById(R.id.Reg_BirthDateTF);
         civilId= (EditText) findViewById(R.id.Reg_CivilIDTF);
-        phone= (EditText) findViewById(R.id.Reg_PhoneNumberTF);
-        emergencyNumber= (EditText) findViewById(R.id.Reg_EmergencyNumberTF);
+        phone= (EditText) findViewById(R.id.Reg2_PhoneNumberTF);
+        emergencyNumber= (EditText) findViewById(R.id.Reg2_EmergencyNumberTF);
 
 
 //        final String fnameValue = fname.getText().toString();

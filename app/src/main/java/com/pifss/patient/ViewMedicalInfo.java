@@ -13,7 +13,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -26,14 +25,14 @@ public class ViewMedicalInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_medical_info);
 
-        final TextView bloodtypeText = (TextView) findViewById(R.id.bloodtypeViewText);
-        final TextView diabetesText = (TextView) findViewById(R.id.diabeteViewText);
-        final TextView asthmaText = (TextView) findViewById(R.id.asthmaViewText);
-        final TextView allergiesText = (TextView) findViewById(R.id.allergiesViewText);
-        final TextView medicationsText = (TextView) findViewById(R.id.medicationViewText);
+        final TextView bloodtypeText = (TextView) findViewById(R.id.ViewMedicalInfo_bloodTypeTV);
+        final TextView diabetesText = (TextView) findViewById(R.id.ViewMedicalInfo_diabetesTV);
+        final TextView asthmaText = (TextView) findViewById(R.id.ViewMedicalInfo_asthmaTV);
+        final TextView allergiesText = (TextView) findViewById(R.id.ViewMedicalInfo_AllergiesTV);
+        final TextView medicationsText = (TextView) findViewById(R.id.ViewMedicalInfo_medicationVT);
 
         Button myDoctor = (Button) findViewById(R.id.mydrMedicalInfoButton);
-        Button viewGeneralInfo=(Button) findViewById(R.id.generalinfoViewButton);
+        Button viewGeneralInfo=(Button) findViewById(R.id.ViewMedicalInfo_generalInfoButton);
         Button editMedicalInfobutton=(Button) findViewById(R.id.EditMedicalInfoButton);
         editMedicalInfobutton.setOnClickListener(new View.OnClickListener() {
             @Override

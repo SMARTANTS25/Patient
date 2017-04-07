@@ -52,10 +52,10 @@ public class DoctorAdapter extends BaseAdapter {
 
         View v=inflater.inflate(R.layout.doctor_item_list,null);
 
-        ImageView docProfile= (ImageView) v.findViewById(R.id.homeDocProfile);
-        TextView docSpecialty= (TextView) v.findViewById(R.id.homeDocSpecialtyTextView);
-        TextView docGender = (TextView) v.findViewById(R.id.homeDocGenderTextView);
-        TextView docName= (TextView) v.findViewById(R.id.homeDocNameTextView);
+        ImageView docProfile= (ImageView) v.findViewById(R.id.DoctorItemList_DoctorProfileImage);
+        TextView docSpecialty= (TextView) v.findViewById(R.id.DoctorItemList_DoctorSpecialtyTV);
+        TextView docGender = (TextView) v.findViewById(R.id.DoctorItemList_DoctorGenderTV);
+        TextView docName= (TextView) v.findViewById(R.id.DoctorItemList_DoctorNameTV);
 
         Doctor m=model.get(position);
 

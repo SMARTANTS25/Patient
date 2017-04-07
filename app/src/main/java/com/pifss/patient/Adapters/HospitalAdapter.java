@@ -1,7 +1,6 @@
 package com.pifss.patient.Adapters;
 
 import android.app.Activity;
-import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 
 import com.pifss.patient.Hospital;
 import com.pifss.patient.R;
-import com.pifss.patient.SearchHospital;
 import com.pifss.patient.utils.LocationHelper;
 
 import java.util.ArrayList;
@@ -59,9 +57,9 @@ public class HospitalAdapter extends BaseAdapter {
 
 
         //ImageView imgHospitsl= (ImageView) view.findViewById(R.id.imageViewHospital);
-        TextView tvHospitalTitle = (TextView) view.findViewById(R.id.textViewHospitalTitle);
-        TextView tvHospitalDistance = (TextView) view.findViewById(R.id.textViewDistance);
-        TextView tvHospitalType = (TextView) view.findViewById(R.id.textViewType);
+        TextView tvHospitalTitle = (TextView) view.findViewById(R.id.ListHospitalView_HospitalTitleTV);
+        TextView tvHospitalDistance = (TextView) view.findViewById(R.id.ListHospitalView_DistanceTV);
+        TextView tvHospitalType = (TextView) view.findViewById(R.id.ListHospitalView_HospitalTypeTV);
 
         Hospital pos = model.get(position);
 

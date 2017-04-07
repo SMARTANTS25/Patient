@@ -14,8 +14,8 @@
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/heartlogo"
         android:layout_below="@+id/settingsToolbar"
-        android:layout_alignLeft="@+id/textViewSettingLanguage"
-        android:layout_alignStart="@+id/textViewSettingLanguage"
+        android:layout_alignLeft="@+id/textViewSettingLanguageTitle"
+        android:layout_alignStart="@+id/textViewSettingLanguageTitle"
         android:layout_marginLeft="27dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="52dp" />
@@ -49,7 +49,7 @@
         tools:text="العربية" />
 
     <TextView
-        android:id="@+id/textViewSettingLanguage"
+        android:id="@+id/textViewSettingLanguageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="64dp"

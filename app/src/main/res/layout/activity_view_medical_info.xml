@@ -20,161 +20,161 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/ViewMedicalInfo_PatientImage"
         android:layout_width="100dp"
         android:layout_height="75dp"
         android:layout_marginTop="14dp"
         app:srcCompat="@mipmap/my_patient_icon"
         android:layout_below="@+id/toolbar6"
-        android:layout_alignRight="@+id/textViewHospitalAddress"
-        android:layout_alignEnd="@+id/textViewHospitalAddress"
+        android:layout_alignRight="@+id/ViewMedicalInfo_AsthmaTitle"
+        android:layout_alignEnd="@+id/ViewMedicalInfo_AsthmaTitle"
         android:layout_marginRight="18dp"
         android:layout_marginEnd="18dp" />
 
     <TextView
-        android:id="@+id/patientNameView"
+        android:id="@+id/ViewMedicalInfo_patientNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ViewMedicalInfo_PatientImage"
+        android:layout_toEndOf="@+id/ViewMedicalInfo_BloodTypeTitle"
+        android:layout_toRightOf="@+id/ViewMedicalInfo_BloodTypeTitle"
         android:fontFamily="monospace"
         android:text="TextView"
-        android:textSize="18sp"
-        android:layout_alignTop="@+id/imageView3"
-        android:layout_toRightOf="@+id/textView5"
-        android:layout_toEndOf="@+id/textView5" />
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/EditMedicalInfoButton"
+        android:id="@+id/ViewMedicalInfo_EditProfileButton"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ViewMedicalInfo_PatientImage"
+        android:layout_toEndOf="@+id/ViewMedicalInfo_DiabetesTitle"
+        android:layout_toRightOf="@+id/ViewMedicalInfo_DiabetesTitle"
         android:background="@color/Buttons"
-        android:text="@string/PatientProfile_EditProfile"
-        android:textSize="18sp"
         android:fontFamily="monospace"
+        android:text="@string/PatientProfile_EditProfile"
         android:textColor="@color/md_white_1000"
-        android:layout_alignBottom="@+id/imageView3"
-        android:layout_toRightOf="@+id/textView11"
-        android:layout_toEndOf="@+id/textView11" />
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/ViewMedicalInfo_BloodTypeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PatientMedicalInfo_BloodType"
 
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/imageView3"
+        android:layout_below="@+id/ViewMedicalInfo_PatientImage"
         android:layout_toRightOf="@+id/imageView31"
         android:layout_toEndOf="@+id/imageView31"
         android:layout_marginTop="19dp" />
 
     <TextView
-        android:id="@+id/bloodtypeViewText"
+        android:id="@+id/ViewMedicalInfo_bloodTypeTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A+"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/ViewMedicalInfo_BloodTypeTitle"
         android:layout_toRightOf="@+id/imageView34"
         android:layout_toEndOf="@+id/imageView34" />
 
     <TextView
-        android:id="@+id/diabeteViewText"
+        android:id="@+id/ViewMedicalInfo_diabetesTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/textView11"
-        android:layout_alignLeft="@+id/bloodtypeViewText"
-        android:layout_alignStart="@+id/bloodtypeViewText" />
+        android:layout_below="@+id/ViewMedicalInfo_DiabetesTitle"
+        android:layout_alignLeft="@+id/ViewMedicalInfo_bloodTypeTV"
+        android:layout_alignStart="@+id/ViewMedicalInfo_bloodTypeTV" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/ViewMedicalInfo_DiabetesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PatientMedicalInfo_Diabetes"
         android:textSize="18sp"
         android:fontFamily="monospace"
         android:layout_alignBottom="@+id/imageView32"
-        android:layout_alignLeft="@+id/textView14"
-        android:layout_alignStart="@+id/textView14" />
+        android:layout_alignLeft="@+id/ViewMedicalInfo_AllergiesTitle"
+        android:layout_alignStart="@+id/ViewMedicalInfo_AllergiesTitle" />
 
     <TextView
-        android:id="@+id/textViewHospitalAddress"
+        android:id="@+id/ViewMedicalInfo_AsthmaTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PatientMedicalInfo_Asthma"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/diabeteViewText"
-        android:layout_alignLeft="@+id/textView14"
-        android:layout_alignStart="@+id/textView14"
+        android:layout_below="@+id/ViewMedicalInfo_diabetesTV"
+        android:layout_alignLeft="@+id/ViewMedicalInfo_AllergiesTitle"
+        android:layout_alignStart="@+id/ViewMedicalInfo_AllergiesTitle"
         android:layout_marginTop="10dp" />
 
     <TextView
-        android:id="@+id/asthmaViewText"
+        android:id="@+id/ViewMedicalInfo_asthmaTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/textViewHospitalAddress"
-        android:layout_alignLeft="@+id/diabeteViewText"
-        android:layout_alignStart="@+id/diabeteViewText" />
+        android:layout_below="@+id/ViewMedicalInfo_AsthmaTitle"
+        android:layout_alignLeft="@+id/ViewMedicalInfo_diabetesTV"
+        android:layout_alignStart="@+id/ViewMedicalInfo_diabetesTV" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/ViewMedicalInfo_AllergiesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PatientMedicalInfo_Allergies"
         android:layout_marginTop="13dp"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/asthmaViewText"
-        android:layout_alignRight="@+id/textView5"
-        android:layout_alignEnd="@+id/textView5" />
+        android:layout_below="@+id/ViewMedicalInfo_asthmaTV"
+        android:layout_alignRight="@+id/ViewMedicalInfo_BloodTypeTitle"
+        android:layout_alignEnd="@+id/ViewMedicalInfo_BloodTypeTitle" />
 
     <TextView
-        android:id="@+id/allergiesViewText"
+        android:id="@+id/ViewMedicalInfo_AllergiesTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/textView14"
-        android:layout_alignLeft="@+id/textView14"
-        android:layout_alignStart="@+id/textView14" />
+        android:layout_below="@+id/ViewMedicalInfo_AllergiesTitle"
+        android:layout_alignLeft="@+id/ViewMedicalInfo_AllergiesTitle"
+        android:layout_alignStart="@+id/ViewMedicalInfo_AllergiesTitle" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/PatientMedicalInfo_Medications"
-        android:id="@+id/textView18"
+        android:id="@+id/ViewMedicalInfo_MedicationTitle"
         android:textSize="18sp"
         android:fontFamily="monospace"
         android:layout_marginTop="13dp"
-        android:layout_below="@+id/allergiesViewText"
+        android:layout_below="@+id/ViewMedicalInfo_AllergiesTV"
         android:layout_toRightOf="@+id/imageView35"
         android:layout_toEndOf="@+id/imageView35" />
 
     <TextView
-        android:id="@+id/medicationViewText"
+        android:id="@+id/ViewMedicalInfo_medicationVT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No Medication"
         android:textSize="18sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/textView18"
-        android:layout_alignLeft="@+id/asthmaViewText"
-        android:layout_alignStart="@+id/asthmaViewText" />
+        android:layout_below="@+id/ViewMedicalInfo_MedicationTitle"
+        android:layout_alignLeft="@+id/ViewMedicalInfo_asthmaTV"
+        android:layout_alignStart="@+id/ViewMedicalInfo_asthmaTV" />
 
     <Button
-        android:id="@+id/mydrMedicalInfoButton"
+        android:id="@+id/ViewMedicalInfo_mydoctorsButton"
         android:layout_width="390dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/generalinfoViewButton"
+        android:layout_above="@+id/ViewMedicalInfo_generalInfoButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="15dp"
@@ -185,7 +185,7 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/generalinfoViewButton"
+        android:id="@+id/ViewMedicalInfo_generalInfoButton"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:background="@color/Buttons"
@@ -206,7 +206,7 @@
         app:srcCompat="@mipmap/blood_drop_icon"
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
-        android:layout_alignTop="@+id/textView5"
+        android:layout_alignTop="@+id/ViewMedicalInfo_BloodTypeTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -215,7 +215,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/diabetes"
-        android:layout_below="@+id/bloodtypeViewText"
+        android:layout_below="@+id/ViewMedicalInfo_bloodTypeTV"
         android:layout_alignLeft="@+id/imageView31"
         android:layout_alignStart="@+id/imageView31" />
 
@@ -224,7 +224,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/asthma"
-        android:layout_alignTop="@+id/textViewHospitalAddress"
+        android:layout_alignTop="@+id/ViewMedicalInfo_AsthmaTitle"
         android:layout_alignRight="@+id/imageView32"
         android:layout_alignEnd="@+id/imageView32" />
 
@@ -233,7 +233,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/allergies"
-        android:layout_alignTop="@+id/textView14"
+        android:layout_alignTop="@+id/ViewMedicalInfo_AllergiesTitle"
         android:layout_alignLeft="@+id/imageView33"
         android:layout_alignStart="@+id/imageView33" />
 
@@ -242,8 +242,8 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/medicine_icon"
-        android:layout_alignTop="@+id/textView18"
-        android:layout_toLeftOf="@+id/medicationViewText"
-        android:layout_toStartOf="@+id/medicationViewText" />
+        android:layout_alignTop="@+id/ViewMedicalInfo_MedicationTitle"
+        android:layout_toLeftOf="@+id/ViewMedicalInfo_medicationVT"
+        android:layout_toStartOf="@+id/ViewMedicalInfo_medicationVT" />
 
 </RelativeLayout>
