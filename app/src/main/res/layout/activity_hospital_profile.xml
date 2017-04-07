@@ -7,7 +7,7 @@
     tools:context="com.pifss.patient.HospitalProfile">
 
     <ImageView
-        android:id="@+id/imageViewHospitalLogo"
+        android:id="@+id/HospitalProfile_HospitalLogoImageView"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_alignParentLeft="true"
@@ -22,20 +22,20 @@
         android:id="@+id/HospitalProfile_hospitalNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageViewHospitalLogo"
+        android:layout_alignTop="@+id/HospitalProfile_HospitalLogoImageView"
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
         android:textSize="18dp"
         android:fontFamily="monospace"
-        android:layout_toEndOf="@+id/imageViewHospitalLogo"
-        android:layout_toRightOf="@+id/imageViewHospitalLogo"
+        android:layout_toEndOf="@+id/HospitalProfile_HospitalLogoImageView"
+        android:layout_toRightOf="@+id/HospitalProfile_HospitalLogoImageView"
         android:text="@string/TextView_HosName" />
 
     <TextView
         android:id="@+id/HospitalProfile_TypeTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageViewHospitalLogo"
+        android:layout_alignBottom="@+id/HospitalProfile_HospitalLogoImageView"
         android:layout_alignLeft="@+id/HospitalProfile_hospitalNameTV"
         android:layout_alignStart="@+id/HospitalProfile_hospitalNameTV"
         android:layout_below="@+id/HospitalProfile_hospitalNameTV"

@@ -21,8 +21,8 @@ public class ViewPatientProfile extends AppCompatActivity {
 
         ImageView imageProfile = (ImageView) findViewById(R.id.ViewPatientProfile_PatientImage);
 
-        Button editButton=(Button) findViewById(R.id.editPersonalInfoButton);
-        Button myDrButton=(Button) findViewById(R.id.mydrGeneralInfoButton);
+        Button editButton=(Button) findViewById(R.id.ViewPatientProfile_editPersonalInfoButton);
+        Button myDrButton=(Button) findViewById(R.id.ViewMedicalInfo_mydoctorsButton);
         Button medicalProfileButton = (Button) findViewById(R.id.ViewPatientProfile_medicalInfoViewButton);
 
 
@@ -31,7 +31,7 @@ public class ViewPatientProfile extends AppCompatActivity {
         final TextView birthdateText=(TextView) findViewById(R.id.ViewPatientProfile_BirthDateVT);
         final TextView emailText=(TextView) findViewById(R.id.ViewPatientProfile_emailVT);
         final TextView phoneText=(TextView) findViewById(R.id.ViewPatientProfile_phoneVT);
-        final TextView emergencyNoText=(TextView) findViewById(R.id.emergencyNoView);
+        final TextView emergencyNoText=(TextView) findViewById(R.id.ViewPatientProfile_emergencyNumberTV);
 
 
 //        String url="";

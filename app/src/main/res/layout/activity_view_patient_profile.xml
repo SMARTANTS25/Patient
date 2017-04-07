@@ -20,15 +20,14 @@
 
     <ImageView
         android:id="@+id/ViewPatientProfile_PatientImage"
-        android:layout_width="100dp"
+        android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
         app:srcCompat="@mipmap/ic_launcher"
         android:layout_alignTop="@+id/ViewPatientProfile_PatientNameTV"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/ViewPatientProfile_PatientNameTV"
@@ -45,19 +44,18 @@
         android:id="@+id/ViewPatientProfile_editPersonalInfoButton"
         android:layout_width="220dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="11dp"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
         android:text="@string/PatientProfile_EditProfile"
         android:textColor="@color/md_white_1000"
         android:textSize="14dp"
         android:layout_alignBottom="@+id/ViewPatientProfile_PatientImage"
-        android:layout_toRightOf="@+id/ViewPatientProfile_BirthDateTitle"
-        android:layout_toEndOf="@+id/ViewPatientProfile_BirthDateTitle" />
+        android:layout_toRightOf="@+id/Reg2_FirstNameTitle"
+        android:layout_toEndOf="@+id/Reg2_FirstNameTitle" />
 
 
     <TextView
-        android:id="@+id/ViewPatientProfile_GenderTitle"
+        android:id="@+id/Reg2_FirstNameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/RegGender_RadioButton"
@@ -72,12 +70,12 @@
         android:layout_height="wrap_content"
         android:text="@string/MaleReg_RadioButton"
         android:textSize="18sp"
-        android:layout_below="@+id/ViewPatientProfile_GenderTitle"
-        android:layout_alignLeft="@+id/ViewPatientProfile_GenderTitle"
-        android:layout_alignStart="@+id/ViewPatientProfile_GenderTitle" />
+        android:layout_below="@+id/Reg2_FirstNameTitle"
+        android:layout_alignLeft="@+id/Reg2_FirstNameTitle"
+        android:layout_alignStart="@+id/Reg2_FirstNameTitle" />
 
     <TextView
-        android:id="@+id/ViewPatientProfile_BirthDateTitle"
+        android:id="@+id/Reg2_CivilIdTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg2_BirthDate"
@@ -93,7 +91,7 @@
         android:layout_height="wrap_content"
         android:text="14/2/2012"
         android:textSize="18dp"
-        android:layout_below="@+id/ViewPatientProfile_BirthDateTitle"
+        android:layout_below="@+id/Reg2_CivilIdTitle"
         android:layout_toRightOf="@+id/imageView37" />
 
     <TextView
@@ -118,7 +116,7 @@
         android:layout_toEndOf="@+id/imageView38" />
 
     <TextView
-        android:id="@+id/Reg2_PhoneNumberTitle"
+        android:id="@+id/editPatientProfile_BirthDateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Reg2_Phone"
@@ -134,7 +132,7 @@
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:text="66666666"
-        android:layout_below="@+id/Reg2_PhoneNumberTitle"
+        android:layout_below="@+id/editPatientProfile_BirthDateTitle"
         android:layout_alignLeft="@+id/ViewPatientProfile_EmergencyPhoneTitle"
         android:layout_alignStart="@+id/ViewPatientProfile_EmergencyPhoneTitle" />
 
@@ -201,7 +199,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/calender"
-        android:layout_alignTop="@+id/ViewPatientProfile_BirthDateTitle"
+        android:layout_alignTop="@+id/Reg2_CivilIdTitle"
         android:layout_alignLeft="@+id/imageView38"
         android:layout_alignStart="@+id/imageView38" />
 
@@ -219,9 +217,9 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/phone_icon"
-        android:layout_alignBottom="@+id/Reg2_PhoneNumberTitle"
-        android:layout_toLeftOf="@+id/Reg2_PhoneNumberTitle"
-        android:layout_toStartOf="@+id/Reg2_PhoneNumberTitle" />
+        android:layout_alignBottom="@+id/editPatientProfile_BirthDateTitle"
+        android:layout_toLeftOf="@+id/editPatientProfile_BirthDateTitle"
+        android:layout_toStartOf="@+id/editPatientProfile_BirthDateTitle" />
 
     <ImageView
         android:id="@+id/imageView41"

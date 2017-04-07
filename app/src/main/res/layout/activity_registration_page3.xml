@@ -294,7 +294,7 @@
         android:text="@string/Reg3_RegisterButton"
         android:textColor="@color/md_white_1000"
         android:fontFamily="monospace"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"

@@ -23,7 +23,7 @@
         android:layout_height="75dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/toolbar10"
+
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
@@ -40,10 +40,8 @@
 
         android:fontFamily="monospace"
         android:layout_alignTop="@+id/DoctorItemList_DoctorProfileImage"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp" />
+        android:layout_alignLeft="@+id/homeSpecialtyIcon"
+        android:layout_alignStart="@+id/homeSpecialtyIcon" />
 
     <TextView
         android:id="@+id/DoctorItemList_DoctorGenderTV"
@@ -62,10 +60,10 @@
         android:id="@+id/homeSpecialtyIcon"
         android:layout_width="25dp"
         android:layout_height="25dp"
+        app:srcCompat="@mipmap/stethoscope"
         android:layout_alignBottom="@+id/DoctorItemList_DoctorProfileImage"
-        android:layout_alignLeft="@+id/DoctorItemList_DoctorNameTV"
-        android:layout_alignStart="@+id/DoctorItemList_DoctorNameTV"
-        app:srcCompat="@mipmap/stethoscope" />
+        android:layout_toLeftOf="@+id/DoctorItemList_DoctorSpecialtyTV"
+        android:layout_toStartOf="@+id/DoctorItemList_DoctorSpecialtyTV" />
 
     <ImageView
         android:id="@+id/homeGenderIcon"

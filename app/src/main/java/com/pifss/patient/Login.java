@@ -15,9 +15,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,10 +28,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         final Button login = (Button) findViewById(R.id.loginButton);
-        final EditText emailText = (EditText) findViewById(R.id.loginEmailText);
-        final EditText passwordText = (EditText) findViewById(R.id.passwordLoginText);
-        TextView signup = (TextView) findViewById(R.id.signupTextView);
-        TextView forgetPassword = (TextView) findViewById(R.id.forgetpasswordTV);
+        final EditText emailText = (EditText) findViewById(R.id.login_EmailTF);
+        final EditText passwordText = (EditText) findViewById(R.id.Login_PasswordTV);
+        TextView signup = (TextView) findViewById(R.id.Login_signupTV);
+        TextView forgetPassword = (TextView) findViewById(R.id.Login_forgetpasswordTV);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
