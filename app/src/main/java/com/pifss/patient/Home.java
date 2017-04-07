@@ -36,6 +36,9 @@ import java.util.ArrayList;
 public class Home extends AppCompatActivity {
 
     ArrayList<Doctor> model;
+    Drawer homeDrawer;
+    PrimaryDrawerItem myDoctorsItem;
+    int myDoctorCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +59,15 @@ public class Home extends AppCompatActivity {
 
         // MaterialDrawer Creation
 
-        int myDoctorsAmount = 1;
+        int myDoctorsAmount = 0;
 
-        PrimaryDrawerItem myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.ic_launcher_round).withName("My Doctors").withBadge(String.valueOf(myDoctorsAmount)).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
-        PrimaryDrawerItem findDoctorsItem = new PrimaryDrawerItem().withIdentifier(2).withIcon(R.mipmap.ic_launcher_round).withName("Find Doctors");
-        PrimaryDrawerItem hospitalsItem = new PrimaryDrawerItem().withIdentifier(3).withIcon(R.mipmap.ic_launcher_round).withName("Hospitals");
-        PrimaryDrawerItem reportItem = new PrimaryDrawerItem().withIdentifier(4).withIcon(R.mipmap.ic_launcher_round).withName("My Reports");
+        myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.doctor_profile_icon_two).withName("My Doctors").withBadge(String.valueOf(myDoctorsAmount)).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
+        PrimaryDrawerItem findDoctorsItem = new PrimaryDrawerItem().withIdentifier(2).withIcon(R.mipmap.doctor_profile_icon).withName("Find Doctors");
+        PrimaryDrawerItem hospitalsItem = new PrimaryDrawerItem().withIdentifier(3).withIcon(R.mipmap.hospital).withName("Hospitals");
+        PrimaryDrawerItem reportItem = new PrimaryDrawerItem().withIdentifier(4).withIcon(R.mipmap.medical_report_icon).withName("My Reports");
         DividerDrawerItem itemDivider = new DividerDrawerItem();
-        PrimaryDrawerItem settingsItem = new PrimaryDrawerItem().withIdentifier(5).withIcon(R.mipmap.ic_launcher_round).withName("Settings");
-        PrimaryDrawerItem logoutItem = new PrimaryDrawerItem().withIdentifier(6).withIcon(R.mipmap.ic_launcher_round).withName("Logout");
+        PrimaryDrawerItem settingsItem = new PrimaryDrawerItem().withIdentifier(5).withIcon(R.mipmap.settings_icon).withName("Settings");
+        PrimaryDrawerItem logoutItem = new PrimaryDrawerItem().withIdentifier(6).withIcon(R.mipmap.logout_icon).withName("Logout");
 
 
         AccountHeader headerResult = new AccountHeaderBuilder()
@@ -84,7 +87,7 @@ public class Home extends AppCompatActivity {
 
         // Drawer creation + navigation (listener)
 
-        Drawer result = new DrawerBuilder()
+        homeDrawer = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .addDrawerItems(myDoctorsItem, findDoctorsItem, hospitalsItem, reportItem, itemDivider, settingsItem, logoutItem)
@@ -132,6 +135,7 @@ public class Home extends AppCompatActivity {
         // Doctor List
 
         updateModel();
+        updateMyDoctorsBadge();
 
 
         ListView lv = (ListView) findViewById(R.id.HomeDoctorList);
@@ -236,6 +240,38 @@ public class Home extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         // Handle error
                         Toast.makeText(Home.this, error.getMessage(), Toast.LENGTH_LONG);
+                    }
+                });
+
+        queue.add(jsonReq);
+    }
+
+    private void updateMyDoctorsBadge () {
+        String patientId = "2";
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+patientId;
+
+        myDoctorCount = 0;
+
+        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(Home.this);
+
+        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        System.out.println(response);
+                        model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
+
+                        myDoctorsItem.withName("My Doctors").withBadge(String.valueOf(model.size()) ).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
+                        //notify the drawer about the updated element. it will take care about everything else
+                        homeDrawer.updateItem(myDoctorsItem);
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle error
                     }
                 });
 
