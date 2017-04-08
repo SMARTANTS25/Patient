@@ -86,13 +86,13 @@
         android:id="@+id/NewDoctorProfile_DoctorEmailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorSpecilityTitle"
-        android:layout_alignStart="@+id/NewDoctorProfile_DoctorSpecilityTitle"
-        android:layout_below="@+id/NewDoctorProfile_DoctorSpecialityTV"
-        android:layout_marginTop="29dp"
         android:text="@string/textView_DocEmail"
         android:textSize="18sp"
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_below="@+id/NewDoctorProfile_DoctorSpecialityTV"
+        android:layout_toLeftOf="@+id/NewDoctorProfile_DoctorNameTV"
+        android:layout_toStartOf="@+id/NewDoctorProfile_DoctorNameTV"
+        android:layout_marginTop="18dp" />
 
     <TextView
         android:id="@+id/NewDoctorProfile_DoctorEmailTV"
@@ -109,13 +109,13 @@
         android:id="@+id/NewDoctorProfile_DoctorNationalityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorEmailTitle"
-        android:layout_alignStart="@+id/NewDoctorProfile_DoctorEmailTitle"
-        android:layout_below="@+id/NewDoctorProfile_DoctorEmailTV"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:text="@string/textView_DocNationality"
         android:textSize="18sp"
-        android:fontFamily="monospace"/>
+        android:fontFamily="monospace"
+        android:layout_below="@+id/NewDoctorProfile_DoctorEmailTV"
+        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorEmailTitle"
+        android:layout_alignStart="@+id/NewDoctorProfile_DoctorEmailTitle" />
 
     <TextView
         android:id="@+id/NewDoctorProfile_DoctorNationalityTV"
@@ -182,7 +182,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/email"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@+id/NewDoctorProfile_DoctorEmailTitle"
         android:layout_alignLeft="@+id/imageView43"
         android:layout_alignStart="@+id/imageView43" />
 
