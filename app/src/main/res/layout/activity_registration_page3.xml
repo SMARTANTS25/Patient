@@ -93,7 +93,6 @@
         android:id="@+id/Reg3_bminImageButton"
         android:layout_width="70dp"
         android:layout_height="65dp"
-        android:layout_marginTop="18dp"
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/ic_b_minus"
         android:layout_below="@+id/Reg3_aminImgButton"
