@@ -16,9 +16,9 @@ public class NewDoctorProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_doctor_profile);
+        setContentView(R.layout.activity_new_doctor_profile); //
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.MyDoctorProfile_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.NewDoctorProfile_toolbar);
 
 
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
@@ -40,12 +40,12 @@ public class NewDoctorProfile extends AppCompatActivity {
 
         toolbar.setTitle(name);
 
-        ImageView imageViewDoctor = (ImageView) findViewById(R.id.NewDoctorProfile_image);
-        TextView textViewDocName = (TextView) findViewById(R.id.NewDoctorProfile_name);
-        TextView textViewEmail = (TextView) findViewById(R.id.NewDoctorProfile_email);
-        TextView textViewSpeciality = (TextView) findViewById(R.id.NewDoctorProfile_specialty);
-        TextView textViewNationality = (TextView) findViewById(R.id.NewDoctorProfile_nationality);
-        TextView textViewCV = (TextView) findViewById(R.id.NewDoctorProfile_cvUrl);
+        ImageView imageViewDoctor = (ImageView) findViewById(R.id.NewDoctorProfile_DoctorLogo);
+        TextView textViewDocName = (TextView) findViewById(R.id.NewDoctorProfile_DoctorNameTV);
+        TextView textViewEmail = (TextView) findViewById(R.id.NewDoctorProfile_DoctorEmailTV);
+        TextView textViewSpeciality = (TextView) findViewById(R.id.NewDoctorProfile_DoctorSpecialityTV);
+        TextView textViewNationality = (TextView) findViewById(R.id.NewDoctorProfile_DoctorNationalityTV);
+        TextView textViewCV = (TextView) findViewById(R.id.NewDoctorProfile_DoctorCvTV);
         //Button buttonRequest = (Button) findViewById(R.id.buttonSendDoctorRequest);
 
 
@@ -55,11 +55,9 @@ public class NewDoctorProfile extends AppCompatActivity {
         textViewNationality.setText(nationality);
         textViewSpeciality.setText(specialty);
 
-        if (profileImg != null && profileImg.length() >= 1 ) {
-            Picasso.with(this).load(profileImg).into(imageViewDoctor);
-        }*/
-
-
+        if (profileImg != null && profileImg.length() >= 4 &&  profileImg.isEmpty() == false ) {
+            Picasso.with(NewDoctorProfile.this).load(profileImg).into(imageViewDoctor);
+        }
 
 
 

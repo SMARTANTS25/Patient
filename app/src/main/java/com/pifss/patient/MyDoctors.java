@@ -58,10 +58,9 @@ public class MyDoctors extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Doctor m = model.get(position);
-
-
+                //
                 Intent intent = new Intent(MyDoctors.this, MyDoctorProfile.class);
-                intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
+                intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
                 intent.putExtra("gender", m.getGender());
                 intent.putExtra("specialty", m.getSpecialityId());
                 intent.putExtra("nationality", m.getNationality());

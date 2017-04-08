@@ -74,7 +74,11 @@ public class HospitalAdapter extends BaseAdapter {
         float distance = helper.distanceBetweenUserAndHospital(latitude, longitude);
 
         tvHospitalTitle.setText(pos.getHospitalName());
-        tvHospitalDistance.setText(String.valueOf(distance));
+        if (distance >= 0) {
+            tvHospitalDistance.setText(String.valueOf(distance));
+        } else {
+            tvHospitalDistance.setText("N/A");
+        }
         tvHospitalType.setText(pos.getType());
 
 

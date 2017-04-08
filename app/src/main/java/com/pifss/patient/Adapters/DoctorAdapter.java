@@ -62,7 +62,7 @@ public class DoctorAdapter extends BaseAdapter {
         // omg its a change
         //docProfile.setImageResource(m.getImageUrl());
 
-        if (m.getImageUrl() != null && m.getImageUrl().length() >= 1 ) {
+        if (m.getImageUrl() != null && m.getImageUrl().length() >= 4 &&  m.getImageUrl().isEmpty() == false ) {
             Picasso.with(context).load(m.getImageUrl()).into(docProfile);
         }
         docSpecialty.setText(m.getSpecialityId());
@@ -70,12 +70,12 @@ public class DoctorAdapter extends BaseAdapter {
         docName.setText(m.getFirstName() + " " + m.getMiddleName() + " " +m.getLastName());
 
 
-        docProfile.setOnClickListener(new View.OnClickListener() {
+        /*docProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Doctor in the HOUSE", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         return v;
     }
