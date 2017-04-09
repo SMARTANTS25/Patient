@@ -74,31 +74,9 @@
         android:layout_width="40dp"
         android:layout_height="55dp"
         app:srcCompat="@mipmap/gender_icon"
-        android:layout_alignBottom="@+id/RegFemaleRadioBu"
+        android:layout_alignTop="@+id/radioGroup2"
         android:layout_toLeftOf="@+id/Reg_ConfirmPassTF"
         android:layout_toStartOf="@+id/Reg_ConfirmPassTF" />
-
-    <RadioButton
-        android:id="@+id/MaleRegMaleRadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/MaleReg_RadioButton"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/Reg_ConfirmPassTF"
-        android:layout_alignLeft="@+id/RegFemaleRadioBu"
-        android:layout_alignStart="@+id/RegFemaleRadioBu" />
-
-    <RadioButton
-        android:id="@+id/RegFemaleRadioBu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/FemaleReg_RadioButton"
-        android:fontFamily="monospace"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp"
-        android:layout_below="@+id/MaleRegMaleRadioButton"
-        android:layout_toRightOf="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/ViewMedicalInfo_PatientImage"
@@ -145,10 +123,39 @@
         android:layout_toLeftOf="@+id/Reg_PasswordTF"
         android:layout_toStartOf="@+id/Reg_PasswordTF" />
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:id="@+id/radioGroup2"
+        android:layout_above="@+id/Reg1Btn"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView">
 
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="35dp"
+            android:layout_marginStart="35dp"
+            android:layout_below="@+id/Reg_ConfirmPassTF"
+            android:layout_weight="1"
+            android:fontFamily="monospace"
+            android:text="@string/MaleReg_RadioButton" />
 
-
-
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/MaleRegMaleRadioButton"
+            android:layout_marginLeft="35dp"
+            android:layout_marginStart="35dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_weight="1"
+            android:fontFamily="monospace"
+            android:text="@string/FemaleReg_RadioButton" />
+    </RadioGroup>
 
 
 </RelativeLayout>
