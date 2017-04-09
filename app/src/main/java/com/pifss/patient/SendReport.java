@@ -38,5 +38,9 @@ public class SendReport extends AppCompatActivity {
         });
 
     }
+//
+    public boolean sendReport(String comments) {
+        return false;
+    }
 
 }
