@@ -20,7 +20,6 @@
         android:id="@+id/ListHospitalView_HospitalTitleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="18sp"
@@ -28,9 +27,23 @@
         android:fontFamily="monospace"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
-        android:layout_alignTop="@+id/ListHospitalView_HospitalImageView"
         android:layout_toRightOf="@+id/ListHospitalView_HospitalImageView"
-        android:layout_toEndOf="@+id/ListHospitalView_HospitalImageView" />
+        android:layout_toEndOf="@+id/ListHospitalView_HospitalImageView"
+        android:layout_alignTop="@+id/ListHospitalView_distanceLabel" />
+
+    <TextView
+        android:id="@+id/ListHospitalView_distanceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ListHospitalView_DistanceTV"
+        android:layout_alignStart="@+id/ListHospitalView_DistanceTV"
+        android:layout_alignTop="@+id/ListHospitalView_HospitalImageView"
+        android:layout_marginTop="15dp"
+        android:fontFamily="monospace"
+        android:text="Distance"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/ListHospitalView_DistanceTV"

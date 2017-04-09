@@ -71,7 +71,7 @@ public class AllDoctors extends AppCompatActivity {
             }
         });
 
-        // Search Bar
+        // Search Bar /
 
         final android.widget.SearchView sv = (android.widget.SearchView) findViewById(R.id.AllDoctorSearchView);
 
