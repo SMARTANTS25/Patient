@@ -53,6 +53,9 @@ public class SearchHospital extends AppCompatActivity {
 
         SearchView svHospital = (SearchView) findViewById(R.id.searchViewHospital);
 
+
+        updateModel();
+
         lv = (ListView) findViewById(R.id.hospitalListView);
 
 
@@ -60,15 +63,22 @@ public class SearchHospital extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 com.pifss.patient.Hospital h = model.get(position);
+                //
+                Intent intent = new Intent(SearchHospital.this, HospitalProfile.class);
+                /*intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
+                intent.putExtra("gender", m.getGender());
+                intent.putExtra("specialty", m.getSpecialityId());
+                intent.putExtra("nationality", m.getNationality());
+                intent.putExtra("email", m.getEmail());
+                intent.putExtra("cvURL", m.getCvUrl());
+                intent.putExtra("imageURL", m.getImageUrl());*/
 
-                Toast.makeText(SearchHospital.this, h.getHospitalName(), Toast.LENGTH_SHORT).show();
+                startActivity(intent);
 
             }
         });
 
-        updateModel();
 
         //R.id.textViewHospitalAddress
 
@@ -99,12 +109,11 @@ public class SearchHospital extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                com.pifss.patient.Hospital h = model.get(position);
+                //
+                Intent intent = new Intent(SearchHospital.this, HospitalProfile.class);
 
-                Intent i = new Intent(SearchHospital.this, HospitalProfile.class);
-
-
-                //    i.putExtra();
-                startActivity(i);
+                startActivity(intent);
 
             }
         });

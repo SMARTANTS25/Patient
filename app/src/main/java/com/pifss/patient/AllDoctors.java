@@ -99,7 +99,7 @@ public class AllDoctors extends AppCompatActivity {
             return;
         }
 
-        ArrayList<Doctor> parsedModel = new ArrayList<>();
+        final ArrayList<Doctor> parsedModel = new ArrayList<>();
 
         for (int i = 0; i < model.size(); i++) {
             Doctor curDoc = model.get(i);
@@ -122,7 +122,7 @@ public class AllDoctors extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Doctor m = model.get(position);
+                Doctor m = parsedModel.get(position);
 
                 Intent intent = new Intent(AllDoctors.this, NewDoctorProfile.class);
                 intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
