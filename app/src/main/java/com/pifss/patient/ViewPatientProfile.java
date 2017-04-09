@@ -16,6 +16,7 @@ public class ViewPatientProfile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_patient_profile);
 
@@ -71,14 +72,30 @@ public class ViewPatientProfile extends AppCompatActivity {
 //            e.printStackTrace();
 //        }
 
-        String movieSTR=getSharedPreferences("PatientData",MODE_PRIVATE).getString("Patient"," ");
+        String PatientProfile  = getSharedPreferences("PatientData",MODE_PRIVATE).getString("Patient"," ");
 
         // Step 2 converting String to Json Object
 
         try {
-            JSONObject obj=new JSONObject(movieSTR);
+            JSONObject obj=new JSONObject(PatientProfile);
 
-            String fname=obj.getString("fname");
+            String fname = obj.getString("firstName");
+            String lname = obj.getString("lastName");
+            nameText.setText(fname.toString() +" "+ lname.toString());
+            String gender = obj.getString("gender");
+
+            if (gender.equals("M"))
+                nameText.setText("male");
+            else nameText.setText("female");
+
+            String email = obj.getString("email");
+            emailText.setText(email);
+            String phone = obj.getString("phoneNumber");
+            String emergency = obj.getString("emergencyNumber");
+            phoneText.setText(phone);
+            emergencyNoText.setText(emergency);
+            String birthDate = obj.getString("dateOfBirth");
+            birthdateText.setText(birthDate);
 
             Toast.makeText(ViewPatientProfile.this, "the patient name: "+fname, Toast.LENGTH_SHORT).show();
 

@@ -88,6 +88,7 @@ public class Home extends AppCompatActivity {
         // Drawer creation + navigation (listener)
 
         homeDrawer = new DrawerBuilder()
+
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .addDrawerItems(myDoctorsItem, findDoctorsItem, hospitalsItem, reportItem, itemDivider, settingsItem, logoutItem)

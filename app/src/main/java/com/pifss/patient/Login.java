@@ -2,8 +2,8 @@ package com.pifss.patient;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +15,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -87,7 +86,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void login(final String emailText, String passwordText) {
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login/";
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login";
         RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
 
         JSONObject obj = new JSONObject();
@@ -97,18 +96,16 @@ public class Login extends AppCompatActivity {
             JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(final JSONObject response) {
-                    Toast.makeText(Login.this, "response received (login)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, response.toString()+" ", Toast.LENGTH_SHORT).show();
+
+
+                    // put info (shared preferences
+                   // Patient p = new Gson().fromJson(response.toString(), Patient.class);
+
+
 
                     SharedPreferences sharedpreferences = getSharedPreferences("patient", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedpreferences.edit();
-                    // put info (shared preferences
-                    Patient p = new Gson().fromJson(response.toString(), Patient.class);
-                    editor.putString("username", p.getEmail());
-                    editor.putString("firstName", p.getFirstName());
-                    editor.putString("middleName", p.getMiddleName());
-                    editor.putString("lastName", p.getLastName());
-                    editor.commit();
-
                     Intent intent = new Intent(Login.this, Home.class);
                     startActivity(intent);
 
@@ -117,7 +114,7 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
 
-                    Toast.makeText(Login.this, "error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, error.toString()+"", Toast.LENGTH_SHORT).show();
                 }
             });
         } catch (JSONException e) {

@@ -11,18 +11,23 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class RegistrationPage3 extends AppCompatActivity {
 
-    String diabetes="";
+
     String BloodType;
+
+    boolean diabetes = false;
+    boolean asthmas = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,14 +35,16 @@ public class RegistrationPage3 extends AppCompatActivity {
 
         Button reg3= (Button) findViewById(R.id.Reg3_button);
 
-        String RegEmail = getIntent().getStringExtra("email");
-        String Regpassword = getIntent().getStringExtra("password");
+        final String email = getIntent().getStringExtra("email1");
+        final String password = getIntent().getStringExtra("password1");
+        final String gender = getIntent().getStringExtra("gender1");
+
         final String fname = getIntent().getStringExtra("firstName");
         final String lname = getIntent().getStringExtra("lastName");
-        String bDate = getIntent().getStringExtra("birthDate");
-        String civilID = getIntent().getStringExtra("civilID");
-        String phoneNum = getIntent().getStringExtra("phoneNumber");
-        String emergencyNum = getIntent().getStringExtra("emergencyNumber");
+        final String bDate = getIntent().getStringExtra("birthDate");
+        final String civilID = getIntent().getStringExtra("civilID");
+        final String phoneNum = getIntent().getStringExtra("phoneNumber");
+        final String emergencyNum = getIntent().getStringExtra("emergencyNumber");
 
         ImageView bloodBPlus = (ImageView) findViewById(R.id.Reg3_bplusImageButton);
         ImageView bloodBMinus = (ImageView) findViewById(R.id.Reg3_bminImageButton);
@@ -49,8 +56,8 @@ public class RegistrationPage3 extends AppCompatActivity {
         ImageView bloodOMinus = (ImageView) findViewById(R.id.Reg3_ominImageButton);
 
 
-        EditText allergies = (EditText) findViewById(R.id.Reg3_AllergiesET);
-        EditText medications = (EditText) findViewById(R.id.Reg3_MedicationsET);
+        final EditText allergies = (EditText) findViewById(R.id.Reg3_AllergiesET);
+        final EditText medications = (EditText) findViewById(R.id.Reg3_MedicationsET);
 
         Switch SAsthma = (Switch) findViewById(R.id.switchAsthma);
         Switch SAllergies = (Switch) findViewById(R.id.switchAllergies);
@@ -58,6 +65,31 @@ public class RegistrationPage3 extends AppCompatActivity {
         RadioButton RDiabetesNo = (RadioButton) findViewById(R.id.Reg3_NoDiabetesRB);
         final RadioButton RDiabetesTOne = (RadioButton) findViewById(R.id.Reg3_TypeOneDiabetesRB);
         RadioButton RDiabetesTTwo = (RadioButton) findViewById(R.id.Reg3_TypeTwoDiabetesRB);
+
+        RDiabetesNo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    diabetes=false;
+
+
+            }
+        });
+        RDiabetesTOne.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    diabetes = true;
+            }
+        });
+        RDiabetesTTwo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked)
+                    diabetes=true;
+            }
+        });
 
         BloodType = "";
 
@@ -113,58 +145,99 @@ public class RegistrationPage3 extends AppCompatActivity {
         SAsthma.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked)
+                    asthmas = true;
+
                 Toast.makeText(RegistrationPage3.this, ""+isChecked, Toast.LENGTH_SHORT).show();
             }
         });
         SAllergies.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
                 Toast.makeText(RegistrationPage3.this, ""+isChecked, Toast.LENGTH_SHORT).show();
             }
         });
 
 
-                String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/";
-        final RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
-        JsonObjectRequest req = null;
-        final JSONObject obj = new JSONObject();
-        try {
-            obj.put("email", getIntent().getStringExtra("email"));
-            obj.put("password", getIntent().getStringExtra("password"));
-            obj.put("fname", getIntent().getStringExtra("firstName"));
-            obj.put("lname", getIntent().getStringExtra("lastName"));
-            obj.put("birthDate" , getIntent().getStringExtra("birthDate"));
-            obj.put("civilId" , getIntent().getStringExtra("civilID"));
-            obj.put("phone",getIntent().getStringExtra("phoneNumber"));
-            obj.put("emergencyNumber", getIntent().getStringExtra("emergencyNumber"));
-            obj.put("bloodType",BloodType.toString());
-
-             req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-
-                    Toast.makeText(RegistrationPage3.this, response.toString(), Toast.LENGTH_SHORT).show();
 
 
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                    Toast.makeText(RegistrationPage3.this, error.toString(), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        queue.add(req);
 
 
+
+        final String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient";
+        final RequestQueue queue = MySingleton.getInstance().getRequestQueue(RegistrationPage3.this);
 
         reg3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                JsonObjectRequest req = null;
+                final JSONObject obj = new JSONObject();
+                try {
+//
+//                    "allergies": "1",
+//                            "asthma": true,
+//                            "bloodType": "b",
+//                            "civilId": "123456789012",
+//                            "dateOfBirth": "2017-01-18",
+//                            "deleted": 0,
+//                            "diabetes": true,
+//                            "email": "ali@ali.com",
+//                            "emergencyNumber": "232323",
+//                            "firstName": "ali",
+//                            "gender": "m",
+//                            "imageUrl": "http://www.fancyicons.com/download/?id=2652&t=png&s=256",
+//                            "lastName": "alo",
+//                            "medications": "1",
+//                            "middleName": "m",
+//                            "nationality": "kw",
+//                            "password": "11",
+//                            "patientId": 3,
+//                            "phoneNumber": "323232",
+//                            "status": true
+                    obj.put("email", email);
+                    obj.put("password", password);
+                    obj.put("gender",gender);
+                    obj.put("deleted",0);
+                    obj.put("firstName", fname);
+                    obj.put("lastName", lname);
+                    obj.put("dateOfBirth" , bDate);
+                    obj.put("civilId" , civilID);
+                    obj.put("phoneNumber", phoneNum);
+                    obj.put("emergencyNumber", emergencyNum);
+                    obj.put("bloodType",BloodType);
+                    obj.put("diabetes",true);
+                    obj.put("asthma",true);
+                    obj.put("status",true);
+
+                    obj.put("nationality"," ");
+                    obj.put("middleName"," ");
+                    obj.put("imageUrl", " ");
+                    obj.put("allergies",allergies.getText().toString());
+                    obj.put("medications",medications.getText().toString());
+                    System.out.println(obj.toString());
+                    req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+
+                            Toast.makeText(RegistrationPage3.this, response.toString(), Toast.LENGTH_SHORT).show();
+
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                            Toast.makeText(RegistrationPage3.this, error.toString(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+                    queue.add(req);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
 
 
                 SharedPreferences pref = getSharedPreferences("PatientData",MODE_PRIVATE);
@@ -174,7 +247,7 @@ public class RegistrationPage3 extends AppCompatActivity {
                         .commit();
 
                 Intent i = new Intent(RegistrationPage3.this, Home.class);
-                Toast.makeText(RegistrationPage3.this, "hello & you are done " + getIntent().getStringExtra("firstName") + " "+ getIntent().getStringExtra("lastName"), Toast.LENGTH_LONG).show();
+                Toast.makeText(RegistrationPage3.this, "hello & you are done " + fname + " "+ lname, Toast.LENGTH_LONG).show();
                 startActivity(i);
             }
         });
@@ -186,24 +259,24 @@ public class RegistrationPage3 extends AppCompatActivity {
 
         boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
+       //  Check which radio button was clicked
         switch(view.getId()) {
             case R.id.Reg3_NoDiabetesRB:
                 if (checked)
                     // Pirates are the best
-                    diabetes = "No";
+                    diabetes = false;
                 break;
             case R.id.Reg3_TypeOneDiabetesRB:
                 if (checked)
-                    diabetes = "Type One";
-                    // Ninjas rule
+                    diabetes = true;
+                // Ninjas rule
                 break;
             case R.id.Reg3_TypeTwoDiabetesRB:
-                if(checked)
-                    diabetes = "Type Two";
-                    break;
-        }
+                if (checked)
+                    diabetes = true;
+                break;
 
+        }
     }
 
 

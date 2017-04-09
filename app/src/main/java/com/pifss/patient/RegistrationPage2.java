@@ -27,8 +27,12 @@ public class RegistrationPage2 extends AppCompatActivity {
 
 
 
+        final String email = getIntent().getStringExtra("email");
+        final String password = getIntent().getStringExtra("password");
+        final String gender = getIntent().getStringExtra("gender");
 
 
+      //  Toast.makeText(this, email+ " "+password+" "+gender , Toast.LENGTH_SHORT).show();
 
         fname= (EditText) findViewById(R.id.Reg2_FirstNameTF);
         lname= (EditText) findViewById(R.id.Reg2_LastNameTF);
@@ -44,12 +48,11 @@ public class RegistrationPage2 extends AppCompatActivity {
 //        final String civilIdValue = birthDate.getText().toString();
 //        final String phoneValue = phone.getText().toString();
 //        final String emergencyNumValue = emergencyNumber.getText().toString();
-         // regButton = (Button) findViewById(R.id.BtnToMedicalReg);
+          regButton = (Button) findViewById(R.id.Reg2_NextButton);
 
 
          final String birthdateV = "";
-
-
+  ;
         birthDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,10 +61,12 @@ public class RegistrationPage2 extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
-                      birthdateV.valueOf( year + "-" + month + "-" + dayOfMonth );
+                        birthDate.setText(year + "-" + month + "-" + dayOfMonth);
+        //              birthdateV.valueOf( year + "-" + month + "-" + dayOfMonth );
 
 
-                        Toast.makeText(RegistrationPage2.this, year + "-" + month + "-" + dayOfMonth, Toast.LENGTH_SHORT).show();
+
+                        //Toast.makeText(RegistrationPage2.this, birthdateV.toString(), Toast.LENGTH_SHORT).show();
 
                     }
                 }, 1995, 2, 23);
@@ -70,35 +75,35 @@ public class RegistrationPage2 extends AppCompatActivity {
 
             }});
 
-        birthDate.setText(birthdateV);
+      //  birthDate.setText(birthdateV);
         Toast.makeText(this, birthDate.getText(), Toast.LENGTH_SHORT).show();
+
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(RegistrationPage2.this, fname.getText()+" "+lname.getText(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(RegistrationPage2.this, fname.getText()+" "+lname.getText(), Toast.LENGTH_SHORT).show();
 
-//            case R.id.canc:
-//                Intent i = new Intent(getBaseContext(), LoginActivity.class);
-//                startActivity(i);
-//                //finish();
-//                break;
+
                           if(validReg()== false){
                               regButton.setEnabled(false);
                               Toast.makeText(RegistrationPage2.this, "Invalid Data Check Please!?", Toast.LENGTH_SHORT).show();
                           }
 
                            else {
-                              Intent i = new Intent(RegistrationPage2.this, RegistrationPage3.class);
+                              Intent i2 = new Intent(RegistrationPage2.this, RegistrationPage3.class);
 
-                              i.putExtra(String.valueOf(fname.getText()), "firstName");
-                              i.putExtra(String.valueOf(lname.getText()), "lastName");
-                              i.putExtra(birthdateV, "birthDate");
-                              i.putExtra(String.valueOf(civilId.getText()), "civilID");
-                              i.putExtra(String.valueOf(phone.getText()), "phoneNumber");
-                              i.putExtra(String.valueOf(emergencyNumber.getText()), "emergencyNumber");
+                              i2.putExtra("firstName",fname.getText().toString());
+                              i2.putExtra("lastName",lname.getText().toString());
+                              i2.putExtra( "birthDate",birthDate.getText().toString());
+                              i2.putExtra("civilID",civilId.getText().toString());
+                              i2.putExtra( "phoneNumber",phone.getText().toString());
+                              i2.putExtra( "emergencyNumber",emergencyNumber.getText().toString());
+                              i2.putExtra("email1",email);
+                              i2.putExtra("password1",password);
+                              i2.putExtra("gender1",gender);
                               Toast.makeText(RegistrationPage2.this, "done with Reg2, Welcome to Reg3", Toast.LENGTH_SHORT).show();
-                              startActivity(i);
+                              startActivity(i2);
                           }
             }
         });

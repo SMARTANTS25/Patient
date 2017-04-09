@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class  RegistrationPage1 extends AppCompatActivity {
@@ -25,9 +26,10 @@ public class  RegistrationPage1 extends AppCompatActivity {
 //        final EditText confirmPasswordf = (EditText) findViewById(R.id.Reg_ConfirmPassTF);
 //        RadioButton male = (RadioButton) findViewById(R.id.MaleRegMaleRadioButton);
 //        RadioButton female = (RadioButton) findViewById(R.id.RegFemaleRadioBu);
+
          email= (EditText) findViewById(R.id.Reg_EmailTF);
-        password = (EditText) findViewById(R.id.Reg_PasswordTF);
-        confirmPassword = (EditText) findViewById(R.id.Reg_ConfirmPassTF);
+         password = (EditText) findViewById(R.id.Reg_PasswordTF);
+         confirmPassword = (EditText) findViewById(R.id.Reg_ConfirmPassTF);
 
 
 
@@ -36,6 +38,25 @@ public class  RegistrationPage1 extends AppCompatActivity {
         String confirmPassValue = confirmPassword.getText().toString();
         RegButton = (Button) findViewById(R.id.Reg1Btn);
 
+        RadioButton male = (RadioButton) findViewById(R.id.radioButton2);
+        RadioButton female = (RadioButton) findViewById(R.id.radioButton);
+
+
+        final String[] gender = new String[1];
+        male.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+        gender[0] = "M";
+                Toast.makeText(RegistrationPage1.this, gender[0]+"", Toast.LENGTH_SHORT).show();
+            }
+        });
+        female.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gender[0] ="F";
+                Toast.makeText(RegistrationPage1.this, gender[0]+"", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         RegButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +73,9 @@ public class  RegistrationPage1 extends AppCompatActivity {
                 else {
                     validReg();
                     Intent i = new Intent(RegistrationPage1.this, RegistrationPage2.class);
-                    i.putExtra(email.getText().toString(), "email");
-                    i.putExtra(password.getText().toString(), "password");
-                    i.putExtra(confirmPassword.getText().toString(), "confirmPassword");
+                    i.putExtra( "email",email.getText().toString());
+                    i.putExtra( "password",password.getText().toString());
+                    i.putExtra("gender", gender[0]);
 
                     Toast.makeText(RegistrationPage1.this, "Next Pressed", Toast.LENGTH_SHORT).show();
                     startActivity(i);

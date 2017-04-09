@@ -27,6 +27,7 @@
         <activity android:name=".EditPatientProfile" />
         <activity android:name=".EditMedicalInfo" />
         <activity android:name=".RegistrationPage1" >
+
             <intent-filter>
 
                 <action android:name="android.intent.action.MAIN" />
@@ -42,9 +43,9 @@
         <activity
             android:name=".Login"
             android:exported="true" />
-        <activity
-            android:name=".Home"
-            android:exported="true" />
+        <!--<activity-->
+            <!--android:name=".Home"-->
+            <!--android:exported="true" />-->
         <activity
             android:name=".MyDoctors"
             android:exported="true"
@@ -70,6 +71,9 @@
         <activity
             android:name=".NewDoctorProfile"
             android:exported="true" />
+        <activity android:name=".Home">
+
+        </activity>
         <activity android:name=".MyDoctorProfile" android:exported="true"></activity>
     </application>
 

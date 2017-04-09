@@ -71,8 +71,8 @@
         android:text="@string/MaleReg_RadioButton"
         android:textSize="18sp"
         android:layout_below="@+id/Reg2_FirstNameTitle"
-        android:layout_alignLeft="@+id/Reg2_FirstNameTitle"
-        android:layout_alignStart="@+id/Reg2_FirstNameTitle" />
+        android:layout_alignRight="@+id/ViewPatientProfile_EmailTitle"
+        android:layout_alignEnd="@+id/ViewPatientProfile_EmailTitle" />
 
     <TextView
         android:id="@+id/Reg2_CivilIdTitle"
