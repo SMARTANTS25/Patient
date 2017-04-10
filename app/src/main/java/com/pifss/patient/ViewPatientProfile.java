@@ -35,42 +35,7 @@ public class ViewPatientProfile extends AppCompatActivity {
         final TextView emergencyNoText=(TextView) findViewById(R.id.ViewPatientProfile_emergencyNumberTV);
 
 
-//        String url="";
-//        RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);
-//
-//        JSONObject obj = new JSONObject();
-//        try {
-//
-//            obj.put("fName", nameText);
-//            obj.put("gender", genderText);
-//            obj.put("birthDate", birthdateText);
-//            obj.put("email", emailText);
-//            obj.put("phoneNumber", phoneText);
-//            obj.put("emergencyNumber", emergencyNoText);
-//            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
-//                @Override
-//                public void onResponse(final JSONObject response) {
-//
-//                    Patient p=new Gson().fromJson(response.toString(),Patient.class);
-//                    nameText.setText(p.getFirstName());
-//                    birthdateText.setText(p.getDateOfBirth());
-//                    emailText.setText(p.getEmail());
-//                    phoneText.setText(p.getPhoneNumber());
-//                    emergencyNoText.setText(p.getEmergencyNumber());
-//                    Toast.makeText(ViewPatientProfile.this, "View profile", Toast.LENGTH_SHORT).show();
-//
-//
-//                }
-//            }, new Response.ErrorListener() {
-//                @Override
-//                public void onErrorResponse(VolleyError error) {
-//
-//                    Toast.makeText(ViewPatientProfile.this, "error", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+
 
         String PatientProfile  = getSharedPreferences("PatientData",MODE_PRIVATE).getString("Patient"," ");
 
@@ -82,11 +47,12 @@ public class ViewPatientProfile extends AppCompatActivity {
             String fname = obj.getString("firstName");
             String lname = obj.getString("lastName");
             nameText.setText(fname.toString() +" "+ lname.toString());
+
             String gender = obj.getString("gender");
 
             if (gender.equals("M"))
-                nameText.setText("male");
-            else nameText.setText("female");
+                genderText.setText("male");
+            else genderText.setText("female");
 
             String email = obj.getString("email");
             emailText.setText(email);

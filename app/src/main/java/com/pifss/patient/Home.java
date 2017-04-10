@@ -1,7 +1,6 @@
 package com.pifss.patient;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +30,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.pifss.patient.Adapters.DoctorAdapter;
 import com.pifss.patient.utils.Doctor;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
@@ -39,11 +40,45 @@ public class Home extends AppCompatActivity {
     Drawer homeDrawer;
     PrimaryDrawerItem myDoctorsItem;
     int myDoctorCount = 0;
+    AccountHeader headerResult;
+    JSONObject obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        String shared = getSharedPreferences("patientData", MODE_PRIVATE).getString("Patient"," ");
+
+
+//                  String fullname="";
+//            String  email="";
+//            String shared = getSharedPreferences("patientData", MODE_PRIVATE).getString("Patient"," ");
+
+//        try {
+//
+//
+//
+//                obj = new JSONObject(shared);
+//
+//                Toast.makeText(this, obj.toString()+"", Toast.LENGTH_SHORT).show();
+//
+//
+////                email = obj.getString("email");
+////                fullname = obj.getString("firstName") + obj.getString("lastName");
+//
+//              //  Toast.makeText(this, fullname+" "+email, Toast.LENGTH_SHORT).show();
+//
+//
+//            } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+     //   Toast.makeText(this, obj.toString()+"", Toast.LENGTH_SHORT).show();
+
+//        String full = patientData("firstName");
+//        Toast.makeText(this, full+"", Toast.LENGTH_SHORT).show();
+
+        //Toast.makeText(this, fullname+" "+email, Toast.LENGTH_SHORT).show();
         Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
         toolbar.setTitle("Home");
         //
@@ -51,12 +86,9 @@ public class Home extends AppCompatActivity {
 
         // Get Patient data
 
-        SharedPreferences sharedpreferences = getSharedPreferences("patient", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        // put info (shared preferences
-        String username = sharedpreferences.getString("username", "ERROR");
-        String fullName = sharedpreferences.getString("firstName", "ERROR") + sharedpreferences.getString("lastName", "ERROR");
+       // String patients[] = patientData("firstName","lastName","email");
 
+       // Toast.makeText(this, patients[0]+" "+patients[1]+" "+patients[2], Toast.LENGTH_SHORT).show();
         // MaterialDrawer Creation
 
         int myDoctorsAmount = 0;
@@ -70,20 +102,22 @@ public class Home extends AppCompatActivity {
         PrimaryDrawerItem logoutItem = new PrimaryDrawerItem().withIdentifier(6).withIcon(R.mipmap.logout_icon).withName("Logout");
 
 
-        AccountHeader headerResult = new AccountHeaderBuilder()
+             headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.mipmap.navigation_drawer_icon)
                 .addProfiles(
-                        new ProfileDrawerItem().withName(fullName).withTextColor(Color.BLUE).withEmail("mikepenz@gmail.com")
+                        new ProfileDrawerItem().withName("  ").withTextColor(Color.BLUE).withEmail("  ")
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
                     public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
+                        startActivity(new Intent(Home.this,ViewPatientProfile.class));
                         return false;
                     }
                 })
 
                 .build();
+
 
         // Drawer creation + navigation (listener)
 
@@ -183,7 +217,8 @@ public class Home extends AppCompatActivity {
                 return false;
             }
         });
-    }
+
+        }
 
 
     private void initAdapterWithFilter(String filter) {
@@ -215,8 +250,8 @@ public class Home extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Doctor m = parsedModel.get(position);
-
-                Intent intent = new Intent(Home.this, NewDoctorProfile.class);
+                                                    //newDoctorProfile
+                Intent intent = new Intent(Home.this, ViewPatientProfile.class);
                 intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
                 intent.putExtra("gender", m.getGender());
                 intent.putExtra("specialty", m.getSpecialityId());
@@ -230,6 +265,30 @@ public class Home extends AppCompatActivity {
             }
         });
     }
+
+
+//
+//      String patientData(String firstName)
+//    {
+//        String shared = getSharedPreferences("patientData", MODE_PRIVATE).getString("Patient"," ");
+//
+//        String fullname="";
+//        try {
+//
+//
+//            obj=new JSONObject(shared);
+//
+//
+//
+//           fullname = obj.getString(firstName) ;
+//            Toast.makeText(this, fullname+"", Toast.LENGTH_SHORT).show();
+//           // email = obj.getString(email);
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        return fullname;
+//    }
 
     private void updateModel () {
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor";

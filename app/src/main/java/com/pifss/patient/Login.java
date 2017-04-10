@@ -86,26 +86,46 @@ public class Login extends AppCompatActivity {
     }
 
     private void login(final String emailText, String passwordText) {
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login";
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login/";
         RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
 
         JSONObject obj = new JSONObject();
+
         try {
             obj.put("username", emailText);
             obj.put("password", passwordText);
             JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(final JSONObject response) {
-                    Toast.makeText(Login.this, response.toString()+" ", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(Login.this, response.toString()+" ", Toast.LENGTH_SHORT).show();
 
 
-                    // put info (shared preferences
-                   // Patient p = new Gson().fromJson(response.toString(), Patient.class);
+                    JSONObject o = null;
+                        //array of object
+                    String one ;
+                    try {
+                        one = response.getString("items");
+                        o = new JSONObject(one);
+                        String name = o.getString("firstName");
+                        Toast.makeText(Login.this, "welcome "+name+"", Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    // Toast.makeText(Login.this, one+"", Toast.LENGTH_SHORT).show();
+
+                        //put the array in one obj
+
+                        //test
 
 
+                    SharedPreferences sharedpreferences = getSharedPreferences("PatientData", MODE_PRIVATE);
 
-                    SharedPreferences sharedpreferences = getSharedPreferences("patient", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedpreferences.edit();
+
+                    sharedpreferences.edit()
+                            .putString("Patient" , o.toString())
+                            .apply();
+
+
                     Intent intent = new Intent(Login.this, Home.class);
                     startActivity(intent);
 
@@ -114,9 +134,10 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
 
-                    Toast.makeText(Login.this, error.toString()+"", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Login.this, error.toString()+"", Toast.LENGTH_SHORT).show();
                 }
             });
+            queue.add(req);
         } catch (JSONException e) {
             e.printStackTrace();
         }
