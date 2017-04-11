@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pifss.patient.SendReportPage2">
+
+    <TextView
+        android:id="@+id/SendReport_Nauseous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="43dp" />
+
+    <RadioButton
+        android:id="@+id/ReportNauseousYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SendReport_Nauseous"
+        android:layout_alignStart="@+id/SendReport_Nauseous"
+        android:layout_below="@+id/SendReport_Nauseous"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportNauseousNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/ReportNauseousYes"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:text="RadioButton" />
+
+    <TextView
+        android:id="@+id/SendReport_HeartBeatsRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportNauseousYes"
+        android:layout_alignStart="@+id/ReportNauseousYes"
+        android:layout_below="@+id/ReportNauseousYes"
+        android:layout_marginTop="13dp"
+        android:text="TextView" />
+
+    <RadioButton
+        android:id="@+id/ReportHeartBeatsRateHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SendReport_HeartBeatsRate"
+        android:layout_alignStart="@+id/SendReport_HeartBeatsRate"
+        android:layout_below="@+id/SendReport_HeartBeatsRate"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportHeartBeatsRateModerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ReportHeartBeatsRateHigh"
+        android:layout_centerHorizontal="true"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportHeartBeatsRateLow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ReportHeartBeatsRateModerate"
+        android:layout_toEndOf="@+id/ReportHeartBeatsRateModerate"
+        android:layout_toRightOf="@+id/ReportHeartBeatsRateModerate"
+        android:text="RadioButton" />
+
+    <TextView
+        android:id="@+id/SendReport_Coughing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportHeartBeatsRateHigh"
+        android:layout_alignStart="@+id/ReportHeartBeatsRateHigh"
+        android:layout_below="@+id/ReportHeartBeatsRateHigh"
+        android:layout_marginTop="14dp"
+        android:text="TextView" />
+
+    <RadioButton
+        android:id="@+id/ReportCoughingYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SendReport_Coughing"
+        android:layout_alignStart="@+id/SendReport_Coughing"
+        android:layout_below="@+id/SendReport_Coughing"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportCoughingNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportNauseousNo"
+        android:layout_alignStart="@+id/ReportNauseousNo"
+        android:layout_alignTop="@+id/ReportCoughingYes"
+        android:text="RadioButton" />
+
+    <TextView
+        android:id="@+id/SendReport_BloodPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportCoughingYes"
+        android:layout_alignStart="@+id/ReportCoughingYes"
+        android:layout_below="@+id/ReportCoughingYes"
+        android:layout_marginTop="15dp"
+        android:text="TextView" />
+
+    <RadioButton
+        android:id="@+id/ReportBloodPressureHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SendReport_BloodPressure"
+        android:layout_alignStart="@+id/SendReport_BloodPressure"
+        android:layout_centerVertical="true"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportBloodPressureModerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportHeartBeatsRateModerate"
+        android:layout_alignStart="@+id/ReportHeartBeatsRateModerate"
+        android:layout_centerVertical="true"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportBloodPressureLow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/ReportBloodPressureModerate"
+        android:layout_toRightOf="@+id/ReportBloodPressureModerate"
+        android:text="RadioButton" />
+
+    <TextView
+        android:id="@+id/SendReport_SugarLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportBloodPressureHigh"
+        android:layout_alignStart="@+id/ReportBloodPressureHigh"
+        android:layout_below="@+id/ReportBloodPressureHigh"
+        android:layout_marginTop="13dp"
+        android:text="TextView" />
+
+    <RadioButton
+        android:id="@+id/ReportSugarLevelHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ReportBloodPressureHigh"
+        android:layout_alignRight="@+id/ReportBloodPressureHigh"
+        android:layout_below="@+id/SendReport_SugarLevel"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportSugarLevelModerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportBloodPressureModerate"
+        android:layout_alignStart="@+id/ReportBloodPressureModerate"
+        android:layout_alignTop="@+id/ReportSugarLevelHigh"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportSugarLevelLow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ReportSugarLevelModerate"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/ReportSugarLevelModerate"
+        android:layout_toRightOf="@+id/ReportSugarLevelModerate"
+        android:text="RadioButton" />
+
+    <TextView
+        android:id="@+id/SendReport_Fever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportSugarLevelHigh"
+        android:layout_alignStart="@+id/ReportSugarLevelHigh"
+        android:layout_below="@+id/ReportSugarLevelHigh"
+        android:layout_marginTop="14dp"
+        android:text="TextView" />
+
+    <RadioButton
+        android:id="@+id/ReportFeverYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ReportSugarLevelHigh"
+        android:layout_alignRight="@+id/ReportSugarLevelHigh"
+        android:layout_below="@+id/SendReport_Fever"
+        android:layout_marginTop="12dp"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/ReportFeverNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReportCoughingNo"
+        android:layout_alignStart="@+id/ReportCoughingNo"
+        android:layout_alignTop="@+id/ReportFeverYes"
+        android:text="RadioButton" />
+
+    <TextView
+        android:id="@+id/SendReport_Comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/SendReport_Fever"
+        android:layout_alignRight="@+id/SendReport_Fever"
+        android:layout_below="@+id/ReportFeverYes"
+        android:layout_marginTop="12dp"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/SendReport_CommentsEText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SendReport_Comments"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/SendReport_SubmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/SendReport_Comments"
+        android:layout_toRightOf="@+id/SendReport_Comments"
+        android:text="Button" />
+</RelativeLayout>

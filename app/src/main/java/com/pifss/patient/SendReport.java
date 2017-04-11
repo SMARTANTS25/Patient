@@ -19,6 +19,28 @@ public class SendReport extends AppCompatActivity {
         toolbar.setNavigationIcon(R.mipmap.aplus);
 
 
+        /*
+        * {
+    "bloodPressure": "high",
+    "comments": "High sugar",
+    "coughing": "no",
+    "dizziness": "yes",
+    "drId": 7,
+    "drcomment": "Eat less suge hello android",
+    "fever": "no",
+    "headache": "Yes",
+    "heartbeatRate": "high",
+    "nauseous": "no",
+    "pain": true,
+    "painlocation": "Head",
+    "patientId": 2,
+    "reportId": 2,
+    "sugarLevel": "high",
+    "timestamp": "2017-02-02T00:00:00Z"
+  }
+  */
+
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
