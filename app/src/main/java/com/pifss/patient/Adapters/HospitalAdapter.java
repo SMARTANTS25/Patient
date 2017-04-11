@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.pifss.patient.Hospital;
 import com.pifss.patient.R;
 import com.pifss.patient.utils.LocationHelper;
 
@@ -20,9 +19,9 @@ import java.util.ArrayList;
 public class HospitalAdapter extends BaseAdapter {
 
     private final LayoutInflater inflater;
-    ArrayList<Hospital> model;
+    ArrayList<com.pifss.patient.utils.Hospital> model;
     Activity context;
-    public HospitalAdapter(ArrayList<Hospital> model, Activity context) {
+    public HospitalAdapter(ArrayList<com.pifss.patient.utils.Hospital> model, Activity context) {
 
 
         this.model = model;
@@ -61,7 +60,7 @@ public class HospitalAdapter extends BaseAdapter {
         TextView tvHospitalDistance = (TextView) view.findViewById(R.id.ListHospitalView_DistanceTV);
         TextView tvHospitalType = (TextView) view.findViewById(R.id.ListHospitalView_HospitalTypeTV);
 
-        Hospital pos = model.get(position);
+        com.pifss.patient.utils.Hospital pos = model.get(position);
 
 
         //imgHospitsl.setImageResource(pos.getLogoUrl());

@@ -15,21 +15,16 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.pifss.patient.Adapters.DoctorAdapter;
 import com.pifss.patient.Adapters.HospitalAdapter;
-import com.pifss.patient.utils.Doctor;
-
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 public class SearchHospital extends AppCompatActivity {
 
-    ArrayList<com.pifss.patient.Hospital> model;
+    ArrayList<com.pifss.patient.utils.Hospital> model;
     ListView lv;
     Location currentLocation = new Location("");
 
@@ -63,17 +58,20 @@ public class SearchHospital extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                com.pifss.patient.Hospital h = model.get(position);
+                com.pifss.patient.utils.Hospital h = model.get(position);
                 //
                 Intent intent = new Intent(SearchHospital.this, HospitalProfile.class);
-                /*intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
-                intent.putExtra("gender", m.getGender());
-                intent.putExtra("specialty", m.getSpecialityId());
-                intent.putExtra("nationality", m.getNationality());
-                intent.putExtra("email", m.getEmail());
-                intent.putExtra("cvURL", m.getCvUrl());
-                intent.putExtra("imageURL", m.getImageUrl());*/
 
+                intent.putExtra("name", h.getHospitalName());
+                intent.putExtra("phoneNumber", h.getPhone());
+                intent.putExtra("type", h.getType());
+                intent.putExtra("workingHours", h.getWorkingHours());
+                intent.putExtra("email", h.getEmail());
+                intent.putExtra("extraInfo", h.getExtraInfo());
+                intent.putExtra("address", h.getAddress());
+                intent.putExtra("specialty", h.getSpecialityId());
+                intent.putExtra("logoURL", h.getLogoUrl());
+                intent.putExtra("specialityId",h.getSpecialityId());
                 startActivity(intent);
 
             }
@@ -103,22 +101,6 @@ public class SearchHospital extends AppCompatActivity {
         });
 
 
-        lv = (ListView) findViewById(R.id.hospitalListView);
-
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                com.pifss.patient.Hospital h = model.get(position);
-                //
-                Intent intent = new Intent(SearchHospital.this, HospitalProfile.class);
-
-                startActivity(intent);
-
-            }
-        });
-
-
 
     }
 
@@ -127,10 +109,10 @@ public class SearchHospital extends AppCompatActivity {
             return;
         }
 
-        ArrayList<com.pifss.patient.Hospital> parsedModel = new ArrayList<>();
+        ArrayList<com.pifss.patient.utils.Hospital> parsedModel = new ArrayList<>();
 
         for (int i = 0; i < model.size(); i++) {
-            com.pifss.patient.Hospital curHospital = model.get(i);
+            com.pifss.patient.utils.Hospital curHospital = model.get(i);
             String fullName = curHospital.getHospitalName();
             if ( fullName.toLowerCase().contains(filter) ) {
                 parsedModel.add(curHospital);
@@ -150,9 +132,21 @@ public class SearchHospital extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                com.pifss.patient.Hospital m = model.get(position);
+                com.pifss.patient.utils.Hospital h = model.get(position);
+                //
+                Intent intent = new Intent(SearchHospital.this, HospitalProfile.class);
 
-                // move to doc profile
+                intent.putExtra("name", h.getHospitalName());
+                intent.putExtra("phoneNumber", h.getPhone());
+                intent.putExtra("type", h.getType());
+                intent.putExtra("workingHours", h.getWorkingHours());
+                intent.putExtra("email", h.getEmail());
+                intent.putExtra("extraInfo", h.getExtraInfo());
+                intent.putExtra("address", h.getAddress());
+                intent.putExtra("specialtyId", h.getSpecialityId());
+                intent.putExtra("logoURL", h.getLogoUrl());
+
+                startActivity(intent);
 
             }
         });
@@ -170,7 +164,7 @@ public class SearchHospital extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        model = new Gson().fromJson(response, new TypeToken<ArrayList<com.pifss.patient.Hospital>>(){}.getType());
+                        model = new Gson().fromJson(response, new TypeToken<ArrayList<com.pifss.patient.utils.Hospital>>(){}.getType());
 
                         ListView lv = (ListView) findViewById(R.id.hospitalListView);
 

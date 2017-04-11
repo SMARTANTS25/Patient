@@ -68,6 +68,8 @@
         <!-- android:exported="true" -->
         <!-- android:label="@string/title_activity_send_report" -->
         <!-- android:theme="@style/AppTheme"></activity> -->
+
+        <activity android:name=".HospitalProfile"></activity>
         <activity
             android:name=".RegistrationPage3"
             android:exported="true" />

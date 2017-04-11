@@ -1,4 +1,4 @@
-package com.pifss.patient;
+package com.pifss.patient.utils;
 
 import java.util.HashMap;
 import java.util.Map;
