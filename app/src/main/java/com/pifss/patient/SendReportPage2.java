@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -257,6 +258,8 @@ public class SendReportPage2 extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                Intent i = new Intent(SendReportPage2.this,Home.class);
+                startActivity(i);
             }
         });
 

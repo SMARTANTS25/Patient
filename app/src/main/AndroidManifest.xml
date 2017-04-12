@@ -63,9 +63,8 @@
         <!-- android:theme="@style/AppTheme"></activity> -->
 
         <activity android:name=".HospitalProfile" />
-        <activity android:name=".SendReport"></activity>
-        <activity android:name=".SendReportPage2"></activity>
-
+        <activity android:name=".SendReport" />
+        <activity android:name=".SendReportPage2" />
         <activity
             android:name=".RegistrationPage3"
             android:exported="true" />
@@ -77,7 +76,8 @@
             android:name=".MyDoctorProfile"
             android:exported="true" />
         <activity android:name=".SendReportPage2" />
-        <activity android:name=".MyReports"></activity>
+        <activity android:name=".MyReports" />
+        <activity android:name=".ReportDetails"></activity>
     </application>
 
 </manifest>
