@@ -7,32 +7,36 @@
     tools:context="com.pifss.patient.MyReports">
 
     <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
+        android:id="@+id/toolbarMyReports"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:background="@color/Buttons"
-        android:id="@+id/toolbarMyReports"
-        >
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            >
-            <android.support.v7.widget.SearchView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/searchViewMyReports"
-                android:layout_alignParentTop="true"
-                />
-
-
-        </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
     <ListView
+        android:id="@+id/MyReportsLV"
         android:layout_width="368dp"
-        android:layout_height="551dp"
+        android:layout_height="500dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        android:id="@+id/MyReportsLV"/>
+        tools:layout_editor_absoluteY="65dp" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchViewMyReports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
