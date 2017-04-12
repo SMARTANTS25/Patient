@@ -7,10 +7,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Date;
 
 public class SendReportPage2 extends AppCompatActivity {
 
@@ -32,9 +39,9 @@ public class SendReportPage2 extends AppCompatActivity {
         final String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/";
         final RequestQueue queue = MySingleton.getInstance().getRequestQueue(SendReportPage2.this);
 
-        String PainLocation = getIntent().getStringExtra("painLocation");
-        String Headache = getIntent().getStringExtra("headache");
-        String Dizziness = getIntent().getStringExtra("dizziness");
+        final String PainLocation = getIntent().getStringExtra("painLocation");
+        final String Headache = getIntent().getStringExtra("headache");
+        final String Dizziness = getIntent().getStringExtra("dizziness");
         int pain = getIntent().getIntExtra("pain",0);
 
 
@@ -62,7 +69,7 @@ public class SendReportPage2 extends AppCompatActivity {
         RadioButton FeverYes = (RadioButton) findViewById(R.id.ReportFeverYes);
         RadioButton FeverNo = (RadioButton) findViewById(R.id.ReportFeverNo);
 
-        EditText Comments = (EditText) findViewById(R.id.SendReport_CommentsEText);
+        final EditText Comments = (EditText) findViewById(R.id.SendReport_CommentsEText);
 
         Button Submit = (Button) findViewById(R.id.SendReport_SubmitButton);
 
@@ -161,12 +168,64 @@ public class SendReportPage2 extends AppCompatActivity {
             }
         });
 
+
+
+
+
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/";
 
                 JsonObjectRequest req = null;
                 final JSONObject obj = new JSONObject();
+                    /*
+        * {
+    "bloodPressure": "high",
+    "comments": "High sugar",
+    "coughing": "no",
+    "dizziness": "yes",
+    "drId": 7,
+    "drcomment": "Eat less suge hello android",
+    "fever": "no",
+    "headache": "Yes",
+    "heartbeatRate": "high",
+    "nauseous": "no",
+    "pain": true,
+    "painlocation": "Head",
+    "patientId": 2,
+    "reportId": 2,
+    "sugarLevel": "high",
+    "timestamp": "2017-02-02T00:00:00Z"
+  }
+  */
+                try {
+                    obj.put("painlocation",PainLocation);
+                    obj.put("dizziness",Dizziness);
+                    obj.put("fever",Fever);
+                    obj.put("sugarLevel",SugarLevel);
+                    obj.put("coughing",Coughing);
+                    obj.put("headache",Headache);
+                    obj.put("comments",Comments.getText().toString());
+                    obj.put("timestamp",new Date().toString());
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                final RequestQueue queue = MySingleton.getInstance().getRequestQueue(SendReportPage2.this);
+
+                final StringRequest jsonReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
 
             }
         });

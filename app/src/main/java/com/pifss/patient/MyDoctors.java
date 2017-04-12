@@ -18,15 +18,20 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pifss.patient.Adapters.DoctorAdapter;
 import com.pifss.patient.utils.Doctor;
-//import com.pifss.patient.utils.MySingleton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+//import com.pifss.patient.utils.MySingleton;
 
 public class MyDoctors extends AppCompatActivity {
 
     ArrayList<Doctor> model;
     private ListView lv;
 
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,7 @@ public class MyDoctors extends AppCompatActivity {
         toolbar.setTitle("My Doctors");
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
         setSupportActionBar(toolbar);
+
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -67,7 +73,7 @@ public class MyDoctors extends AppCompatActivity {
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
-
+                intent.putExtra("drId",id);
                 startActivity(intent);
 
             }
@@ -150,9 +156,21 @@ public class MyDoctors extends AppCompatActivity {
         });
     }
 
-    private void updateModel () {
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/2";
 
+
+
+
+    private void updateModel () {
+
+        String Pid="";
+        String PatientDat = getSharedPreferences("PatientData1",MODE_PRIVATE).getString("Patient1"," ");
+        try {
+            JSONObject o = new JSONObject(PatientDat);
+             Pid = o.getString("patientId");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+Pid;
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(MyDoctors.this);
 
@@ -162,11 +180,21 @@ public class MyDoctors extends AppCompatActivity {
                     public void onResponse(String response) {
 
                         System.out.println(response);
+                        try {
+                            JSONObject obj = new JSONObject(response);
+                            Toast.makeText(MyDoctors.this, obj.getString("drId") + " ", Toast.LENGTH_SHORT).show();
+                             id = obj.getString("drId");
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
                         model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
 
                         DoctorAdapter adapter = new DoctorAdapter(model, MyDoctors.this);
 
                         lv.setAdapter(adapter);
+
 
 
                     }

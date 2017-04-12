@@ -10,6 +10,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SendReport extends AppCompatActivity {
 
@@ -19,17 +30,19 @@ public class SendReport extends AppCompatActivity {
     int Pain;
     String Headache;
     String Dizziness;
+    String docName;
+    String imgurl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_report);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar9);
         toolbar.setTitle("Send Report");
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.mipmap.aplus);
 
         ImageView DcoImage = (ImageView) findViewById(R.id.SendReport_DoctorImage);
-        TextView DocName = (TextView) findViewById(R.id.SendReport_DoctorNameTV);
+        final TextView DocName = (TextView) findViewById(R.id.SendReport_DoctorNameTV);
 
         RadioButton PainOne = (RadioButton) findViewById(R.id.ReportPainRadioOne);
         RadioButton PainTwo = (RadioButton) findViewById(R.id.ReportPainRadioTwo);
@@ -46,26 +59,55 @@ public class SendReport extends AppCompatActivity {
         RadioButton DizzinessNo = (RadioButton) findViewById(R.id.ReportDizzinessNo);
 
         Button b = (Button) findViewById(R.id.SendReport_Button);
-        /*
-        * {
-    "bloodPressure": "high",
-    "comments": "High sugar",
-    "coughing": "no",
-    "dizziness": "yes",
-    "drId": 7,
-    "drcomment": "Eat less suge hello android",
-    "fever": "no",
-    "headache": "Yes",
-    "heartbeatRate": "high",
-    "nauseous": "no",
-    "pain": true,
-    "painlocation": "Head",
-    "patientId": 2,
-    "reportId": 2,
-    "sugarLevel": "high",
-    "timestamp": "2017-02-02T00:00:00Z"
-  }
-  */
+
+
+
+
+        String DocId = getIntent().getStringExtra("DocId");
+        Toast.makeText(this, DocId+"", Toast.LENGTH_SHORT).show();
+       // int Docidds  = DocId;
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+7;
+
+
+
+        final RequestQueue queue = MySingleton.getInstance().getRequestQueue(SendReport.this);
+
+        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        System.out.println(response);
+                        try {
+                            JSONObject obj = new JSONObject(response);
+                             docName = obj.getString("firstName") +" "+ obj.getString("lastName");
+                             imgurl = obj.getString("imageUrl");
+
+                            DocName.setText(docName);
+                            Toast.makeText(SendReport.this, docName+"", Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle error
+                    }
+                });
+
+        queue.add(jsonReq);
+
+        if (imgurl != null && imgurl.length() >= 1 ) {
+            Picasso.with(this).load(imgurl).into(DcoImage);
+
+        }
+
+
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -141,13 +183,13 @@ public class SendReport extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(SendReport.this,SendReportPage2.class);
+                Intent i = new Intent(SendReport.this , SendReportPage2.class);
                 i.putExtra("pain",Pain);
                 i.putExtra("painLocation",PainLocation.getText().toString());
                 i.putExtra("headache",Headache);
                 i.putExtra("dizziness",Dizziness);
 
-
+                startActivity(i);
 
 
                     }

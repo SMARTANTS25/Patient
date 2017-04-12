@@ -107,7 +107,18 @@ public class Login extends AppCompatActivity {
                         one = response.getString("items");
                         o = new JSONObject(one);
                         String name = o.getString("firstName");
-                        Toast.makeText(Login.this, "welcome "+name+"", Toast.LENGTH_SHORT).show();
+                        SharedPreferences sharedpreferences = getSharedPreferences("PatientData1", MODE_PRIVATE);
+
+
+                        sharedpreferences.edit()
+                                .putString("Patient1" , o.toString())
+                                .apply();
+
+
+                        Intent intent = new Intent(Login.this, Home.class);
+                        Toast.makeText(Login.this, "welcome "+ name +" ", Toast.LENGTH_SHORT).show();
+                        startActivity(intent);
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -118,16 +129,7 @@ public class Login extends AppCompatActivity {
                         //test
 
 
-                    SharedPreferences sharedpreferences = getSharedPreferences("PatientData", MODE_PRIVATE);
 
-
-                    sharedpreferences.edit()
-                            .putString("Patient" , o.toString())
-                            .apply();
-
-
-                    Intent intent = new Intent(Login.this, Home.class);
-                    startActivity(intent);
 
                 }
             }, new Response.ErrorListener() {

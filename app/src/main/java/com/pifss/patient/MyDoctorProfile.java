@@ -1,12 +1,14 @@
 package com.pifss.patient;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -30,12 +32,13 @@ public class MyDoctorProfile extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
-        String gender = intent.getStringExtra("gender");
+       // String gender = intent.getStringExtra("gender");
         String nationality = intent.getStringExtra("nationality");
         String email = intent.getStringExtra("email");
         String cvURL = intent.getStringExtra("cvURL");
         String specialty = intent.getStringExtra("specialty");
         String profileImg = intent.getStringExtra("imageURL");
+        final String id = intent.getStringExtra("drId");
 
         toolbar.setTitle(name);
 
@@ -45,7 +48,18 @@ public class MyDoctorProfile extends AppCompatActivity {
         TextView textViewSpeciality = (TextView) findViewById(R.id.MyDoctorProfile_doctorSpecialtyTV);
         TextView textViewNationality = (TextView) findViewById(R.id.MyDoctorProfile_NationalityTV);
         TextView textViewCV = (TextView) findViewById(R.id.MyDoctorProfile_doctorCvTV);
-        //Button buttonRequest = (Button) findViewById(R.id.buttonSendDoctorRequest);
+        Button buttonRequest = (Button) findViewById(R.id.myDrProfile_sendReportButton);
+
+        buttonRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i2 = new Intent(MyDoctorProfile.this,SendReport.class);
+                Toast.makeText(MyDoctorProfile.this, id+"", Toast.LENGTH_SHORT).show();
+                i2.putExtra("DocId",id);
+                startActivity(i2);
+
+            }
+        });
 
 
         textViewDocName.setText(name);

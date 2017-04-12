@@ -37,7 +37,7 @@ public class ViewPatientProfile extends AppCompatActivity {
 
 
 
-        String PatientProfile  = getSharedPreferences("PatientData",MODE_PRIVATE).getString("Patient"," ");
+        String PatientProfile  = getSharedPreferences("PatientData1",MODE_PRIVATE).getString("Patient1"," ");
 
         // Step 2 converting String to Json Object
 
