@@ -12,12 +12,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.Date;
 
 public class SendReportPage2 extends AppCompatActivity {
 
@@ -42,8 +39,8 @@ public class SendReportPage2 extends AppCompatActivity {
         final String PainLocation = getIntent().getStringExtra("painLocation");
         final String Headache = getIntent().getStringExtra("headache");
         final String Dizziness = getIntent().getStringExtra("dizziness");
-        int pain = getIntent().getIntExtra("pain",0);
-
+        final int pain = getIntent().getIntExtra("pain",0);
+        final int drId = getIntent().getIntExtra("drid",0);
 
 
 
@@ -175,10 +172,8 @@ public class SendReportPage2 extends AppCompatActivity {
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/";
+                String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientreport";
 
-                JsonObjectRequest req = null;
-                final JSONObject obj = new JSONObject();
                     /*
         * {
     "bloodPressure": "high",
@@ -199,7 +194,33 @@ public class SendReportPage2 extends AppCompatActivity {
     "timestamp": "2017-02-02T00:00:00Z"
   }
   */
+                String pId="";
+                String Patientdata  = getSharedPreferences("PatientData1",MODE_PRIVATE).getString("Patient1"," ");
+
                 try {
+                    JSONObject o = new JSONObject(Patientdata);
+                    pId = o.getString("patientId");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                JsonObjectRequest req = null;
+                final JSONObject obj = new JSONObject();
+                try {
+//                    Toast.makeText(SendReportPage2.this, pain+"", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SendReportPage2.this, PainLocation+"", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SendReportPage2.this, Dizziness+"", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SendReportPage2.this, Fever+"", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SendReportPage2.this, SugarLevel+"", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SendReportPage2.this, Coughing+"", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SendReportPage2.this, Headache+"", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SendReportPage2.this, Comments.getText().toString()+"", Toast.LENGTH_SHORT).show();
+
+//                    Toast.makeText(SendReportPage2.this, drId+"", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SendReportPage2.this, pId+"", Toast.LENGTH_SHORT).show();
+
+
                     obj.put("painlocation",PainLocation);
                     obj.put("dizziness",Dizziness);
                     obj.put("fever",Fever);
@@ -207,26 +228,35 @@ public class SendReportPage2 extends AppCompatActivity {
                     obj.put("coughing",Coughing);
                     obj.put("headache",Headache);
                     obj.put("comments",Comments.getText().toString());
-                    obj.put("timestamp",new Date().toString());
+//                    Date s = new Date();
+//                    android.text.format.DateFormat form = new android.text.format.DateFormat();
+//                    form.format("yyyy-MM-dd", s);
+//                    obj.put("timestamp",s.toString()+"T00:00:00Z");
+                    obj.put("heartbeatRate",HeartBeat);
+                    obj.put("drId",drId);
+                    obj.put("pain",true);
+                    obj.put("patientId",Integer.parseInt(pId));
+                    obj.put("nauseous",Nausaous);
+                    obj.put("drcomment"," ");
+                    obj.put("bloodPressure",BloodPressure);
+                    System.out.print(obj);
+                final RequestQueue queue = MySingleton.getInstance().getRequestQueue(SendReportPage2.this);
 
+                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                        }
+                    });
+                    queue.add(request);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                final RequestQueue queue = MySingleton.getInstance().getRequestQueue(SendReportPage2.this);
-
-                final StringRequest jsonReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                });
-
             }
         });
 

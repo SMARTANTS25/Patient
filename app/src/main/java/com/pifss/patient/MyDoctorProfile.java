@@ -38,8 +38,8 @@ public class MyDoctorProfile extends AppCompatActivity {
         String cvURL = intent.getStringExtra("cvURL");
         String specialty = intent.getStringExtra("specialty");
         String profileImg = intent.getStringExtra("imageURL");
-        final String id = intent.getStringExtra("drId");
-
+        final int id = intent.getIntExtra("drId1",0);
+        Toast.makeText(this, "checking Id= "+id, Toast.LENGTH_SHORT).show();
         toolbar.setTitle(name);
 
         ImageView imageViewDoctor = (ImageView) findViewById(R.id.MyDoctorProfile_doctorImage);
@@ -54,7 +54,7 @@ public class MyDoctorProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i2 = new Intent(MyDoctorProfile.this,SendReport.class);
-                Toast.makeText(MyDoctorProfile.this, id+"", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MyDoctorProfile.this, id+"", Toast.LENGTH_SHORT).show();
                 i2.putExtra("DocId",id);
                 startActivity(i2);
 

@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -31,7 +32,7 @@ public class MyDoctors extends AppCompatActivity {
     ArrayList<Doctor> model;
     private ListView lv;
 
-    String id;
+    String Id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +74,9 @@ public class MyDoctors extends AppCompatActivity {
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
-                intent.putExtra("drId",id);
+                intent.putExtra("drId1",m.getDrId());
+                Toast.makeText(MyDoctors.this, m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
+
                 startActivity(intent);
 
             }
@@ -149,7 +152,9 @@ public class MyDoctors extends AppCompatActivity {
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
-
+                intent.putExtra("drId",m.getDrId());
+                Toast.makeText(MyDoctors.this, ""+m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MyDoctors.this, m.getDrId()+"", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
 
             }
@@ -167,9 +172,11 @@ public class MyDoctors extends AppCompatActivity {
         try {
             JSONObject o = new JSONObject(PatientDat);
              Pid = o.getString("patientId");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
+      //  Toast.makeText(this, Pid+"", Toast.LENGTH_SHORT).show();
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+Pid;
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(MyDoctors.this);
@@ -178,19 +185,22 @@ public class MyDoctors extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        SharedPreferences sharedpreferences = getSharedPreferences("MyDoctorData", MODE_PRIVATE);
 
                         System.out.println(response);
+
                         try {
                             JSONObject obj = new JSONObject(response);
-                            Toast.makeText(MyDoctors.this, obj.getString("drId") + " ", Toast.LENGTH_SHORT).show();
-                             id = obj.getString("drId");
+                            sharedpreferences.edit()
+                                    .putString("MyDoc" , obj.toString())
+                                    .commit();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
-                        model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
-
+                        model = new Gson().fromJson(response.toString(), new TypeToken<ArrayList<Doctor>>(){}.getType());
+                       // Toast.makeText(MyDoctors.this, model.size()+"", Toast.LENGTH_SHORT).show();
                         DoctorAdapter adapter = new DoctorAdapter(model, MyDoctors.this);
 
                         lv.setAdapter(adapter);
@@ -203,6 +213,7 @@ public class MyDoctors extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle error
+                        Toast.makeText(MyDoctors.this, "Connection error sorry", Toast.LENGTH_SHORT).show();
                     }
                 });
 

@@ -46,10 +46,14 @@ public class ViewPatientProfile extends AppCompatActivity {
 
             String fname = obj.getString("firstName");
             String lname = obj.getString("lastName");
-            nameText.setText(fname.toString() +" "+ lname.toString());
+            nameText.setText(fname +" "+ lname);
+
+            System.out.print(fname +" "+ lname);
 
             String gender = obj.getString("gender");
 
+      //      Toast.makeText(this, obj.getString("patientId")+"", Toast.LENGTH_SHORT).show();
+            System.out.print(obj.getString("patientId"));
             if (gender.equals("M"))
                 genderText.setText("male");
             else genderText.setText("female");
@@ -63,7 +67,7 @@ public class ViewPatientProfile extends AppCompatActivity {
             String birthDate = obj.getString("dateOfBirth");
             birthdateText.setText(birthDate);
 
-            Toast.makeText(ViewPatientProfile.this, "the patient name: "+fname, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ViewPatientProfile.this, "the patient name: " + fname, Toast.LENGTH_SHORT).show();
 
         } catch (JSONException e) {
             e.printStackTrace();

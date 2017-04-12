@@ -240,10 +240,10 @@ public class RegistrationPage3 extends AppCompatActivity {
 
 
 
-                SharedPreferences pref = getSharedPreferences("PatientData",MODE_PRIVATE);
+                SharedPreferences pref = getSharedPreferences("PatientData1",MODE_PRIVATE);
 
                 pref.edit()
-                        .putString("Patient",obj.toString())
+                        .putString("Patient1",obj.toString())
                         .commit();
 
                 Intent i = new Intent(RegistrationPage3.this, Home.class);

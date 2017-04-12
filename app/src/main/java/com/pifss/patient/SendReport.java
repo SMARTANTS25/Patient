@@ -60,13 +60,20 @@ public class SendReport extends AppCompatActivity {
 
         Button b = (Button) findViewById(R.id.SendReport_Button);
 
+//        String DocId ="";
+//        String MyDoctorData = getSharedPreferences("MyDoctorData",MODE_PRIVATE).getString("MyDoc"," error");
+//        try {
+//            JSONObject obj = new JSONObject(MyDoctorData);
+//             DocId = obj.getString("drId");
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
-
-
-        String DocId = getIntent().getStringExtra("DocId");
-        Toast.makeText(this, DocId+"", Toast.LENGTH_SHORT).show();
+        final int DocId = getIntent().getIntExtra("DocId",0);
+        Toast.makeText(this, DocId+"  weeeeeeeeee", Toast.LENGTH_SHORT).show();
        // int Docidds  = DocId;
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+7;
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+DocId;
 
 
 
@@ -188,7 +195,7 @@ public class SendReport extends AppCompatActivity {
                 i.putExtra("painLocation",PainLocation.getText().toString());
                 i.putExtra("headache",Headache);
                 i.putExtra("dizziness",Dizziness);
-
+                i.putExtra("drid",DocId);
                 startActivity(i);
 
 

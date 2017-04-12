@@ -32,6 +32,8 @@ public class Login extends AppCompatActivity {
         TextView signup = (TextView) findViewById(R.id.Login_signupTV);
         TextView forgetPassword = (TextView) findViewById(R.id.Login_forgetpasswordTV);
 
+        emailText.setText("waw@gmail.com");
+        passwordText.setText("111111");
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +45,7 @@ public class Login extends AppCompatActivity {
 
                         String username =emailText.getText().toString();
                         String password=passwordText.getText().toString();
+
                         login( username,  password);
 
 
