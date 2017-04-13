@@ -42,43 +42,18 @@ public class Home extends AppCompatActivity {
     int myDoctorCount = 0;
     AccountHeader headerResult;
     JSONObject obj;
+    int patientId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        String shared = getSharedPreferences("patientData", MODE_PRIVATE).getString("Patient"," ");
-
-
-//                  String fullname="";
-//            String  email="";
-//            String shared = getSharedPreferences("patientData", MODE_PRIVATE).getString("Patient"," ");
-
-//        try {
-//
-//
-//
-//                obj = new JSONObject(shared);
-//
-//                Toast.makeText(this, obj.toString()+"", Toast.LENGTH_SHORT).show();
-//
-//
-////                email = obj.getString("email");
-////                fullname = obj.getString("firstName") + obj.getString("lastName");
-//
-//              //  Toast.makeText(this, fullname+" "+email, Toast.LENGTH_SHORT).show();
-//
-//
-//            } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-     //   Toast.makeText(this, obj.toString()+"", Toast.LENGTH_SHORT).show();
-
-//        String full = patientData("firstName");
-//        Toast.makeText(this, full+"", Toast.LENGTH_SHORT).show();
-
-        //Toast.makeText(this, fullname+" "+email, Toast.LENGTH_SHORT).show();
+        String shared = getSharedPreferences("PatientData1", MODE_PRIVATE).getString("Patient1"," ");
+        Patient profile = new Gson().fromJson(shared,Patient.class);
+        String patientName = profile.getFirstName() + " " + profile.getLastName();
+        String patientEmail = profile.getEmail();
+        this.patientId = profile.getPatientId();
         Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
         toolbar.setTitle("Home");
         //
@@ -91,9 +66,9 @@ public class Home extends AppCompatActivity {
        // Toast.makeText(this, patients[0]+" "+patients[1]+" "+patients[2], Toast.LENGTH_SHORT).show();
         // MaterialDrawer Creation
 
-        int myDoctorsAmount = 0;
 
-        myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.doctor_profile_icon_two).withName("My Doctors").withBadge(String.valueOf(myDoctorsAmount)).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
+
+        myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.doctor_profile_icon_two).withName("My Doctors").withBadge(String.valueOf(myDoctorCount)).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
         PrimaryDrawerItem findDoctorsItem = new PrimaryDrawerItem().withIdentifier(2).withIcon(R.mipmap.doctor_profile_icon).withName("Find Doctors");
         PrimaryDrawerItem hospitalsItem = new PrimaryDrawerItem().withIdentifier(3).withIcon(R.mipmap.hospital).withName("Hospitals");
         PrimaryDrawerItem reportItem = new PrimaryDrawerItem().withIdentifier(4).withIcon(R.mipmap.medical_report_icon).withName("My Reports");
@@ -106,7 +81,7 @@ public class Home extends AppCompatActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.mipmap.navigation_drawer_icon)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("  ").withTextColor(Color.BLUE).withEmail("  ")
+                        new ProfileDrawerItem().withName(patientName).withTextColor(Color.BLUE).withEmail(patientEmail)
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
@@ -326,9 +301,9 @@ public class Home extends AppCompatActivity {
 
     private void updateMyDoctorsBadge () {
         String patientId = "2";
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+patientId;
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+(this.patientId);
 
-        myDoctorCount = 0;
+
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(Home.this);
 
@@ -338,9 +313,9 @@ public class Home extends AppCompatActivity {
                     public void onResponse(String response) {
 
                         System.out.println(response);
-                        model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
+                        ArrayList<Doctor> model2 = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
 
-                        myDoctorsItem.withName("My Doctors").withBadge(String.valueOf(model.size()) ).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
+                        myDoctorsItem.withName("My Doctors").withBadge(String.valueOf(model2.size()) ).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
                         //notify the drawer about the updated element. it will take care about everything else
                         homeDrawer.updateItem(myDoctorsItem);
 
