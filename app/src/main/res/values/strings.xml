@@ -81,7 +81,25 @@
     <string name="PatientMedicalInfo_Medications"> Medications</string>
     <string name="PatientMedicalInfo_GeneralInfo"> General Information</string>
 
-
+//SendReport Page
     <string name="title_activity_my_doctors">MyDoctors</string>
     <string name="title_activity_send_report">SendReport</string>
+    <string name="SendReport_Pain">Pain</string>
+    <string name="SendReport_PainLocation">Pain Location</string>
+    <string name="SendReport_BloodPressure">Blood Pressure</string>
+    <string name="SendReport_Fever">Fever</string>
+    <string name="SendReport_Headache">Headache</string>
+    <string name="SendReport_Nauseous">Nauseous</string>
+    <string name="SendReport_SugarLevel">Sugar Level</string>
+    <string name="SendReport_HeartBeat">HeartBeat Rate</string>
+    <string name="SendReport_Comments">Comments</string>
+    <string name="SendReport_High">High</string>
+    <string name="SendReport_Moderate">Moderate</string>
+    <string name="SendReport_Dizziness">Dizziness</string>
+    <string name="SendReport_Coughing">Coughing</string>
+    <string name="SendReport_Low">Low</string>
+    <string name="SendReport_Next">Next</string>
+    <string name="SendReport_Submit">Submit</string>
+    <string name="SendReport_Yes">Yes</string>
+    <string name="SendReport_No">No</string>
 </resources>

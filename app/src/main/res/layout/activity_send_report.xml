@@ -10,7 +10,7 @@
         android:id="@+id/SendReport_ReportTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Report:"
+        android:text="@string/SendReport_PainLocation"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:fontFamily="monospace"
         android:textSize="18dp"
@@ -45,7 +45,7 @@
         android:id="@+id/SendReport_DoctorNameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name:"
+        android:text="@string/textView_DocName"
         android:fontFamily="monospace"
         android:textSize="18dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -110,7 +110,7 @@ android:textColor="@color/md_white_1000"
         android:id="@+id/SendReport_Pain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="p"
+        android:text="@string/SendReport_Pain"
         android:layout_below="@+id/SendReport_DoctorImage"
         android:layout_toRightOf="@+id/SendReport_ReportTitle"
         android:layout_toEndOf="@+id/SendReport_ReportTitle" />
@@ -169,8 +169,14 @@ android:textColor="@color/md_white_1000"
         android:layout_alignStart="@+id/SendReport_ReportTitle"
         android:layout_below="@+id/SendReport_PainLocation"
         android:layout_marginTop="11dp"
-        android:text="TextView" />
-
+        android:text="@string/SendReport_Headache" />
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/radioGroup"
+    android:layout_below="@+id/SendReportHeadache"
+    android:layout_alignLeft="@+id/ReportPainRadioOne"
+    android:layout_alignStart="@+id/ReportPainRadioOne">
     <RadioButton
         android:id="@+id/ReportHeadacheYes"
         android:layout_width="wrap_content"
@@ -178,44 +184,49 @@ android:textColor="@color/md_white_1000"
         android:layout_alignLeft="@+id/SendReportHeadache"
         android:layout_alignStart="@+id/SendReportHeadache"
         android:layout_below="@+id/SendReportHeadache"
-        android:text="RadioButton" />
+        android:text="@string/SendReport_Yes" />
 
-    <RadioButton
-        android:id="@+id/ReportHeadacheNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/ReportHeadacheYes"
-        android:layout_toEndOf="@+id/ReportPainRadioTwo"
-        android:layout_toRightOf="@+id/ReportPainRadioTwo"
-        android:text="RadioButton" />
-
+</RadioGroup>
     <TextView
         android:id="@+id/SendReportDizziness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ReportHeadacheYes"
-        android:layout_alignStart="@+id/ReportHeadacheYes"
-        android:layout_below="@+id/ReportHeadacheYes"
-        android:layout_marginTop="19dp"
-        android:text="TextView" />
+        android:text="@string/SendReport_Dizziness"
+        android:layout_below="@+id/ReportHeadacheNo"
+        android:layout_toLeftOf="@+id/radioGroup"
+        android:layout_toStartOf="@+id/radioGroup" />
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-    <RadioButton
-        android:id="@+id/ReportDizzinessYes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/SendReportDizziness"
-        android:layout_toLeftOf="@+id/ReportPainRadioTwo"
-        android:layout_toStartOf="@+id/ReportPainRadioTwo"
-        android:text="RadioButton" />
+</RadioGroup>
 
     <RadioButton
         android:id="@+id/ReportDizzinessNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ReportHeadacheNo"
-        android:layout_alignStart="@+id/ReportHeadacheNo"
-        android:layout_alignTop="@+id/ReportDizzinessYes"
-        android:text="RadioButton" />
+        android:text="@string/SendReport_No"
+        android:layout_alignBottom="@+id/ReportDizzinessYes"
+        android:layout_toLeftOf="@+id/ReportPainRadioFive"
+        android:layout_toStartOf="@+id/ReportPainRadioFive" />
 
+    <RadioButton
+        android:id="@+id/ReportDizzinessYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SendReport_Yes"
+        android:layout_below="@+id/SendReportDizziness"
+        android:layout_toLeftOf="@+id/SendReport_DoctorNameTV"
+        android:layout_toStartOf="@+id/SendReport_DoctorNameTV"
+        android:layout_marginTop="24dp" />
+
+    <RadioButton
+        android:id="@+id/ReportHeadacheNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SendReport_No"
+        android:layout_alignTop="@+id/radioGroup"
+        android:layout_toRightOf="@+id/SendReport_ReportTitle"
+        android:layout_toEndOf="@+id/SendReport_ReportTitle" />
 
 </RelativeLayout>

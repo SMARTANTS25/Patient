@@ -101,5 +101,23 @@
 
     <string name="title_activity_my_doctors">أطبائي</string>
     <string name="title_activity_send_report">إرسال تقرير</string>
+    <string name="SendReport_Pain">الألم</string>
+    <string name="SendReport_BloodPressure">ضغط الدم</string>
+    <string name="SendReport_Comments">الملاحظات</string>
+    <string name="SendReport_Coughing">كحة</string>
+    <string name="SendReport_Dizziness">دوخة</string>
+    <string name="SendReport_Fever">حمى</string>
+    <string name="SendReport_Headache">صداع</string>
+    <string name="SendReport_HeartBeat">ضربات القلب</string>
+    <string name="SendReport_High">عالي</string>
+    <string name="SendReport_Low">منخفض</string>
+    <string name="SendReport_Moderate">معتدل</string>
+    <string name="SendReport_Nauseous">غثيان</string>
+    <string name="SendReport_Next">تالي</string>
+    <string name="SendReport_PainLocation">مكان الألم</string>
+    <string name="SendReport_Submit">أرسل</string>
+    <string name="SendReport_SugarLevel">معدل السكر</string>
+    <string name="SendReport_Yes">نعم</string>
+    <string name="SendReport_No">لا</string>
 </resources>
 
