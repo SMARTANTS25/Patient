@@ -2,6 +2,8 @@
 package com.pifss.patient;
 
 
+import com.google.gson.Gson;
+
 public class Patient {
 
     private String allergies;
@@ -183,6 +185,10 @@ public class Patient {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String toJSONString() {
+        return new Gson().toJson(this);
     }
 
 }
