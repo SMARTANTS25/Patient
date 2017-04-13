@@ -1,13 +1,106 @@
 package com.pifss.patient;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class ReportDetails extends AppCompatActivity {
+
+    String Dname="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_details);
+
+
+        TextView Docname = (TextView) findViewById(R.id.ReportDetails_DocNameTV);
+        TextView BloodPre = (TextView) findViewById(R.id.ReportDetails_BloodTV);
+        TextView Cooment = (TextView) findViewById(R.id.ReportDetails_CommentsTV);
+        TextView Nauseous = (TextView) findViewById(R.id.ReportDetails_NauseousTV);
+        TextView Headache = (TextView) findViewById(R.id.ReportDetails_HeadacheTV);
+        TextView HeartBeat = (TextView) findViewById(R.id.ReportDetails_HeartBeatTV);
+        TextView Coughing = (TextView) findViewById(R.id.ReportDetails_CoughingTV);
+        TextView Fever = (TextView) findViewById(R.id.ReportDetails_FeverTV);
+        TextView Pain = (TextView) findViewById(R.id.ReportDetails_PainTV);
+        TextView PainLocation = (TextView) findViewById(R.id.ReportDetails_PainLocationTV);
+        TextView SugarLevel = (TextView) findViewById(R.id.ReportDetails_SugarLevelTV);
+        //TextView Dizziness = findViewById(R.id.ReportDetails_)
+
+        String heartBeat = getIntent().getStringExtra("heartBeat");
+        String bloodPressure = getIntent().getStringExtra("bloodPressure");
+        String commets = getIntent().getStringExtra("comments");
+        String fever = getIntent().getStringExtra("fever");
+        String coughing = getIntent().getStringExtra("coughing");
+        //String dizziness = getIntent().getStringExtra("dizziness");
+        String headache = getIntent().getStringExtra("headache");
+        String pain = getIntent().getStringExtra("pain");
+        String painLocation = getIntent().getStringExtra("painLocation");
+        String sugarLevel = getIntent().getStringExtra("SugarLever");
+        String nouseous = getIntent().getStringExtra("nauseous");
+
+        String Did = getIntent().getStringExtra("drId");
+
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+Did;
+
+
+        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(ReportDetails.this);
+
+        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                JSONObject obj;
+            try{
+                obj = new JSONObject(response);
+
+                    Dname= obj.getString("firstName")+" "+obj.getString("lastName");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        queue.add(jsonReq);
+
+        Nauseous.setText(nouseous);
+        Pain.setText(pain);
+        PainLocation.setText(painLocation);
+        Coughing.setText(coughing);
+        SugarLevel.setText(sugarLevel);
+        Headache.setText(headache);
+        HeartBeat.setText(heartBeat);
+        Fever.setText(fever);
+        Cooment.setText(commets);
+        BloodPre.setText(bloodPressure);
+        Docname.setText(Dname);
+//        intent.putExtra("heartBeat",reports.getHeartbeatRate());
+//        intent.putExtra("bloodPressure",reports.getBloodPressure());
+//        intent.putExtra("drId",reports.getDrId());
+//        intent.putExtra("comments",reports.getComments());
+//        intent.putExtra("fever",reports.getFever());
+//        intent.putExtra("coughing",reports.getCoughing());
+//        intent.putExtra("dizziness",reports.getDizziness());
+//        intent.putExtra("headache",reports.getHeadache());
+//        intent.putExtra("nauseous",reports.getNauseous());
+//        intent.putExtra("pain",reports.getPain());
+//        intent.putExtra("painLocation",reports.getPainlocation());
+//        intent.putExtra("SugarLever",reports.getSugarLevel());
+//        intent.putExtra("patientId",reports.getPatientId());
+//        intent.putExtra("drComment",reports.getDrcomment());
+//        intent.putExtra("date",reports.getTimestamp());
     }
 }

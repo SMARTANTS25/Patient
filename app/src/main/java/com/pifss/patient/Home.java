@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -123,6 +124,13 @@ public class Home extends AppCompatActivity {
                                 intent = new Intent(Home.this, MyReports.class);
                             } else if (drawerItem.getIdentifier() == 5) {
                                 intent = new Intent(Home.this, Settings.class);
+                            }  else if (drawerItem.getIdentifier() == 6) {
+                                intent = new Intent(Home.this, Login.class);
+                                //String shared = getSharedPreferences("patientData", MODE_PRIVATE).getString("Patient"," ");
+                                SharedPreferences pref = getSharedPreferences("PatientData1",MODE_PRIVATE);
+                            pref.edit()
+                                    .clear()
+                                    .apply();
                             }
 
 

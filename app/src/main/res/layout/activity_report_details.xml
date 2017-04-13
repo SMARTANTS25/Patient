@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pifss.patient.ReportDetails">
+    tools:context="com.pifss.patient.ReportDetails"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/ReportDetails_Blood"
@@ -43,14 +44,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="143dp" />
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="136dp" />
 
     <View android:id="@+id/primerdivisor1"
         android:layout_height="2dp"
         android:layout_width="fill_parent"
         android:background="#ff11ff"
-        tools:layout_editor_absoluteY="170dp"
+        tools:layout_editor_absoluteY="160dp"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
@@ -58,22 +59,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/SendReport_Pain"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="136dp" />
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="173dp" />
 
     <TextView
         android:id="@+id/ReportDetails_PainTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="199dp" />
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="190dp" />
 
     <View android:id="@+id/primerdivisor2"
         android:layout_height="2dp"
         android:layout_width="fill_parent"
         android:background="#ff11ff"
-        tools:layout_editor_absoluteY="233dp"
+        tools:layout_editor_absoluteY="216dp"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
@@ -82,7 +83,7 @@
         android:layout_height="wrap_content"
         android:text="@string/SendReport_PainLocation"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="243dp" />
+        tools:layout_editor_absoluteY="230dp" />
 
     <TextView
         android:id="@+id/ReportDetails_PainLocationTV"
@@ -90,13 +91,13 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="275dp" />
+        tools:layout_editor_absoluteY="247dp" />
 
     <View android:id="@+id/primerdivisor3"
         android:layout_height="2dp"
         android:layout_width="fill_parent"
         android:background="#ff11ff"
-        tools:layout_editor_absoluteY="290dp"
+        tools:layout_editor_absoluteY="264dp"
         tools:layout_editor_absoluteX="0dp" />
 
 
@@ -106,7 +107,7 @@
         android:layout_height="wrap_content"
         android:text="@string/SendReport_Coughing"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="301dp" />
+        tools:layout_editor_absoluteY="275dp" />
 
     <TextView
         android:id="@+id/ReportDetails_CoughingTV"
@@ -114,16 +115,145 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="324dp" />
+        tools:layout_editor_absoluteY="292dp" />
 
 
     <View android:id="@+id/primerdivisor4"
         android:layout_height="2dp"
         android:layout_width="fill_parent"
         android:background="#ff11ff"
+        tools:layout_editor_absoluteY="309dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_DocName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_DocName"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_DocNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="33dp" />
+
+    <View android:id="@+id/primerdivisor5"
+        android:layout_height="2dp"
+        android:layout_width="fill_parent"
+        android:background="#ff11ff"
+        tools:layout_editor_absoluteY="50dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_HeartBeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SendReport_HeartBeat"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="318dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_HeartBeatTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="335dp" />
+
+    <View android:id="@+id/primerdivisor6"
+        android:layout_height="2dp"
+        android:layout_width="fill_parent"
+        android:background="#ff11ff"
         tools:layout_editor_absoluteY="352dp"
         tools:layout_editor_absoluteX="0dp" />
 
+    <TextView
+        android:id="@+id/ReportDetails_SugarLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SendReport_SugarLevel"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="367dp" />
 
+    <TextView
+        android:id="@+id/ReportDetails_SugarLevelTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="384dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <View android:id="@+id/primerdivisor7"
+        android:layout_height="2dp"
+        android:layout_width="fill_parent"
+        android:background="#ff11ff"
+        tools:layout_editor_absoluteY="401dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_Nauseous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SendReport_Nauseous"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_NauseousTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <View android:id="@+id/primerdivisor8"
+        android:layout_height="2dp"
+        android:layout_width="fill_parent"
+        android:background="#ff11ff"
+        tools:layout_editor_absoluteY="444dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_Fever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SendReport_Fever"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="453dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_FeverTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+    <View android:id="@+id/primerdivisor9"
+        android:layout_height="2dp"
+        android:layout_width="fill_parent"
+        android:background="#ff11ff"
+        tools:layout_editor_absoluteY="487dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_Comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SendReport_Comments"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="517dp" />
+
+    <TextView
+        android:id="@+id/ReportDetails_CommentsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="534dp" />
+
+</LinearLayout>
