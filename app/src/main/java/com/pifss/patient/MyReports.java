@@ -1,7 +1,6 @@
 package com.pifss.patient;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -44,10 +43,26 @@ public class MyReports extends AppCompatActivity {
 
         String Patientid = getSharedPreferences("PatientData", MODE_PRIVATE).getString("Patient", " ");
 
+//        final ArrayList<Reports> parsedModel = new ArrayList<>();
+//
+//        for (int i = 0; i < model.size(); i++) {
+//            Reports curDoc = model.get(i);
+////            String fullName = curDoc.getFirstName() + " "+ curDoc.getMiddleName() + " " + curDoc.getLastName();
+////            if ( fullName.toLowerCase().contains(filter) ) {
+//
+//            parsedModel.add(curDoc);
+////            }
+//        }
+
+
+
 
         updateModel ();
 
         lv = (ListView) findViewById(R.id.MyReportsLV);
+        ReportAdapter adapter = new ReportAdapter(model,this);
+
+        lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -86,7 +101,7 @@ public class MyReports extends AppCompatActivity {
 //        } catch (JSONException e) {
 //            e.printStackTrace();
 //        }
-        
+
     }
 
 
@@ -121,19 +136,25 @@ public class MyReports extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Doctor m = parsedModel.get(position);
+                Reports reports = model.get(position);
 
-                Intent intent = new Intent(MyReports.this, ReportDetails.class);
-                intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
-                intent.putExtra("gender", m.getGender());
-                intent.putExtra("specialty", m.getSpecialityId());
-                intent.putExtra("nationality", m.getNationality());
-                intent.putExtra("email", m.getEmail());
-                intent.putExtra("cvURL", m.getCvUrl());
-                intent.putExtra("imageURL", m.getImageUrl());
-                intent.putExtra("drId",m.getDrId());
-                Toast.makeText(MyReports.this, ""+m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
-                // Toast.makeText(MyDoctors.this, m.getDrId()+"", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MyReports.this,ReportDetails.class);
+                intent.putExtra("heartBeat",reports.getHeartbeatRate());
+                intent.putExtra("bloodPressure",reports.getBloodPressure());
+                intent.putExtra("drId",reports.getDrId());
+                intent.putExtra("comments",reports.getComments());
+                intent.putExtra("fever",reports.getFever());
+                intent.putExtra("coughing",reports.getCoughing());
+                intent.putExtra("dizziness",reports.getDizziness());
+                intent.putExtra("headache",reports.getHeadache());
+                intent.putExtra("nauseous",reports.getNauseous());
+                intent.putExtra("pain",reports.getPain());
+                intent.putExtra("painLocation",reports.getPainlocation());
+                intent.putExtra("SugarLever",reports.getSugarLevel());
+                intent.putExtra("patientId",reports.getPatientId());
+                intent.putExtra("drComment",reports.getDrcomment());
+                intent.putExtra("date",reports.getTimestamp());
+                Toast.makeText(MyReports.this, reports.getPainlocation()+" "+reports.getDizziness(), Toast.LENGTH_SHORT).show();
                 startActivity(intent);
 
             }
@@ -164,23 +185,23 @@ public class MyReports extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        SharedPreferences sharedpreferences = getSharedPreferences("MyReportData", MODE_PRIVATE);
-
-                        System.out.println(response);
-
-                        try {
-                            JSONObject obj = new JSONObject(response);
-                            sharedpreferences.edit()
-                                    .putString("MyReport" , obj.toString())
-                                    .commit();
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+//                        SharedPreferences sharedpreferences = getSharedPreferences("MyReportData", MODE_PRIVATE);
+//
+//                        System.out.println(response);
+//
+//                        try {
+//                            JSONObject obj = new JSONObject(response);
+//                            sharedpreferences.edit()
+//                                    .putString("MyReport" , obj.toString())
+//                                    .commit();
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
 
                         model = new Gson().fromJson(response.toString(), new TypeToken<ArrayList<Doctor>>(){}.getType());
-                        // Toast.makeText(MyDoctors.this, model.size()+"", Toast.LENGTH_SHORT).show();
-                        ReportAdapter adapter = new ReportAdapter(model, MyReports.this);
+
+                         ReportAdapter adapter = new ReportAdapter(model, MyReports.this);
 
                         lv.setAdapter(adapter);
 
