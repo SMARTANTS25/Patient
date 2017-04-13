@@ -300,7 +300,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void updateMyDoctorsBadge () {
-        String patientId = "2";
+
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+(this.patientId);
 
 
