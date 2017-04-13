@@ -147,17 +147,17 @@ public class MyReports extends AppCompatActivity {
 
     private void updateModel () {
 
-//        String Pid="";
-//        String PatientDat = getSharedPreferences("PatientData1",MODE_PRIVATE).getString("Patient1"," ");
-//        try {
-//            JSONObject o = new JSONObject(PatientDat);
-//            Pid = o.getString("patientId");
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-        //  Toast.makeText(this, Pid+"", Toast.LENGTH_SHORT).show();
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/";
+        String Pid="";
+        String PatientDat = getSharedPreferences("PatientData1",MODE_PRIVATE).getString("Patient1"," ");
+        try {
+            JSONObject o = new JSONObject(PatientDat);
+            Pid = o.getString("patientId");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+          Toast.makeText(this, Pid+"", Toast.LENGTH_SHORT).show();
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/getPr/"+Pid;
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(MyReports.this);
 
