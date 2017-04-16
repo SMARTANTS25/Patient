@@ -189,27 +189,7 @@ selectedBloodTypeImageButton(0);
                 JsonObjectRequest req = null;
                 final JSONObject obj = new JSONObject();
                 try {
-//
-//                    "allergies": "1",
-//                            "asthma": true,
-//                            "bloodType": "b",
-//                            "civilId": "123456789012",
-//                            "dateOfBirth": "2017-01-18",
-//                            "deleted": 0,
-//                            "diabetes": true,
-//                            "email": "ali@ali.com",
-//                            "emergencyNumber": "232323",
-//                            "firstName": "ali",
-//                            "gender": "m",
-//                            "imageUrl": "http://www.fancyicons.com/download/?id=2652&t=png&s=256",
-//                            "lastName": "alo",
-//                            "medications": "1",
-//                            "middleName": "m",
-//                            "nationality": "kw",
-//                            "password": "11",
-//                            "patientId": 3,
-//                            "phoneNumber": "323232",
-//                            "status": true
+
                     obj.put("email", email);
                     obj.put("password", password);
                     obj.put("gender",gender);
@@ -225,9 +205,9 @@ selectedBloodTypeImageButton(0);
                     obj.put("asthma",asthmas);
                     obj.put("status",true);
 
-                    obj.put("nationality"," ");
-                    obj.put("middleName"," ");
-                    obj.put("imageUrl", " ");
+                    obj.put("nationality","");
+                    obj.put("middleName","");
+                    obj.put("imageUrl", "");
                     String alergies = allergies.getText().toString();
                     if (alergies.length() == 0){
                         alergies = "NO Alergies";
