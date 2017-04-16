@@ -238,7 +238,7 @@ public class Home extends AppCompatActivity {
 
                 Doctor m = parsedModel.get(position);
                                                     //newDoctorProfile
-                Intent intent = new Intent(Home.this, ViewPatientProfile.class);
+                Intent intent = new Intent(Home.this, NewDoctorProfile.class);
                 intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
                 intent.putExtra("gender", m.getGender());
                 intent.putExtra("specialty", m.getSpecialityId());
