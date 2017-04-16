@@ -24,7 +24,6 @@ public class EditPatientProfile extends AppCompatActivity {
         setContentView(R.layout.activity_edit_patient_profile);
 
         Button saveChanges= (Button) findViewById(R.id.editPatientInfo_SaveChangesButton);
-        Button goToEditMedical = (Button) findViewById(R.id.editPatientProfile_editMedicalInfoButton);
 
 
         saveChanges.setOnClickListener(new View.OnClickListener() {
@@ -35,15 +34,6 @@ public class EditPatientProfile extends AppCompatActivity {
             }
         });
 
-       goToEditMedical.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                Intent i = new Intent(EditPatientProfile.this,EditMedicalInfo.class);
-                 startActivity(i);
-            }
-        });
         final EditText genderText=(EditText) findViewById(R.id.editPatientProfile_genderET);
         final EditText birthDateText=(EditText) findViewById(R.id.editPatientProfile_birthDateET);
         final EditText emailText=(EditText) findViewById(R.id.editPatientProfile_emailET);

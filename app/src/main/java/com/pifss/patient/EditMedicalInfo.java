@@ -27,20 +27,12 @@ public class EditMedicalInfo extends AppCompatActivity {
         setContentView(R.layout.activity_edit_medical_info);
 
         Button saveChanges= (Button) findViewById(R.id.saveChangesMedicalButton);
-        Button goToGeneralInfo = (Button) findViewById(R.id.editGeneralInfoButton);
 
         saveChanges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                // Intent i = new Intent(EditMedicalInfo.this, .class);
                // startActivity(i);
-            }
-        });
-        goToGeneralInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                 Intent i = new Intent(EditMedicalInfo.this, EditPatientProfile.class);
-                startActivity(i);
             }
         });
 

@@ -157,21 +157,6 @@
         android:layout_alignLeft="@+id/allergiesEditText"
         android:layout_alignStart="@+id/allergiesEditText" />
 
-    <Button
-        android:id="@+id/editGeneralInfoButton"
-        android:layout_width="365dp"
-        android:layout_height="wrap_content"
-        android:background="@color/Buttons"
-        android:text="Edit General Information"
-        android:layout_alignParentLeft="true"
-        android:fontFamily="monospace"
-        android:textSize="14dp"
-        android:textColor="@color/md_white_1000"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <ImageView
         android:id="@+id/SendReport_DoctorImage"
         android:layout_width="30dp"
