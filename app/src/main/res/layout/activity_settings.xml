@@ -13,12 +13,10 @@
 
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/heartlogo"
+        android:layout_marginTop="42dp"
         android:layout_below="@+id/settingsToolbar"
-        android:layout_alignLeft="@+id/textViewSettingLanguageTitle"
-        android:layout_alignStart="@+id/textViewSettingLanguageTitle"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="52dp" />
+        android:layout_alignRight="@+id/Sitting_Arb"
+        android:layout_alignEnd="@+id/Sitting_Arb" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/settingsToolbar"
@@ -32,32 +30,38 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <Switch
-        android:id="@+id/switchLanguage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="241dp"
-        android:layout_marginEnd="73dp"
-
-        android:layout_marginRight="73dp"
-        android:fontFamily="monospace"
-        android:text="English"
-        android:textSize="18dp"
-        tools:text="العربية" />
-
     <TextView
         android:id="@+id/textViewSettingLanguageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="64dp"
-        android:layout_marginStart="64dp"
-        android:text="Language"
+        android:text="@string/Settings_Language"
         android:fontFamily="monospace"
         android:textSize="18dp"
-        android:layout_alignBottom="@+id/switchLanguage"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/imageView40"
+        android:layout_toLeftOf="@+id/Sitting_Arb"
+        android:layout_toStartOf="@+id/Sitting_Arb" />
+
+    <Button
+        android:id="@+id/Sitting_English"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="@string/Settings_LanguageEng"
+        android:layout_below="@+id/textViewSettingLanguageTitle"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="63dp"
+        android:layout_marginStart="63dp" />
+
+    <Button
+        android:id="@+id/Sitting_Arb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/Sitting_English"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:text="@string/Settings_LanguageArb" />
 </RelativeLayout>

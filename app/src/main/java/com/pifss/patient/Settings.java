@@ -7,8 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.Switch;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -33,19 +32,20 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-        Switch switchLocale = (Switch) findViewById(R.id.switchLanguage);
+        Button btnEng = (Button) findViewById(R.id.Sitting_English);
+        Button btnArb = (Button) findViewById(R.id.Sitting_Arb);
 
-        switchLocale.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Configuration config = getResources().getConfiguration();
+                final Configuration config = getResources().getConfiguration();
 
 
-                        if (isChecked) {
-                            if (getSharedPreferences("sittings",MODE_PRIVATE).getString("language","ar").equals("ar"))
+                btnEng.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                              if (getSharedPreferences("sittings",MODE_PRIVATE).getString("language","ar").equals("ar"))
 
                             {
-                                Toast.makeText(Settings.this, isChecked + "", Toast.LENGTH_SHORT).show();
+                            //    Toast.makeText(Settings.this, isChecked + "", Toast.LENGTH_SHORT).show();
 
 
                                 config.locale = new Locale("en");
@@ -62,9 +62,14 @@ public class Settings extends AppCompatActivity {
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 finish();
                                 startActivity(intent);
-                            } }
-                else
-                    {
+                            }  }
+                });
+
+              btnArb.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+
+
 
                     Toast.makeText(Settings.this, "العربية", Toast.LENGTH_SHORT).show();
 
@@ -80,12 +85,10 @@ public class Settings extends AppCompatActivity {
                     finish();
                     startActivity(intent);
 
-
+                  }
+              });
                 }
-            }
-        });
 
-    }
 
 
 }

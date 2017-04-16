@@ -110,4 +110,8 @@
     <string name="Home_Sittings">Sittings</string>
     <string name="Home_Logout">Logout</string>
     <string name="Home_Hospitals">Hospitals</string>
+    <string name="Sittings_language">Language</string>
+    <string name="Settings_Language">language</string>
+    <string name="Settings_LanguageArb">Arabic</string>
+    <string name="Settings_LanguageEng">English</string>
 </resources>

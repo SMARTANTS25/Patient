@@ -92,7 +92,7 @@
 
     //Settings page
     <string name="Settings_Language">" اللغة"</string>
-    <string name="Settings_LanguageEng"> English</string>
+    <string name="Settings_LanguageEng">الإنجليزية</string>
     <string name="Settings_LanguageArb"> العربية</string>
 
 

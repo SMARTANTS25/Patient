@@ -46,7 +46,8 @@ public class ViewPatientProfile extends AppCompatActivity {
 
             String fname = obj.getString("firstName");
             String lname = obj.getString("lastName");
-            nameText.setText(fname +" "+ lname);
+            String Fullname = obj.getString("firstName") +" "+obj.getString("lastName");
+            nameText.setText(Fullname);
 
             System.out.print(fname +" "+ lname);
 
@@ -73,7 +74,14 @@ public class ViewPatientProfile extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
+//        myDrButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Intent i = new Intent(ViewPatientProfile.this,MyDoctors.class);
+////                startActivity(i);
+//                Toast.makeText(ViewPatientProfile.this, "my Doctors", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
 

@@ -64,14 +64,8 @@ public class Home extends AppCompatActivity {
         }
         Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
         toolbar.setTitle(R.string.Home_home);
-        //
-        //setSupportActionBar(toolbar);
 
-        // Get Patient data
 
-       // String patients[] = patientData("firstName","lastName","email");
-
-       // Toast.makeText(this, patients[0]+" "+patients[1]+" "+patients[2], Toast.LENGTH_SHORT).show();
         // MaterialDrawer Creation
 
 
@@ -331,6 +325,10 @@ public class Home extends AppCompatActivity {
                     public void onResponse(String response) {
 
                         System.out.println(response);
+                        SharedPreferences docShared  = getSharedPreferences("acceptedDoc",MODE_PRIVATE);
+                        docShared.edit()
+                                .putString("myDoctor",response.toString())
+                                .commit();
                         ArrayList<Doctor> model2 = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
 
                         myDoctorsItem.withName("My Doctors").withBadge(String.valueOf(model2.size()) ).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
