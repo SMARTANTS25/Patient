@@ -25,8 +25,6 @@ public class RegistrationPage2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page2);
 
-
-
         final String email = getIntent().getStringExtra("email");
         final String password = getIntent().getStringExtra("password");
         final String gender = getIntent().getStringExtra("gender");
@@ -82,15 +80,9 @@ public class RegistrationPage2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-               // Toast.makeText(RegistrationPage2.this, fname.getText()+" "+lname.getText(), Toast.LENGTH_SHORT).show();
-
-
                           if(validReg()== false){
-                              regButton.setEnabled(false);
                               Toast.makeText(RegistrationPage2.this, "Invalid Data Check Please!?", Toast.LENGTH_SHORT).show();
-                          }
-
-                           else {
+                          }else {
                               Intent i2 = new Intent(RegistrationPage2.this, RegistrationPage3.class);
 
                               i2.putExtra("firstName",fname.getText().toString());
