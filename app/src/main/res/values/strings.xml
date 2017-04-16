@@ -114,4 +114,5 @@
     <string name="Settings_Language">language</string>
     <string name="Settings_LanguageArb">Arabic</string>
     <string name="Settings_LanguageEng">English</string>
+    <string name="ResetPassword_CivilId">Civil ID</string>
 </resources>
