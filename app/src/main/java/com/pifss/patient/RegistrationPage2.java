@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegistrationPage2 extends AppCompatActivity {
 
     EditText fname;
     EditText lname;
-    EditText birthDate;
+    TextView birthDate;
     EditText civilId;
     EditText phone;
     EditText emergencyNumber;
@@ -25,8 +26,6 @@ public class RegistrationPage2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page2);
 
-
-
         final String email = getIntent().getStringExtra("email");
         final String password = getIntent().getStringExtra("password");
         final String gender = getIntent().getStringExtra("gender");
@@ -36,7 +35,7 @@ public class RegistrationPage2 extends AppCompatActivity {
 
         fname= (EditText) findViewById(R.id.Reg2_FirstNameTF);
         lname= (EditText) findViewById(R.id.Reg2_LastNameTF);
-        birthDate= (EditText) findViewById(R.id.Reg2_BirthDateTF);
+        birthDate= (TextView) findViewById(R.id.Reg2_BirthDateTF);
         civilId= (EditText) findViewById(R.id.Reg2_CivilIDTF);
         phone= (EditText) findViewById(R.id.Reg2_PhoneNumberTF);
         emergencyNumber= (EditText) findViewById(R.id.Reg2_EmergencyNumberTF);
@@ -49,10 +48,8 @@ public class RegistrationPage2 extends AppCompatActivity {
 //        final String phoneValue = phone.getText().toString();
 //        final String emergencyNumValue = emergencyNumber.getText().toString();
           regButton = (Button) findViewById(R.id.Reg2_NextButton);
+        birthDate.setText(1995 + "-" + 2 + "-" + 23);
 
-
-         final String birthdateV = "";
-  ;
         birthDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,13 +57,7 @@ public class RegistrationPage2 extends AppCompatActivity {
                 DatePickerDialog d = new DatePickerDialog(RegistrationPage2.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
                         birthDate.setText(year + "-" + month + "-" + dayOfMonth);
-        //              birthdateV.valueOf( year + "-" + month + "-" + dayOfMonth );
-
-
-
-                        //Toast.makeText(RegistrationPage2.this, birthdateV.toString(), Toast.LENGTH_SHORT).show();
 
                     }
                 }, 1995, 2, 23);
@@ -75,22 +66,13 @@ public class RegistrationPage2 extends AppCompatActivity {
 
             }});
 
-      //  birthDate.setText(birthdateV);
-        Toast.makeText(this, birthDate.getText(), Toast.LENGTH_SHORT).show();
-
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-               // Toast.makeText(RegistrationPage2.this, fname.getText()+" "+lname.getText(), Toast.LENGTH_SHORT).show();
-
-
                           if(validReg()== false){
-                              regButton.setEnabled(false);
                               Toast.makeText(RegistrationPage2.this, "Invalid Data Check Please!?", Toast.LENGTH_SHORT).show();
-                          }
-
-                           else {
+                          }else {
                               Intent i2 = new Intent(RegistrationPage2.this, RegistrationPage3.class);
 
                               i2.putExtra("firstName",fname.getText().toString());
@@ -141,6 +123,10 @@ public class RegistrationPage2 extends AppCompatActivity {
         } else if (emergencyNumValue.isEmpty()) {
             invalid = false;
             Toast.makeText(getApplicationContext(), "Please enter your emergency phone number", Toast.LENGTH_SHORT).show();
+        }else if (civilIdValue.length() < 12){
+            invalid = false;
+            Toast.makeText(getApplicationContext(), "Please enter a valid civil ID", Toast.LENGTH_SHORT).show();
+
         }
         return invalid;
     }

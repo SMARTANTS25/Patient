@@ -15,6 +15,7 @@ public class  RegistrationPage1 extends AppCompatActivity {
          EditText password;
          EditText confirmPassword;
          Button RegButton;
+    String gender = "M";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +42,19 @@ public class  RegistrationPage1 extends AppCompatActivity {
         RadioButton male = (RadioButton) findViewById(R.id.radioButton2);
         RadioButton female = (RadioButton) findViewById(R.id.radioButton);
 
+        male.setChecked(true);
 
-        final String[] gender = new String[1];
+
         male.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-        gender[0] = "M";
-                Toast.makeText(RegistrationPage1.this, gender[0]+"", Toast.LENGTH_SHORT).show();
+        gender = "M";
             }
         });
         female.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gender[0] ="F";
-                Toast.makeText(RegistrationPage1.this, gender[0]+"", Toast.LENGTH_SHORT).show();
+                gender ="F";
             }
         });
 
@@ -62,14 +62,12 @@ public class  RegistrationPage1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(validReg() == false){
-                    Toast.makeText(RegistrationPage1.this, "Not Valid Email Or Password", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(RegistrationPage1.this, "Not Valid Email Or Password", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent i = new Intent(RegistrationPage1.this, RegistrationPage2.class);
                     i.putExtra( "email",email.getText().toString());
                     i.putExtra( "password",password.getText().toString());
-                    i.putExtra("gender", gender[0]);
-
-                    Toast.makeText(RegistrationPage1.this, "Next Pressed", Toast.LENGTH_SHORT).show();
+                    i.putExtra("gender", gender);
                     startActivity(i);
                 }
             }
@@ -86,23 +84,14 @@ public class  RegistrationPage1 extends AppCompatActivity {
         if (emailValue.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(emailValue).matches()) {
             invalid = false;
             Toast.makeText(getApplicationContext(), "Enter a valid email", Toast.LENGTH_SHORT).show();
-
         }
-        else if (passwordValue.isEmpty()){
+        else if (passwordValue.length() < 8){
             invalid = false;
-            Toast.makeText(getApplicationContext(), "please enter the password", Toast.LENGTH_SHORT).show();
-        }
-        else if (confirmPassValue.isEmpty()) {
-            invalid = false;
-            Toast.makeText(getApplicationContext(), "Please enter the confirm password", Toast.LENGTH_SHORT).show();
-        }
-        else if ( password.length() < 6 || password.length() > 10 || confirmPassword.length() < 6 || confirmPassword.length()>10 ) {
-            invalid = false;
-            Toast.makeText(getApplicationContext(), "your passwords should be between 6 - 10 characters", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Password must be greater than 8", Toast.LENGTH_SHORT).show();
         }
         else if (!confirmPassValue.equals(passwordValue)) {
             invalid = false;
-            Toast.makeText(getApplicationContext(), "Passwords Dont Match", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Passwords Don't Match", Toast.LENGTH_SHORT).show();
         }
         return invalid;
     }
