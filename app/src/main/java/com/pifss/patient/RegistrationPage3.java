@@ -72,23 +72,29 @@ public class RegistrationPage3 extends AppCompatActivity {
         Switch SAsthma = (Switch) findViewById(R.id.switchAsthma);
         Switch SAllergies = (Switch) findViewById(R.id.switchAllergies);
 
-        RadioButton RDiabetesNo = (RadioButton) findViewById(R.id.Reg3_NoDiabetesRB);
+        final RadioButton RDiabetesNo = (RadioButton) findViewById(R.id.Reg3_NoDiabetesRB);
         final RadioButton RDiabetesTOne = (RadioButton) findViewById(R.id.Reg3_TypeOneDiabetesRB);
+
+        diabetes = false;
+        RDiabetesNo.setChecked(true);
 
         RDiabetesNo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    diabetes=false;
-
+                if (isChecked) {
+                    diabetes = false;
+                    RDiabetesTOne.setChecked(false);
+                }
 
             }
         });
         RDiabetesTOne.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
+                if (isChecked){
                     diabetes = true;
+                    RDiabetesNo.setChecked(false);
+                }
             }
         });
 
@@ -159,14 +165,12 @@ selectedBloodTypeImageButton(0);
                 if (isChecked)
                     asthmas = true;
 
-                Toast.makeText(RegistrationPage3.this, ""+isChecked, Toast.LENGTH_SHORT).show();
             }
         });
         SAllergies.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                Toast.makeText(RegistrationPage3.this, ""+isChecked, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -217,14 +221,18 @@ selectedBloodTypeImageButton(0);
                     obj.put("phoneNumber", phoneNum);
                     obj.put("emergencyNumber", emergencyNum);
                     obj.put("bloodType",BloodType);
-                    obj.put("diabetes",true);
-                    obj.put("asthma",true);
+                    obj.put("diabetes",diabetes);
+                    obj.put("asthma",asthmas);
                     obj.put("status",true);
 
                     obj.put("nationality"," ");
                     obj.put("middleName"," ");
                     obj.put("imageUrl", " ");
-                    obj.put("allergies",allergies.getText().toString());
+                    String alergies = allergies.getText().toString();
+                    if (alergies.length() == 0){
+                        alergies = "NO Alergies";
+                    }
+                    obj.put("allergies",alergies);
                     obj.put("medications",medications.getText().toString());
                     System.out.println(obj.toString());
                     req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
@@ -256,7 +264,7 @@ selectedBloodTypeImageButton(0);
                         .putString("Patient1",obj.toString())
                         .commit();
 
-                Intent i = new Intent(RegistrationPage3.this , Home.class);
+                Intent i = new Intent(RegistrationPage3.this , Login.class);
 
                 Toast.makeText(RegistrationPage3.this, "hello & you are done " + fname + " "+ lname, Toast.LENGTH_LONG).show();
                 startActivity(i);
@@ -282,10 +290,7 @@ selectedBloodTypeImageButton(0);
                     diabetes = true;
                 // Ninjas rule
                 break;
-            case R.id.Reg3_TypeTwoDiabetesRB:
-                if (checked)
-                    diabetes = true;
-                break;
+
 
         }
     }
