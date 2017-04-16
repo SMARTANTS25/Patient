@@ -4,224 +4,298 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pifss.patient.EditPatientProfile">
-
-    <ImageButton
-        android:id="@+id/editPatientInfo_Img"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_alignLeft="@+id/editPatientProfile_editMedicalInfoButton"
-        android:layout_alignStart="@+id/editPatientProfile_editMedicalInfoButton"
-
-        android:layout_below="@+id/toolbar5"
-        android:layout_marginLeft="21dp"
-        android:layout_marginStart="21dp"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <EditText
-        android:id="@+id/editPatientInfo_NameTF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_below="@+id/toolbar5"
-        android:layout_alignLeft="@+id/editPatientInfo_SaveChangesButton"
-        android:layout_alignStart="@+id/editPatientInfo_SaveChangesButton" />
+    android:orientation="vertical"
+    tools:context="com.pifss.patient.EditMedicalInfo">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar5"
+        android:id="@+id/toolbar4"
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/Buttons"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
 
     </android.support.v7.widget.Toolbar>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbar4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/saveChangesMedicalButton">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:fontFamily="monospace"
+                    android:text="Blood type:"
+                    android:textSize="19dp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/GroupRadioBloodType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonAP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="A+" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonAM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="A-" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonBP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="B+" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonBM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="B-" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="O+" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonOM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="O-" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonABP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="AB+" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonABM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="AB-" />
+
+                </LinearLayout>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:fontFamily="monospace"
+                    android:text="Diabetes:"
+                    android:textSize="19dp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/GroupRadioDiabetes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/radioButtonDiabetesNO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="No" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDiabetesYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:fontFamily="monospace"
+                    android:text="Asthma:"
+                    android:textSize="19dp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/GroupRadioAsthma"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/radioButtonAsthmaNO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="No" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAsthmaYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_margin="10dp">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.2"
+                app:srcCompat="@mipmap/allergy_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Allergies:"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextAllergies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:ems="10" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_margin="10dp">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.2"
+                app:srcCompat="@mipmap/medicine_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Medications:"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextMedications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:ems="10" />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/editPatientInfo_SaveChangesButton"
+        android:id="@+id/saveChangesMedicalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Buttons"
+        android:fontFamily="monospace"
+        android:text="Save Changes"
         android:textColor="@color/md_white_1000"
         android:textSize="14dp"
-        android:fontFamily="monospace"
-
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:text="Save Changes"
-
-        android:background="@color/Buttons"
-        android:layout_below="@+id/editPatientInfo_NameTF"
-        android:layout_alignRight="@+id/editPatientProfile_genderET"
-        android:layout_alignEnd="@+id/editPatientProfile_genderET" />
-
-    <EditText
-        android:id="@+id/editPatientProfile_genderET"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_alignLeft="@+id/editPatientProfile_emailET"
-        android:layout_alignStart="@+id/editPatientProfile_emailET"
-        android:layout_below="@+id/editPatientProfile_genderTitle"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Male" />
-
-    <EditText
-        android:id="@+id/editPatientProfile_birthDateET"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:inputType="textPersonName"
-        android:text="14/2/2012"
-        android:layout_below="@+id/imageView21"
-        android:layout_toRightOf="@+id/imageView21"
-        android:layout_toEndOf="@+id/imageView21" />
-
-    <EditText
-        android:id="@+id/editPatientProfile_emailET"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:inputType="textEmailAddress"
-        android:text="test@gmail.com"
-        android:layout_below="@+id/editPatientProfile_emailTitle"
-        android:layout_toRightOf="@+id/imageView20"
-        android:layout_toEndOf="@+id/imageView20" />
-
-    <TextView
-        android:id="@+id/editPatientProfile_genderTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/RegGender_RadioButton"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:layout_alignBottom="@+id/imageView22"
-        android:layout_alignLeft="@+id/editPatientInfo_Img"
-        android:layout_alignStart="@+id/editPatientInfo_Img" />
-
-    <TextView
-        android:id="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg2_BirthDate"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_below="@+id/editPatientProfile_genderET"
-        android:layout_alignLeft="@+id/editPatientProfile_genderTitle"
-        android:layout_alignStart="@+id/editPatientProfile_genderTitle" />
-
-    <TextView
-        android:id="@+id/editPatientProfile_emailTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textView_DocEmail"
-        android:layout_marginTop="10dp"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_below="@+id/editPatientProfile_birthDateET"
-        android:layout_alignLeft="@+id/editPatientProfile_birthDateET"
-        android:layout_alignStart="@+id/editPatientProfile_birthDateET" />
-
-    <TextView
-        android:id="@+id/editPatientProfile_phoneNumberTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/Reg2_Phone"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_below="@+id/editPatientProfile_emailET"
-        android:layout_toRightOf="@+id/imageView19"
-        android:layout_toEndOf="@+id/imageView19" />
-
-    <EditText
-        android:id="@+id/editPatientProfile__phoneNumberET"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:inputType="phone"
-        android:layout_toEndOf="@+id/imageView19"
-        android:layout_below="@+id/editPatientProfile_phoneNumberTitle"
-        android:layout_toRightOf="@+id/imageView19" />
-
-    <TextView
-        android:id="@+id/editPatientProfile_emergencyNumberTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg2_EmergencyPhone"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_above="@+id/editPatientProfile_emergencyNumberET"
-        android:layout_alignLeft="@+id/editPatientProfile__phoneNumberET"
-        android:layout_alignStart="@+id/editPatientProfile__phoneNumberET" />
-
-    <EditText
-        android:id="@+id/editPatientProfile_emergencyNumberET"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="phone"
-        android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_below="@+id/imageView18"
-        android:layout_toRightOf="@+id/imageView18"
-        android:layout_toEndOf="@+id/imageView18" />
-
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/emergencynum"
-        android:layout_below="@+id/editPatientProfile__phoneNumberET"
-        android:layout_toLeftOf="@+id/editPatientProfile_emergencyNumberTitle"
-        android:layout_toStartOf="@+id/editPatientProfile_emergencyNumberTitle" />
-
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/phone_icon"
-        android:layout_below="@+id/editPatientProfile_emailET"
-        android:layout_toLeftOf="@+id/editPatientProfile_emailET"
-        android:layout_toStartOf="@+id/editPatientProfile_emailET" />
-
-    <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/email"
-        android:layout_above="@+id/editPatientProfile_emailET"
-        android:layout_toLeftOf="@+id/editPatientProfile_emailTitle"
-        android:layout_toStartOf="@+id/editPatientProfile_emailTitle" />
-
-    <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        app:srcCompat="@mipmap/calender"
-        android:layout_alignTop="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_toLeftOf="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_toStartOf="@+id/editPatientProfile_BirthDateTitle" />
-
-    <ImageView
-        android:id="@+id/imageView22"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/gender_icon"
-        android:layout_below="@+id/editPatientInfo_SaveChangesButton"
-        android:layout_toLeftOf="@+id/editPatientProfile_genderET"
-        android:layout_toStartOf="@+id/editPatientProfile_genderET" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

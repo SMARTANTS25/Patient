@@ -110,6 +110,14 @@ public class EditPatientProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (fname.getText().toString().length() == 0 || mname.getText().toString().length() == 0 ||
+                        lname.getText().toString().length() == 0 || civilID.getText().toString().length() == 0 ||
+                        phone.getText().toString().length() == 0 || emergency.getText().toString().length() == 0 ||
+                        nationality.getText().toString().length() == 0){
+
+                    Toast.makeText(EditPatientProfile.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (!(password.getText().toString().equals(currentPatientObject.getPassword()))){
 
                     Toast.makeText(EditPatientProfile.this, "Password in incorrect", Toast.LENGTH_SHORT).show();

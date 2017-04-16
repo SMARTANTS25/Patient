@@ -1,11 +1,16 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,12 +20,21 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class EditMedicalInfo extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class EditMedicalInfo extends AppCompatActivity {
+    Patient updatedPatient = new Patient();
+    Patient currentPatientObject;
+String bloodType = "AB-";
+    Boolean diabetes = false;
+    Boolean asthma = false;
+
+    ArrayList<RadioButton> bloodRadioButton = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,65 +42,275 @@ public class EditMedicalInfo extends AppCompatActivity {
 
         Button saveChanges= (Button) findViewById(R.id.saveChangesMedicalButton);
 
-        saveChanges.setOnClickListener(new View.OnClickListener() {
+        SharedPreferences pref1 = getSharedPreferences("PatientData1", MODE_PRIVATE);
+        String patientProfile = pref1.getString("Patient1","notfound");
+        currentPatientObject = new Gson().fromJson(patientProfile,Patient.class);
+
+
+
+
+        final EditText allergiesText=(EditText) findViewById(R.id.editTextAllergies);
+        final EditText medicationsText=(EditText) findViewById(R.id.editTextMedications);
+
+        RadioButton ap = (RadioButton) findViewById(R.id.radioButtonAP);
+        RadioButton am = (RadioButton) findViewById(R.id.radioButtonAM);
+        RadioButton bp = (RadioButton) findViewById(R.id.radioButtonBP);
+        RadioButton bm = (RadioButton) findViewById(R.id.radioButtonBM);
+        RadioButton op = (RadioButton) findViewById(R.id.radioButtonOP);
+        RadioButton om = (RadioButton) findViewById(R.id.radioButtonOM);
+        RadioButton abp = (RadioButton) findViewById(R.id.radioButtonABP);
+        RadioButton abm = (RadioButton) findViewById(R.id.radioButtonABM);
+        bloodRadioButton.add(ap);
+        bloodRadioButton.add(am);
+        bloodRadioButton.add(bp);
+        bloodRadioButton.add(bm);
+        bloodRadioButton.add(op);
+        bloodRadioButton.add(om);
+        bloodRadioButton.add(abp);
+        bloodRadioButton.add(abm);
+
+        if (currentPatientObject.getBloodType().equals("A+")){
+            ap.setChecked(true);
+            bloodType = "A+";
+        }else if (currentPatientObject.getBloodType().equals("A-")){
+            am.setChecked(true);
+            bloodType = "A-";
+        }else if (currentPatientObject.getBloodType().equals("B+")){
+            bp.setChecked(true);
+            bloodType = "B+";
+        }else if (currentPatientObject.getBloodType().equals("B-")){
+            bm.setChecked(true);
+            bloodType = "B-";
+        }else if (currentPatientObject.getBloodType().equals("O+")){
+            op.setChecked(true);
+            bloodType = "O+";
+        }else if (currentPatientObject.getBloodType().equals("O-")){
+            om.setChecked(true);
+            bloodType = "O-";
+        }else if (currentPatientObject.getBloodType().equals("AB+")){
+            abp.setChecked(true);
+            bloodType = "AB+";
+        }else{
+            abm.setChecked(true);
+            bloodType = "AB-";
+        }
+
+        ap.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-               // Intent i = new Intent(EditMedicalInfo.this, .class);
-               // startActivity(i);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                bloodType = "A+";
+                setCheckedBloodButton(0);
+
+                }
             }
         });
 
-        final EditText bloodtypeText=(EditText) findViewById(R.id.bloodtypeEditText);
-        final EditText diabetesText=(EditText) findViewById(R.id.diabetesEditText);
-        final EditText asthmaText=(EditText) findViewById(R.id.asthmaEditText);
-        final EditText allergiesText=(EditText) findViewById(R.id.allergiesEditText);
-        final EditText medicationsText=(EditText) findViewById(R.id.medicationsEditText);
+        am.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-        final TextView nameText=(TextView) findViewById(R.id.PNameTF);
+                if (isChecked){
 
-
-        //change URL
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/";
-        RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
-
-        JSONObject obj = new JSONObject();
-        try {
-            obj.put("bloodtype", bloodtypeText.getText().toString());
-            obj.put("diabetes", diabetesText.getText().toString());
-
-            obj.put("asthma", asthmaText.getText().toString());
-            obj.put("allergies", allergiesText.getText().toString());
-
-            obj.put("medications", medicationsText.getText().toString());
-            //check
-           // Patient p=new Gson().fromJson(response,Patient.class);
-            // nameText.setText(p.getFirstName());
-
-
-
-            JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-
-
-
+                bloodType = "A-";
+                setCheckedBloodButton(1);
                 }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
+            }
+        });
 
+        bp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+
+                bloodType = "B+";
+                setCheckedBloodButton(2);
                 }
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
+            }
+        });
+
+        bm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+
+                bloodType = "B-";
+                setCheckedBloodButton(3);
+                }
+            }
+        });
+
+        op.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+
+                bloodType = "O+";
+                setCheckedBloodButton(4);
+                }
+            }
+        });
+
+
+        om.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+
+                bloodType = "O-";
+                setCheckedBloodButton(5);
+                }
+            }
+        });
+
+        abp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+
+                bloodType = "AB+";
+                setCheckedBloodButton(6);
+                }
+            }
+        });
+
+        abm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+
+                bloodType = "AB-";
+                setCheckedBloodButton(7);
+                }
+            }
+        });
+
+
+        RadioButton diabetesNo = (RadioButton) findViewById(R.id.radioButtonDiabetesNO);
+        RadioButton diabetesYes = (RadioButton) findViewById(R.id.radioButtonDiabetesYes);
+        RadioGroup radioGroupdiabetes = (RadioGroup) findViewById(R.id.GroupRadioDiabetes);
+
+        if (currentPatientObject.getDiabetes()){
+            diabetesYes.setChecked(true);
+            diabetes = true;
+        }else{
+            diabetesNo.setChecked(true);
+            diabetes = false;
         }
+        radioGroupdiabetes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (checkedId == R.id.radioButtonDiabetesNO){
+                    diabetes = false;
+                }else{
+                    diabetes = true;
+                }
+            }
+        });
 
 
+        RadioButton asthmaNo = (RadioButton) findViewById(R.id.radioButtonAsthmaNO);
+        RadioButton asthmaYes = (RadioButton) findViewById(R.id.radioButtonAsthmaYes);
+        RadioGroup radioGroupasthma = (RadioGroup) findViewById(R.id.GroupRadioAsthma);
+
+        if (currentPatientObject.getAsthma()){
+            asthmaYes.setChecked(true);
+            asthma = true;
+        }else{
+            asthmaNo.setChecked(true);
+            asthma = false;
+        }
+        radioGroupasthma.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (checkedId == R.id.radioButtonAsthmaNO){
+                    asthma = false;
+                }else{
+                    asthma = true;
+                }
+            }
+        });
 
 
+        allergiesText.setText(currentPatientObject.getAllergies());
+        medicationsText.setText(currentPatientObject.getMedications());
+
+        saveChanges.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (allergiesText.getText().toString().length() == 0 || medicationsText.getText().toString().length() == 0){
+
+                    Toast.makeText(EditMedicalInfo.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // send Update Profile Request
+                String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/"+currentPatientObject.getPatientId();
+                RequestQueue queue = MySingleton.getInstance().getRequestQueue(EditMedicalInfo.this);
+
+                try {
+
+                    updatedPatient = new Gson().fromJson(currentPatientObject.toJSONString(),Patient.class);
+
+                    updatedPatient.setBloodType(bloodType);
+                    updatedPatient.setAsthma(asthma);
+                    updatedPatient.setDiabetes(diabetes);
+
+                    updatedPatient.setAllergies(allergiesText.getText().toString());
+                    updatedPatient.setMedications(medicationsText.getText().toString());
 
 
+                    JSONObject jsonProfile = new JSONObject(updatedPatient.toJSONString());
+                    System.out.println("request: "+jsonProfile.toString());
+                    JsonObjectRequest req = new JsonObjectRequest(Request.Method.PUT, url, jsonProfile, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            System.out.println("response: "+response.toString());
+                            try {
+                                if (response.getString("errorMsgEn").equalsIgnoreCase("Done")){
+
+                                    Toast.makeText(EditMedicalInfo.this, "Profile updated", Toast.LENGTH_SHORT).show();
+
+                                    SharedPreferences pref1 = getSharedPreferences("PatientData1", MODE_PRIVATE);
+                                    SharedPreferences.Editor Ed1 = pref1.edit();
+                                    //profile
+                                    Ed1.putString("Patient1",updatedPatient.toJSONString());
+                                    Ed1.commit();
+                                    currentPatientObject = updatedPatient;
+                                }else{
+                                    Toast.makeText(EditMedicalInfo.this, "Error Please try again.", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
 
 
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(EditMedicalInfo.this, "Error connection failed.", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+                    queue.add(req);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+    public void setCheckedBloodButton(int index){
+        for (int i =0;i<bloodRadioButton.size();i++){
+            RadioButton radioButton = bloodRadioButton.get(i);
+            if (i == index){
+                radioButton.setChecked(true);
+            }else {
+                radioButton.setChecked(false);
+            }
+
+        }
     }
 }
