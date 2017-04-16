@@ -246,7 +246,8 @@ public class RegistrationPage3 extends AppCompatActivity {
                         .putString("Patient1",obj.toString())
                         .commit();
 
-                Intent i = new Intent(RegistrationPage3.this, Home.class);
+                Intent i = new Intent(RegistrationPage3.this , Home.class);
+
                 Toast.makeText(RegistrationPage3.this, "hello & you are done " + fname + " "+ lname, Toast.LENGTH_LONG).show();
                 startActivity(i);
             }

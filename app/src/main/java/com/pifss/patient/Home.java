@@ -31,6 +31,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.pifss.patient.Adapters.DoctorAdapter;
 import com.pifss.patient.utils.Doctor;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -54,9 +55,15 @@ public class Home extends AppCompatActivity {
         Patient profile = new Gson().fromJson(shared,Patient.class);
         String patientName = profile.getFirstName() + " " + profile.getLastName();
         String patientEmail = profile.getEmail();
-        this.patientId = profile.getPatientId();
+        JSONObject obj1;
+        try {
+            obj1 = new JSONObject(shared);
+            this.patientId = obj1.getInt("patientId"); //profile.getPatientId();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
-        toolbar.setTitle("Home");
+        toolbar.setTitle(R.string.Home_home);
         //
         //setSupportActionBar(toolbar);
 
@@ -69,13 +76,13 @@ public class Home extends AppCompatActivity {
 
 
 
-        myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.doctor_profile_icon_two).withName("My Doctors").withBadge(String.valueOf(myDoctorCount)).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
-        PrimaryDrawerItem findDoctorsItem = new PrimaryDrawerItem().withIdentifier(2).withIcon(R.mipmap.doctor_profile_icon).withName("Find Doctors");
-        PrimaryDrawerItem hospitalsItem = new PrimaryDrawerItem().withIdentifier(3).withIcon(R.mipmap.hospital).withName("Hospitals");
-        PrimaryDrawerItem reportItem = new PrimaryDrawerItem().withIdentifier(4).withIcon(R.mipmap.medical_report_icon).withName("My Reports");
+        myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.doctor_profile_icon_two).withName(R.string.Home_MyDoctors).withBadge(String.valueOf(myDoctorCount)).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
+        PrimaryDrawerItem findDoctorsItem = new PrimaryDrawerItem().withIdentifier(2).withIcon(R.mipmap.doctor_profile_icon).withName(R.string.Home_FindDoctors);
+        PrimaryDrawerItem hospitalsItem = new PrimaryDrawerItem().withIdentifier(3).withIcon(R.mipmap.hospital).withName(R.string.Home_Hospitals);
+        PrimaryDrawerItem reportItem = new PrimaryDrawerItem().withIdentifier(4).withIcon(R.mipmap.medical_report_icon).withName(R.string.Home_MyReports);
         DividerDrawerItem itemDivider = new DividerDrawerItem();
-        PrimaryDrawerItem settingsItem = new PrimaryDrawerItem().withIdentifier(5).withIcon(R.mipmap.settings_icon).withName("Settings");
-        PrimaryDrawerItem logoutItem = new PrimaryDrawerItem().withIdentifier(6).withIcon(R.mipmap.logout_icon).withName("Logout");
+        PrimaryDrawerItem settingsItem = new PrimaryDrawerItem().withIdentifier(5).withIcon(R.mipmap.settings_icon).withName(R.string.Home_Sittings);
+        PrimaryDrawerItem logoutItem = new PrimaryDrawerItem().withIdentifier(6).withIcon(R.mipmap.logout_icon).withName(R.string.Home_Logout);
 
 
              headerResult = new AccountHeaderBuilder()
@@ -128,9 +135,12 @@ public class Home extends AppCompatActivity {
                                 intent = new Intent(Home.this, Login.class);
                                 //String shared = getSharedPreferences("patientData", MODE_PRIVATE).getString("Patient"," ");
                                 SharedPreferences pref = getSharedPreferences("PatientData1",MODE_PRIVATE);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                             pref.edit()
                                     .clear()
                                     .apply();
+                                finish();
                             }
 
 

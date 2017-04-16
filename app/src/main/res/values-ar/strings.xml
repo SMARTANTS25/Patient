@@ -76,7 +76,7 @@
 
     //Some of them are the Same As Reg2Page Strings ex:BirthDate
     <string name="PatientProfile_MyDoctors">أطبائي</string>
-    <string name="PatientProfile_MedicalInfo">\" المعلومات الطبية\"</string>
+    <string name="PatientProfile_MedicalInfo">" المعلومات الطبية"</string>
     <string name="PatientProfile_EditProfile">تحرير البروفايل</string>
 
 
@@ -119,5 +119,13 @@
     <string name="SendReport_SugarLevel">معدل السكر</string>
     <string name="SendReport_Yes">نعم</string>
     <string name="SendReport_No">لا</string>
+    <string name="textView_HosType">النوع</string>
+    <string name="Home_FindDoctors">البحث عن أطباء</string>
+    <string name="Home_Logout">تسجيل خروج</string>
+    <string name="Home_MyDoctors">أطبائي</string>
+    <string name="Home_MyReports">تقاريري</string>
+    <string name="Home_Sittings">الإعدادات</string>
+    <string name="Home_home">الرئيسية</string>
+    <string name="Home_Hospitals">المستشفيات</string>
 </resources>
 

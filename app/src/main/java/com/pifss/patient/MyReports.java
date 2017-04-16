@@ -36,7 +36,7 @@ public class MyReports extends AppCompatActivity {
         setContentView(R.layout.activity_my_reports);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarMyReports);
-        toolbar.setTitle("My Reports");
+        toolbar.setTitle(R.string.Home_MyReports);
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
         setSupportActionBar(toolbar);
 

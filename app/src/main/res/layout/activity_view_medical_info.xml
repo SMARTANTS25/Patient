@@ -31,17 +31,6 @@
         android:layout_marginTop="14dp"
         app:srcCompat="@mipmap/my_patient_icon" />
 
-    <TextView
-        android:id="@+id/ViewMedicalInfo_patientNameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="TextView"
-        android:textSize="18sp"
-        android:layout_alignTop="@+id/ViewMedicalInfo_PatientImage"
-        android:layout_toRightOf="@+id/ViewMedicalInfo_DiabetesTitle"
-        android:layout_toEndOf="@+id/ViewMedicalInfo_DiabetesTitle" />
-
     <Button
         android:id="@+id/ViewMedicalInfo_EditProfileButton"
         android:layout_width="220dp"

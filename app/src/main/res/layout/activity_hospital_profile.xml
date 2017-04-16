@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:fontFamily="monospace"
-        android:text="Type"
+        android:text="@string/textView_HosType"
         android:layout_alignBottom="@+id/HospitalProfile_HospitalLogoImageView"
         android:layout_toRightOf="@+id/HospitalProfile_HospitalLogoImageView"
         android:layout_toEndOf="@+id/HospitalProfile_HospitalLogoImageView"
@@ -132,13 +132,15 @@
         android:id="@+id/HospitalProfile_PhoneNumberTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:fontFamily="monospace"
-        android:text="Phone Number"
-        android:textSize="18dp"
-        android:layout_below="@+id/HospitalProfile_WorkingHourseTV"
+        android:layout_alignEnd="@+id/HospitalProfile_PhoneNumberTV"
         android:layout_alignRight="@+id/HospitalProfile_PhoneNumberTV"
-        android:layout_alignEnd="@+id/HospitalProfile_PhoneNumberTV" />
+        android:layout_below="@+id/HospitalProfile_WorkingHourseTV"
+        android:layout_marginTop="17dp"
+        android:text="@string/textView_HosPhone"
+        android:fontFamily="monospace"
+        android:textSize="18dp"
+        android:layout_toRightOf="@+id/imageViewHosAddress"
+        android:layout_toEndOf="@+id/imageViewHosAddress" />
 
     <TextView
         android:id="@+id/HospitalProfile_PhoneNumberTV"
@@ -251,13 +253,10 @@
         android:id="@+id/imageViewHosPhone"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/HospitalProfile_AddressTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        app:srcCompat="@mipmap/phone_icon"
         android:layout_alignTop="@+id/HospitalProfile_PhoneNumberTitle"
-        android:layout_toLeftOf="@+id/HospitalProfile_PhoneNumberTitle"
-        android:layout_toStartOf="@+id/HospitalProfile_PhoneNumberTitle"
-        app:srcCompat="@mipmap/phone_icon" />
+        android:layout_alignRight="@+id/imageViewHosExtraInfo"
+        android:layout_alignEnd="@+id/imageViewHosExtraInfo" />
 
     <ImageView
         android:id="@+id/imageViewHosAddress"

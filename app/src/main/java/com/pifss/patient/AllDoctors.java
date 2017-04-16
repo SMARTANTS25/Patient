@@ -31,7 +31,7 @@ public class AllDoctors extends AppCompatActivity {
         setContentView(R.layout.activity_all_doctors);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
-        toolbar.setTitle("All Doctors");
+        toolbar.setTitle(R.string.Home_FindDoctors);
         //setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
 

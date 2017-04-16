@@ -102,4 +102,12 @@
     <string name="SendReport_Submit">Submit</string>
     <string name="SendReport_Yes">Yes</string>
     <string name="SendReport_No">No</string>
+    <string name="textView_HosType">Type</string>
+    <string name="Home_home">Home</string>
+    <string name="Home_MyDoctors">My Doctors</string>
+    <string name="Home_FindDoctors">Find Doctors</string>
+    <string name="Home_MyReports">My Reports</string>
+    <string name="Home_Sittings">Sittings</string>
+    <string name="Home_Logout">Logout</string>
+    <string name="Home_Hospitals">Hospitals</string>
 </resources>
