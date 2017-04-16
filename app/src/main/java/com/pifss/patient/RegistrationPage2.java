@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegistrationPage2 extends AppCompatActivity {
 
     EditText fname;
     EditText lname;
-    EditText birthDate;
+    TextView birthDate;
     EditText civilId;
     EditText phone;
     EditText emergencyNumber;
@@ -34,7 +35,7 @@ public class RegistrationPage2 extends AppCompatActivity {
 
         fname= (EditText) findViewById(R.id.Reg2_FirstNameTF);
         lname= (EditText) findViewById(R.id.Reg2_LastNameTF);
-        birthDate= (EditText) findViewById(R.id.Reg2_BirthDateTF);
+        birthDate= (TextView) findViewById(R.id.Reg2_BirthDateTF);
         civilId= (EditText) findViewById(R.id.Reg2_CivilIDTF);
         phone= (EditText) findViewById(R.id.Reg2_PhoneNumberTF);
         emergencyNumber= (EditText) findViewById(R.id.Reg2_EmergencyNumberTF);
@@ -47,10 +48,8 @@ public class RegistrationPage2 extends AppCompatActivity {
 //        final String phoneValue = phone.getText().toString();
 //        final String emergencyNumValue = emergencyNumber.getText().toString();
           regButton = (Button) findViewById(R.id.Reg2_NextButton);
+        birthDate.setText(1995 + "-" + 2 + "-" + 23);
 
-
-         final String birthdateV = "";
-  ;
         birthDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,9 +65,6 @@ public class RegistrationPage2 extends AppCompatActivity {
                 d.show();
 
             }});
-
-      //  birthDate.setText(birthdateV);
-        Toast.makeText(this, birthDate.getText(), Toast.LENGTH_SHORT).show();
 
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
