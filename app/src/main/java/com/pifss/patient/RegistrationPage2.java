@@ -58,13 +58,7 @@ public class RegistrationPage2 extends AppCompatActivity {
                 DatePickerDialog d = new DatePickerDialog(RegistrationPage2.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
                         birthDate.setText(year + "-" + month + "-" + dayOfMonth);
-        //              birthdateV.valueOf( year + "-" + month + "-" + dayOfMonth );
-
-
-
-                        //Toast.makeText(RegistrationPage2.this, birthdateV.toString(), Toast.LENGTH_SHORT).show();
 
                     }
                 }, 1995, 2, 23);
