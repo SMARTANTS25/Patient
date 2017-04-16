@@ -31,8 +31,6 @@ public class ViewMedicalInfo extends AppCompatActivity {
         final TextView allergiesText = (TextView) findViewById(R.id.ViewMedicalInfo_AllergiesTV);
         final TextView medicationsText = (TextView) findViewById(R.id.ViewMedicalInfo_medicationVT);
 
-        Button myDoctor = (Button) findViewById(R.id.ViewMedicalInfo_mydoctorsButton);
-        Button viewGeneralInfo=(Button) findViewById(R.id.ViewMedicalInfo_generalInfoButton);
         Button editMedicalInfobutton=(Button) findViewById(R.id.ViewMedicalInfo_EditProfileButton);
         editMedicalInfobutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,23 +41,6 @@ public class ViewMedicalInfo extends AppCompatActivity {
             }
         });
 
-        viewGeneralInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i= new Intent(ViewMedicalInfo.this, ViewPatientProfile.class);
-                startActivity(i);
-            }
-        });
-
-        myDoctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i= new Intent(ViewMedicalInfo.this, MyDoctors.class);
-                startActivity(i);
-            }
-        });
 
         String url="";
         RequestQueue queue= MySingleton.getInstance().getRequestQueue(this);

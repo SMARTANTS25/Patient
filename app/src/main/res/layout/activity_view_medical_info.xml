@@ -159,34 +159,6 @@
         android:layout_alignLeft="@+id/ViewMedicalInfo_asthmaTV"
         android:layout_alignStart="@+id/ViewMedicalInfo_asthmaTV" />
 
-    <Button
-        android:id="@+id/ViewMedicalInfo_mydoctorsButton"
-        android:layout_width="390dp"
-        android:layout_height="wrap_content"
-        android:background="@color/Buttons"
-        android:fontFamily="monospace"
-        android:text="@string/PatientProfile_MyDoctors"
-        android:textColor="@color/md_white_1000"
-        android:textSize="14sp"
-        android:layout_above="@+id/ViewMedicalInfo_generalInfoButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:id="@+id/ViewMedicalInfo_generalInfoButton"
-        android:layout_width="365dp"
-        android:layout_height="wrap_content"
-        android:background="@color/Buttons"
-        android:text="@string/PatientMedicalInfo_GeneralInfo"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:textColor="@color/md_white_1000"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <ImageView
         android:id="@+id/imageView31"
         android:layout_width="30dp"

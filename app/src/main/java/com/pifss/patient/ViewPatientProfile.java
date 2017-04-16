@@ -23,7 +23,7 @@ public class ViewPatientProfile extends AppCompatActivity {
         ImageView imageProfile = (ImageView) findViewById(R.id.ViewPatientProfile_PatientImage);
 
         Button editButton=(Button) findViewById(R.id.ViewPatientProfile_editPersonalInfoButton);
-        Button myDrButton=(Button) findViewById(R.id.ViewMedicalInfo_mydoctorsButton);
+        Button myDrButton=(Button) findViewById(R.id.ViewPatientProfile_myDoctorsButton);
         Button medicalProfileButton = (Button) findViewById(R.id.ViewPatientProfile_medicalInfoViewButton);
 
 
@@ -99,6 +99,14 @@ public class ViewPatientProfile extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = new Intent(ViewPatientProfile.this, ViewMedicalInfo.class);
+                startActivity(i);
+            }
+        });
+
+        myDrButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(ViewPatientProfile.this, MyDoctors.class);
                 startActivity(i);
             }
         });
