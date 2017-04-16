@@ -123,6 +123,10 @@ public class RegistrationPage2 extends AppCompatActivity {
         } else if (emergencyNumValue.isEmpty()) {
             invalid = false;
             Toast.makeText(getApplicationContext(), "Please enter your emergency phone number", Toast.LENGTH_SHORT).show();
+        }else if (civilIdValue.length() < 12){
+            invalid = false;
+            Toast.makeText(getApplicationContext(), "Please enter a valid civil ID", Toast.LENGTH_SHORT).show();
+
         }
         return invalid;
     }

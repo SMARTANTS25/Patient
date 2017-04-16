@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Switch;
@@ -20,6 +21,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class RegistrationPage3 extends AppCompatActivity {
 
@@ -46,15 +49,22 @@ public class RegistrationPage3 extends AppCompatActivity {
         final String phoneNum = getIntent().getStringExtra("phoneNumber");
         final String emergencyNum = getIntent().getStringExtra("emergencyNumber");
 
-        ImageView bloodBPlus = (ImageView) findViewById(R.id.Reg3_bplusImageButton);
-        ImageView bloodBMinus = (ImageView) findViewById(R.id.Reg3_bminImageButton);
-        ImageView bloodAPlus = (ImageView) findViewById(R.id.Reg3_aplusImgButton);
-        ImageView bloodAMinus = (ImageView) findViewById(R.id.Reg3_aminImgButton);
-        ImageView bloodABPlus = (ImageView) findViewById(R.id.Reg3_abplusImgButton);
-        ImageView bloodABMinus = (ImageView) findViewById(R.id.Reg3_abminImgButton);
-        ImageView bloodOPlus = (ImageView) findViewById(R.id.Reg3_oplusImageButton);
-        ImageView bloodOMinus = (ImageView) findViewById(R.id.Reg3_ominImageButton);
-
+        ImageButton bloodBPlus = (ImageButton) findViewById(R.id.Reg3_bplusImageButton);
+        ImageButton bloodBMinus = (ImageButton) findViewById(R.id.Reg3_bminImageButton);
+        ImageButton bloodAPlus = (ImageButton) findViewById(R.id.Reg3_aplusImgButton);
+        ImageButton bloodAMinus = (ImageButton) findViewById(R.id.Reg3_aminImgButton);
+        ImageButton bloodABPlus = (ImageButton) findViewById(R.id.Reg3_abplusImgButton);
+        ImageButton bloodABMinus = (ImageButton) findViewById(R.id.Reg3_abminImgButton);
+        ImageButton bloodOPlus = (ImageButton) findViewById(R.id.Reg3_oplusImageButton);
+        ImageButton bloodOMinus = (ImageButton) findViewById(R.id.Reg3_ominImageButton);
+        myImageButtons.add(bloodAMinus);
+        myImageButtons.add(bloodAPlus);
+        myImageButtons.add(bloodABMinus);
+        myImageButtons.add(bloodABPlus);
+        myImageButtons.add(bloodBMinus);
+        myImageButtons.add(bloodBPlus);
+        myImageButtons.add(bloodOMinus);
+        myImageButtons.add(bloodOPlus);
 
         final EditText allergies = (EditText) findViewById(R.id.Reg3_AllergiesET);
         final EditText medications = (EditText) findViewById(R.id.Reg3_MedicationsET);
@@ -64,7 +74,6 @@ public class RegistrationPage3 extends AppCompatActivity {
 
         RadioButton RDiabetesNo = (RadioButton) findViewById(R.id.Reg3_NoDiabetesRB);
         final RadioButton RDiabetesTOne = (RadioButton) findViewById(R.id.Reg3_TypeOneDiabetesRB);
-        RadioButton RDiabetesTTwo = (RadioButton) findViewById(R.id.Reg3_TypeTwoDiabetesRB);
 
         RDiabetesNo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -82,63 +91,64 @@ public class RegistrationPage3 extends AppCompatActivity {
                     diabetes = true;
             }
         });
-        RDiabetesTTwo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if (isChecked)
-                    diabetes=true;
-            }
-        });
 
-        BloodType = "";
-
+        BloodType = "A-";
+selectedBloodTypeImageButton(0);
         bloodBPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BloodType = "B+";
+                selectedBloodTypeImageButton(5);
             }
         });
         bloodBMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BloodType = "B-";
+                selectedBloodTypeImageButton(4);
             }
         });
         bloodAPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BloodType = "A+";
+                selectedBloodTypeImageButton(1);
             }
         });
         bloodAMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BloodType = "A-";
+                selectedBloodTypeImageButton(0);
             }
         });
         bloodABPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BloodType = "AB+";
+                selectedBloodTypeImageButton(3);
             }
         });
         bloodABMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BloodType = "AB-";
+                selectedBloodTypeImageButton(2);
             }
         });
         bloodOPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BloodType = "O+";
+                selectedBloodTypeImageButton(7);
             }
         });
         bloodOMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BloodType = "O-";
+                selectedBloodTypeImageButton(6);
             }
         });
 
@@ -281,4 +291,20 @@ public class RegistrationPage3 extends AppCompatActivity {
     }
 
 
+    ArrayList<ImageButton> myImageButtons = new ArrayList<>();
+    int selectedBloodTypeIndex = 0;
+    public void selectedBloodTypeImageButton(int position) {
+        selectedBloodTypeIndex = position;
+        for (int i = 0; i < myImageButtons.size(); i++) {
+
+            ImageButton button = myImageButtons.get(i);
+
+            if (i == position) {
+                button.setAlpha(1.0f);
+            } else {
+                button.setAlpha(0.4f);
+            }
+
+        }
+    }
 }

@@ -301,16 +301,6 @@
         android:layout_alignParentEnd="true" />
 
     <RadioButton
-        android:id="@+id/Reg3_TypeTwoDiabetesRB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/fitWindowsLinearLayout"
-        android:layout_toEndOf="@+id/Reg3_ominImageButton"
-        android:layout_toRightOf="@+id/Reg3_ominImageButton"
-        android:onClick="onRadioButtonClicked"
-        android:text="@string/Reg3_DiabetesTypeTwo" />
-
-    <RadioButton
         android:id="@+id/Reg3_TypeOneDiabetesRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -318,7 +308,7 @@
         android:layout_toLeftOf="@+id/Reg3_abminImgButton"
         android:layout_toStartOf="@+id/Reg3_abminImgButton"
         android:onClick="onRadioButtonClicked"
-        android:text="@string/Reg3_DiabetesTypeOne" />
+        android:text="Yes" />
 
 
 </RelativeLayout>
