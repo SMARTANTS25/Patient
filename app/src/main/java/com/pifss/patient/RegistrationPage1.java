@@ -62,16 +62,8 @@ public class  RegistrationPage1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(validReg() == false){
-                    RegButton.setEnabled(false);
-//                    Intent i=new Intent(RegistrationPage1.this, RegistrationPage2.class);
-//                    startActivity(i);
-
-
                     Toast.makeText(RegistrationPage1.this, "Not Valid Email Or Password", Toast.LENGTH_SHORT).show();
-                }  //validReg();
-
-                else {
-                    validReg();
+                } else {
                     Intent i = new Intent(RegistrationPage1.this, RegistrationPage2.class);
                     i.putExtra( "email",email.getText().toString());
                     i.putExtra( "password",password.getText().toString());
