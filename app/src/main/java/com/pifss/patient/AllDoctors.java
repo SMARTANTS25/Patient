@@ -68,7 +68,7 @@ public class AllDoctors extends AppCompatActivity {
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
-
+                intent.putExtra("drId",m.getDrId());
                 startActivity(intent);
 
             }

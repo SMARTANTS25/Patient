@@ -129,5 +129,6 @@
     <string name="Home_Hospitals">المستشفيات</string>
     <string name="MyReport_HavePain">لدي ألم</string>
     <string name="MyReportNoPain">لا ألم</string>
+    <string name="NewDoctor_Request">تم إرسال الطلب</string>
 </resources>
 

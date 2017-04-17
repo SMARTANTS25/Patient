@@ -34,8 +34,8 @@ public class Login extends AppCompatActivity {
         TextView forgetPassword = (TextView) findViewById(R.id.Login_forgetpasswordTV);
 
         // TODO: 13/04/17 for testing remove when done
-        emailText.setText("email@gmail.com");
-        passwordText.setText("123123123");
+        emailText.setText("relat@gmail.com");
+        passwordText.setText("112233");
 
         //login button
         loginBtn.setOnClickListener(new View.OnClickListener() {

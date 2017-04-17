@@ -117,4 +117,5 @@
     <string name="ResetPassword_CivilId">Civil ID</string>
     <string name="MyReport_HavePain">Have Pain</string>
     <string name="MyReportNoPain">No Pain</string>
+    <string name="NewDoctor_Request">the Request is sent</string>
 </resources>

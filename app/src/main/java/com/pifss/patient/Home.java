@@ -242,6 +242,7 @@ public class Home extends AppCompatActivity {
                 intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
                 intent.putExtra("gender", m.getGender());
                 intent.putExtra("drId2",m.getDrId());
+                Toast.makeText(Home.this, m.getDrId()+"", Toast.LENGTH_SHORT).show();
                 intent.putExtra("specialty", m.getSpecialityId());
                 intent.putExtra("nationality", m.getNationality());
                 intent.putExtra("email", m.getEmail());

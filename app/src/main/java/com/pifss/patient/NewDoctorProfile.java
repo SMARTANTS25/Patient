@@ -46,7 +46,7 @@ public class NewDoctorProfile extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        int dID = intent.getIntExtra("drId2",0);
+        int dID = intent.getIntExtra("drId",0);
         String name = intent.getStringExtra("name");
         String gender = intent.getStringExtra("gender");
         String nationality = intent.getStringExtra("nationality");
@@ -67,36 +67,8 @@ public class NewDoctorProfile extends AppCompatActivity {
 
         Button buttonRequest = (Button) findViewById(R.id.NewDoctorProfile_SendRequestButton);
 
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientdrlink/";
 
 
-        Toast.makeText(this, pID+"pid  "+ , Toast.LENGTH_SHORT).show();
-        JSONObject obj = new JSONObject();
-        try {
-            obj.put("drId",dID);
-            obj.put("patientId",pID);
-            obj.put("status",0);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(NewDoctorProfile.this);
-
-        final JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-
-                Toast.makeText(NewDoctorProfile.this, "the request is sent", Toast.LENGTH_SHORT).show();
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Toast.makeText(NewDoctorProfile.this, "ERROR", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         textViewDocName.setText(name);
         textViewCV.setText(cvURL);
@@ -107,6 +79,58 @@ public class NewDoctorProfile extends AppCompatActivity {
         if (profileImg != null && profileImg.length() >= 4 &&  profileImg.isEmpty() == false ) {
             Picasso.with(NewDoctorProfile.this).load(profileImg).into(imageViewDoctor);
         }
+
+
+        final String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientdrlink";
+
+
+        Toast.makeText(this, pID+" pid  "+dID , Toast.LENGTH_SHORT).show();
+        final JSONObject obj = new JSONObject();
+        try {
+            obj.put("drId",dID);
+            obj.put("patientId",pID);
+            obj.put("status",0);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        System.out.print("request"+obj);
+        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(NewDoctorProfile.this);
+
+        buttonRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                final JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        System.out.print("response"+response);
+                        Toast.makeText(NewDoctorProfile.this, R.string.NewDoctor_Request, Toast.LENGTH_SHORT).show();
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error: "+error);
+
+                        Toast.makeText(NewDoctorProfile.this, "ERROR", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                queue.add(req);
+            }
+        });
+
+
+
+
+
+
+
+
+
 
 
 
