@@ -79,7 +79,8 @@ public class MyReports extends AppCompatActivity {
                 Intent intent = new Intent(MyReports.this, ReportDetails.class);
                 intent.putExtra("heartBeat",reports.getHeartbeatRate());
                 intent.putExtra("bloodPressure",reports.getBloodPressure());
-                intent.putExtra("drId",reports.getDrId());
+                intent.putExtra("drId1",reports.getDrId());
+              //  Toast.makeText(MyReports.this, reports.getDrId()+"", Toast.LENGTH_SHORT).show();
                 intent.putExtra("comments",reports.getComments());
                 intent.putExtra("fever",reports.getFever());
                 intent.putExtra("coughing",reports.getCoughing());
@@ -87,13 +88,14 @@ public class MyReports extends AppCompatActivity {
                 intent.putExtra("headache",reports.getHeadache());
                 intent.putExtra("nauseous",reports.getNauseous());
                 intent.putExtra("pain",reports.getPain());
+                //Toast.makeText(MyReports.this, reports.getPain()+"", Toast.LENGTH_SHORT).show();
                 intent.putExtra("painLocation",reports.getPainlocation());
                 intent.putExtra("SugarLever",reports.getSugarLevel());
                 intent.putExtra("patientId",reports.getPatientId());
                 intent.putExtra("drComment",reports.getDrcomment());
                 intent.putExtra("date",reports.getTimestamp());
                 System.out.print(reports.getPainlocation()+" "+reports.getDizziness());
-                Toast.makeText(MyReports.this, reports.getPainlocation()+" "+reports.getDizziness(), Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(MyReports.this, reports.getPainlocation()+" "+reports.getDizziness(), Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
 
@@ -101,14 +103,7 @@ public class MyReports extends AppCompatActivity {
         });
         // Step 2 converting String to Json Object
 
-//        try {
-//            JSONObject obj = new JSONObject(Patientid);
-//            String id = obj.getString("patientId");
-//
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+
 
     }
 
@@ -166,7 +161,7 @@ public class MyReports extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-          Toast.makeText(this, Pid+"", Toast.LENGTH_SHORT).show();
+      //    Toast.makeText(this, Pid+"", Toast.LENGTH_SHORT).show();
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/getPr/"+Pid;
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(MyReports.this);
@@ -210,7 +205,7 @@ public class MyReports extends AppCompatActivity {
         });
         System.out.println(model);
         //System.out.println(model.size());
-        Toast.makeText(this, "reached here ", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "reached here ", Toast.LENGTH_SHORT).show();
 
         queue.add(request);
     }

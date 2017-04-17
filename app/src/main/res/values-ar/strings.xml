@@ -127,5 +127,7 @@
     <string name="Home_Sittings">الإعدادات</string>
     <string name="Home_home">الرئيسية</string>
     <string name="Home_Hospitals">المستشفيات</string>
+    <string name="MyReport_HavePain">لدي ألم</string>
+    <string name="MyReportNoPain">لا ألم</string>
 </resources>
 

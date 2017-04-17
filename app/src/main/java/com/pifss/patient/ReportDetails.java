@@ -3,6 +3,7 @@ package com.pifss.patient;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,7 +24,7 @@ public class ReportDetails extends AppCompatActivity {
         setContentView(R.layout.activity_report_details);
 
 
-        TextView Docname = (TextView) findViewById(R.id.ReportDetails_DocNameTV);
+        final TextView Docname = (TextView) findViewById(R.id.ReportDetails_DocNameTV);
         TextView BloodPre = (TextView) findViewById(R.id.ReportDetails_BloodTV);
         TextView Cooment = (TextView) findViewById(R.id.ReportDetails_CommentsTV);
         TextView Nauseous = (TextView) findViewById(R.id.ReportDetails_NauseousTV);
@@ -43,14 +44,16 @@ public class ReportDetails extends AppCompatActivity {
         String coughing = getIntent().getStringExtra("coughing");
         //String dizziness = getIntent().getStringExtra("dizziness");
         String headache = getIntent().getStringExtra("headache");
-        String pain = getIntent().getStringExtra("pain");
+      //  String pain = getIntent().getStringExtra("pain");
+       boolean pain = getIntent().getBooleanExtra("pain",true);
+        // Toast.makeText(this, pain+"", Toast.LENGTH_SHORT).show();
         String painLocation = getIntent().getStringExtra("painLocation");
         String sugarLevel = getIntent().getStringExtra("SugarLever");
         String nouseous = getIntent().getStringExtra("nauseous");
 
-        String Did = getIntent().getStringExtra("drId");
-
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+Did;
+      //  String Did = getIntent().getStringExtra("drId");
+        int dd  = getIntent().getIntExtra("drId1",0);
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+dd;
 
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(ReportDetails.this);
@@ -62,7 +65,10 @@ public class ReportDetails extends AppCompatActivity {
             try{
                 obj = new JSONObject(response);
 
-                    Dname= obj.getString("firstName")+" "+obj.getString("lastName");
+                    Dname = obj.getString("firstName")+" "+obj.getString("lastName");
+               // Toast.makeText(ReportDetails.this, obj.getString("firstName")+" "+obj.getString("lastName"), Toast.LENGTH_SHORT).show();
+
+                Docname.setText(Dname);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -71,13 +77,21 @@ public class ReportDetails extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(ReportDetails.this, "ERROR ", Toast.LENGTH_SHORT).show();
             }
         });
         queue.add(jsonReq);
-
+        Toast.makeText(this, Dname+"", Toast.LENGTH_SHORT).show();
         Nauseous.setText(nouseous);
-        Pain.setText(pain);
+        if (pain)
+        {
+            Pain.setText(R.string.MyReport_HavePain);
+        }
+        else
+        {
+            Pain.setText(R.string.MyReportNoPain);
+        }
+
         PainLocation.setText(painLocation);
         Coughing.setText(coughing);
         SugarLevel.setText(sugarLevel);
@@ -86,7 +100,7 @@ public class ReportDetails extends AppCompatActivity {
         Fever.setText(fever);
         Cooment.setText(commets);
         BloodPre.setText(bloodPressure);
-        Docname.setText(Dname);
+
 //        intent.putExtra("heartBeat",reports.getHeartbeatRate());
 //        intent.putExtra("bloodPressure",reports.getBloodPressure());
 //        intent.putExtra("drId",reports.getDrId());

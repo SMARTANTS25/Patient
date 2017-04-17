@@ -241,6 +241,7 @@ public class Home extends AppCompatActivity {
                 Intent intent = new Intent(Home.this, NewDoctorProfile.class);
                 intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
                 intent.putExtra("gender", m.getGender());
+                intent.putExtra("drId2",m.getDrId());
                 intent.putExtra("specialty", m.getSpecialityId());
                 intent.putExtra("nationality", m.getNationality());
                 intent.putExtra("email", m.getEmail());
