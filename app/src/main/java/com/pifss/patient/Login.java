@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -37,6 +38,25 @@ public class Login extends AppCompatActivity {
 //        emailText.setText("relat@gmail.com");
 //        passwordText.setText("112233");
 
+        //login button
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginBtn.setEnabled(false);
+
+                String username =emailText.getText().toString();
+                String password=passwordText.getText().toString();
+
+                if (username.length() == 0 || password.length() == 0){
+                    Toast.makeText(Login.this, "Please fill all field", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                loginFunction( username,  password);
+
+            }
+        });
+
+
         String LoginData = getSharedPreferences("PatientData1",MODE_PRIVATE).getString("Patient1", "ERROR");
         JSONObject obj;
 
@@ -44,10 +64,6 @@ public class Login extends AppCompatActivity {
         String sharedPassword="";
 
         if (!LoginData.equals("ERROR")) {
-
-
-
-
 
             try {
 
@@ -61,27 +77,11 @@ public class Login extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            loginFunction( sharedEmail,  sharedPassword);
-
+//            loginFunction( sharedEmail,  sharedPassword);
+            emailText.setText(sharedEmail);
+            passwordText.setText(sharedPassword);
+            loginBtn.callOnClick();
         }
-
-
-
-
-        //login button
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                String username =emailText.getText().toString();
-                String password=passwordText.getText().toString();
-
-                loginFunction( username,  password);
-
-            }
-        });
-
 
 
         //Sign up screen button
@@ -107,6 +107,9 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginFunction(final String emailText, String passwordText) {
+        final Button loginBtn = (Button) findViewById(R.id.loginButton);
+        final ProgressDialog progressDialog = new ProgressDialog(Login.this);
+
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/login/";
         RequestQueue queue = MySingleton.getInstance().getRequestQueue(this);
 
@@ -120,13 +123,21 @@ public class Login extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        System.out.println("request Login: "+obj.toString());
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(final JSONObject response) {
                 //  Toast.makeText(Login.this, response.toString()+" ", Toast.LENGTH_SHORT).show();
+                System.out.println("response Login: "+response.toString());
+                loginBtn.setEnabled(true);
+                progressDialog.hide();
 
                 try {
+                    if (!response.has("errorCode")){
+                        Toast.makeText(Login.this, "Connection failed" , Toast.LENGTH_LONG).show();
 
+                        return;
+                    }
                     if(response.getInt("errorCode") == 0) {
 
                         Patient profile ;
@@ -150,21 +161,20 @@ public class Login extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
-                
-
-
-
-
-
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                System.out.println("error Login: "+error.toString());
+                loginBtn.setEnabled(true);
+                progressDialog.hide();
+
                 Toast.makeText(Login.this, "No Internet Connection, please connect internet connection", Toast.LENGTH_LONG);
                 //Toast.makeText(Login.this, error.toString()+"", Toast.LENGTH_SHORT).show();
             }
         });
+        progressDialog.setMessage("Login...");
+        progressDialog.show();
         queue.add(req);
     }
 

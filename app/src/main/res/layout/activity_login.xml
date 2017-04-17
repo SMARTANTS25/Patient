@@ -36,13 +36,13 @@
         android:id="@+id/Login_PasswordTV"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/imageView25"
+        android:layout_toRightOf="@+id/imageView25"
         android:ems="10"
         android:fontFamily="monospace"
-        android:hint="******"
-        android:inputType="textPassword"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/imageView25"
-        android:layout_toEndOf="@+id/imageView25" />
+        android:hint="password"
+        android:inputType="textPassword" />
 
 
     <Button
