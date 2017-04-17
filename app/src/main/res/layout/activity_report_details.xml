@@ -6,7 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.ReportDetails"
     android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/myToolbar"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
 
+    </android.support.v7.widget.Toolbar>
     <TextView
         android:id="@+id/ReportDetails_Blood"
         android:layout_width="wrap_content"

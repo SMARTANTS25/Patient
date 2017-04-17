@@ -1,7 +1,9 @@
 package com.pifss.patient;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,9 +21,23 @@ public class ReportDetails extends AppCompatActivity {
     String Dname="";
 
     @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_details);
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.myToolbar);
+
+        toolbar.setTitle("Report Details");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
         final TextView Docname = (TextView) findViewById(R.id.ReportDetails_DocNameTV);

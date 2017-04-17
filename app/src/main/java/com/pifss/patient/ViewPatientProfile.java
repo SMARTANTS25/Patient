@@ -82,11 +82,15 @@ public class ViewPatientProfile extends AppCompatActivity {
 
         SharedPreferences pref1 = getSharedPreferences("PatientData1", MODE_PRIVATE);
         String patientProfile = pref1.getString("Patient1","notfound");
+
         Patient currentPatientObject = new Gson().fromJson(patientProfile,Patient.class);
 
 
-        Picasso.with(ViewPatientProfile.this).load(currentPatientObject.getImageUrl()).placeholder(R.mipmap.profile_icon).into(img);
-
+        if (currentPatientObject.getImageUrl().startsWith("http")) {
+            Picasso.with(ViewPatientProfile.this).load(currentPatientObject.getImageUrl()).placeholder(R.mipmap.profile_icon).into(img);
+        }else{
+            img.setImageResource(R.mipmap.profile_icon);
+        }
         editImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
