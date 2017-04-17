@@ -79,7 +79,7 @@ public class MyReports extends AppCompatActivity {
                 Intent intent = new Intent(MyReports.this, ReportDetails.class);
                 intent.putExtra("heartBeat",reports.getHeartbeatRate());
                 intent.putExtra("bloodPressure",reports.getBloodPressure());
-                intent.putExtra("drId1",reports.getDrId());
+                intent.putExtra("drId",reports.getDrId());
               //  Toast.makeText(MyReports.this, reports.getDrId()+"", Toast.LENGTH_SHORT).show();
                 intent.putExtra("comments",reports.getComments());
                 intent.putExtra("fever",reports.getFever());
