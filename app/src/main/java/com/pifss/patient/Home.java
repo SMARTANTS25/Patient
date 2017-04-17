@@ -63,14 +63,14 @@ public class Home extends AppCompatActivity {
             e.printStackTrace();
         }
         Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
-        toolbar.setTitle(R.string.Home_home);
+        toolbar.setTitle("My Doctor");
 
 
         // MaterialDrawer Creation
 
 
 
-        myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.doctor_profile_icon_two).withName(R.string.Home_MyDoctors).withBadge(String.valueOf(myDoctorCount)).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
+        myDoctorsItem = new PrimaryDrawerItem().withIdentifier(1).withIcon(R.mipmap.doctor_profile_icon_two).withName(R.string.Home_MyDoctors).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
         PrimaryDrawerItem findDoctorsItem = new PrimaryDrawerItem().withIdentifier(2).withIcon(R.mipmap.doctor_profile_icon).withName(R.string.Home_FindDoctors);
         PrimaryDrawerItem hospitalsItem = new PrimaryDrawerItem().withIdentifier(3).withIcon(R.mipmap.hospital).withName(R.string.Home_Hospitals);
         PrimaryDrawerItem reportItem = new PrimaryDrawerItem().withIdentifier(4).withIcon(R.mipmap.medical_report_icon).withName(R.string.Home_MyReports);
@@ -157,8 +157,6 @@ public class Home extends AppCompatActivity {
         // Doctor List
 
         updateModel();
-        updateMyDoctorsBadge();
-
 
         ListView lv = (ListView) findViewById(R.id.HomeDoctorList);
 
@@ -169,8 +167,8 @@ public class Home extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Doctor m = model.get(position);
-
-                Intent intent = new Intent(Home.this, NewDoctorProfile.class);
+                //
+                Intent intent = new Intent(Home.this, MyDoctorProfile.class);
                 intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
                 intent.putExtra("gender", m.getGender());
                 intent.putExtra("specialty", m.getSpecialityId());
@@ -178,6 +176,8 @@ public class Home extends AppCompatActivity {
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
+                intent.putExtra("drId",m.getDrId());
+                Toast.makeText(Home.this, m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
 
                 startActivity(intent);
 
@@ -237,17 +237,18 @@ public class Home extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Doctor m = parsedModel.get(position);
-                                                    //newDoctorProfile
-                Intent intent = new Intent(Home.this, NewDoctorProfile.class);
-                intent.putExtra("name", m.getFirstName()+" "+m.getMiddleName()+" "+m.getLastName());
+
+                Intent intent = new Intent(Home.this, MyDoctorProfile.class);
+                intent.putExtra("name", m.getFirstName()+m.getMiddleName()+m.getLastName());
                 intent.putExtra("gender", m.getGender());
-                intent.putExtra("drId2",m.getDrId());
                 intent.putExtra("specialty", m.getSpecialityId());
                 intent.putExtra("nationality", m.getNationality());
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
-
+                intent.putExtra("drId",m.getDrId());
+                Toast.makeText(Home.this, ""+m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(MyDoctors.this, m.getDrId()+"", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
 
             }
@@ -255,31 +256,16 @@ public class Home extends AppCompatActivity {
     }
 
 
-//
-//      String patientData(String firstName)
-//    {
-//        String shared = getSharedPreferences("patientData", MODE_PRIVATE).getString("Patient"," ");
-//
-//        String fullname="";
-//        try {
-//
-//
-//            obj=new JSONObject(shared);
-//
-//
-//
-//           fullname = obj.getString(firstName) ;
-//            Toast.makeText(this, fullname+"", Toast.LENGTH_SHORT).show();
-//           // email = obj.getString(email);
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        return fullname;
-//    }
-
     private void updateModel () {
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor";
+        try {
+        String Pid="";
+        String PatientDat = getSharedPreferences("PatientData1",MODE_PRIVATE).getString("Patient1"," ");
+
+            JSONObject o = new JSONObject(PatientDat);
+            Pid = o.getString("patientId");
+
+        //  Toast.makeText(this, Pid+"", Toast.LENGTH_SHORT).show();
+        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+Pid;
 
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(Home.this);
@@ -288,6 +274,8 @@ public class Home extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+
 
                         Toast.makeText(Home.this, response, Toast.LENGTH_LONG);
                         model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
@@ -310,42 +298,12 @@ public class Home extends AppCompatActivity {
                 });
 
         queue.add(jsonReq);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void updateMyDoctorsBadge () {
 
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+(this.patientId);
-
-
-
-        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(Home.this);
-
-        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        System.out.println(response);
-                        SharedPreferences docShared  = getSharedPreferences("acceptedDoc",MODE_PRIVATE);
-                        docShared.edit()
-                                .putString("myDoctor",response.toString())
-                                .commit();
-                        ArrayList<Doctor> model2 = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
-
-                        myDoctorsItem.withName("My Doctors").withBadge(String.valueOf(model2.size()) ).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
-                        //notify the drawer about the updated element. it will take care about everything else
-                        homeDrawer.updateItem(myDoctorsItem);
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // Handle error
-                    }
-                });
-
-        queue.add(jsonReq);
-    }
 
 }

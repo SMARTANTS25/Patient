@@ -67,7 +67,6 @@ public class ViewPatientProfile extends AppCompatActivity {
         ImageView img = (ImageView) findViewById(R.id.ViewPatientProfile_PatientImage);
 
         Button editButton=(Button) findViewById(R.id.ViewPatientProfile_editPersonalInfoButton);
-        Button myDrButton=(Button) findViewById(R.id.ViewPatientProfile_myDoctorsButton);
         Button medicalProfileButton = (Button) findViewById(R.id.ViewPatientProfile_medicalInfoViewButton);
 
 
@@ -133,14 +132,7 @@ public class ViewPatientProfile extends AppCompatActivity {
             e.printStackTrace();
         }
 
-//        myDrButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                Intent i = new Intent(ViewPatientProfile.this,MyDoctors.class);
-////                startActivity(i);
-//                Toast.makeText(ViewPatientProfile.this, "my Doctors", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
 
 
 
@@ -162,13 +154,7 @@ public class ViewPatientProfile extends AppCompatActivity {
             }
         });
 
-        myDrButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(ViewPatientProfile.this, MyDoctors.class);
-                startActivity(i);
-            }
-        });
+
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
