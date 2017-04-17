@@ -112,7 +112,7 @@ public class SearchHospital extends AppCompatActivity {
             return;
         }
 
-        ArrayList<com.pifss.patient.utils.Hospital> parsedModel = new ArrayList<>();
+        final ArrayList<com.pifss.patient.utils.Hospital> parsedModel = new ArrayList<>();
 
         for (int i = 0; i < model.size(); i++) {
             com.pifss.patient.utils.Hospital curHospital = model.get(i);
@@ -135,7 +135,7 @@ public class SearchHospital extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                com.pifss.patient.utils.Hospital h = model.get(position);
+                com.pifss.patient.utils.Hospital h = parsedModel.get(position);
                 //
                 Intent intent = new Intent(SearchHospital.this, HospitalProfile.class);
 

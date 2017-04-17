@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,22 +22,27 @@ import org.json.JSONObject;
 public class HospitalProfile extends AppCompatActivity {
 
     @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital_profile);
 
-        Toolbar t = (Toolbar) findViewById(R.id.HospitalProfile_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.HospitalProfile_toolbar);
 
-        t.setNavigationIcon(android.R.drawable.arrow_up_float);
-        t.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
+        toolbar.setTitle(name);
         String workingHours = intent.getStringExtra("workingHours");
 
         String email = intent.getStringExtra("email");
@@ -52,7 +58,6 @@ public class HospitalProfile extends AppCompatActivity {
 
         updateSpecialtyName(specialtyId);
 
-        t.setTitle(name);
 
 
 
