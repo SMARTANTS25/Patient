@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.location.Location;
@@ -20,12 +21,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pifss.patient.Adapters.HospitalAdapter;
+import com.pifss.patient.utils.Hospital;
 
 import java.util.ArrayList;
 
 public class SearchHospital extends AppCompatActivity {
 
-    ArrayList<com.pifss.patient.utils.Hospital> model;
+    ArrayList<Hospital> model;
     ListView lv;
     Location currentLocation = new Location("");
 
@@ -112,7 +114,7 @@ public class SearchHospital extends AppCompatActivity {
             return;
         }
 
-        final ArrayList<com.pifss.patient.utils.Hospital> parsedModel = new ArrayList<>();
+        final ArrayList<Hospital> parsedModel = new ArrayList<>();
 
         for (int i = 0; i < model.size(); i++) {
             com.pifss.patient.utils.Hospital curHospital = model.get(i);
@@ -161,11 +163,14 @@ public class SearchHospital extends AppCompatActivity {
 
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(SearchHospital.this);
+        final ProgressDialog progressDialog = new ProgressDialog(SearchHospital.this);
 
         final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+                        progressDialog.hide();
 
                         model = new Gson().fromJson(response, new TypeToken<ArrayList<com.pifss.patient.utils.Hospital>>(){}.getType());
 
@@ -183,9 +188,12 @@ public class SearchHospital extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         // Handle error
                         Toast.makeText(SearchHospital.this, error.getMessage(), Toast.LENGTH_LONG);
+                        progressDialog.hide();
+
                     }
                 });
-
+        progressDialog.setMessage("Connecting...");
+        progressDialog.show();
         queue.add(jsonReq);
     }
 

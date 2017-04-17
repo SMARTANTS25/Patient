@@ -4,6 +4,7 @@
 
         public class Reports {
 
+    public  String doctorName = "";
     private String bloodPressure;
     private String comments;
     private String coughing;

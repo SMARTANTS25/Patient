@@ -1,10 +1,12 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,8 +30,9 @@ import java.util.ArrayList;
 
 public class MyReports extends AppCompatActivity {
 
-    ArrayList<Reports> model;
+    ArrayList<Reports> model = new ArrayList<>();
     private ListView lv;
+    private ReportAdapter adapter;
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -50,23 +53,10 @@ public class MyReports extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        //  String Patientid = getSharedPreferences("PatientData", MODE_PRIVATE).getString("Patient", " ");
-
-//        final ArrayList<Reports> parsedModel = new ArrayList<>();
-//
-//        for (int i = 0; i < model.size(); i++) {
-//            Reports curDoc = model.get(i);
-////            String fullName = curDoc.getFirstName() + " "+ curDoc.getMiddleName() + " " + curDoc.getLastName();
-////            if ( fullName.toLowerCase().contains(filter) ) {
-//
-//            parsedModel.add(curDoc);
-////            }
-//        }
+        SearchView searchViewReport = (SearchView) findViewById(R.id.searchViewMyReports);
 
 
-
-
-        updateModel ();
+        updateModel();
 
         lv = (ListView) findViewById(R.id.MyReportsLV);
 
@@ -101,50 +91,80 @@ public class MyReports extends AppCompatActivity {
 
 
         });
-        // Step 2 converting String to Json Object
+
+
+        searchViewReport.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                initAdapterWithFilter(newText);
+
+
+                return false;
+            }
+        });
 
 
 
     }
 
+    private void initAdapterWithFilter(String filter) {
+        if (model == null || model.size() <= 0) {
+            return;
+        }
+
+        final ArrayList<Reports> parsedModel = new ArrayList<>();
+
+        for (int i = 0; i < adapter.model.size(); i++) {
+            Reports currentReport = adapter.model.get(i);
 
 
+            String fullName = currentReport.doctorName;
+            if ( fullName.toLowerCase().contains(filter) ) {
+                parsedModel.add(currentReport);
+            }
+        }
+
+        ListView lv = (ListView) findViewById(R.id.MyReportsLV);
+
+        ReportAdapter adapter = new ReportAdapter(parsedModel, this);
 
 
-//    private void initAdapterWithFilter(String filter) {
-//        if (model == null || model.size() <= 0) {
-//            return;
-//        }
-//
-//
-//        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                Reports reports = model.get(position);
-//
-//                Intent intent = new Intent(MyReports.this,ReportDetails.class);
-//                intent.putExtra("heartBeat",reports.getHeartbeatRate());
-//                intent.putExtra("bloodPressure",reports.getBloodPressure());
-//                intent.putExtra("drId",reports.getDrId());
-//                intent.putExtra("comments",reports.getComments());
-//                intent.putExtra("fever",reports.getFever());
-//                intent.putExtra("coughing",reports.getCoughing());
-//                intent.putExtra("dizziness",reports.getDizziness());
-//                intent.putExtra("headache",reports.getHeadache());
-//                intent.putExtra("nauseous",reports.getNauseous());
-//                intent.putExtra("pain",reports.getPain());
-//                intent.putExtra("painLocation",reports.getPainlocation());
-//                intent.putExtra("SugarLever",reports.getSugarLevel());
-//                intent.putExtra("patientId",reports.getPatientId());
-//                intent.putExtra("drComment",reports.getDrcomment());
-//                intent.putExtra("date",reports.getTimestamp());
-//                Toast.makeText(MyReports.this, reports.getPainlocation()+" "+reports.getDizziness(), Toast.LENGTH_SHORT).show();
-//                startActivity(intent);
-//
-//            }
-//        });
-//    }
+        lv.setAdapter(adapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Reports reports = parsedModel.get(position);
+
+                Intent intent = new Intent(MyReports.this,ReportDetails.class);
+                intent.putExtra("heartBeat",reports.getHeartbeatRate());
+                intent.putExtra("bloodPressure",reports.getBloodPressure());
+                intent.putExtra("drId",reports.getDrId());
+                intent.putExtra("comments",reports.getComments());
+                intent.putExtra("fever",reports.getFever());
+                intent.putExtra("coughing",reports.getCoughing());
+                intent.putExtra("dizziness",reports.getDizziness());
+                intent.putExtra("headache",reports.getHeadache());
+                intent.putExtra("nauseous",reports.getNauseous());
+                intent.putExtra("pain",reports.getPain());
+                intent.putExtra("painLocation",reports.getPainlocation());
+                intent.putExtra("SugarLever",reports.getSugarLevel());
+                intent.putExtra("patientId",reports.getPatientId());
+                intent.putExtra("drComment",reports.getDrcomment());
+                intent.putExtra("date",reports.getTimestamp());
+                Toast.makeText(MyReports.this, reports.getPainlocation()+" "+reports.getDizziness(), Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+            }
+        });
+    }
 
 
 
@@ -165,34 +185,20 @@ public class MyReports extends AppCompatActivity {
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/getPr/"+Pid;
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(MyReports.this);
-
-
-
+        final ProgressDialog progressDialog = new ProgressDialog(MyReports.this);
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
-
-
-                SharedPreferences sharedpreferences = getSharedPreferences("MyReportData", MODE_PRIVATE);
-
                 System.out.println(response);
+                progressDialog.hide();
 
-                sharedpreferences.edit()
-                        .putString("MyReport" , response)
-                        .commit();
                 Gson gson = new Gson();
-                JSONObject json = null;
                 TypeToken <ArrayList<Reports>> token= new TypeToken<ArrayList<Reports>>(){};
-                try {
-                    json = new JSONObject(response);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+
                 model = gson.fromJson(response,token.getType());
 
-                ReportAdapter adapter = new ReportAdapter(model, MyReports.this);
+                adapter = new ReportAdapter(model, MyReports.this);
 
                 lv.setAdapter(adapter);
 
@@ -200,13 +206,13 @@ public class MyReports extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressDialog.hide();
+
                 Toast.makeText(MyReports.this, error.getMessage(), Toast.LENGTH_LONG);
             }
         });
-        System.out.println(model);
-        //System.out.println(model.size());
-       // Toast.makeText(this, "reached here ", Toast.LENGTH_SHORT).show();
-
+        progressDialog.setMessage("Connecting...");
+        progressDialog.show();
         queue.add(request);
     }
 }

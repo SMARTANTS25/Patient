@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 public class ReportAdapter extends BaseAdapter {
     private final LayoutInflater inflater;
-    ArrayList<Reports> model;
+    public ArrayList<Reports> model = new ArrayList<>();
     Activity context;
 
     public ReportAdapter(ArrayList<Reports> model, Activity context) {
@@ -59,7 +59,7 @@ public class ReportAdapter extends BaseAdapter {
         //return null;
         View view = inflater.inflate(R.layout.my_report_list , null);
 
-        Reports reports = model.get(position);
+        final Reports reports = model.get(position);
         final ImageView DocImg = (ImageView) view.findViewById(R.id.MyReport_Docimg);
         final TextView DocName = (TextView) view.findViewById(R.id.MyRerports_DocName);
         TextView Headache = (TextView) view.findViewById(R.id.MyReports_HeadacheTV);
@@ -83,6 +83,7 @@ public class ReportAdapter extends BaseAdapter {
                             img = obj.getString("imageUrl");
                             String name = obj.getString("firstName")+ " "+obj.getString("lastName");
                             DocName.setText(name);
+                            reports.doctorName = name;
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
