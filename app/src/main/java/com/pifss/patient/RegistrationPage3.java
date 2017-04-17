@@ -1,4 +1,5 @@
 package com.pifss.patient;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -202,6 +203,8 @@ selectedBloodTypeImageButton(0);
         reg3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final ProgressDialog progressDialog = new ProgressDialog(RegistrationPage3.this);
+
                 JsonObjectRequest req = null;
                 final JSONObject obj = new JSONObject();
                 try {
@@ -234,36 +237,51 @@ selectedBloodTypeImageButton(0);
                     req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
+                            progressDialog.hide();
 
-                            Toast.makeText(RegistrationPage3.this, response.toString(), Toast.LENGTH_SHORT).show();
+                            if (response.has("errorCode")){
 
+                                int errorCode = 406;
+                                try {
+                                    errorCode = response.getInt("errorCode");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                if (errorCode == 200){
+                                    Toast.makeText(RegistrationPage3.this, "Account created", Toast.LENGTH_SHORT).show();
+
+                                    Intent i = new Intent(RegistrationPage3.this , Login.class);
+
+                                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    finish();
+
+                                    startActivity(i);
+                                }else{
+                                    Toast.makeText(RegistrationPage3.this, "Failed, use another email address.", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }else{
+                                Toast.makeText(RegistrationPage3.this, "Connection Failed", Toast.LENGTH_SHORT).show();
+
+                            }
 
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
 
-                            Toast.makeText(RegistrationPage3.this, error.toString(), Toast.LENGTH_SHORT).show();
+                            progressDialog.hide();
+
+                            Toast.makeText(RegistrationPage3.this, "Error, connection failed", Toast.LENGTH_SHORT).show();
 
                         }
                     });
+                    progressDialog.setMessage("Connecting...");
+                    progressDialog.show();
                     queue.add(req);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
-
-                SharedPreferences pref = getSharedPreferences("PatientData1",MODE_PRIVATE);
-
-                pref.edit()
-                        .putString("Patient1",obj.toString())
-                        .commit();
-
-                Intent i = new Intent(RegistrationPage3.this , Login.class);
-
-                Toast.makeText(RegistrationPage3.this, "hello & you are done " + fname + " "+ lname, Toast.LENGTH_LONG).show();
-                startActivity(i);
             }
         });
 
