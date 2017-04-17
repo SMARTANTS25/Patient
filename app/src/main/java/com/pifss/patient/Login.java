@@ -42,7 +42,7 @@ public class Login extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginBtn.setEnabled(false);
+
 
                 String username =emailText.getText().toString();
                 String password=passwordText.getText().toString();
@@ -51,6 +51,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Please fill all field", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                loginBtn.setEnabled(false);
                 loginFunction( username,  password);
 
             }
