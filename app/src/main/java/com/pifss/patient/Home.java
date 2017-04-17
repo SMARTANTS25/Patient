@@ -116,7 +116,7 @@ public class Home extends AppCompatActivity {
                         if (drawerItem != null) {
                             Intent intent = null;
                             if (drawerItem.getIdentifier() == 1) {
-                                intent = new Intent(Home.this, MyDoctors.class);
+                               // intent = new Intent(Home.this, MyDoctors.class);
                             } else if (drawerItem.getIdentifier() == 2) {
                                 intent = new Intent(Home.this, AllDoctors.class);
                             } else if (drawerItem.getIdentifier() == 3) {

@@ -52,7 +52,7 @@ public class ReportDetails extends AppCompatActivity {
         String nouseous = getIntent().getStringExtra("nauseous");
 
       //  String Did = getIntent().getStringExtra("drId");
-        int dd  = getIntent().getIntExtra("drId1",0);
+        int dd  = getIntent().getIntExtra("drId",0);
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+dd;
 
 
@@ -81,7 +81,7 @@ public class ReportDetails extends AppCompatActivity {
             }
         });
         queue.add(jsonReq);
-        Toast.makeText(this, Dname+"", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, Dname+" doctor ID:"+dd, Toast.LENGTH_SHORT).show();
         Nauseous.setText(nouseous);
         if (pain)
         {
