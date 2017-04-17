@@ -7,7 +7,7 @@
     tools:context="com.pifss.patient.ViewPatientProfile">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar7"
+        android:id="@+id/myToolbar"
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
         android:text="TextView"
         android:textSize="18dp"
         android:layout_marginTop="12dp"
-        android:layout_below="@+id/toolbar7"
+        android:layout_below="@+id/myToolbar"
         android:layout_toRightOf="@+id/Reg2_CivilIdTitle"
         android:layout_toEndOf="@+id/Reg2_CivilIdTitle" />
 
@@ -152,17 +152,16 @@
         android:id="@+id/ViewPatientProfile_emergencyNumberTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/ViewPatientProfile_BirthDateVT"
-        android:layout_alignRight="@+id/ViewPatientProfile_BirthDateVT"
-        android:layout_below="@+id/ViewPatientProfile_EmergencyPhoneTitle"
         android:text="77777777"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_below="@+id/ViewPatientProfile_EmergencyPhoneTitle"
+        android:layout_toRightOf="@+id/imageView41"
+        android:layout_toEndOf="@+id/imageView41" />
 
     <Button
         android:id="@+id/ViewPatientProfile_myDoctorsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:background="@color/Buttons"
         android:fontFamily="monospace"
         android:text="@string/PatientProfile_MyDoctors"
@@ -170,7 +169,8 @@
         android:textSize="14dp"
         android:layout_above="@+id/ViewPatientProfile_medicalInfoViewButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ViewPatientProfile_emergencyNumberTV"/>
 
     <Button
         android:id="@+id/ViewPatientProfile_medicalInfoViewButton"
@@ -229,6 +229,17 @@
         android:layout_alignBottom="@+id/ViewPatientProfile_EmergencyPhoneTitle"
         android:layout_toLeftOf="@+id/ViewPatientProfile_EmergencyPhoneTitle"
         android:layout_toStartOf="@+id/ViewPatientProfile_EmergencyPhoneTitle" />
+
+    <TextView
+        android:id="@+id/textViewEditImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView36"
+        android:layout_alignStart="@+id/imageView36"
+        android:layout_below="@+id/ViewPatientProfile_PatientImage"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text=" Edit " />
 
 
 </RelativeLayout>

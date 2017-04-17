@@ -2,8 +2,10 @@ package com.pifss.patient;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -31,11 +33,24 @@ public class ResetPassword extends AppCompatActivity {
         return matcher.find();
             }
 
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.myToolbar);
+
+        toolbar.setTitle("Forget password");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         final EditText email = (EditText) findViewById(R.id.ResetPassword_emailTF);
         final EditText civilID = (EditText) findViewById(R.id.ResetPassword_CivilIdTV);

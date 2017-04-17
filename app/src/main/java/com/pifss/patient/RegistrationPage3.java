@@ -1,8 +1,10 @@
 package com.pifss.patient;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -31,10 +33,24 @@ public class RegistrationPage3 extends AppCompatActivity {
 
     boolean diabetes = false;
     boolean asthmas = false;
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page3);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.myToolbar);
+
+        toolbar.setTitle("Register");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         Button reg3= (Button) findViewById(R.id.Reg3_button);
 

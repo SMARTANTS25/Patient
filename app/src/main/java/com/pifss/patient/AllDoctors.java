@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -24,23 +25,25 @@ import java.util.ArrayList;
 public class AllDoctors extends AppCompatActivity {
 
     ArrayList<Doctor> model;
-    
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_doctors);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
-        toolbar.setTitle(R.string.Home_FindDoctors);
-        //setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        toolbar.setTitle(R.string.Home_FindDoctors);
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         // Doctor List
 

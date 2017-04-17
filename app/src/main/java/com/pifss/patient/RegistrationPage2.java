@@ -2,8 +2,10 @@ package com.pifss.patient;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -22,9 +24,23 @@ public class RegistrationPage2 extends AppCompatActivity {
     Button regButton;
 
     @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page2);
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.myToolbar);
+
+        toolbar.setTitle("Register");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         final String email = getIntent().getStringExtra("email");
         final String password = getIntent().getStringExtra("password");

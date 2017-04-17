@@ -8,7 +8,7 @@
     tools:context="com.pifss.patient.EditMedicalInfo">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar4"
+        android:id="@+id/myToolbar"
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/toolbar4"
+        android:layout_below="@+id/myToolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/saveChangesMedicalButton">

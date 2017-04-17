@@ -23,13 +23,13 @@
         android:layout_height="25dp"
 
         app:srcCompat="@mipmap/blood_drop_icon"
-        android:layout_below="@+id/toolbar13"
+        android:layout_below="@+id/myToolbar"
         android:layout_alignLeft="@+id/Reg3_AllergiesET"
         android:layout_alignStart="@+id/Reg3_AllergiesET" />
 
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar13"
+        android:id="@+id/myToolbar"
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

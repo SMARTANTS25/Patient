@@ -2,6 +2,7 @@ package com.pifss.patient;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -33,23 +34,26 @@ public class MyDoctors extends AppCompatActivity {
     private ListView lv;
 
     String Id;
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_doctors);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.AllDoctorToolbar);
+
         toolbar.setTitle("My Doctors");
-        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
+        toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
         // Doctor List
 

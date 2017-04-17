@@ -3,6 +3,7 @@ package com.pifss.patient;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,22 +16,25 @@ import java.util.Locale;
 public class Settings extends AppCompatActivity {
 
     @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        // k
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.settingsToolbar);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.settingsToolbar);
         toolbar.setTitle(R.string.Home_Sittings);
-        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
         Button btnEng = (Button) findViewById(R.id.Sitting_English);
         Button btnArb = (Button) findViewById(R.id.Sitting_Arb);

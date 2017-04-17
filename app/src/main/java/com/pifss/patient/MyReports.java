@@ -2,6 +2,7 @@ package com.pifss.patient;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -31,16 +32,25 @@ public class MyReports extends AppCompatActivity {
     private ListView lv;
 
     @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_reports);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarMyReports);
-        toolbar.setTitle(R.string.Home_MyReports);
-        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
-        setSupportActionBar(toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarMyReports);
 
-      //  String Patientid = getSharedPreferences("PatientData", MODE_PRIVATE).getString("Patient", " ");
+        toolbar.setTitle(R.string.Home_MyReports);
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        //  String Patientid = getSharedPreferences("PatientData", MODE_PRIVATE).getString("Patient", " ");
 
 //        final ArrayList<Reports> parsedModel = new ArrayList<>();
 //

@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,20 +16,25 @@ import com.squareup.picasso.Picasso;
 public class MyDoctorProfile extends AppCompatActivity {
 
     @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_doctor_profile);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.MyDoctorProfile_toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.MyDoctorProfile_toolbar);
 
+        toolbar.setTitle("Doctor profile");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");

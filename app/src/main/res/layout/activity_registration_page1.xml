@@ -7,7 +7,7 @@
     tools:context="com.pifss.patient.RegistrationPage1">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar11"
+        android:id="@+id/myToolbar"
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -8,7 +8,7 @@
 
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar6"
+        android:id="@+id/myToolbar"
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_height="75dp"
         android:layout_alignEnd="@+id/ViewMedicalInfo_AsthmaTitle"
         android:layout_alignRight="@+id/ViewMedicalInfo_AsthmaTitle"
-        android:layout_below="@+id/toolbar6"
+        android:layout_below="@+id/myToolbar"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:layout_marginTop="14dp"

@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -29,21 +30,23 @@ public class SearchHospital extends AppCompatActivity {
     Location currentLocation = new Location("");
 
     @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_hospital);
 
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarHospitalSearch);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarHospitalSearch);
         toolbar.setTitle("Hospitals");
-
-        toolbar.setNavigationIcon(android.R.drawable.arrow_up_float);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
         SearchView svHospital = (SearchView) findViewById(R.id.searchViewHospital);
