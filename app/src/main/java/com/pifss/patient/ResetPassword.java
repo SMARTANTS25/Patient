@@ -85,35 +85,31 @@ public class ResetPassword extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                          progressDialog.hide();
-                         try{
 
-                             if (response.getString("errorMsgEn").equalsIgnoreCase("Done")) {
+                        if (response.has("errorMsgEn")) {
 
-                                 email.setText("");
-                                 Toast.makeText(ResetPassword.this, "password changed", Toast.LENGTH_SHORT).show();
+                                 Toast.makeText(ResetPassword.this, "password changed, check your email", Toast.LENGTH_SHORT).show();
+                                 Intent i = new Intent(ResetPassword.this,Login.class);
+                                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                 finish();
+                                 startActivity(i);
+
                              } else {
                                  Toast.makeText(ResetPassword.this, "connection failed", Toast.LENGTH_SHORT).show();
                              }
-                         }
-                         catch (JSONException e) {
-                         e.printStackTrace();
-                         }
 
                     }
 
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-//                        progressDialog.hide(); 
+                        progressDialog.hide();
+                        Toast.makeText(ResetPassword.this, "connection failed", Toast.LENGTH_SHORT).show();
                     }
                 });
-                queue.add(jsonObjRequest);
-
-
-               Intent i = new Intent(ResetPassword.this,Login.class);
-               i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-               finish();
-               startActivity(i);
+               progressDialog.setMessage("Connecting...");
+               progressDialog.show();
+               queue.add(jsonObjRequest);
             }
 
        });
