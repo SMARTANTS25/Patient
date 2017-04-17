@@ -78,7 +78,7 @@ public class MyDoctors extends AppCompatActivity {
                 intent.putExtra("email", m.getEmail());
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
-                intent.putExtra("drId1",m.getDrId());
+                intent.putExtra("drId",m.getDrId());
                 Toast.makeText(MyDoctors.this, m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
 
                 startActivity(intent);
@@ -192,16 +192,6 @@ public class MyDoctors extends AppCompatActivity {
                         SharedPreferences sharedpreferences = getSharedPreferences("MyDoctorData", MODE_PRIVATE);
 
                         System.out.println(response);
-
-                        try {
-                            JSONObject obj = new JSONObject(response);
-                            sharedpreferences.edit()
-                                    .putString("MyDoc" , obj.toString())
-                                    .commit();
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
 
                         model = new Gson().fromJson(response.toString(), new TypeToken<ArrayList<Doctor>>(){}.getType());
                        // Toast.makeText(MyDoctors.this, model.size()+"", Toast.LENGTH_SHORT).show();

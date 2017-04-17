@@ -25,7 +25,7 @@ public class Patient {
     private String password;
     private Integer patientId;
     private String phoneNumber;
-    private Boolean status;
+    private Boolean status = true;
 
     public String getAllergies() {
         return allergies;

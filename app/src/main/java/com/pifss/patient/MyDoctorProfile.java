@@ -44,7 +44,7 @@ public class MyDoctorProfile extends AppCompatActivity {
         String cvURL = intent.getStringExtra("cvURL");
         String specialty = intent.getStringExtra("specialty");
         String profileImg = intent.getStringExtra("imageURL");
-        final int id = intent.getIntExtra("drId1",0);
+        final int id = intent.getIntExtra("drId",0);
         Toast.makeText(this, "checking Id= "+id, Toast.LENGTH_SHORT).show();
         toolbar.setTitle(name);
 
