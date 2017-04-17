@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -269,12 +270,13 @@ public class Home extends AppCompatActivity {
 
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(Home.this);
+            final ProgressDialog progressDialog = new ProgressDialog(Home.this);
 
         final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
+progressDialog.hide();
 
 
                         Toast.makeText(Home.this, response, Toast.LENGTH_LONG);
@@ -293,10 +295,12 @@ public class Home extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle error
+                        progressDialog.hide();
                         Toast.makeText(Home.this, error.getMessage(), Toast.LENGTH_LONG);
                     }
                 });
-
+            progressDialog.setMessage("Connecting...");
+            progressDialog.show();
         queue.add(jsonReq);
 
         } catch (JSONException e) {

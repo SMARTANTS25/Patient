@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -148,12 +149,13 @@ public class AllDoctors extends AppCompatActivity {
 
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(AllDoctors.this);
+        final ProgressDialog progressDialog = new ProgressDialog(AllDoctors.this);
 
         final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
+progressDialog.hide();
                         Toast.makeText(AllDoctors.this, response, Toast.LENGTH_LONG);
                         model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
 
@@ -170,10 +172,12 @@ public class AllDoctors extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle error
+                        progressDialog.hide();
                         Toast.makeText(AllDoctors.this, error.getMessage(), Toast.LENGTH_LONG);
                     }
                 });
-
+        progressDialog.setMessage("Connecting...");
+        progressDialog.show();
         queue.add(jsonReq);
     }
 }

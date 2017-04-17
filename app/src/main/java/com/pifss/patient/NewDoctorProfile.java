@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -110,11 +111,13 @@ public class NewDoctorProfile extends AppCompatActivity {
 
 
 
+                final ProgressDialog progressDialog = new ProgressDialog(NewDoctorProfile.this);
 
                 final JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-try {
+                        progressDialog.hide();
+                        try {
                         if (response.getBoolean("status") == true) {
 
                         System.out.print("response"+response);
@@ -123,13 +126,14 @@ try {
                             Toast.makeText(NewDoctorProfile.this,"Error, Failed to send request", Toast.LENGTH_SHORT).show();
 
                         }
-} catch (JSONException e) {
-    e.printStackTrace();
-}
-                    }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                                            }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        progressDialog.hide();
                         System.out.print("error: "+error);
 
                         
@@ -175,6 +179,8 @@ try {
                     };
 
 
+                progressDialog.setMessage("Connecting...");
+                progressDialog.show();
                 queue.add(req);
 
             }

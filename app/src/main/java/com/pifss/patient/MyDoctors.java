@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -184,11 +185,13 @@ public class MyDoctors extends AppCompatActivity {
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/"+Pid;
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(MyDoctors.this);
+        final ProgressDialog progressDialog = new ProgressDialog(MyDoctors.this);
 
         final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        progressDialog.hide();
                         SharedPreferences sharedpreferences = getSharedPreferences("MyDoctorData", MODE_PRIVATE);
 
                         System.out.println(response);
@@ -206,11 +209,13 @@ public class MyDoctors extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        progressDialog.hide();
                         // Handle error
                         Toast.makeText(MyDoctors.this, "Connection error sorry", Toast.LENGTH_SHORT).show();
                     }
                 });
-
+        progressDialog.setMessage("Connecting...");
+        progressDialog.show();
         queue.add(jsonReq);
     }
 

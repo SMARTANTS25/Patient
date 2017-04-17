@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -78,12 +79,13 @@ public class SendReport extends AppCompatActivity {
 
 
         final RequestQueue queue = MySingleton.getInstance().getRequestQueue(SendReport.this);
+        final ProgressDialog progressDialog = new ProgressDialog(SendReport.this);
 
         final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
+progressDialog.hide();
                         System.out.println(response);
                         try {
                             JSONObject obj = new JSONObject(response);
@@ -104,9 +106,11 @@ public class SendReport extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle error
+                        progressDialog.hide();
                     }
                 });
-
+        progressDialog.setMessage("Connecting...");
+        progressDialog.show();
         queue.add(jsonReq);
 
         if (imgurl != null && imgurl.length() >= 1 ) {

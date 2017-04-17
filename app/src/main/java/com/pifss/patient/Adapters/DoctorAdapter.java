@@ -66,7 +66,12 @@ public class DoctorAdapter extends BaseAdapter {
             Picasso.with(context).load(m.getImageUrl()).into(docProfile);
         }
         docSpecialty.setText(m.getSpecialityId());
-        docGender.setText(m.getGender());
+        if ( (m.getGender().charAt(0)+"").equalsIgnoreCase("f")){
+            docGender.setText("Female");
+        }else{
+            docGender.setText("Male");
+        }
+
         docName.setText(m.getFirstName() + " " + m.getMiddleName() + " " +m.getLastName());
 
 

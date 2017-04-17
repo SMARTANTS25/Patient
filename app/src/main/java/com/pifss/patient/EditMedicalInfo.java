@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -281,9 +282,12 @@ String bloodType = "AB-";
 
                     JSONObject jsonProfile = new JSONObject(updatedPatient.toJSONString());
                     System.out.println("request: "+jsonProfile.toString());
+                    final ProgressDialog progressDialog = new ProgressDialog(EditMedicalInfo.this);
+
                     JsonObjectRequest req = new JsonObjectRequest(Request.Method.PUT, url, jsonProfile, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
+                            progressDialog.hide();
                             System.out.println("response: "+response.toString());
                             try {
                                 if (response.getString("errorMsgEn").equalsIgnoreCase("Done")){
@@ -308,10 +312,13 @@ String bloodType = "AB-";
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            progressDialog.hide();
                             Toast.makeText(EditMedicalInfo.this, "Error connection failed.", Toast.LENGTH_SHORT).show();
 
                         }
                     });
+                    progressDialog.setMessage("Connecting...");
+                    progressDialog.show();
                     queue.add(req);
                 } catch (JSONException e) {
                     e.printStackTrace();

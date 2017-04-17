@@ -107,7 +107,7 @@
     <string name="Home_MyDoctors">My Doctors</string>
     <string name="Home_FindDoctors">Find Doctors</string>
     <string name="Home_MyReports">My Reports</string>
-    <string name="Home_Sittings">Sittings</string>
+    <string name="Home_Sittings">Settings</string>
     <string name="Home_Logout">Logout</string>
     <string name="Home_Hospitals">Hospitals</string>
     <string name="Sittings_language">Language</string>

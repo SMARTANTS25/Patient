@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -242,18 +243,21 @@ public class SendReportPage2 extends AppCompatActivity {
                     obj.put("bloodPressure",BloodPressure);
                     System.out.print(obj);
                 final RequestQueue queue = MySingleton.getInstance().getRequestQueue(SendReportPage2.this);
+                    final ProgressDialog progressDialog = new ProgressDialog(SendReportPage2.this);
 
                     JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-
+progressDialog.hide();
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-
+progressDialog.hide();
                         }
                     });
+                    progressDialog.setMessage("Connecting...");
+                    progressDialog.show();
                     queue.add(request);
                 } catch (JSONException e) {
                     e.printStackTrace();

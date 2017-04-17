@@ -1,5 +1,6 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.pifss.patient.utils.Hospital;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -103,12 +105,13 @@ public class HospitalProfile extends AppCompatActivity {
         final StringBuilder specialty = new StringBuilder();
 
         final RequestQueue queue= MySingleton.getInstance().getRequestQueue(HospitalProfile.this);
+        final ProgressDialog progressDialog = new ProgressDialog(HospitalProfile.this);
 
         final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
+progressDialog.hide();
                         String specialtyName = "";
                         JSONObject resp = null;
                         try {
@@ -126,13 +129,15 @@ public class HospitalProfile extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        progressDialog.hide();
                         // Handle error
                         Toast.makeText(HospitalProfile.this, error.getMessage(), Toast.LENGTH_LONG);
                         TextView textViewSpecialty = (TextView) findViewById(R.id.HospitalProfile_SpecialityTV);
                         textViewSpecialty.setText("N/A");
                     }
                 });
-
+        progressDialog.setMessage("Connecting...");
+        progressDialog.show();
         queue.add(jsonReq);
     }
 }
