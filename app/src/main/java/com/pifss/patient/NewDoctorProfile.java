@@ -132,6 +132,7 @@ try {
                     public void onErrorResponse(VolleyError error) {
                         System.out.print("error: "+error);
 
+                        
                         Toast.makeText(NewDoctorProfile.this, "ERROR", Toast.LENGTH_SHORT).show();
 
                     }

@@ -86,13 +86,12 @@
         android:id="@+id/HospitalProfile_SpecialityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:textSize="18dp"
         android:fontFamily="monospace"
         android:text="@string/textView_HosSpeciality"
         android:layout_below="@+id/textViewHospitalType"
-        android:layout_alignRight="@+id/HospitalProfile_TypeTitle"
-        android:layout_alignEnd="@+id/HospitalProfile_TypeTitle" />
+        android:layout_toRightOf="@+id/imageViewHosPhone"
+        android:layout_toEndOf="@+id/imageViewHosPhone" />
 
     <TextView
         android:id="@+id/HospitalProfile_SpecialityTV"
@@ -109,13 +108,13 @@
         android:id="@+id/HospitalProfile_WorkingHourseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="12dp"
         android:text="@string/textView_HosWorkingH"
         android:textSize="18dp"
         android:fontFamily="monospace"
         android:layout_below="@+id/HospitalProfile_SpecialityTV"
-        android:layout_alignLeft="@+id/HospitalProfile_SpecialityTitle"
-        android:layout_alignStart="@+id/HospitalProfile_SpecialityTitle" />
+        android:layout_toRightOf="@+id/imageViewHosSpeciality"
+        android:layout_toEndOf="@+id/imageViewHosSpeciality" />
 
     <TextView
         android:id="@+id/HospitalProfile_WorkingHourseTV"
@@ -159,7 +158,7 @@
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:fontFamily="monospace"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="11dp"
         android:text="@string/textView_HosAddress"
         android:layout_below="@+id/HospitalProfile_PhoneNumberTV"
         android:layout_alignRight="@+id/HospitalProfile_SpecialityTitle"
@@ -190,14 +189,14 @@
 
     <TextView
         android:id="@+id/HospitalProfile_EmailTV"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
         android:fontFamily="monospace"
         android:text="TextView"
+        android:textSize="18dp"
         android:layout_below="@+id/HospitalProfile_EmailTitle"
-        android:layout_toRightOf="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_toEndOf="@+id/HospitalProfile_HospitalLogoImageView" />
+        android:layout_alignLeft="@+id/HospitalProfile_EmailTitle"
+        android:layout_alignStart="@+id/HospitalProfile_EmailTitle" />
 
     <TextView
         android:id="@+id/HospitalProfile_AdditionalInfoTitle"
@@ -213,14 +212,14 @@
 
     <TextView
         android:id="@+id/HospitalProfile_AdditionalInfoTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_alignLeft="@+id/HospitalProfile_EmailTV"
+        android:layout_alignStart="@+id/HospitalProfile_EmailTV"
+        android:layout_below="@+id/HospitalProfile_AdditionalInfoTitle"
         android:fontFamily="monospace"
         android:text="TextView"
-        android:layout_below="@+id/HospitalProfile_AdditionalInfoTitle"
-        android:layout_toRightOf="@+id/HospitalProfile_EmailTitle"
-        android:layout_toEndOf="@+id/HospitalProfile_EmailTitle" />
+        android:textSize="18dp" />
 
     <ImageView
         android:id="@+id/imageViewHosSpeciality"
