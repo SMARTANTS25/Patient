@@ -34,8 +34,39 @@ public class Login extends AppCompatActivity {
         TextView forgetPassword = (TextView) findViewById(R.id.Login_forgetpasswordTV);
 
         // TODO: 13/04/17 for testing remove when done
-        emailText.setText("relat@gmail.com");
-        passwordText.setText("112233");
+//        emailText.setText("relat@gmail.com");
+//        passwordText.setText("112233");
+
+        String LoginData = getSharedPreferences("PatientData1",MODE_PRIVATE).getString("Patient1", "ERROR");
+        JSONObject obj;
+
+        String sharedEmail = "";
+        String sharedPassword="";
+
+        if (!LoginData.equals("ERROR")) {
+
+
+
+
+
+            try {
+
+                obj = new JSONObject(LoginData);
+
+                sharedEmail = obj.getString("email");
+
+                sharedPassword = obj.getString("password");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            loginFunction( sharedEmail,  sharedPassword);
+
+        }
+
+
+
 
         //login button
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -119,33 +150,8 @@ public class Login extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                //                JSONObject o = null;
-//                //array of object
-//                String one ;
-//                try {
-//                    one = response.getString("items");
-//                    o = new JSONObject(one);
-//                    String name = o.getString("firstName");
-//                    SharedPreferences sharedpreferences = getSharedPreferences("PatientData1", MODE_PRIVATE);
-//
-//
-//                    sharedpreferences.edit()
-//                            .putString("Patient1" , o.toString())
-//                            .apply();
-//
-//
-//                    Intent intent = new Intent(Login.this, Home.class);
-//                    Toast.makeText(Login.this, "welcome "+ name +" ", Toast.LENGTH_SHORT).show();
-//                    startActivity(intent);
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-                // Toast.makeText(Login.this, one+"", Toast.LENGTH_SHORT).show();
 
-                //put the array in one obj
-
-                //test
+                
 
 
 
