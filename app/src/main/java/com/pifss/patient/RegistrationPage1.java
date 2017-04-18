@@ -48,6 +48,7 @@ public class  RegistrationPage1 extends AppCompatActivity {
 
 
 
+
         String emailValue = email.getText().toString();
         String passwordValue = password.getText().toString();
         String confirmPassValue = confirmPassword.getText().toString();

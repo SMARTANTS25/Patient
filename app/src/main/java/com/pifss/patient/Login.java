@@ -1,8 +1,11 @@
 package com.pifss.patient;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -158,6 +161,7 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(Login.this, "Username or password is wrong" , Toast.LENGTH_LONG).show();
                     }
 
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -174,10 +178,21 @@ public class Login extends AppCompatActivity {
                 //Toast.makeText(Login.this, error.toString()+"", Toast.LENGTH_SHORT).show();
             }
         });
+//        if (!haveNetworkConniction)
+        if (!isNetworkAvailable()){
+            Toast.makeText(this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+        }
         progressDialog.setMessage("Login...");
         progressDialog.show();
         queue.add(req);
     }
 
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
     
 }

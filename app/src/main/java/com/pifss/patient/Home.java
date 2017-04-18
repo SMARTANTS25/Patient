@@ -1,9 +1,12 @@
 package com.pifss.patient;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -299,6 +302,11 @@ progressDialog.hide();
                         Toast.makeText(Home.this, error.getMessage(), Toast.LENGTH_LONG);
                     }
                 });
+
+            if (!isNetworkAvailable()){
+                Toast.makeText(Home.this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+            }
+
             progressDialog.setMessage("Connecting...");
             progressDialog.show();
         queue.add(jsonReq);
@@ -308,6 +316,12 @@ progressDialog.hide();
         }
     }
 
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 
 
 }

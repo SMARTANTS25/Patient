@@ -1,12 +1,14 @@
 package com.pifss.patient;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +16,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -22,7 +23,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -317,6 +317,11 @@ String bloodType = "AB-";
 
                         }
                     });
+
+                    if (!isNetworkAvailable()){
+                        Toast.makeText(EditMedicalInfo.this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+                    }
+
                     progressDialog.setMessage("Connecting...");
                     progressDialog.show();
                     queue.add(req);
@@ -327,6 +332,14 @@ String bloodType = "AB-";
         });
 
     }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
     public void setCheckedBloodButton(int index){
         for (int i =0;i<bloodRadioButton.size();i++){
             RadioButton radioButton = bloodRadioButton.get(i);

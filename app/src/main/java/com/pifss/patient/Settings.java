@@ -89,6 +89,7 @@ public class Settings extends AppCompatActivity {
                     finish();
                     startActivity(intent);
 
+
                   }
               });
                 }

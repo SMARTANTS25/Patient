@@ -1,6 +1,10 @@
 package com.pifss.patient;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,6 +36,8 @@ public class ReportDetails extends AppCompatActivity {
         setContentView(R.layout.activity_report_details);
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.myToolbar);
+
+        final ProgressDialog progressDialog = new ProgressDialog(ReportDetails.this);
 
         toolbar.setTitle("Report Details");
         toolbar.setTitleTextColor(Color.WHITE);
@@ -82,7 +88,7 @@ public class ReportDetails extends AppCompatActivity {
                 obj = new JSONObject(response);
 
                     Dname = obj.getString("firstName")+" "+obj.getString("lastName");
-               // Toast.makeText(ReportDetails.this, obj.getString("firstName")+" "+obj.getString("lastName"), Toast.LENGTH_SHORT).show();
+
 
                 Docname.setText(Dname);
                 } catch (JSONException e) {
@@ -108,6 +114,14 @@ public class ReportDetails extends AppCompatActivity {
             Pain.setText(R.string.MyReportNoPain);
         }
 
+        if (!isNetworkAvailable()){
+            Toast.makeText(ReportDetails.this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+        }
+
+        progressDialog.setMessage("Connecting...");
+        progressDialog.show();
+        queue.add(jsonReq);
+
         PainLocation.setText(painLocation);
         Coughing.setText(coughing);
         SugarLevel.setText(sugarLevel);
@@ -117,20 +131,13 @@ public class ReportDetails extends AppCompatActivity {
         Cooment.setText(commets);
         BloodPre.setText(bloodPressure);
 
-//        intent.putExtra("heartBeat",reports.getHeartbeatRate());
-//        intent.putExtra("bloodPressure",reports.getBloodPressure());
-//        intent.putExtra("drId",reports.getDrId());
-//        intent.putExtra("comments",reports.getComments());
-//        intent.putExtra("fever",reports.getFever());
-//        intent.putExtra("coughing",reports.getCoughing());
-//        intent.putExtra("dizziness",reports.getDizziness());
-//        intent.putExtra("headache",reports.getHeadache());
-//        intent.putExtra("nauseous",reports.getNauseous());
-//        intent.putExtra("pain",reports.getPain());
-//        intent.putExtra("painLocation",reports.getPainlocation());
-//        intent.putExtra("SugarLever",reports.getSugarLevel());
-//        intent.putExtra("patientId",reports.getPatientId());
-//        intent.putExtra("drComment",reports.getDrcomment());
-//        intent.putExtra("date",reports.getTimestamp());
+
+
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

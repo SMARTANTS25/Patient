@@ -68,6 +68,7 @@ public class MyDoctorProfile extends AppCompatActivity {
         });
 
 
+
         textViewDocName.setText(name);
         textViewCV.setText(cvURL);
         textViewEmail.setText(email);

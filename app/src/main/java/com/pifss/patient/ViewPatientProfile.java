@@ -159,6 +159,7 @@ public class ViewPatientProfile extends AppCompatActivity {
         });
 
 
+
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
