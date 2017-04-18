@@ -2,7 +2,6 @@ package com.pifss.patient.utils;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -10,9 +9,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.NotificationCompat;
-
-import com.pifss.patient.R;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,8 +25,11 @@ public class LocationHelper {
     Activity activity;
 
 
+
     private Location currentLocation ;
 
+    double lang;
+    double alt;
     public LocationHelper(Activity activity) {
         this.activity = activity;
         initLocation();
@@ -48,12 +48,7 @@ public class LocationHelper {
 
         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},0);
@@ -64,7 +59,13 @@ public class LocationHelper {
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
             @Override
-            public void onLocationChanged(Location location) {
+            public void onLocationChanged(Location location)
+            {
+
+                System.out.print(location);
+
+
+                Toast.makeText(activity, location.getAltitude()+"AAA"+location.getLatitude(), Toast.LENGTH_SHORT).show();
                 currentLocation = location;
             }
 
@@ -90,12 +91,56 @@ public class LocationHelper {
 
     }
 
+/*::  Official Web site: http://www.geodatasource.com                        :*/
+/*::                                                                         :*/
+/*::           GeoDataSource.com (C) All Rights Reserved 2015                :*/
+
+
+    static double distance(double lat1, double lon1, double lat2, double lon2, String unit)
+
+    {
+
+        double theta = lon1 - lon2;
+        double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
+
+        dist = Math.acos(dist);
+        dist = rad2deg(dist);
+        dist = dist * 60 * 1.1515;
+
+        if (unit == "K")
+        {
+            dist = dist * 1.609344;
+        }
+        else if (unit == "N")
+        {
+            dist = dist * 0.8684;
+        }
+
+        return (dist);
+    }
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+	/*::	This function converts decimal degrees to radians			 :*/
+	/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    private static double deg2rad(double deg) {
+        return (deg * Math.PI / 180.0);
+    }
+
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+	/*::	This function converts radians to decimal degrees			 :*/
+	/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    private static double rad2deg(double rad) {
+        return (rad * 180 / Math.PI);
+    }
+
+
+
 
     public float distanceBetweenUserAndHospital(double latHospital, double longHospital) {
 
         if (currentLocation == null) {
             return -1;
         }
+
 
         Location loc1 = new Location("hospital");
         loc1.setLatitude(latHospital);
@@ -104,7 +149,9 @@ public class LocationHelper {
         return currentLocation.distanceTo(loc1);
     }
 
-    public Location getCurrentLocation() { return currentLocation; }
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
 
     public void sendNotificationBloodCampaigns() {
         /*
@@ -132,6 +179,7 @@ public class LocationHelper {
     }
 
     public ArrayList<Location> getNearbyBloodCampaigns() {
+
         return null;
     }
 
