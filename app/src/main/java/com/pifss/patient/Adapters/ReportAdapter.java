@@ -7,20 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.pifss.patient.MySingleton;
 import com.pifss.patient.R;
 import com.pifss.patient.utils.Reports;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -65,44 +55,46 @@ public class ReportAdapter extends BaseAdapter {
         TextView Headache = (TextView) view.findViewById(R.id.MyReports_HeadacheTV);
         TextView heart = (TextView) view.findViewById(R.id.MyReport_HeartTV);
 
-        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+reports.getDrId();
+//        String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+reports.getDrId();
+//
+//
+//        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(context);
+//
+//
+//        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        String img="";
+//                        JSONObject obj;
+//                        try {
+//
+//                            obj = new JSONObject(response);
+//                            img = obj.getString("imageUrl");
+//                            String name = obj.getString("firstName")+ " "+obj.getString("lastName");
+//                            DocName.setText(name);
+//                            reports.doctorName = name;
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
 
-
-        final RequestQueue queue= MySingleton.getInstance().getRequestQueue(context);
-
-
-        final StringRequest jsonReq = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        String img="";
-                        JSONObject obj;
-                        try {
-
-                            obj = new JSONObject(response);
-                            img = obj.getString("imageUrl");
-                            String name = obj.getString("firstName")+ " "+obj.getString("lastName");
-                            DocName.setText(name);
-                            reports.doctorName = name;
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if (img.toString() != null && img.length() >= 4 &&  img.isEmpty() == false ) {
-                                 Picasso.with(context).load(img).into(DocImg);
+        DocName.setText(reports.getName());
+                        if (reports.getImageUrl() != null && reports.getImageUrl().length() >= 4 &&  reports.getImageUrl().isEmpty() == false ) {
+                                 Picasso.with(context).load(reports.getImageUrl()).into(DocImg);
                              }
 
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // Handle error
-                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG);
+//                    }
+//                },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        // Handle error
+//                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG);
+//
+//                    }
+//                });
 
-                    }
-                });
-
-        queue.add(jsonReq);
+     //   queue.add(jsonReq);
 
         heart.setText(reports.getHeartbeatRate());
         Headache.setText(reports.getHeadache());

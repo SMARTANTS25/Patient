@@ -2,7 +2,6 @@ package com.pifss.patient;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -124,7 +123,7 @@ public class MyReports extends AppCompatActivity {
             Reports currentReport = adapter.model.get(i);
 
 
-            String fullName = currentReport.doctorName;
+            String fullName = currentReport.getName();
             if ( fullName.toLowerCase().contains(filter) ) {
                 parsedModel.add(currentReport);
             }

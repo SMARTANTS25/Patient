@@ -4,152 +4,178 @@
 
         public class Reports {
 
-    public  String doctorName = "";
-    private String bloodPressure;
-    private String comments;
-    private String coughing;
-    private String dizziness;
-    private Integer drId;
-    private String drcomment;
-    private String fever;
-    private String headache;
-    private String heartbeatRate;
-    private String nauseous;
-    private Boolean pain;
-    private String painlocation;
-    private Integer patientId;
-    private Integer reportId;
-    private String sugarLevel;
-    private String timestamp;
+            private String coughing;
+            private String sugarLevel;
+            private Integer drId;
+            private String imageUrl;
+            private String drcomment;
+            private Boolean pain;
+            private String fever;
+            private Integer reportId;
+            private String dizziness;
+            private String timestamp;
+            private String painlocation;
+            private Integer patientId;
+            private String nauseous;
+            private String headache;
+            private String bloodPressure;
+            private String name;
+            private String gender;
+            private String heartbeatRate;
+            private String comments;
    // private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public String getBloodPressure() {
-        return bloodPressure;
-    }
+            public String getCoughing() {
+                return coughing;
+            }
 
-    public void setBloodPressure(String bloodPressure) {
-        this.bloodPressure = bloodPressure;
-    }
+            public void setCoughing(String coughing) {
+                this.coughing = coughing;
+            }
 
-    public String getComments() {
-        return comments;
-    }
+            public String getSugarLevel() {
+                return sugarLevel;
+            }
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
+            public void setSugarLevel(String sugarLevel) {
+                this.sugarLevel = sugarLevel;
+            }
 
-    public String getCoughing() {
-        return coughing;
-    }
+            public Integer getDrId() {
+                return drId;
+            }
 
-    public void setCoughing(String coughing) {
-        this.coughing = coughing;
-    }
+            public void setDrId(Integer drId) {
+                this.drId = drId;
+            }
 
-    public String getDizziness() {
-        return dizziness;
-    }
+            public String getImageUrl() {
+                return imageUrl;
+            }
 
-    public void setDizziness(String dizziness) {
-        this.dizziness = dizziness;
-    }
+            public void setImageUrl(String imageUrl) {
+                this.imageUrl = imageUrl;
+            }
 
-    public Integer getDrId() {
-        return drId;
-    }
+            public String getDrcomment() {
+                return drcomment;
+            }
 
-    public void setDrId(Integer drId) {
-        this.drId = drId;
-    }
+            public void setDrcomment(String drcomment) {
+                this.drcomment = drcomment;
+            }
 
-    public String getDrcomment() {
-        return drcomment;
-    }
+            public Boolean getPain() {
+                return pain;
+            }
 
-    public void setDrcomment(String drcomment) {
-        this.drcomment = drcomment;
-    }
+            public void setPain(Boolean pain) {
+                this.pain = pain;
+            }
 
-    public String getFever() {
-        return fever;
-    }
+            public String getFever() {
+                return fever;
+            }
 
-    public void setFever(String fever) {
-        this.fever = fever;
-    }
+            public void setFever(String fever) {
+                this.fever = fever;
+            }
 
-    public String getHeadache() {
-        return headache;
-    }
+            public Integer getReportId() {
+                return reportId;
+            }
 
-    public void setHeadache(String headache) {
-        this.headache = headache;
-    }
+            public void setReportId(Integer reportId) {
+                this.reportId = reportId;
+            }
 
-    public String getHeartbeatRate() {
-        return heartbeatRate;
-    }
+            public String getDizziness() {
+                return dizziness;
+            }
 
-    public void setHeartbeatRate(String heartbeatRate) {
-        this.heartbeatRate = heartbeatRate;
-    }
+            public void setDizziness(String dizziness) {
+                this.dizziness = dizziness;
+            }
 
-    public String getNauseous() {
-        return nauseous;
-    }
+            public String getTimestamp() {
+                return timestamp;
+            }
 
-    public void setNauseous(String nauseous) {
-        this.nauseous = nauseous;
-    }
+            public void setTimestamp(String timestamp) {
+                this.timestamp = timestamp;
+            }
 
-    public Boolean getPain() {
-        return pain;
-    }
+            public String getPainlocation() {
+                return painlocation;
+            }
 
-    public void setPain(Boolean pain) {
-        this.pain = pain;
-    }
+            public void setPainlocation(String painlocation) {
+                this.painlocation = painlocation;
+            }
 
-    public String getPainlocation() {
-        return painlocation;
-    }
+            public Integer getPatientId() {
+                return patientId;
+            }
 
-    public void setPainlocation(String painlocation) {
-        this.painlocation = painlocation;
-    }
+            public void setPatientId(Integer patientId) {
+                this.patientId = patientId;
+            }
 
-    public Integer getPatientId() {
-        return patientId;
-    }
+            public String getNauseous() {
+                return nauseous;
+            }
 
-    public void setPatientId(Integer patientId) {
-        this.patientId = patientId;
-    }
+            public void setNauseous(String nauseous) {
+                this.nauseous = nauseous;
+            }
 
-    public Integer getReportId() {
-        return reportId;
-    }
+            public String getHeadache() {
+                return headache;
+            }
 
-    public void setReportId(Integer reportId) {
-        this.reportId = reportId;
-    }
+            public void setHeadache(String headache) {
+                this.headache = headache;
+            }
 
-    public String getSugarLevel() {
-        return sugarLevel;
-    }
+            public String getBloodPressure() {
+                return bloodPressure;
+            }
 
-    public void setSugarLevel(String sugarLevel) {
-        this.sugarLevel = sugarLevel;
-    }
+            public void setBloodPressure(String bloodPressure) {
+                this.bloodPressure = bloodPressure;
+            }
 
-    public String getTimestamp() {
-        return timestamp;
-    }
+            public String getName() {
+                return name;
+            }
 
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public String getGender() {
+                return gender;
+            }
+
+            public void setGender(String gender) {
+                this.gender = gender;
+            }
+
+            public String getHeartbeatRate() {
+                return heartbeatRate;
+            }
+
+            public void setHeartbeatRate(String heartbeatRate) {
+                this.heartbeatRate = heartbeatRate;
+            }
+
+            public String getComments() {
+                return comments;
+            }
+
+            public void setComments(String comments) {
+                this.comments = comments;
+            }
 
 
 
