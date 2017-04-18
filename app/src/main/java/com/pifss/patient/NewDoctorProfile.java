@@ -112,7 +112,7 @@ public class NewDoctorProfile extends AppCompatActivity {
 
 
                 final ProgressDialog progressDialog = new ProgressDialog(NewDoctorProfile.this);
-
+                System.out.println("send invite request: "+obj.toString());
                 final JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, obj, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -134,10 +134,21 @@ public class NewDoctorProfile extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.hide();
-                        System.out.print("error: "+error);
+                        System.out.print("error: "+error.toString());
 
+                        String jsonString = null;
+                        try {
+                            jsonString = new String(error.networkResponse.data, "UTF-8");
+                        } catch (UnsupportedEncodingException e) {
+                            Toast.makeText(NewDoctorProfile.this, "ERROR", Toast.LENGTH_SHORT).show();
+                        }
+                        if (jsonString.contains("Duplicate entry")){
+                            Toast.makeText(NewDoctorProfile.this, "Cannot send multiple request", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(NewDoctorProfile.this, "ERROR", Toast.LENGTH_SHORT).show();
+
+                        }
                         
-                        Toast.makeText(NewDoctorProfile.this, "ERROR", Toast.LENGTH_SHORT).show();
 
                     }
                 }){
@@ -145,7 +156,7 @@ public class NewDoctorProfile extends AppCompatActivity {
                         protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
                             String jsonString = "";
                             JSONObject object = new JSONObject();
-
+                        System.out.println(response.data);
                             try {
                                 System.out.println("statuscode: "+response.statusCode);
                                 if (response.statusCode <200 || response.statusCode >300){
