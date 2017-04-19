@@ -19,10 +19,10 @@ android:layout_height="match_parent">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/myToolbar"
+    android:layout_alignParentBottom="true"
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
-    android:layout_above="@+id/buttonSave">
+    android:layout_below="@+id/myToolbar">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,108 +39,77 @@ android:layout_height="match_parent">
             android:orientation="horizontal"
             android:weightSum="1">
 
-            <TextView
-                android:id="@+id/textViewFirstName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:text="First name:"
-                android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imgPatient"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@mipmap/patiet2" />
 
             <EditText
                 android:id="@+id/editTextFirstName"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.9"
+                android:layout_weight="0.52"
+                android:ems="10"
                 android:hint="FirstName"
                 android:inputType="textPersonName"
                 android:textSize="18sp" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:id="@+id/textViewLastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:text="Middle name:"
-                android:textSize="20sp" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="1">-->
 
             <EditText
                 android:id="@+id/editTextMiddleName"
-                android:layout_width="wrap_content"
+                android:layout_width="287dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.9"
                 android:ems="10"
+                android:layout_marginLeft="75dp"
                 android:hint="middle name"
                 android:inputType="textPersonName" />
 
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
 
-            <TextView
-                android:id="@+id/textViewlastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:text="Last name:"
-                android:textSize="20sp" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="1">-->
 
             <EditText
                 android:id="@+id/editTextLastName"
-                android:layout_width="wrap_content"
+                android:layout_width="287dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.9"
+                android:layout_marginLeft="75dp"
                 android:ems="10"
                 android:hint="last name"
                 android:inputType="textPersonName" />
 
-
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginBottom="7dp"
+            android:weightSum="1">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <ImageView
-                    android:id="@+id/imageView22"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.1"
-                    app:srcCompat="@mipmap/gender_icon" />
-
-                <TextView
-                    android:id="@+id/editPatientProfile_genderTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.9"
-                    android:fontFamily="monospace"
-                    android:text="@string/RegGender_RadioButton"
-                    android:textSize="19dp" />
-            </LinearLayout>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.33"
+                app:srcCompat="@mipmap/gendersss" />
 
             <RadioGroup
                 android:id="@+id/GroupGenderRadio"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:orientation="horizontal"
@@ -148,17 +117,16 @@ android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/radioButtonMale"
-                    android:layout_width="wrap_content"
+                    android:layout_width="91dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="Male" />
+                    android:text="Male"/>
 
                 <RadioButton
                     android:id="@+id/radioButtonFemale"
-                    android:layout_width="wrap_content"
+                    android:layout_width="98dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
                     android:text="Female" />
+
             </RadioGroup>
 
         </LinearLayout>
@@ -166,41 +134,38 @@ android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:layout_marginBottom="7dp"
+            android:weightSum="1">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:weightSum="1">-->
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.1"
-                    app:srcCompat="@mipmap/calender" />
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.35"
+                android:ems="10"
+                app:srcCompat="@mipmap/bday" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.9"
-                    android:fontFamily="monospace"
-                    android:text="Date of Birth"
-                    android:textSize="19dp" />
-
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
             <TextView
                 android:id="@+id/textViewDateOfBirth"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.1"
+                android:layout_weight="0.55"
+                android:ems="10"
                 android:text="1991-11-1"
                 android:textAlignment="center"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -210,23 +175,19 @@ android:layout_height="match_parent">
 
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                app:srcCompat="@mipmap/id" />
+                android:id="@+id/imageView3"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                app:srcCompat="@mipmap/idd_card" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:text="Civil ID:"
-                android:textSize="20sp" />
+
 
             <EditText
                 android:id="@+id/editTextCivilID"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
+                android:layout_weight="0.52"
                 android:ems="10"
                 android:hint="civil ID"
                 android:inputType="textPersonName|number" />
@@ -240,23 +201,16 @@ android:layout_height="match_parent">
 
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                app:srcCompat="@mipmap/phone" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:text="Phone Number:"
-                android:textSize="15sp" />
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                app:srcCompat="@mipmap/telephone" />
 
             <EditText
                 android:id="@+id/editTextPhoneNumber"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
+                android:layout_weight="0.52"
                 android:ems="10"
                 android:hint="number"
                 android:inputType="textPersonName|number" />
@@ -270,25 +224,18 @@ android:layout_height="match_parent">
 
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                app:srcCompat="@mipmap/emergencynum" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="Emergency:"
-                android:textSize="15sp" />
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                app:srcCompat="@mipmap/telephone" />
 
             <EditText
                 android:id="@+id/editTextEmergencyNumber"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.52"
                 android:ems="10"
-                android:hint="number"
+                android:hint="Emergency number"
                 android:inputType="textPersonName|number" />
         </LinearLayout>
 
@@ -300,23 +247,16 @@ android:layout_height="match_parent">
 
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_weight="0.2"
-                app:srcCompat="@mipmap/big_flag_icon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="Nationality:"
-                android:textSize="15sp" />
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                app:srcCompat="@mipmap/flag" />
 
             <EditText
                 android:id="@+id/editTextNationality"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.52"
                 android:ems="10"
                 android:hint="Country name" />
         </LinearLayout>
@@ -329,23 +269,16 @@ android:layout_height="match_parent">
 
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_weight="0.2"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
                 app:srcCompat="@mipmap/password" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="Password:"
-                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editTextPassword"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.52"
                 android:ems="10"
                 android:hint="Password" />
         </LinearLayout>
@@ -358,23 +291,16 @@ android:layout_height="match_parent">
 
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_weight="0.2"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
                 app:srcCompat="@mipmap/password" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="New password:"
-                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editTextNewPassword"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.52"
                 android:ems="10"
                 android:hint="New Password" />
         </LinearLayout>
