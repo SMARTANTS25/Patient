@@ -14,8 +14,8 @@
         android:layout_marginTop="14dp"
         app:srcCompat="@mipmap/doctor"
         android:layout_below="@+id/MyDoctorProfile_toolbar"
-        android:layout_toLeftOf="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
-        android:layout_toStartOf="@+id/MyDoctorProfile_DoctorSpecialtyTitle" />
+        android:layout_alignLeft="@+id/imageView49"
+        android:layout_alignStart="@+id/imageView49" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/MyDoctorProfile_toolbar"
@@ -50,35 +50,54 @@
         android:text="TextView"
         android:textSize="14sp" />
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar7"
+        android:layout_width="281dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:layout_below="@+id/MyDoctorProfile_doctorNameTV"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/MyDoctorProfile_DoctorNameTitle"
+        android:layout_alignStart="@+id/MyDoctorProfile_DoctorNameTitle" />
+
     <TextView
         android:id="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:text="@string/textView_DocSpeciality"
-        android:textSize="18sp"
+        android:layout_marginTop="42dp"
+        android:text="Speciality:"
+        android:textSize="14sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/MyDoctorProfile_doctorImage"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_below="@+id/toolbar7"
+        android:layout_toRightOf="@+id/imageView49"
+        android:layout_toEndOf="@+id/imageView49" />
 
     <TextView
         android:id="@+id/MyDoctorProfile_doctorSpecialtyTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/imageView49"
-        android:layout_alignLeft="@+id/MyDoctorProfile_DoctorNameTitle"
-        android:layout_alignStart="@+id/MyDoctorProfile_DoctorNameTitle" />
+        android:layout_alignBottom="@+id/imageView49"
+        android:layout_alignLeft="@+id/MyDoctorProfile_NationalityTV"
+        android:layout_alignStart="@+id/MyDoctorProfile_NationalityTV" />
 
     <TextView
         android:id="@+id/MyDoctorProfile_emailTITLE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textView_DocEmail"
-        android:layout_marginTop="19dp"
-        android:textSize="18sp"
+        android:text="Email:"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"
         android:fontFamily="monospace"
         android:layout_below="@+id/MyDoctorProfile_doctorSpecialtyTV"
         android:layout_alignLeft="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
@@ -89,19 +108,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/imageView50"
-        android:layout_alignLeft="@+id/MyDoctorProfile_doctorSpecialtyTV"
-        android:layout_alignStart="@+id/MyDoctorProfile_doctorSpecialtyTV" />
+        android:layout_alignTop="@+id/imageView50"
+        android:layout_toRightOf="@+id/MyDoctorProfile_emailTITLE"
+        android:layout_toEndOf="@+id/MyDoctorProfile_emailTITLE" />
 
     <TextView
         android:id="@+id/MyDoctorProfile_NationalityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:text="@string/textView_DocNationality"
-        android:textSize="18sp"
+        android:layout_marginTop="17dp"
+        android:text="Nationality:"
+        android:textSize="14sp"
         android:fontFamily="monospace"
         android:layout_below="@+id/MyDoctorProfile_doctorEmailTV"
         android:layout_alignLeft="@+id/MyDoctorProfile_emailTITLE"
@@ -111,63 +130,64 @@
         android:id="@+id/MyDoctorProfile_NationalityTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:text="TextView"
         android:textSize="14sp"
         android:fontFamily="monospace"
-        android:layout_below="@+id/MyDoctorProfile_NationalityTitle"
-        android:layout_alignLeft="@+id/MyDoctorProfile_doctorEmailTV"
-        android:layout_alignStart="@+id/MyDoctorProfile_doctorEmailTV" />
+        android:layout_alignBottom="@+id/imageView52"
+        android:layout_alignRight="@+id/MyDoctorProfile_doctorEmailTV"
+        android:layout_alignEnd="@+id/MyDoctorProfile_doctorEmailTV" />
 
     <TextView
         android:id="@+id/MyDoctorProfile_CvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/textView_DocCV"
-        android:textSize="18sp"
+        android:text="CV:"
+        android:textSize="14sp"
         android:fontFamily="monospace"
+        android:layout_marginTop="22dp"
         android:layout_below="@+id/MyDoctorProfile_NationalityTV"
-        android:layout_alignLeft="@+id/MyDoctorProfile_NationalityTitle"
-        android:layout_alignStart="@+id/MyDoctorProfile_NationalityTitle" />
+        android:layout_alignRight="@+id/MyDoctorProfile_doctorImage"
+        android:layout_alignEnd="@+id/MyDoctorProfile_doctorImage" />
 
     <TextView
         android:id="@+id/MyDoctorProfile_doctorCvTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/MyDoctorProfile_NationalityTV"
-        android:layout_alignStart="@+id/MyDoctorProfile_NationalityTV"
-        android:layout_below="@+id/MyDoctorProfile_CvTitle"
         android:fontFamily="monospace"
         android:text="TextView"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:layout_alignBottom="@+id/imageView53"
+        android:layout_alignLeft="@+id/MyDoctorProfile_NationalityTV"
+        android:layout_alignStart="@+id/MyDoctorProfile_NationalityTV" />
 
     <ImageView
         android:id="@+id/imageView49"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:srcCompat="@mipmap/stethoscope"
-        android:layout_marginRight="19dp"
-        android:layout_marginEnd="19dp"
-        android:layout_alignTop="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
-        android:layout_toLeftOf="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
-        android:layout_toStartOf="@+id/MyDoctorProfile_DoctorSpecialtyTitle" />
+        app:srcCompat="@mipmap/spacialty"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/imageView50"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:srcCompat="@mipmap/email"
-        android:layout_alignTop="@+id/MyDoctorProfile_emailTITLE"
+        app:srcCompat="@mipmap/email_2"
+        android:layout_below="@+id/MyDoctorProfile_emailTITLE"
         android:layout_alignLeft="@+id/imageView49"
-        android:layout_alignStart="@+id/imageView49" />
+        android:layout_alignStart="@+id/imageView49"
+        android:layout_marginTop="12dp" />
 
     <ImageView
         android:id="@+id/imageView52"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:srcCompat="@mipmap/big_flag_icon"
-        android:layout_alignBottom="@+id/MyDoctorProfile_NationalityTitle"
+        app:srcCompat="@mipmap/flag"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/MyDoctorProfile_NationalityTitle"
         android:layout_alignLeft="@+id/imageView50"
         android:layout_alignStart="@+id/imageView50" />
 
@@ -175,8 +195,8 @@
         android:id="@+id/imageView53"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:srcCompat="@mipmap/medical_report_icon"
-        android:layout_alignBottom="@+id/MyDoctorProfile_CvTitle"
+        app:srcCompat="@mipmap/analytics"
+        android:layout_below="@+id/MyDoctorProfile_CvTitle"
         android:layout_alignLeft="@+id/imageView52"
         android:layout_alignStart="@+id/imageView52" />
 
