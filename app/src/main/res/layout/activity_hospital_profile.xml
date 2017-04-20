@@ -29,7 +29,9 @@
         app:srcCompat="@mipmap/hospitall"
         android:layout_below="@+id/HospitalProfile_toolbar"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/HospitalProfile_EmailTitle"
+        android:layout_alignEnd="@+id/HospitalProfile_EmailTitle" />
 
     <TextView
         android:id="@+id/HospitalProfile_hospitalNameTV"
@@ -159,8 +161,8 @@
         android:layout_marginTop="11dp"
         android:text="@string/textView_HosAddress"
         android:layout_below="@+id/HospitalProfile_PhoneNumberTV"
-        android:layout_alignRight="@+id/HospitalProfile_SpecialityTitle"
-        android:layout_alignEnd="@+id/HospitalProfile_SpecialityTitle" />
+        android:layout_toRightOf="@+id/imageViewHosAddress"
+        android:layout_toEndOf="@+id/imageViewHosAddress" />
 
     <TextView
         android:id="@+id/ViewMedicalInfo_AsthmaTitle"
@@ -170,8 +172,8 @@
         android:fontFamily="monospace"
         android:text="TextView"
         android:layout_below="@+id/HospitalProfile_AddressTitle"
-        android:layout_alignLeft="@+id/HospitalProfile_EmailTitle"
-        android:layout_alignStart="@+id/HospitalProfile_EmailTitle" />
+        android:layout_alignLeft="@+id/HospitalProfile_PhoneNumberTV"
+        android:layout_alignStart="@+id/HospitalProfile_PhoneNumberTV" />
 
     <TextView
         android:id="@+id/HospitalProfile_EmailTitle"
@@ -193,8 +195,8 @@
         android:text="TextView"
         android:textSize="18dp"
         android:layout_below="@+id/HospitalProfile_EmailTitle"
-        android:layout_alignLeft="@+id/HospitalProfile_EmailTitle"
-        android:layout_alignStart="@+id/HospitalProfile_EmailTitle" />
+        android:layout_toRightOf="@+id/HospitalProfile_EmailTitle"
+        android:layout_toEndOf="@+id/HospitalProfile_EmailTitle" />
 
     <TextView
         android:id="@+id/HospitalProfile_AdditionalInfoTitle"
@@ -224,16 +226,15 @@
     <ImageView
         android:id="@+id/imageViewHosSpeciality"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:fontFamily="monospace"
         android:textSize="18dp"
         app:srcCompat="@mipmap/spacialty"
         android:layout_below="@+id/HospitalProfile_SpecialityTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/HospitalProfile_WorkingHourseTitle"
-        android:layout_toLeftOf="@+id/HospitalProfile_SpecialityTitle"
-        android:layout_toStartOf="@+id/HospitalProfile_SpecialityTitle" />
+        android:layout_toStartOf="@+id/HospitalProfile_SpecialityTitle"
+        android:layout_toLeftOf="@+id/HospitalProfile_SpecialityTitle" />
 
     <ImageView
         android:id="@+id/imageViewHosWorkingHours"
@@ -257,23 +258,24 @@
         app:srcCompat="@mipmap/telephone"
         android:layout_below="@+id/HospitalProfile_PhoneNumberTitle"
         android:layout_toLeftOf="@+id/HospitalProfile_PhoneNumberTitle"
-        android:layout_toStartOf="@+id/HospitalProfile_PhoneNumberTitle" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/imageViewHosAddress"
         android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         app:srcCompat="@mipmap/map"
-        android:layout_alignTop="@+id/HospitalProfile_AddressTitle"
+        android:layout_below="@+id/HospitalProfile_AddressTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/imageViewHosEmail"
         android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         app:srcCompat="@mipmap/email_2"
-        android:layout_alignTop="@+id/HospitalProfile_EmailTitle"
+        android:layout_below="@+id/HospitalProfile_EmailTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -282,7 +284,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/info"
-        android:layout_alignTop="@+id/HospitalProfile_AdditionalInfoTitle"
+        android:layout_below="@+id/HospitalProfile_AdditionalInfoTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/HospitalProfile_AdditionalInfoTitle"
