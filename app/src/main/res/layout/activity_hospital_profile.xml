@@ -60,14 +60,13 @@
         android:id="@+id/HospitalProfile_TypeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_toEndOf="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_toRightOf="@+id/HospitalProfile_HospitalLogoImageView"
         android:fontFamily="monospace"
         android:text="@string/textView_HosType"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:layout_above="@+id/textViewHospitalType"
+        android:layout_alignRight="@+id/HospitalProfile_WorkingHourseTitle"
+        android:layout_alignEnd="@+id/HospitalProfile_WorkingHourseTitle"
+        android:layout_marginBottom="11dp" />
 
     <TextView
         android:id="@+id/textViewHospitalType"
@@ -79,8 +78,8 @@
         android:layout_below="@+id/HospitalProfile_HospitalLogoImageView"
         android:layout_alignRight="@+id/HospitalProfile_TypeTV"
         android:layout_alignEnd="@+id/HospitalProfile_TypeTV"
-        android:layout_alignLeft="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_alignStart="@+id/HospitalProfile_HospitalLogoImageView" />
+        android:layout_toEndOf="@+id/HospitalProfile_SpecialityTitle"
+        android:layout_toRightOf="@+id/HospitalProfile_SpecialityTitle" />
 
     <TextView
         android:id="@+id/HospitalProfile_SpecialityTitle"
