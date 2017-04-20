@@ -191,6 +191,7 @@ public class Login extends AppCompatActivity {
                         if (getSharedPreferences("sittings",MODE_PRIVATE).getString("language","error").equals("en")) {
                             config.locale = new Locale("ar");
 
+                            
                             Toast.makeText(Login.this, "العربية", Toast.LENGTH_SHORT).show();
 
                             getResources().updateConfiguration(config, getResources().getDisplayMetrics());
