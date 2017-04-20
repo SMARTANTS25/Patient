@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -24,12 +25,42 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 public class Login extends AppCompatActivity {
 
+    Configuration config ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+     //   JSONObject sitting;
+
+
+
+//        if (getSharedPreferences("sittings",MODE_PRIVATE).getString("language","ar").equals("ar"))
+////        {
+//            config.locale = new Locale("ar");
+//
+//            Toast.makeText(Login.this, "العربية", Toast.LENGTH_SHORT).show();
+//
+//            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+
+//            Intent intent = new Intent(Login.this, Login.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            finish();
+//            startActivity(intent);
+ //       }
+//        try {
+//            sitting = new JSONObject(Lang);
+//            if (sitting.getString())
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+
 
         final Button loginBtn = (Button) findViewById(R.id.loginButton);
         final EditText emailText = (EditText) findViewById(R.id.login_EmailTF);
@@ -110,7 +141,7 @@ public class Login extends AppCompatActivity {
 
     }
 
-    private void loginFunction(final String emailText, String passwordText) {
+    private void loginFunction(final String emailText, final String passwordText) {
         final Button loginBtn = (Button) findViewById(R.id.loginButton);
         final ProgressDialog progressDialog = new ProgressDialog(Login.this);
 
@@ -120,7 +151,7 @@ public class Login extends AppCompatActivity {
         JSONObject obj = new JSONObject();
 
         try {
-            obj.put("username", emailText);
+            obj.put("username", emailText.toLowerCase());
             obj.put("password", passwordText);
 
         } catch (JSONException e) {
@@ -155,10 +186,31 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(Login.this, "Welcome " + profile.getFirstName(), Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(Login.this, Home.class);
-                        startActivity(intent);
+                        config = getResources().getConfiguration();
 
-                    } else {
-                        Toast.makeText(Login.this, "Username or password is wrong" , Toast.LENGTH_LONG).show();
+                        if (getSharedPreferences("sittings",MODE_PRIVATE).getString("language","error").equals("en")) {
+                            config.locale = new Locale("ar");
+
+                            Toast.makeText(Login.this, "العربية", Toast.LENGTH_SHORT).show();
+
+                            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+//                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                            finish();
+
+                        }else{
+                            config.locale = new Locale("en");
+                            Toast.makeText(Login.this, getSharedPreferences("sittings",MODE_PRIVATE).getString("language","error") , Toast.LENGTH_SHORT).show();
+                            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            finish();
+                        }
+
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        finish();
+
+                        startActivity(intent);
+                    } else if (!emailText.contains("@") || !emailText.contains(".com") || (passwordText.length() < 5) ){
+                        Toast.makeText(Login.this, ""+R.string.WrongUsername , Toast.LENGTH_LONG).show();
                     }
 
 
@@ -178,14 +230,17 @@ public class Login extends AppCompatActivity {
                 //Toast.makeText(Login.this, error.toString()+"", Toast.LENGTH_SHORT).show();
             }
         });
-//        if (!haveNetworkConniction)
+
         if (!isNetworkAvailable()){
-            Toast.makeText(this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
-        progressDialog.setMessage("Login...");
+
+        progressDialog.setMessage("Logging in");
         progressDialog.show();
         queue.add(req);
     }
+
+
 
 
     private boolean isNetworkAvailable() {

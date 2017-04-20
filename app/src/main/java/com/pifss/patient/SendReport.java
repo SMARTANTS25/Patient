@@ -114,7 +114,7 @@ progressDialog.hide();
                 });
 
         if (!isNetworkAvailable()){
-            Toast.makeText(SendReport.this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SendReport.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
 
 

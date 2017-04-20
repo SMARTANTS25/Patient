@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.pifss.patient.R;
 import com.pifss.patient.utils.Doctor;
@@ -50,7 +49,7 @@ public class DoctorAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View v=inflater.inflate(R.layout.doctor_item_list,null);
+        View v = inflater.inflate(R.layout.doctor_item_list,null);
 
         ImageView docProfile= (ImageView) v.findViewById(R.id.DoctorItemList_DoctorProfileImage);
         TextView docSpecialty= (TextView) v.findViewById(R.id.DoctorItemList_DoctorSpecialtyTV);
