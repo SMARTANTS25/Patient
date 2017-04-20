@@ -128,15 +128,15 @@
         android:text="@string/SendReport_High" />
 
 </RadioGroup>
+
     <TextView
         android:id="@+id/SendReport_Fever"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ReportSugarLevelHigh"
-        android:layout_alignStart="@+id/ReportSugarLevelHigh"
-        android:layout_below="@+id/ReportSugarLevelHigh"
         android:layout_marginTop="14dp"
         android:text="@string/SendReport_Fever" />
+
+
 <RadioGroup
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -257,6 +257,13 @@
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SendReport_Coughing"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
     <RadioButton
         android:id="@+id/ReportCoughingYes"
         android:layout_width="wrap_content"
@@ -268,25 +275,6 @@
         android:layout_marginBottom="15dp" />
 
     <RadioButton
-        android:id="@+id/ReportFeverNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/SendReport_No"
-        android:layout_alignBaseline="@+id/ReportFeverYes"
-        android:layout_alignBottom="@+id/ReportFeverYes"
-        android:layout_alignLeft="@+id/ReportCoughingNo"
-        android:layout_alignStart="@+id/ReportCoughingNo" />
-
-    <RadioButton
-        android:id="@+id/ReportFeverYes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioGroup5"
-        android:layout_alignStart="@+id/radioGroup5"
-        android:layout_below="@+id/SendReport_Fever"
-        android:text="@string/SendReport_Yes" />
-
-    <RadioButton
         android:id="@+id/ReportCoughingNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -294,4 +282,58 @@
         android:layout_alignStart="@+id/ReportNauseousNo"
         android:layout_alignTop="@+id/radioGroup8"
         android:text="@string/SendReport_No" />
+
+    </LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/SendReport_Fever"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+    <ImageView
+        android:layout_width="78dp"
+        android:layout_height="match_parent"
+        app:srcCompat="@mipmap/fever"
+
+        />
+
+   <RadioGroup
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_above="@+id/SendReport_Coughing"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentEnd="true"
+       android:weightSum="1"
+       >
+
+
+       <RadioButton
+           android:id="@+id/ReportFeverYes"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/radioGroup5"
+           android:layout_alignStart="@+id/radioGroup5"
+           android:layout_below="@+id/SendReport_Fever"
+           android:text="@string/SendReport_Yes"
+           android:layout_weight="0.5"
+           />
+
+       <RadioButton
+           android:id="@+id/ReportFeverNo"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBaseline="@+id/ReportFeverYes"
+           android:layout_alignBottom="@+id/ReportFeverYes"
+           android:layout_alignLeft="@+id/ReportCoughingNo"
+           android:layout_alignStart="@+id/ReportCoughingNo"
+           android:layout_weight="0.5"
+           android:text="@string/SendReport_No" />
+   </RadioGroup>
+</LinearLayout>
+
+
 </RelativeLayout>
