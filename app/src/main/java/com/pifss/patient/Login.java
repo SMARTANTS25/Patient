@@ -40,26 +40,7 @@ public class Login extends AppCompatActivity {
 
 
 
-//        if (getSharedPreferences("sittings",MODE_PRIVATE).getString("language","ar").equals("ar"))
-////        {
-//            config.locale = new Locale("ar");
-//
-//            Toast.makeText(Login.this, "العربية", Toast.LENGTH_SHORT).show();
-//
-//            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
-
-//            Intent intent = new Intent(Login.this, Login.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            finish();
-//            startActivity(intent);
- //       }
-//        try {
-//            sitting = new JSONObject(Lang);
-//            if (sitting.getString())
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
 
 
         final Button loginBtn = (Button) findViewById(R.id.loginButton);
@@ -188,7 +169,7 @@ public class Login extends AppCompatActivity {
                         Intent intent = new Intent(Login.this, Home.class);
                         config = getResources().getConfiguration();
 
-                        if (getSharedPreferences("sittings",MODE_PRIVATE).getString("language","WRONG").equals("ar")) {
+                        if (getSharedPreferences("sittings1",MODE_PRIVATE).getString("language1","wee").equals("ar")) {
                             config.locale = new Locale("ar");
 
 
@@ -200,7 +181,7 @@ public class Login extends AppCompatActivity {
 
                         }else{
                             config.locale = new Locale("en");
-                            Toast.makeText(Login.this, getSharedPreferences("sittings",MODE_PRIVATE).getString("language","WRONG") , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, getSharedPreferences("sittings1",MODE_PRIVATE).getString("language1","wee")+"" , Toast.LENGTH_SHORT).show();
                             getResources().updateConfiguration(config, getResources().getDisplayMetrics());
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             finish();
