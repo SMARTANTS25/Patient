@@ -100,9 +100,9 @@ public class  RegistrationPage1 extends AppCompatActivity {
             invalid = false;
             Toast.makeText(getApplicationContext(), "Enter a valid email", Toast.LENGTH_SHORT).show();
         }
-        else if (passwordValue.length() < 8){
+        else if (passwordValue.length() < 6){
             invalid = false;
-            Toast.makeText(getApplicationContext(), "Password must be greater than 8", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Password must be greater than 6", Toast.LENGTH_SHORT).show();
         }
         else if (!confirmPassValue.equals(passwordValue)) {
             invalid = false;
