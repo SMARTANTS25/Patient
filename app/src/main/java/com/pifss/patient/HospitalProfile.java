@@ -83,7 +83,13 @@ public class HospitalProfile extends AppCompatActivity {
         textViewPhone.setText(phoneNumber);
         textViewWorkingH.setText(workingHours);
         textViewExtraInfo.setText(extraInfo);
-        textViewType.setText(type);
+
+        if (type.equals("public"))
+            textViewType.setText(R.string.HospitalTypePublic);
+        else if (type.equals("private"))
+            textViewType.setText(R.string.HospitalTypePrivate);
+        else textViewType.setText(type);
+
         textViewAddress.setText(address);
 
         Toast.makeText(this, logoURL, Toast.LENGTH_LONG);

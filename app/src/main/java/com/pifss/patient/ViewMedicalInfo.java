@@ -27,7 +27,7 @@ public class ViewMedicalInfo extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.myToolbar);
 
-        toolbar.setTitle("Medical Info");
+        toolbar.setTitle(R.string.PatientProfile_MedicalInfo);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -48,16 +48,16 @@ public class ViewMedicalInfo extends AppCompatActivity {
         bloodtypeText.setText(currentPatientObject.getBloodType());
         if (currentPatientObject.getDiabetes()){
 
-            diabetesText.setText("No");
+            diabetesText.setText(R.string.Reg3_MedicationsNo);
         }else{
-            diabetesText.setText("Yes");
+            diabetesText.setText(R.string.Reg3_MedicationsYes);
         }
 
         if (currentPatientObject.getAsthma()){
 
-            asthmaText.setText("No");
+            asthmaText.setText(R.string.Reg3_MedicationsNo);
         }else{
-            asthmaText.setText("Yes");
+            asthmaText.setText(R.string.Reg3_MedicationsYes);
         }
 
         allergiesText.setText(currentPatientObject.getAllergies());

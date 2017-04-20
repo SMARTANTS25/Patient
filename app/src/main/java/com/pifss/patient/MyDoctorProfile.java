@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -29,7 +28,7 @@ public class MyDoctorProfile extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.MyDoctorProfile_toolbar);
 
-        toolbar.setTitle("Doctor profile");
+        toolbar.setTitle(R.string.DoctorProfile);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -45,7 +44,7 @@ public class MyDoctorProfile extends AppCompatActivity {
         String specialty = intent.getStringExtra("specialty");
         String profileImg = intent.getStringExtra("imageURL");
         final int id = intent.getIntExtra("drId",0);
-        Toast.makeText(this, "checking Id= "+id, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, "checking Id= "+id, Toast.LENGTH_SHORT).show();
         toolbar.setTitle(name);
 
         ImageView imageViewDoctor = (ImageView) findViewById(R.id.MyDoctorProfile_doctorImage);

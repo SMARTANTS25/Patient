@@ -121,4 +121,10 @@
     <string name="Connecting">Connecting...</string>
     <string name="WrongUsername">Email or Password is wrong!</string>
     <string name="NoInternetConnection">you do not have Internet Connection!</string>
+    <string name="MyDoctorHome">My Doctors</string>
+    <string name="Profile">Profile</string>
+    <string name="HospitalTypePrivate">Private</string>
+    <string name="HospitalTypePublic">Public</string>
+    <string name="DoctorProfile">Doctor Profile</string>
+    <string name="SendReport_Send">Send Report</string>
 </resources>

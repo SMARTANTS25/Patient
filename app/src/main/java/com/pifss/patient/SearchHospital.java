@@ -47,7 +47,7 @@ public class SearchHospital extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarHospitalSearch);
 
-        toolbar.setTitle("Hospitals");
+        toolbar.setTitle(R.string.Home_Hospitals);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

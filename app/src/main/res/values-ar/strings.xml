@@ -133,5 +133,11 @@
     <string name="Connecting">جاري الإتصار</string>
     <string name="WrongUsername">الإيميل او كلمة السر خاطئة</string>
     <string name="NoInternetConnection">ليس لديك إتصال بالإنترنت</string>
+    <string name="MyDoctorHome">أطبائي</string>
+    <string name="Profile">" الملف الشخصي"</string>
+    <string name="HospitalTypePrivate">خاص</string>
+    <string name="HospitalTypePublic">عمومي</string>
+    <string name="DoctorProfile">ملف الدكتور الشخصي</string>
+    <string name="SendReport_Send">أرسل تقرير</string>
 </resources>
 

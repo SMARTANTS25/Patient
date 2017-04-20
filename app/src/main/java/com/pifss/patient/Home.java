@@ -67,7 +67,7 @@ public class Home extends AppCompatActivity {
             e.printStackTrace();
         }
         Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolbar);
-        toolbar.setTitle("My Doctor");
+        toolbar.setTitle(R.string.MyDoctorHome);
 
 
         // MaterialDrawer Creation
@@ -181,7 +181,7 @@ public class Home extends AppCompatActivity {
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
                 intent.putExtra("drId",m.getDrId());
-                Toast.makeText(Home.this, m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
+          //      Toast.makeText(Home.this, m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
 
                 startActivity(intent);
 
@@ -251,7 +251,7 @@ public class Home extends AppCompatActivity {
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
                 intent.putExtra("drId",m.getDrId());
-                Toast.makeText(Home.this, ""+m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(Home.this, ""+m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
                 // Toast.makeText(MyDoctors.this, m.getDrId()+"", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
 
@@ -282,7 +282,7 @@ public class Home extends AppCompatActivity {
 progressDialog.hide();
 
 
-                        Toast.makeText(Home.this, response, Toast.LENGTH_LONG);
+                   //     Toast.makeText(Home.this, response, Toast.LENGTH_LONG);
                         model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
 
                         ListView lv = (ListView) findViewById(R.id.HomeDoctorList);
