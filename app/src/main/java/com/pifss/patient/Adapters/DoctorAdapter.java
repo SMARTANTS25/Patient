@@ -67,9 +67,9 @@ public class DoctorAdapter extends BaseAdapter {
         docSpecialty.setText(m.getSpecialityId());
 
         if (m.getGender().length() > 0 && (m.getGender().charAt(0)+"").equalsIgnoreCase("f")){
-            docGender.setText("Female");
+            docGender.setText(R.string.FemaleReg_RadioButton);
         }else{
-            docGender.setText("Male");
+            docGender.setText(R.string.MaleReg_RadioButton);
         }
 
         docName.setText(m.getFirstName() + " " + m.getMiddleName() + " " +m.getLastName());

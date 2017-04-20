@@ -60,7 +60,7 @@ public class ViewPatientProfile extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.myToolbar);
 
-        toolbar.setTitle("Profile");
+        toolbar.setTitle(R.string.Profile);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -121,8 +121,8 @@ public class ViewPatientProfile extends AppCompatActivity {
       //      Toast.makeText(this, obj.getString("patientId")+"", Toast.LENGTH_SHORT).show();
             System.out.print(obj.getString("patientId"));
             if (gender.equals("M"))
-                genderText.setText("male");
-            else genderText.setText("female");
+                genderText.setText(R.string.MaleReg_RadioButton);
+            else genderText.setText(R.string.FemaleReg_RadioButton);
 
             String email = obj.getString("email");
             emailText.setText(email);
@@ -133,7 +133,7 @@ public class ViewPatientProfile extends AppCompatActivity {
             String birthDate = obj.getString("dateOfBirth");
             birthdateText.setText(birthDate);
 
-            Toast.makeText(ViewPatientProfile.this, "the patient name: " + fname, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(ViewPatientProfile.this, "the patient name: " + fname, Toast.LENGTH_SHORT).show();
 
         } catch (JSONException e) {
             e.printStackTrace();

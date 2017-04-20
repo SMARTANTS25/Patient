@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.pifss.patient.R;
 import com.pifss.patient.utils.LocationHelper;
@@ -127,7 +126,7 @@ public class HospitalAdapter extends BaseAdapter {
        double alt = Double.parseDouble(pos.getHospitalAlt());
         double lang = Double.parseDouble(pos.getHospitalLang());
        double dis =  distance(deviceLant,deviceAlt,alt,lang , "km");
-        Toast.makeText(context, dis+"", Toast.LENGTH_SHORT).show();
+    //    Toast.makeText(context, dis+"", Toast.LENGTH_SHORT).show();
 
         tvHospitalTitle.setText(pos.getHospitalName());
 //        if (distance >= 0) {
@@ -135,7 +134,11 @@ public class HospitalAdapter extends BaseAdapter {
 //        } else {
 //            tvHospitalDistance.setText("N/A");
  //       }
-        tvHospitalType.setText(pos.getType());
+        if (pos.getType().equals("public"))
+        tvHospitalType.setText(R.string.HospitalTypePublic);
+        else if (pos.getType().equals("private"))
+            tvHospitalType.setText(R.string.HospitalTypePrivate);
+        else tvHospitalType.setText(pos.getType());
 
 
         return view;

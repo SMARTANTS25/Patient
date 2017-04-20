@@ -41,7 +41,7 @@ public class SendReport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_report);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar9);
-        toolbar.setTitle("Send Report");
+        toolbar.setTitle(R.string.SendReport_Send);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.mipmap.aplus);
 

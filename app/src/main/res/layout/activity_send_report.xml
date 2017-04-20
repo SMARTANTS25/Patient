@@ -89,7 +89,7 @@
 android:textColor="@color/md_white_1000"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
-        android:text="Send Report"
+        android:text="@string/Reg1_Btn"
         android:textSize="14sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
