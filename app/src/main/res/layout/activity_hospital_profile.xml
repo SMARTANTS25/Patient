@@ -249,7 +249,7 @@
         android:layout_toLeftOf="@+id/HospitalProfile_PhoneNumberTitle"
         android:layout_toStartOf="@+id/HospitalProfile_PhoneNumberTitle" />
 
-    
+
     <ImageView
         android:id="@+id/imageViewHosPhone"
         android:layout_width="wrap_content"
