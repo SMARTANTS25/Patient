@@ -130,5 +130,8 @@
     <string name="MyReport_HavePain">لدي ألم</string>
     <string name="MyReportNoPain">لا ألم</string>
     <string name="NewDoctor_Request">تم إرسال الطلب</string>
+    <string name="Connecting">جاري الإتصار</string>
+    <string name="WrongUsername">الإيميل او كلمة السر خاطئة</string>
+    <string name="NoInternetConnection">ليس لديك إتصال بالإنترنت</string>
 </resources>
 

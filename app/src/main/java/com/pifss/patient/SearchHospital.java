@@ -196,7 +196,7 @@ public class SearchHospital extends AppCompatActivity {
                     }
                 });
         if (!isNetworkAvailable()){
-            Toast.makeText(SearchHospital.this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SearchHospital.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
         progressDialog.setMessage("Connecting...");
         progressDialog.show();

@@ -194,7 +194,7 @@ public class NewDoctorProfile extends AppCompatActivity {
 
 
                 if (!isNetworkAvailable()){
-                    Toast.makeText(NewDoctorProfile.this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewDoctorProfile.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
                 }
 
                 progressDialog.setMessage("Connecting...");

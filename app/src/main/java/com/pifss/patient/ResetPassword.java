@@ -72,6 +72,7 @@ public class ResetPassword extends AppCompatActivity {
                     Toast.makeText(ResetPassword.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 final JSONObject jsonBody = new JSONObject();
                  try{
                  jsonBody.put("username",email.getText().toString());
@@ -97,7 +98,7 @@ public class ResetPassword extends AppCompatActivity {
                                  finish();
                                  startActivity(i);
 
-                             } else {
+                             } else if (civilID.length()<11 || civilID.length() > 13){
                                  Toast.makeText(ResetPassword.this, "connection failed", Toast.LENGTH_SHORT).show();
                              }
 
@@ -113,10 +114,10 @@ public class ResetPassword extends AppCompatActivity {
 
 
                if (!isNetworkAvailable()){
-                   Toast.makeText(ResetPassword.this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(ResetPassword.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
                }
 
-               progressDialog.setMessage("Connecting...");
+               progressDialog.setMessage("Loading...");
                progressDialog.show();
                queue.add(jsonObjRequest);
             }

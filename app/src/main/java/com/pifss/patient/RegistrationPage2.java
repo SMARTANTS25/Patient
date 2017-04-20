@@ -100,7 +100,7 @@ public class RegistrationPage2 extends AppCompatActivity {
                               i2.putExtra("email1",email);
                               i2.putExtra("password1",password);
                               i2.putExtra("gender1",gender);
-                              Toast.makeText(RegistrationPage2.this, "done with Reg2, Welcome to Reg3", Toast.LENGTH_SHORT).show();
+                            //  Toast.makeText(RegistrationPage2.this, "done with Reg2, Welcome to Reg3", Toast.LENGTH_SHORT).show();
                               startActivity(i2);
                           }
             }

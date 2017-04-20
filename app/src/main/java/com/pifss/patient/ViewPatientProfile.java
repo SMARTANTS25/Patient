@@ -1,6 +1,7 @@
 package com.pifss.patient;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,6 +11,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -357,6 +360,10 @@ public class ViewPatientProfile extends AppCompatActivity {
         });
 
 
+            if (!isNetworkAvailable()){
+                Toast.makeText(ViewPatientProfile.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+            }
+
         progressDialog.setMessage("Updating Profile...");
         progressDialog.show();
         queue.add(jsonObjRequest);
@@ -364,6 +371,13 @@ public class ViewPatientProfile extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     public String getRealPathFromURI(Uri uri) {

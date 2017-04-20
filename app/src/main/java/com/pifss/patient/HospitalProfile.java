@@ -139,7 +139,7 @@ progressDialog.hide();
                 });
 
         if (!isNetworkAvailable()){
-            Toast.makeText(HospitalProfile.this, "you do not have Internet Connection!!!!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(HospitalProfile.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
 
         progressDialog.setMessage("Connecting...");
