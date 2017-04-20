@@ -170,8 +170,8 @@ android:layout_height="match_parent">
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.55"
+                android:layout_marginTop="4dp"
                 android:ems="10"
-                android:layout_marginTop=""
                 android:text="1991-11-1"
                 android:textAlignment="center"
                 android:textSize="28sp"
@@ -188,7 +188,7 @@ android:layout_height="match_parent">
             android:background="@android:color/darker_gray"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            android:layout_marginTop="6dp"/>
+            />
 
         <LinearLayout
             android:layout_width="match_parent"

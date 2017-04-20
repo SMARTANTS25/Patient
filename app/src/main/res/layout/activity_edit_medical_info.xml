@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:weightSum="1"
-        android:layout_below="@+id/myToolbar"
+        android:layout_above="@+id/saveChangesMedicalButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
@@ -134,6 +134,16 @@
 
         </LinearLayout>
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar5"
+            android:layout_width="383dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="35dp"
+            android:background="@android:color/darker_gray"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
