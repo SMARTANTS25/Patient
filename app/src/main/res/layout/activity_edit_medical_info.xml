@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:weightSum="1"
         android:layout_below="@+id/myToolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
@@ -226,6 +227,14 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:text="Allergies:"
+            android:textSize="19sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -235,17 +244,12 @@
 
 
             <ImageView
+                android:id="@+id/imageView15"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="0.2"
-                app:srcCompat="@mipmap/allergy_icon" />
+                app:srcCompat="@mipmap/allergies" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="Allergies:"
-                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editTextAllergies"
@@ -255,32 +259,36 @@
                 android:ems="10" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/txtMed"
+            android:layout_width="128dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="11dp"
+            android:text="Medications:"
+            android:textSize="19sp"
+            android:layout_weight="0.26" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="1"
             android:layout_margin="10dp">
 
 
             <ImageView
+                android:id="@+id/imageView16"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="0.2"
-                app:srcCompat="@mipmap/medicine_icon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="Medications:"
-                android:textSize="15sp" />
+                android:layout_marginTop="15dp"
+                app:srcCompat="@mipmap/medicine" />
 
             <EditText
                 android:id="@+id/editTextMedications"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_height="74dp"
+                android:layout_weight="0.30"
                 android:ems="10" />
         </LinearLayout>
 

@@ -12,15 +12,10 @@
         android:layout_height="wrap_content"
         android:background="@color/Buttons"
         android:id="@+id/HospitalProfile_toolbar"
-        >
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            >
-
-        </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
 
@@ -31,7 +26,7 @@
         android:layout_height="75dp"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
-        app:srcCompat="@mipmap/hospital"
+        app:srcCompat="@mipmap/hospitall"
         android:layout_below="@+id/HospitalProfile_toolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -40,12 +35,12 @@
         android:id="@+id/HospitalProfile_hospitalNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:layout_above="@+id/HospitalProfile_TypeTV"
+        android:layout_toEndOf="@+id/HospitalProfile_HospitalLogoImageView"
+        android:layout_toRightOf="@+id/HospitalProfile_HospitalLogoImageView"
         android:fontFamily="monospace"
         android:text="@string/TextView_HosName"
-        android:layout_above="@+id/HospitalProfile_TypeTV"
-        android:layout_toRightOf="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_toEndOf="@+id/HospitalProfile_HospitalLogoImageView" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/HospitalProfile_TypeTV"
@@ -55,21 +50,22 @@
         android:fontFamily="monospace"
         android:text="                         "
         android:layout_above="@+id/HospitalProfile_TypeTitle"
-        android:layout_toRightOf="@+id/HospitalProfile_WorkingHourseTitle"
-        android:layout_toEndOf="@+id/HospitalProfile_WorkingHourseTitle" />
+        android:layout_toRightOf="@+id/HospitalProfile_SpecialityTitle"
+        android:layout_alignRight="@+id/HospitalProfile_EmailTV"
+        android:layout_alignEnd="@+id/HospitalProfile_EmailTV" />
 
     <TextView
         android:id="@+id/HospitalProfile_TypeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:layout_alignBottom="@+id/HospitalProfile_HospitalLogoImageView"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/HospitalProfile_HospitalLogoImageView"
+        android:layout_toRightOf="@+id/HospitalProfile_HospitalLogoImageView"
         android:fontFamily="monospace"
         android:text="@string/textView_HosType"
-        android:layout_alignBottom="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_toRightOf="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_toEndOf="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/textViewHospitalType"
@@ -79,14 +75,16 @@
         android:fontFamily="monospace"
         android:text="           "
         android:layout_below="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_toRightOf="@+id/HospitalProfile_EmailTitle"
-        android:layout_toEndOf="@+id/HospitalProfile_EmailTitle" />
+        android:layout_alignRight="@+id/HospitalProfile_TypeTV"
+        android:layout_alignEnd="@+id/HospitalProfile_TypeTV"
+        android:layout_alignLeft="@+id/HospitalProfile_HospitalLogoImageView"
+        android:layout_alignStart="@+id/HospitalProfile_HospitalLogoImageView" />
 
     <TextView
         android:id="@+id/HospitalProfile_SpecialityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="14sp"
         android:fontFamily="monospace"
         android:text="@string/textView_HosSpeciality"
         android:layout_below="@+id/textViewHospitalType"
@@ -108,9 +106,9 @@
         android:id="@+id/HospitalProfile_WorkingHourseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:text="@string/textView_HosWorkingH"
-        android:textSize="18dp"
+        android:textSize="14dp"
         android:fontFamily="monospace"
         android:layout_below="@+id/HospitalProfile_SpecialityTV"
         android:layout_toRightOf="@+id/imageViewHosSpeciality"
@@ -137,7 +135,7 @@
         android:layout_marginTop="17dp"
         android:text="@string/textView_HosPhone"
         android:fontFamily="monospace"
-        android:textSize="18dp"
+        android:textSize="14sp"
         android:layout_toRightOf="@+id/imageViewHosAddress"
         android:layout_toEndOf="@+id/imageViewHosAddress" />
 
@@ -156,7 +154,7 @@
         android:id="@+id/HospitalProfile_AddressTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="14dp"
         android:fontFamily="monospace"
         android:layout_marginTop="11dp"
         android:text="@string/textView_HosAddress"
@@ -179,7 +177,7 @@
         android:id="@+id/HospitalProfile_EmailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="14sp"
         android:fontFamily="monospace"
         android:layout_marginTop="21dp"
         android:text="@string/textView_HosEmail"
@@ -202,7 +200,7 @@
         android:id="@+id/HospitalProfile_AdditionalInfoTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="14sp"
         android:fontFamily="monospace"
         android:layout_marginTop="13dp"
         android:text="@string/textView_HosExtraInfo"
@@ -219,71 +217,74 @@
         android:layout_below="@+id/HospitalProfile_AdditionalInfoTitle"
         android:fontFamily="monospace"
         android:text="TextView"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_alignRight="@+id/HospitalProfile_EmailTV"
+        android:layout_alignEnd="@+id/HospitalProfile_EmailTV" />
 
     <ImageView
         android:id="@+id/imageViewHosSpeciality"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_above="@+id/HospitalProfile_WorkingHourseTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/HospitalProfile_SpecialityTitle"
-        android:layout_toStartOf="@+id/HospitalProfile_SpecialityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:textSize="18dp"
-        app:srcCompat="@mipmap/stethoscope" />
+        app:srcCompat="@mipmap/spacialty"
+        android:layout_below="@+id/HospitalProfile_SpecialityTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/HospitalProfile_WorkingHourseTitle"
+        android:layout_toLeftOf="@+id/HospitalProfile_SpecialityTitle"
+        android:layout_toStartOf="@+id/HospitalProfile_SpecialityTitle" />
 
     <ImageView
         android:id="@+id/imageViewHosWorkingHours"
-        android:layout_width="wrap_content"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:fontFamily="monospace"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/HospitalProfile_PhoneNumberTitle"
+        app:srcCompat="@mipmap/clock"
+        android:layout_below="@+id/HospitalProfile_WorkingHourseTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/HospitalProfile_WorkingHourseTitle"
-        android:layout_toLeftOf="@+id/HospitalProfile_WorkingHourseTitle"
-        android:layout_toStartOf="@+id/HospitalProfile_WorkingHourseTitle" />
+        android:layout_above="@+id/HospitalProfile_PhoneNumberTitle"
+        android:layout_toLeftOf="@+id/HospitalProfile_PhoneNumberTitle"
+        android:layout_toStartOf="@+id/HospitalProfile_PhoneNumberTitle" />
 
     <ImageView
         android:id="@+id/imageViewHosPhone"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:srcCompat="@mipmap/phone_icon"
-        android:layout_alignTop="@+id/HospitalProfile_PhoneNumberTitle"
-        android:layout_alignRight="@+id/imageViewHosExtraInfo"
-        android:layout_alignEnd="@+id/imageViewHosExtraInfo" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/telephone"
+        android:layout_below="@+id/HospitalProfile_PhoneNumberTitle"
+        android:layout_toLeftOf="@+id/HospitalProfile_PhoneNumberTitle"
+        android:layout_toStartOf="@+id/HospitalProfile_PhoneNumberTitle" />
 
     <ImageView
         android:id="@+id/imageViewHosAddress"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/HospitalProfile_EmailTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        app:srcCompat="@mipmap/map"
         android:layout_alignTop="@+id/HospitalProfile_AddressTitle"
-        android:layout_toLeftOf="@+id/HospitalProfile_AddressTitle"
-        android:layout_toStartOf="@+id/HospitalProfile_AddressTitle"
-        app:srcCompat="@mipmap/map" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/imageViewHosEmail"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:srcCompat="@mipmap/email"
-        android:layout_alignBottom="@+id/HospitalProfile_EmailTV"
-        android:layout_alignLeft="@+id/HospitalProfile_HospitalLogoImageView"
-        android:layout_alignStart="@+id/HospitalProfile_HospitalLogoImageView" />
+        app:srcCompat="@mipmap/email_2"
+        android:layout_alignTop="@+id/HospitalProfile_EmailTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/imageViewHosExtraInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/aboutusicon"
+        app:srcCompat="@mipmap/info"
         android:layout_alignTop="@+id/HospitalProfile_AdditionalInfoTitle"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/HospitalProfile_AdditionalInfoTitle"
+        android:layout_toStartOf="@+id/HospitalProfile_AdditionalInfoTitle" />
+
 </RelativeLayout>
