@@ -47,7 +47,8 @@ public class Settings extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                              if (getSharedPreferences("sittings",MODE_PRIVATE).getString("language","error").equals("ar"))
+                      String arb =  getSharedPreferences("sittings1",MODE_PRIVATE).getString("language1","ar");
+                              if (arb.equals("ar"))
 
                             {
 
@@ -57,14 +58,15 @@ public class Settings extends AppCompatActivity {
 
                                 config.locale = new Locale(local);
 
-                                Toast.makeText(Settings.this, "is english", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Settings.this, " english", Toast.LENGTH_SHORT).show();
 
                                 getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
-                                SharedPreferences langShared = getSharedPreferences("sittings", MODE_PRIVATE);
+                                SharedPreferences langShared = getSharedPreferences("sittings1", MODE_PRIVATE);
                                 SharedPreferences.Editor editor = langShared.edit();
-                                editor.putString("language", local);
-
+                                editor.putString("language1",local);//putString("language", local);
+                                editor.commit();
+                          //      Toast.makeText(Settings.this, getSharedPreferences("sittings",MODE_PRIVATE).getString("language","error")+"", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(Settings.this, Home.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 finish();
@@ -84,11 +86,13 @@ public class Settings extends AppCompatActivity {
                     config.locale = new Locale(local);
                     getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
-                    SharedPreferences langShared = getSharedPreferences("sittings",MODE_PRIVATE);
+                    SharedPreferences langShared = getSharedPreferences("sittings1",MODE_PRIVATE);
                     SharedPreferences.Editor editor = langShared.edit();
-                    editor.putString("language",local);
+                    editor.putString("language1",local);
+                      editor.commit();
+          //            Toast.makeText(Settings.this, getSharedPreferences("sittings",MODE_PRIVATE).getString("language","error")+"", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(Settings.this,Home.class);
+                      Intent intent = new Intent(Settings.this,Home.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     finish();
                     startActivity(intent);
