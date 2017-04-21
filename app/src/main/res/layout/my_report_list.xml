@@ -1,72 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <ImageView
-        android:id="@+id/MyReport_Docimg"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="19dp"
-        app:srcCompat="@mipmap/doctor" />
-
-    <TextView
-        android:id="@+id/MyRerports_DocName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/MyReport_Docimg"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_toEndOf="@+id/MyReport_Docimg"
-        android:layout_toRightOf="@+id/MyReport_Docimg"
-        android:text="TextView" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/MyReport_Headache"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:text="@string/SendReport_Headache"
-        android:layout_alignBottom="@+id/MyReport_Docimg"
-        android:layout_toRightOf="@+id/MyReport_Docimg"
-        android:layout_toEndOf="@+id/MyReport_Docimg" />
+        <ImageView
+            android:id="@+id/MyReport_Docimg"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@mipmap/doctor" />
 
-    <TextView
-        android:id="@+id/MyReports_HeadacheTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/MyReport_Headache"
-        android:layout_alignStart="@+id/MyReport_Headache"
-        android:layout_below="@+id/MyReport_Headache"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:text="TextView" />
+        <TextView
+            android:id="@+id/MyRerports_DocName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="monospace"
+            android:text="Mohammad Aziz Mohammad"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/MyReport_heartbeatRate"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/SendReport_HeartBeat"
-        android:layout_above="@+id/MyReport_Headache"
-        android:layout_alignLeft="@+id/MyReport_HeartTV"
-        android:layout_alignStart="@+id/MyReport_HeartTV" />
+        android:orientation="horizontal"
+        android:weightSum="1">
 
-    <TextView
-        android:id="@+id/MyReport_HeartTV"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/DoctorItemList_DoctorSpecialtyTV"
+            android:layout_marginLeft="90dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Headache"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:layout_weight="0.5"
+            />
+        <TextView
+            android:id="@+id/DoctorItemList_DoctorGenderTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="monospace"
+            android:text="Heartbeat Rate"
+            android:textSize="14sp"
+            android:layout_weight="0.5"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_below="@+id/MyReport_heartbeatRate"
-        android:layout_toRightOf="@+id/MyRerports_DocName"
-        android:layout_toEndOf="@+id/MyRerports_DocName"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp" />
-</RelativeLayout>
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/MyReports_HeadacheTV"
+            android:layout_marginLeft="90dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="HeadacheR"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:layout_weight="0.5"
+
+            />
+        <TextView
+            android:id="@+id/MyReport_HeartTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="monospace"
+            android:text="Heartbeat RateR"
+            android:textSize="14sp"
+            android:layout_weight="0.5"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
