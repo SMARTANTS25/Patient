@@ -265,7 +265,7 @@ progressDialog.hide();
 
 
                     if (!isNetworkAvailable()){
-                        Toast.makeText(SendReportPage2.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SendReportPage2.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
                     }
                     progressDialog.setMessage("Connecting...");
                     progressDialog.show();

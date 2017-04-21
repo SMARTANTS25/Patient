@@ -115,7 +115,7 @@ public class ReportDetails extends AppCompatActivity {
         }
 
         if (!isNetworkAvailable()){
-            Toast.makeText(ReportDetails.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ReportDetails.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
 
         progressDialog.setMessage("Connecting...");

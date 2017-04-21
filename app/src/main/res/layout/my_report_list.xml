@@ -26,7 +26,8 @@
         android:layout_marginStart="48dp"
         android:layout_toEndOf="@+id/MyReport_Docimg"
         android:layout_toRightOf="@+id/MyReport_Docimg"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/MyReport_Headache"
@@ -37,7 +38,8 @@
         android:layout_below="@+id/MyReport_Docimg"
         android:layout_marginLeft="25dp"
         android:layout_marginStart="25dp"
-        android:text="@string/SendReport_Headache" />
+        android:text="@string/SendReport_Headache"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/MyReports_HeadacheTV"
@@ -57,7 +59,8 @@
         android:text="@string/SendReport_HeartBeat"
         android:layout_above="@+id/MyReports_HeadacheTV"
         android:layout_toRightOf="@+id/MyRerports_DocName"
-        android:layout_toEndOf="@+id/MyRerports_DocName" />
+        android:layout_toEndOf="@+id/MyRerports_DocName"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/MyReport_HeartTV"

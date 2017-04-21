@@ -47,7 +47,7 @@ public class SearchHospital extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarHospitalSearch);
 
-        toolbar.setTitle(R.string.Home_Hospitals);
+        toolbar.setTitle(R.string.SearchHospital_Hospital);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -196,7 +196,7 @@ public class SearchHospital extends AppCompatActivity {
                     }
                 });
         if (!isNetworkAvailable()){
-            Toast.makeText(SearchHospital.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+            Toast.makeText(SearchHospital.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
         progressDialog.setMessage("Connecting...");
         progressDialog.show();

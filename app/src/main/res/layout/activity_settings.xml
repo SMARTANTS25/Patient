@@ -13,10 +13,9 @@
 
         android:background="@color/material_drawer_background"
         app:srcCompat="@mipmap/heartlogo"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="45dp"
         android:layout_below="@+id/settingsToolbar"
-        android:layout_alignRight="@+id/Sitting_Arb"
-        android:layout_alignEnd="@+id/Sitting_Arb" />
+        android:layout_centerHorizontal="true" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/settingsToolbar"
@@ -36,11 +35,11 @@
         android:layout_height="wrap_content"
         android:text="@string/Settings_Language"
         android:fontFamily="monospace"
-        android:textSize="18dp"
-        android:layout_marginTop="41dp"
+        android:textSize="20dp"
+        android:layout_marginTop="43dp"
+        android:textStyle="bold"
         android:layout_below="@+id/imageView40"
-        android:layout_toLeftOf="@+id/Sitting_Arb"
-        android:layout_toStartOf="@+id/Sitting_Arb" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/Sitting_English"
@@ -52,7 +51,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="63dp"
-        android:layout_marginStart="63dp" />
+        android:layout_marginStart="63dp"
+        android:background="#ffffff"/>
 
     <Button
         android:id="@+id/Sitting_Arb"
@@ -63,5 +63,6 @@
         android:layout_alignTop="@+id/Sitting_English"
         android:layout_marginEnd="71dp"
         android:layout_marginRight="71dp"
-        android:text="@string/Settings_LanguageArb" />
+        android:text="@string/Settings_LanguageArb"
+        android:background="#ffffff"/>
 </RelativeLayout>

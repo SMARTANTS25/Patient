@@ -218,7 +218,7 @@ public class MyDoctors extends AppCompatActivity {
                     }
                 });
         if (!isNetworkAvailable()){
-            Toast.makeText(MyDoctors.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MyDoctors.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
 
         progressDialog.setMessage("Connecting...");

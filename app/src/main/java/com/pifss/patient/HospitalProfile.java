@@ -92,7 +92,7 @@ public class HospitalProfile extends AppCompatActivity {
 
         textViewAddress.setText(address);
 
-        Toast.makeText(this, logoURL, Toast.LENGTH_LONG);
+     //   Toast.makeText(this, logoURL, Toast.LENGTH_LONG);
 
         /*if (!logoURL.isEmpty() && logoURL.length() >= 4 && logoURL != null) {
             try {

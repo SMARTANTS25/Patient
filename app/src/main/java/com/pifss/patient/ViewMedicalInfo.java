@@ -50,14 +50,14 @@ public class ViewMedicalInfo extends AppCompatActivity {
 
             diabetesText.setText(R.string.Reg3_MedicationsNo);
         }else{
-            diabetesText.setText(R.string.Reg3_MedicationsYes);
+            diabetesText.setText(R.string.Reg3_AllergiesYes);
         }
 
         if (currentPatientObject.getAsthma()){
 
-            asthmaText.setText(R.string.Reg3_MedicationsNo);
+            asthmaText.setText(R.string.No);
         }else{
-            asthmaText.setText(R.string.Reg3_MedicationsYes);
+            asthmaText.setText(R.string.Yes);
         }
 
         allergiesText.setText(currentPatientObject.getAllergies());

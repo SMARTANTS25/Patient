@@ -139,5 +139,8 @@
     <string name="HospitalTypePublic">عمومي</string>
     <string name="DoctorProfile">ملف الدكتور الشخصي</string>
     <string name="SendReport_Send">أرسل تقرير</string>
+    <string name="SearchHospital_Hospital">المستشفيات</string>
+    <string name="Yes">نعم</string>
+    <string name="No">لا</string>
 </resources>
 
