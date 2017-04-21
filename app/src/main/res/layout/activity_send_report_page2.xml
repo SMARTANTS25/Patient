@@ -188,8 +188,8 @@
             android:background="@android:color/darker_gray"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

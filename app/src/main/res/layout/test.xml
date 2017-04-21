@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="1">
 
         <ImageView
             android:id="@+id/MyReport_Docimg"
@@ -19,72 +20,199 @@
             android:layout_marginLeft="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            app:srcCompat="@mipmap/doctor" />
+            app:srcCompat="@mipmap/patiet2" />
+
+        <Button
+            android:id="@+id/ViewMedicalInfo_EditProfileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/Buttons"
+            android:fontFamily="monospace"
+            android:text="@string/PatientProfile_EditProfile"
+            android:textColor="@color/md_white_1000"
+            android:textSize="14sp"
+            android:layout_weight="0.7" />
+    </LinearLayout>
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:background="@android:color/darker_gray"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        >
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        app:srcCompat="@mipmap/heartlogo"
+        />
+
+    <TextView
+        android:id="@+id/BloodType"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fontFamily="monospace"
+        android:text="Blood type:"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:layout_weight="0.12"         />
+
+    <TextView
+        android:id="@+id/MyReports_HeadacheTV"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:fontFamily="monospace"
+        android:text="BType"
+        android:textSize="14sp" />
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/finger"
+         />
 
         <TextView
-            android:id="@+id/MyRerports_DocName"
+            android:id="@+id/diabetes"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="50dp"
+            android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Mohammad Aziz Mohammad"
-            android:textColor="@android:color/black"
-            android:textSize="17sp"
-            android:textStyle="bold" />
+            android:text="Diabetes:"
+            android:layout_weight="0.2"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/ViewMedicalInfo_diabetesTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="Status"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="31dp"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/asthma"
+            />
 
         <TextView
-            android:id="@+id/DoctorItemList_DoctorSpecialtyTV"
-            android:layout_marginLeft="90dp"
+            android:id="@+id/asthma"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Headache"
-            android:textSize="14sp"
             android:fontFamily="monospace"
-            />
+            android:text="Asthma:"
+            android:layout_weight="0.28"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
         <TextView
-            android:id="@+id/DoctorItemList_DoctorGenderTV"
+            android:id="@+id/ViewMedicalInfo_asthmaTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50dp"
+            android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="Heartbeat Rate"
+            android:text="Status"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/allergies" />
+
+        <TextView
+            android:id="@+id/Allergies"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="Allergies:"
+            android:layout_weight="0.2"
+            android:textAlignment="center"
             android:textSize="14sp"
             />
+
+        <TextView
+            android:id="@+id/ViewMedicalInfo_AllergiesTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="Status"
+            android:textSize="14sp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="31dp"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_marginTop="25dp"
 
-        <TextView
-            android:id="@+id/MyReports_HeadacheTV"
-            android:layout_marginLeft="90dp"
+        >
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="HeadacheR"
-            android:textSize="14sp"
-            android:fontFamily="monospace"
-            />
+            app:srcCompat="@mipmap/medicine"
+            android:layout_weight="0.06" />
+
         <TextView
-            android:id="@+id/MyReport_HeartTV"
+            android:id="@+id/medication"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50dp"
             android:fontFamily="monospace"
-            android:text="Heartbeat RateR"
+            android:text="Medication:"
+            android:textAlignment="center"
             android:textSize="14sp"
+            android:layout_weight="0.2"
             />
 
+        <TextView
+            android:id="@+id/ViewMedicalInfo_medicationVT"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="medication"
+            android:textSize="14sp" />
     </LinearLayout>
+
 
 </LinearLayout>
