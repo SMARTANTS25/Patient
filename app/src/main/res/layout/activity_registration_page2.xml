@@ -18,202 +18,173 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/Reg2_FirstNameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg2_FirstName"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_alignBottom="@+id/imageView8"
-        android:layout_toRightOf="@+id/imageView8"
-        android:layout_toEndOf="@+id/imageView8" />
 
-    <TextView
-        android:id="@+id/Reg2_LastNameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg2_LastName"
-
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_alignBaseline="@+id/Reg2_FirstNameTitle"
-        android:layout_alignBottom="@+id/Reg2_FirstNameTitle"
-        android:layout_toRightOf="@+id/imageView9"
-        android:layout_toEndOf="@+id/imageView9" />
-
-    <EditText
-        android:id="@+id/Reg2_LastNameTF"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/Reg2_LastNameTitle"
-        android:layout_toRightOf="@+id/Reg2_EmergencyTitle"
-        android:layout_toEndOf="@+id/Reg2_EmergencyTitle" />
-
-    <EditText
-        android:id="@+id/Reg2_FirstNameTF"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/Reg2_FirstNameTitle"
-        android:layout_alignLeft="@+id/imageView5"
-        android:layout_alignStart="@+id/imageView5" />
-
-    <TextView
-        android:id="@+id/Reg2_CivilIdTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:text="@string/Reg2_CivilID"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/Reg2_FirstNameTF"
-        android:layout_toRightOf="@+id/imageView4"
-        android:layout_toEndOf="@+id/imageView4" />
-
-    <EditText
-        android:id="@+id/Reg2_CivilIDTF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:layout_below="@+id/Reg2_CivilIdTitle"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_alignRight="@+id/Reg2_BirthDateTF"
-        android:layout_alignEnd="@+id/Reg2_BirthDateTF" />
-
-    <TextView
-        android:id="@+id/Reg2_BirthDateTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/Reg2_BirthDate"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/Reg2_CivilIDTF"
-        android:layout_toRightOf="@+id/imageView5"
-        android:layout_toEndOf="@+id/imageView5" />
-
-    <TextView
-        android:id="@+id/Reg2_BirthDateTF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/Reg2_PhoneNumberTF"
-        android:layout_alignLeft="@+id/imageView6"
-        android:layout_alignRight="@+id/Reg2_PhoneNumberTF"
-        android:layout_alignStart="@+id/imageView6"
-        android:layout_below="@+id/Reg2_BirthDateTitle"
-        android:ems="10"
-        android:hint="dd/mm/yyyy"
-        android:inputType="date"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:text="@string/Reg2_Phone"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/Reg2_BirthDateTF"
-        android:layout_toRightOf="@+id/imageView6"
-        android:layout_toEndOf="@+id/imageView6"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp" />
-
-    <EditText
-        android:id="@+id/Reg2_PhoneNumberTF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        android:layout_below="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_alignLeft="@+id/imageView6"
-        android:layout_alignStart="@+id/imageView6"
-        android:layout_alignRight="@+id/Reg2_EmergencyNumberTF"
-        android:layout_alignEnd="@+id/Reg2_EmergencyNumberTF" />
-
-    <TextView
-        android:id="@+id/Reg2_EmergencyTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="Emergency Phone"
-        android:textSize="18sp"
-        android:layout_below="@+id/Reg2_PhoneNumberTF"
-        android:layout_toRightOf="@+id/imageView7"
-        android:layout_toEndOf="@+id/imageView7"
-        android:layout_marginTop="19dp" />
-
-    <EditText
-        android:id="@+id/Reg2_EmergencyNumberTF"
-        android:layout_width="365dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        android:layout_below="@+id/Reg2_EmergencyTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_above="@+id/Reg2_CivilIDTF"
-        android:layout_alignLeft="@+id/Reg2_FirstNameTF"
-        android:layout_alignStart="@+id/Reg2_FirstNameTF"
-        app:srcCompat="@mipmap/id_card" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/calender"
-        android:layout_alignBottom="@+id/Reg2_BirthDateTitle"
-        android:layout_alignLeft="@+id/Reg2_BirthDateTF"
-        android:layout_alignStart="@+id/Reg2_BirthDateTF" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/phone_icon"
-        android:layout_above="@+id/Reg2_PhoneNumberTF"
-        android:layout_alignLeft="@+id/imageView7"
-        android:layout_alignStart="@+id/imageView7" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/emergencynum"
-        android:layout_alignTop="@+id/Reg2_EmergencyTitle"
-        android:layout_alignLeft="@+id/Reg2_EmergencyNumberTF"
-        android:layout_alignStart="@+id/Reg2_EmergencyNumberTF" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/profile_icon"
-        android:layout_marginTop="21dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_below="@+id/myToolbar"
-        android:layout_alignLeft="@+id/Reg2_FirstNameTF"
-        android:layout_alignStart="@+id/Reg2_FirstNameTF" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/button">
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/profile_icon"
-        android:layout_above="@+id/Reg2_LastNameTF"
-        android:layout_alignLeft="@+id/Reg2_LastNameTF"
-        android:layout_alignStart="@+id/Reg2_LastNameTF" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imgPatient"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@mipmap/patiet2" />
+
+            <EditText
+                android:id="@+id/Reg2_FirstNameTF"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.52"
+                android:ems="10"
+                android:hint="FirstName"
+                android:inputType="textPersonName"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/Reg2_LastNameTF"
+            android:layout_width="287dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:hint="last name"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="7dp"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
+
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.35"
+                android:ems="10"
+                app:srcCompat="@mipmap/bday" />
+
+            <TextView
+                android:id="@+id/Reg2_BirthDateTF"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:layout_marginTop="4dp"
+                android:ems="10"
+                android:text="1991-11-1"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar5"
+            android:layout_width="281dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="35dp"
+            android:background="@android:color/darker_gray"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
+
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                app:srcCompat="@mipmap/idd_card" />
+
+
+
+            <EditText
+                android:id="@+id/Reg2_CivilIDTF"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.52"
+                android:ems="10"
+                android:hint="civil ID"
+                android:inputType="textPersonName|number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+
+            android:weightSum="1">
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                app:srcCompat="@mipmap/telephone" />
+
+            <EditText
+                android:id="@+id/Reg2_PhoneNumberTF"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.52"
+                android:ems="10"
+                android:hint="number"
+                android:inputType="textPersonName|number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.34"
+                app:srcCompat="@mipmap/telephone" />
+
+            <EditText
+                android:id="@+id/Reg2_EmergencyNumberTF"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.52"
+                android:ems="10"
+                android:hint="Emergency number"
+                android:inputType="textPersonName|number" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/Reg2_NextButton"

@@ -2,431 +2,190 @@
 <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">-->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pifss.patient.RegistrationPage2">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/myToolbar"
-        style="@style/AppTheme.Toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/Buttons">
 
-    </android.support.v7.widget.Toolbar>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <LinearLayout
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/myToolbar"
+            style="@style/AppTheme.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/Buttons">
+
+        </android.support.v7.widget.Toolbar>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp"
-                >
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_below="@+id/myToolbar"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/button">
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@mipmap/doctor" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="50dp"
+                    android:weightSum="1">
 
-                <TextView
-                    android:id="@+id/DrName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="monospace"
-                    android:text="Doctor name:"
-                    android:layout_weight="0.5"
-                    android:textSize="14sp"
+                    <ImageView
+                        android:id="@+id/imgPatient"
+                        android:layout_width="20dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="0.34"
+                        android:layout_marginTop="5dp"
+                        app:srcCompat="@mipmap/patiet2" />
+
+                    <EditText
+                        android:id="@+id/Reg2_FirstNameTF"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.52"
+                        android:ems="10"
+                        android:hint="FirstName"
+                        android:inputType="textPersonName"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/Reg2_LastNameTF"
+                    android:layout_width="287dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:ems="10"
+                    android:hint="last name"
+                    android:inputType="textPersonName" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="7dp"
+                    android:weightSum="1">
+
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="20dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="0.35"
+                        android:ems="10"
+                        app:srcCompat="@mipmap/bday" />
+
+                    <TextView
+                        android:id="@+id/Reg2_BirthDateTF"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.50"
+                        android:layout_marginTop="4dp"
+                        android:ems="10"
+                        android:text="1991-11-1"
+                        android:textAlignment="center"
+                        android:textSize="28sp"
+                        />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar5"
+                    android:layout_width="281dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="35dp"
+                    android:background="@android:color/darker_gray"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
                     />
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="70dp">
-                <TextView
-                    android:id="@+id/ReportDetails_DocNameTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:fontFamily="monospace"
-                    android:text="Entisar"
-                    android:textSize="14sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
-            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        >
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="20dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="0.34"
+                        app:srcCompat="@mipmap/idd_card" />
 
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@mipmap/bpiconnn"
-            />
 
-        <TextView
-            android:id="@+id/BloodPressure"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="monospace"
-            android:text="Blood Pressure:"
-            android:textSize="14sp"
-            android:layout_weight="0.12"/>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="70dp">
+                    <EditText
+                        android:id="@+id/Reg2_CivilIDTF"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.52"
+                        android:ems="10"
+                        android:hint="civil ID"
+                        android:inputType="textPersonName|number" />
+                </LinearLayout>
 
-        <TextView
-            android:id="@+id/ReportDetails_BloodTV"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:fontFamily="monospace"
-            android:text="High"
-            android:textSize="14sp" />
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp"
-                >
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@mipmap/heartlogo" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="0.34"
+                        app:srcCompat="@mipmap/telephone" />
 
-                <TextView
-                    android:id="@+id/Heartbeatrate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="monospace"
-                    android:text="Heartbeat rate:"
-                    android:layout_weight="0.5"
-                    android:textSize="14sp"
-                    />
-            </LinearLayout>
+                    <EditText
+                        android:id="@+id/Reg2_PhoneNumberTF"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.52"
+                        android:ems="10"
+                        android:hint="number"
+                        android:inputType="textPersonName|number" />
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="70dp">
-                <TextView
-                    android:id="@+id/ReportDetails_HeartBeatTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:fontFamily="monospace"
-                    android:text="Status"
-                    android:textSize="14sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="0.34"
+                        app:srcCompat="@mipmap/telephone" />
+
+                    <EditText
+                        android:id="@+id/Reg2_EmergencyNumberTF"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.52"
+                        android:ems="10"
+                        android:hint="Emergency number"
+                        android:inputType="textPersonName|number" />
+                </LinearLayout>
+
 
             </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp"
-        >
-
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@mipmap/finger"
-            />
-
-        <TextView
-            android:id="@+id/diabetes"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="monospace"
-            android:text="Sugar level:"
-            android:layout_weight="0.2"
-            android:textSize="14sp"
-            />
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="70dp">
-        <TextView
-            android:id="@+id/ReportDetails_SugarLevelTV"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:fontFamily="monospace"
-            android:text="Status"
-            android:textSize="14sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp">
-
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@mipmap/headache"
-            />
-
-        <TextView
-            android:id="@+id/Headache"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="monospace"
-            android:text="Headache:"
-            android:layout_weight="0.28"
-            android:textSize="14sp" />
+</RelativeLayout>
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="70dp">
-        <TextView
-            android:id="@+id/ReportDetails_HeadacheTV"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:fontFamily="monospace"
-            android:text="Status"
-            android:textSize="14sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp"
-        >
-
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@mipmap/cough" />
-
-        <TextView
-            android:id="@+id/Coughing"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="monospace"
-            android:text="Coughing:"
-            android:layout_weight="0.5"
-            android:textSize="14sp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="70dp">
-        <TextView
-            android:id="@+id/ReportDetails_CoughingTV"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:fontFamily="monospace"
-            android:text="Status"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp"
-                >
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@mipmap/fever" />
-
-                <TextView
-                    android:id="@+id/Fever"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="monospace"
-                    android:text="Fever:"
-                    android:layout_weight="0.5"
-                    android:textSize="14sp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="70dp">
-                <TextView
-                    android:id="@+id/ReportDetails_FeverTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:fontFamily="monospace"
-                    android:text="Status"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp"
-                >
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@mipmap/nauseousss" />
-
-                <TextView
-                    android:id="@+id/Nauseous"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="monospace"
-                    android:text="Nauseous:"
-                    android:layout_weight="0.5"
-                    android:textSize="14sp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="70dp">
-                <TextView
-                    android:id="@+id/ReportDetails_NauseousTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:fontFamily="monospace"
-                    android:text="Status"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp"
-                >
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@mipmap/painn" />
-
-                <TextView
-                    android:id="@+id/pain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="monospace"
-                    android:text="Pain:"
-                    android:layout_weight="0.5"
-                    android:textSize="14sp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="70dp">
-                <TextView
-                    android:id="@+id/ReportDetails_PainTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:fontFamily="monospace"
-                    android:text="Status"
-                    android:textSize="14sp" />
-                <TextView
-                    android:id="@+id/ReportDetails_PainLocationTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:fontFamily="monospace"
-                    android:text="Location"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp"
-                >
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@mipmap/message" />
-
-                <TextView
-                    android:id="@+id/Comments"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="monospace"
-                    android:text="Comments:"
-                    android:layout_weight="0.5"
-                    android:textSize="14sp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="70dp">
-                <TextView
-                    android:id="@+id/ReportDetails_CommentsTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:fontFamily="monospace"
-                    android:text="Status"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
