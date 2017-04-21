@@ -32,12 +32,12 @@
         android:id="@+id/MyReport_Headache"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/MyReport_Docimg"
-        android:layout_alignStart="@+id/MyReport_Docimg"
-        android:layout_below="@+id/MyReport_Docimg"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="25dp"
-        android:text="@string/SendReport_Headache" />
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:text="@string/SendReport_Headache"
+        android:layout_alignBottom="@+id/MyReport_Docimg"
+        android:layout_toRightOf="@+id/MyReport_Docimg"
+        android:layout_toEndOf="@+id/MyReport_Docimg" />
 
     <TextView
         android:id="@+id/MyReports_HeadacheTV"
@@ -55,9 +55,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/SendReport_HeartBeat"
-        android:layout_above="@+id/MyReports_HeadacheTV"
-        android:layout_toRightOf="@+id/MyRerports_DocName"
-        android:layout_toEndOf="@+id/MyRerports_DocName" />
+        android:layout_above="@+id/MyReport_Headache"
+        android:layout_alignLeft="@+id/MyReport_HeartTV"
+        android:layout_alignStart="@+id/MyReport_HeartTV" />
 
     <TextView
         android:id="@+id/MyReport_HeartTV"
