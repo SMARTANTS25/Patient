@@ -1,357 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.pifss.patient.SendReportPage2"
-    android:weightSum="1">
-
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/MyReport_Docimg"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@mipmap/doctor" />
 
         <TextView
+            android:id="@+id/MyRerports_DocName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text="@string/SendReport_HeartBeat" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="78dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@mipmap/heartlogo"
-
-                />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <RadioButton
-                    android:id="@+id/ReportHeartBeatsRateHigh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/SendReport_High"
-                    android:layout_weight="0.37" />
-
-                <RadioButton
-                    android:id="@+id/ReportHeartBeatsRateModerate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.16"
-                    android:text="@string/SendReport_Moderate" />
-
-                <RadioButton
-                    android:id="@+id/ReportHeartBeatsRateLow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.37"
-                    android:text="@string/SendReport_Low" />
-            </RadioGroup>
-        </LinearLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="monospace"
+            android:text="Mohammad Aziz Mohammad"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:weightSum="1">
 
         <TextView
-            android:id="@+id/SendReport_BloodPressure"
+            android:id="@+id/DoctorItemList_DoctorSpecialtyTV"
+            android:layout_marginLeft="90dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/SendReport_BloodPressure" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="78dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@mipmap/bpiconnn"
-                />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <RadioButton
-                    android:id="@+id/ReportBloodPressureHigh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/SendReport_High"
-                    android:layout_weight="0.37" />
-
-                <RadioButton
-                    android:id="@+id/ReportBloodPressureModerate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/SendReport_Moderate"
-                    android:layout_weight="0.16" />
-
-                <RadioButton
-                    android:id="@+id/ReportBloodPressureLow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_weight="0.37"
-                    android:text="@string/SendReport_Low" />
-            </RadioGroup>
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
-
+            android:layout_height="match_parent"
+            android:text="Headache"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            />
         <TextView
-            android:id="@+id/SendReport_SugarLevel"
+            android:id="@+id/DoctorItemList_DoctorGenderTV"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/SendReport_SugarLevel" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="78dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@mipmap/finger"
-                />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <RadioButton
-                    android:id="@+id/ReportSugarLevelHigh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.37"
-                    android:text="@string/SendReport_High" />
-
-                <RadioButton
-                    android:id="@+id/ReportSugarLevelModerate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.16"
-                    android:text="@string/SendReport_Moderate" />
-
-                <RadioButton
-                    android:id="@+id/ReportSugarLevelLow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.37"
-                    android:text="@string/SendReport_Low" />
-
-
-            </RadioGroup>
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="monospace"
+            android:text="Heartbeat Rate"
+            android:textSize="14sp"
+            />
     </LinearLayout>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-       >
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar7"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
+        android:orientation="horizontal"
+        android:weightSum="1">
 
-        />
         <TextView
+            android:id="@+id/MyReports_HeadacheTV"
+            android:layout_marginLeft="90dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text="@string/SendReport_Fever" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="78dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@mipmap/fever"
-                />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <RadioButton
-                    android:id="@+id/ReportFeverNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/SendReport_No" />
-
-                <RadioButton
-                    android:id="@+id/ReportFeverYes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/SendReport_Yes" />
-            </RadioGroup>
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
-
+            android:layout_height="match_parent"
+            android:text="HeadacheR"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            />
         <TextView
-            android:id="@+id/SendReport_Nauseous"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/SendReport_Nauseous"
-          />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="78dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@mipmap/nauseousss"
-                />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-
-                <RadioButton
-                    android:id="@+id/ReportNauseousNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/SendReport_No" />
-
-                <RadioButton
-                    android:id="@+id/ReportNauseousYes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/SendReport_Yes" />
-
-            </RadioGroup>
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/SendReport_Coughing"
+            android:id="@+id/MyReport_HeartTV"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/SendReport_Coughing" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="monospace"
+            android:text="Heartbeat RateR"
+            android:textSize="14sp"
+            />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView17"
-                android:layout_width="78dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@mipmap/cough" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/ReportCoughingNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/SendReport_No" />
-
-                <RadioButton
-                    android:id="@+id/ReportCoughingYes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/SendReport_Yes" />
-            </RadioGroup>
-        </LinearLayout>
     </LinearLayout>
 
-
-    <TextView
-        android:id="@+id/SendReport_Comments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:text="@string/SendReport_Comments"
-      />
-
-    <EditText
-        android:id="@+id/SendReport_CommentsEText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_marginBottom="23dp"
-        android:inputType="textPersonName"
-        android:layout_weight="0.10" />
-
-    <Button
-        android:id="@+id/SendReport_SubmitButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/Buttons"
-        android:text="@string/SendReport_Submit"
-        android:textColor="@color/material_drawer_dark_header_selection_text" />
 </LinearLayout>

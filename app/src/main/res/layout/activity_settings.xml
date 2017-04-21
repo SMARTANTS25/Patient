@@ -12,9 +12,9 @@
         android:layout_height="150dp"
 
         android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/heartlogo"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/settingsToolbar"
+        app:srcCompat="@mipmap/big_flag_icon"
+        android:layout_marginTop="69dp"
+        android:layout_below="@+id/textViewSettingLanguageTitle"
         android:layout_centerHorizontal="true" />
 
     <android.support.v7.widget.Toolbar
@@ -33,36 +33,35 @@
         android:id="@+id/textViewSettingLanguageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Settings_Language"
+        android:layout_below="@+id/settingsToolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
         android:fontFamily="monospace"
-        android:textSize="20dp"
-        android:layout_marginTop="43dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/imageView40"
-        android:layout_centerHorizontal="true" />
+        android:text="Choose language"
+        android:textAlignment="center"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/Sitting_English"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
         android:text="@string/Settings_LanguageEng"
-        android:layout_below="@+id/textViewSettingLanguageTitle"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_alignBaseline="@+id/Sitting_Arb"
+        android:layout_alignBottom="@+id/Sitting_Arb"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="63dp"
-        android:layout_marginStart="63dp"
-        android:background="#ffffff"/>
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/Sitting_Arb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/Sitting_English"
-        android:layout_marginEnd="71dp"
-        android:layout_marginRight="71dp"
         android:text="@string/Settings_LanguageArb"
-        android:background="#ffffff"/>
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="73dp"
+        android:layout_below="@+id/imageView40"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
