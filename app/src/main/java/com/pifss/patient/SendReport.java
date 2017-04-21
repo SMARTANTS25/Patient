@@ -75,7 +75,7 @@ public class SendReport extends AppCompatActivity {
 //        }
 
         final int DocId = getIntent().getIntExtra("DocId",0);
-        Toast.makeText(this, DocId+"  weeeeeeeeee", Toast.LENGTH_SHORT).show();
+    //    Toast.makeText(this, DocId+"  weeeeeeeeee", Toast.LENGTH_SHORT).show();
        // int Docidds  = DocId;
         String url = "http://34.196.107.188:8081/MhealthWeb/webresources/doctor/"+DocId;
 
@@ -96,7 +96,7 @@ progressDialog.hide();
                              imgurl = obj.getString("imageUrl");
 
                             DocName.setText(docName);
-                            Toast.makeText(SendReport.this, docName+"", Toast.LENGTH_SHORT).show();
+                         //   Toast.makeText(SendReport.this, docName+"", Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -114,7 +114,7 @@ progressDialog.hide();
                 });
 
         if (!isNetworkAvailable()){
-            Toast.makeText(SendReport.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+            Toast.makeText(SendReport.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
 
 

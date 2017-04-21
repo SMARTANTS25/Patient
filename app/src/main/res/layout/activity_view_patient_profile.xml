@@ -304,18 +304,17 @@
                     android:text="67733009"
                     android:textSize="14sp" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/ViewPatientProfile_medicalInfoViewButton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/Buttons"
+                android:fontFamily="monospace"
+                android:text="@string/PatientProfile_MedicalInfo"
+                android:textColor="@color/md_white_1000"
+                android:textSize="14dp" />
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/ViewPatientProfile_medicalInfoViewButton"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:fontFamily="monospace"
-        android:textSize="14dp"
-        android:textColor="@color/md_white_1000"
-        android:background="@color/Buttons"
-        android:text="@string/PatientProfile_MedicalInfo"
-        />
 
 </LinearLayout>
