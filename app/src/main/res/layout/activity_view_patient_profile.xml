@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
     tools:context="com.pifss.patient.ViewPatientProfile">
 
     <android.support.v7.widget.Toolbar
@@ -18,214 +20,301 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <ImageView
-        android:id="@+id/ViewPatientProfile_PatientImage"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/ViewPatientProfile_PatientNameTV"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    <TextView
-        android:id="@+id/ViewPatientProfile_PatientNameTV"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="18dp"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/myToolbar"
-        android:layout_toRightOf="@+id/Reg2_CivilIdTitle"
-        android:layout_toEndOf="@+id/Reg2_CivilIdTitle" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-    <Button
-        android:id="@+id/ViewPatientProfile_editPersonalInfoButton"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:background="@color/Buttons"
-        android:fontFamily="monospace"
-        android:text="@string/PatientProfile_EditProfile"
-        android:textColor="@color/md_white_1000"
-        android:textSize="14dp"
-        android:layout_alignBottom="@+id/ViewPatientProfile_PatientImage"
-        android:layout_toRightOf="@+id/Reg2_FirstNameTitle"
-        android:layout_toEndOf="@+id/Reg2_FirstNameTitle" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    >
+                    <ImageView
+                        android:id="@+id/MyReport_Docimg"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="20dp"
+                        app:srcCompat="@mipmap/patiet2" />
+
+                    <TextView
+                        android:id="@+id/textViewEditImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text=" Edit " />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/ViewPatientProfile_PatientNameTV"
+                        android:layout_width="175dp"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="20dp"
+                        />
+                    <Button
+                        android:id="@+id/ViewPatientProfile_editPersonalInfoButton"
+                        android:layout_width="209dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@color/Buttons"
+                        android:fontFamily="monospace"
+                        android:text="@string/PatientProfile_EditProfile"
+                        android:textColor="@color/md_white_1000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/Reg2_FirstNameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/RegGender_RadioButton"
-        android:textSize="18dp"
-        android:layout_alignTop="@+id/imageView36"
-        android:layout_toRightOf="@+id/imageView36"
-        android:layout_toEndOf="@+id/imageView36" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/ViewPatientProfile_GenderVT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/MaleReg_RadioButton"
-        android:textSize="18sp"
-        android:layout_below="@+id/Reg2_FirstNameTitle"
-        android:layout_alignRight="@+id/ViewPatientProfile_EmailTitle"
-        android:layout_alignEnd="@+id/ViewPatientProfile_EmailTitle" />
 
-    <TextView
-        android:id="@+id/Reg2_CivilIdTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg2_BirthDate"
-        android:textSize="18dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/ViewPatientProfile_GenderVT"
-        android:layout_toRightOf="@+id/imageView37"
-        android:layout_toEndOf="@+id/imageView37" />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="20dp"
+                android:background="@android:color/darker_gray"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                />
 
-    <TextView
-        android:id="@+id/ViewPatientProfile_BirthDateVT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="14/2/2012"
-        android:textSize="18dp"
-        android:layout_below="@+id/Reg2_CivilIdTitle"
-        android:layout_toRightOf="@+id/imageView37" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                >
 
-    <TextView
-        android:id="@+id/ViewPatientProfile_EmailTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:text="@string/textView_DocEmail"
-        android:layout_below="@+id/ViewPatientProfile_BirthDateVT"
-        android:layout_alignLeft="@+id/ViewPatientProfile_BirthDateVT"
-        android:layout_alignStart="@+id/ViewPatientProfile_BirthDateVT"
-        android:layout_marginTop="14dp" />
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/email_2"
+                    />
 
-    <TextView
-        android:id="@+id/ViewPatientProfile_emailVT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test@gmail.com"
-        android:textSize="20dp"
-        android:layout_below="@+id/ViewPatientProfile_EmailTitle"
-        android:layout_toRightOf="@+id/imageView38"
-        android:layout_toEndOf="@+id/imageView38" />
+                <TextView
+                    android:id="@+id/Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Email:"
+                    android:textSize="14sp"
+                    android:layout_weight="0.12"/>
 
-    <TextView
-        android:id="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg2_Phone"
-        android:textSize="18dp"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/ViewPatientProfile_emailVT"
-        android:layout_alignLeft="@+id/ViewPatientProfile_EmailTitle"
-        android:layout_alignStart="@+id/ViewPatientProfile_EmailTitle" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/ViewPatientProfile_phoneVT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:text="66666666"
-        android:layout_below="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_alignLeft="@+id/ViewPatientProfile_EmergencyPhoneTitle"
-        android:layout_alignStart="@+id/ViewPatientProfile_EmergencyPhoneTitle" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
 
-    <TextView
-        android:id="@+id/ViewPatientProfile_EmergencyPhoneTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
+                <TextView
+                    android:id="@+id/ViewPatientProfile_emailVT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Example@gmail.com"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
-        android:text="@string/Reg2_EmergencyPhone"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/ViewPatientProfile_phoneVT"
-        android:layout_alignRight="@+id/ViewPatientProfile_emailVT"
-        android:layout_alignEnd="@+id/ViewPatientProfile_emailVT" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                >
 
-    <TextView
-        android:id="@+id/ViewPatientProfile_emergencyNumberTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="77777777"
-        android:textSize="18dp"
-        android:layout_below="@+id/ViewPatientProfile_EmergencyPhoneTitle"
-        android:layout_toRightOf="@+id/imageView41"
-        android:layout_toEndOf="@+id/imageView41" />
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/gendersss"
+                    />
+
+                <TextView
+                    android:id="@+id/diabetes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Gender:"
+                    android:layout_weight="0.2"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+
+                <TextView
+                    android:id="@+id/ViewPatientProfile_GenderVT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Gender"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/bday"
+                    />
+
+                <TextView
+                    android:id="@+id/asthma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Birthdate:"
+                    android:layout_weight="0.28"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+
+                <TextView
+                    android:id="@+id/ViewPatientProfile_BirthDateVT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="15/11/1992"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/telephone" />
+
+                <TextView
+                    android:id="@+id/Allergies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Phone Number:"
+                    android:layout_weight="0.2"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+
+                <TextView
+                    android:id="@+id/ViewPatientProfile_phoneVT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="67700009"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+
+                >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/telephone" />
+
+                <TextView
+                    android:id="@+id/medication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Emergency phone number:"
+                    android:textSize="14sp"
+                    android:layout_weight="0.2"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp"
+                android:layout_marginBottom="15dp"
+                >
+
+                <TextView
+                    android:id="@+id/ViewPatientProfile_emergencyNumberTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="67733009"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/ViewPatientProfile_medicalInfoViewButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:fontFamily="monospace"
         android:textSize="14dp"
         android:textColor="@color/md_white_1000"
         android:background="@color/Buttons"
         android:text="@string/PatientProfile_MedicalInfo"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        />
 
-    <ImageView
-        android:id="@+id/imageView36"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/gender_icon"
-        android:layout_marginTop="22dp"
-        android:layout_below="@+id/ViewPatientProfile_PatientImage"
-        android:layout_toLeftOf="@+id/ViewPatientProfile_phoneVT"
-        android:layout_toStartOf="@+id/ViewPatientProfile_phoneVT" />
-
-    <ImageView
-        android:id="@+id/imageView37"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/calender"
-        android:layout_alignTop="@+id/Reg2_CivilIdTitle"
-        android:layout_alignLeft="@+id/imageView38"
-        android:layout_alignStart="@+id/imageView38" />
-
-    <ImageView
-        android:id="@+id/imageView38"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/email"
-        android:layout_alignBottom="@+id/ViewPatientProfile_EmailTitle"
-        android:layout_alignLeft="@+id/ViewPatientProfile_PatientImage"
-        android:layout_alignStart="@+id/ViewPatientProfile_PatientImage" />
-
-    <ImageView
-        android:id="@+id/imageView39"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/phone_icon"
-        android:layout_alignBottom="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_toLeftOf="@+id/editPatientProfile_BirthDateTitle"
-        android:layout_toStartOf="@+id/editPatientProfile_BirthDateTitle" />
-
-    <ImageView
-        android:id="@+id/imageView41"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/emergencynum"
-        android:layout_alignBottom="@+id/ViewPatientProfile_EmergencyPhoneTitle"
-        android:layout_toLeftOf="@+id/ViewPatientProfile_EmergencyPhoneTitle"
-        android:layout_toStartOf="@+id/ViewPatientProfile_EmergencyPhoneTitle" />
-
-    <TextView
-        android:id="@+id/textViewEditImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView36"
-        android:layout_alignStart="@+id/imageView36"
-        android:layout_below="@+id/ViewPatientProfile_PatientImage"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:text=" Edit " />
-
-
-</RelativeLayout>
+</LinearLayout>
