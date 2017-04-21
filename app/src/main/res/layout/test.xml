@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.pifss.patient.SendReportPage2">
+    tools:context="com.pifss.patient.SendReportPage2"
+    android:weightSum="1">
 
 
     <LinearLayout
@@ -312,8 +313,8 @@
                 android:id="@+id/radioGroup3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/ReportCoughingNo"
@@ -326,7 +327,6 @@
                     android:id="@+id/ReportCoughingYes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
                     android:layout_weight="1"
                     android:text="@string/SendReport_Yes" />
             </RadioGroup>
@@ -347,13 +347,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:layout_marginBottom="23dp"
+        android:inputType="textPersonName"
+        android:layout_weight="0.10" />
 
     <Button
         android:id="@+id/SendReport_SubmitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/SendReport_Submit" />
+        android:background="@color/Buttons"
+        android:text="@string/SendReport_Submit"
+        android:textColor="@color/material_drawer_dark_header_selection_text" />
 
 
     <!--<LinearLayout-->
