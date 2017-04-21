@@ -118,6 +118,7 @@
     <string name="MyReport_HavePain">Have Pain</string>
     <string name="MyReportNoPain">No Pain</string>
     <string name="NewDoctor_Request">the Request is sent</string>
+
     <string name="Connecting">Connecting...</string>
     <string name="WrongUsername">Email or Password is wrong!</string>
     <string name="NoInternetConnection">you do not have Internet Connection!</string>
@@ -131,4 +132,7 @@
     <string name="Yes">Yes</string>
     <string name="No">No</string>
     <string name="Settings_ChooseLang">Choose Language</string>
+    <string name="nauseous_No">No</string>
+    <string name="nauseous_Yes">Yes</string>
+    <string name="EditPic">Edit picture</string>
 </resources>

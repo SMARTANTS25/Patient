@@ -161,7 +161,8 @@ public class MyReports extends AppCompatActivity {
                 intent.putExtra("patientId",reports.getPatientId());
                 intent.putExtra("drComment",reports.getDrcomment());
                 intent.putExtra("date",reports.getTimestamp());
-                Toast.makeText(MyReports.this, reports.getPainlocation()+" "+reports.getDizziness(), Toast.LENGTH_SHORT).show();
+                intent.putExtra("drImg",reports.getImageUrl());
+               // Toast.makeText(MyReports.this, reports.getPainlocation()+" "+reports.getDizziness(), Toast.LENGTH_SHORT).show();
                 startActivity(intent);
 
             }

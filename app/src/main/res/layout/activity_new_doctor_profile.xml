@@ -33,8 +33,9 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             app:srcCompat="@mipmap/doctor" />
+
         <TextView
-            android:id="@+id/MyDoctorProfile_doctorNameTV"
+            android:id="@+id/NewDoctorProfile_DoctorNameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/NewDoctorProfile_DoctorLogo"

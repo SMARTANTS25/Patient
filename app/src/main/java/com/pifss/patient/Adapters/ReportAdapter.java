@@ -95,9 +95,17 @@ public class ReportAdapter extends BaseAdapter {
 //                });
 
      //   queue.add(jsonReq);
-        
-        heart.setText(reports.getHeartbeatRate());
-        Headache.setText(reports.getHeadache());
+
+        if (reports.getHeartbeatRate().equals("no"))
+        heart.setText(R.string.nauseous_No);
+        else heart.setText(R.string.nauseous_Yes);
+
+        if (reports.getHeadache().equals("high"))
+        Headache.setText(R.string.SendReport_High);
+        else if (reports.getHeadache().equals("moderate"))
+            Headache.setText(R.string.SendReport_Moderate);
+        else Headache.setText(R.string.SendReport_Low);
+
 
         return view;
     }

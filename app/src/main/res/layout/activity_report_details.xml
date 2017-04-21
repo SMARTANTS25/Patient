@@ -36,6 +36,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/ReportDetails_DrImg"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
                     app:srcCompat="@mipmap/doctor" />
@@ -45,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Doctor name:"
+                    android:text="@string/textView_DocName"
                     android:layout_weight="0.5"
                     android:textSize="14sp"
                     />
@@ -85,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Blood Pressure:"
+                    android:text="@string/SendReport_BloodPressure"
                     android:textSize="14sp"
                     android:layout_weight="0.12"/>
 
@@ -123,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Heartbeat rate:"
+                    android:text="@string/SendReport_HeartBeat"
                     android:layout_weight="0.5"
                     android:textSize="14sp"
                     />
@@ -163,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Sugar level:"
+                    android:text="@string/SendReport_SugarLevel"
                     android:layout_weight="0.2"
                     android:textSize="14sp"
                     />
@@ -203,7 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Headache:"
+                    android:text="@string/SendReport_Headache"
                     android:layout_weight="0.28"
                     android:textSize="14sp" />
 
@@ -242,7 +243,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Coughing:"
+                    android:text="@string/SendReport_Coughing"
                     android:layout_weight="0.5"
                     android:textSize="14sp"
                     />
@@ -280,7 +281,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Fever:"
+                    android:text="@string/SendReport_Fever"
                     android:layout_weight="0.5"
                     android:textSize="14sp"
                     />
@@ -318,7 +319,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Nauseous:"
+                    android:text="@string/SendReport_Nauseous"
                     android:layout_weight="0.5"
                     android:textSize="14sp"
                     />
@@ -357,7 +358,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Pain:"
+                    android:text="@string/SendReport_Pain"
                     android:layout_weight="0.5"
                     android:textSize="14sp"
                     />
@@ -404,7 +405,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    android:text="Comments:"
+                    android:text="@string/SendReport_Comments"
                     android:layout_weight="0.5"
                     android:textSize="14sp"
                     />

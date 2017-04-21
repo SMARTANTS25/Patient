@@ -90,7 +90,7 @@
         android:layout_marginLeft="70dp">
 
         <TextView
-            android:id="@+id/MyReports_HeadacheTV"
+            android:id="@+id/ViewMedicalInfo_bloodTypeTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"

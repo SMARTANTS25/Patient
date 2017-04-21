@@ -144,5 +144,8 @@
     <string name="No">لا</string>
     <string name="Sittings_language"></string>
     <string name="Settings_ChooseLang">أختار اللغة</string>
+    <string name="nauseous_No">لا</string>
+    <string name="nauseous_Yes">نعم</string>
+    <string name="EditPic">تحرير الصورة</string>
 </resources>
 
