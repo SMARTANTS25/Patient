@@ -77,7 +77,7 @@
             <ImageView
                 android:layout_width="78dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@mipmap/fever"
+                app:srcCompat="@mipmap/heartlogo"
 
                 />
 
@@ -134,7 +134,7 @@
             <ImageView
                 android:layout_width="78dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@mipmap/fever"
+                app:srcCompat="@mipmap/nauseousss"
                 />
 
             <RadioGroup
@@ -186,7 +186,7 @@
             <ImageView
                 android:layout_width="78dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@mipmap/fever"
+                app:srcCompat="@mipmap/bpiconnn"
                 />
 
             <RadioGroup
@@ -199,7 +199,6 @@
                     android:id="@+id/ReportBloodPressureHigh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:text="@string/SendReport_High"
                     android:layout_weight="0.55" />
 
@@ -233,7 +232,7 @@
             android:id="@+id/SendReport_SugarLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/SendReport_BloodPressure" />
+            android:text="@string/SendReport_SugarLevel" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -243,7 +242,7 @@
             <ImageView
                 android:layout_width="78dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@mipmap/fever"
+                app:srcCompat="@mipmap/finger"
                 />
 
             <RadioGroup
@@ -294,7 +293,7 @@
 
         <TextView
             android:id="@+id/SendReport_Coughing"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/SendReport_Coughing" />
 
@@ -307,12 +306,12 @@
                 android:id="@+id/imageView17"
                 android:layout_width="78dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@mipmap/fever" />
+                app:srcCompat="@mipmap/cough" />
 
             <RadioGroup
                 android:id="@+id/radioGroup3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_weight="1">
 
@@ -339,8 +338,6 @@
         android:id="@+id/SendReport_Comments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp"
         android:text="@string/SendReport_Comments" />
@@ -349,11 +346,6 @@
         android:id="@+id/SendReport_CommentsEText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/SendReport_SubmitButton"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -361,9 +353,6 @@
         android:id="@+id/SendReport_SubmitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/SendReport_Comments"
-        android:layout_toRightOf="@+id/SendReport_Comments"
         android:text="@string/SendReport_Submit" />
 
 
