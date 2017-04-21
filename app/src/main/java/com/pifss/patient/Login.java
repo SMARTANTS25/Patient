@@ -181,7 +181,7 @@ public class Login extends AppCompatActivity {
 
                         }else{
                             config.locale = new Locale("en");
-                            Toast.makeText(Login.this, getSharedPreferences("sittings1",MODE_PRIVATE).getString("language1","wee")+"" , Toast.LENGTH_SHORT).show();
+                       //     Toast.makeText(Login.this, getSharedPreferences("sittings1",MODE_PRIVATE).getString("language1","wee")+"" , Toast.LENGTH_SHORT).show();
                             getResources().updateConfiguration(config, getResources().getDisplayMetrics());
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             finish();
@@ -195,7 +195,7 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(Login.this, ""+R.string.WrongUsername , Toast.LENGTH_LONG).show();
                     }
 
-                    
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
