@@ -423,10 +423,8 @@
                     android:fontFamily="monospace"
                     android:text="Status"
                     android:textSize="14sp" />
-
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
