@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
     tools:context="com.pifss.patient.NewDoctorProfile">
-
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/myToolbar"
@@ -18,148 +19,212 @@
         android:background="@color/Buttons">
 
     </android.support.v7.widget.Toolbar>
-
-    <ImageView
-        android:id="@+id/NewDoctorProfile_DoctorLogo"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="73dp"
-        app:srcCompat="@mipmap/doctor"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorNameTitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/textView_DocName"
-        android:layout_alignTop="@+id/NewDoctorProfile_DoctorLogo"
-        android:layout_toRightOf="@+id/NewDoctorProfile_DoctorLogo"
-        android:layout_toEndOf="@+id/NewDoctorProfile_DoctorLogo"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:textSize="18sp"
-        android:fontFamily="monospace"/>
+        android:orientation="horizontal"
+        android:weightSum="1">
 
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorNameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorNameTitle"
-        android:layout_alignStart="@+id/NewDoctorProfile_DoctorNameTitle"
-        android:layout_below="@+id/NewDoctorProfile_DoctorNameTitle"
-        android:layout_marginTop="12dp"
-        android:fontFamily="monospace"
-        android:text="                     "
-        android:textSize="14sp" />
+        <ImageView
+            android:id="@+id/NewDoctorProfile_DoctorLogo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@mipmap/doctor" />
+        <TextView
+            android:id="@+id/MyDoctorProfile_doctorNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/NewDoctorProfile_DoctorLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="monospace"
+            android:text="Entisar AlAdwani"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorSpecilityTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
-        android:text="@string/textView_DocSpeciality"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/NewDoctorProfile_DoctorLogo"
-        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorLogo"
-        android:layout_alignStart="@+id/NewDoctorProfile_DoctorLogo"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp" />
 
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorSpecialityTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/NewDoctorProfile_DoctorSpecilityTitle"
-        android:layout_toRightOf="@+id/NewDoctorProfile_DoctorCvTitle"
-        android:layout_toEndOf="@+id/NewDoctorProfile_DoctorCvTitle" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorEmailTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textView_DocEmail"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/NewDoctorProfile_DoctorSpecialityTV"
-        android:layout_toLeftOf="@+id/NewDoctorProfile_DoctorNameTV"
-        android:layout_toStartOf="@+id/NewDoctorProfile_DoctorNameTV"
-        android:layout_marginTop="18dp" />
 
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorEmailTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/imageView44"
-        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorSpecialityTV"
-        android:layout_alignStart="@+id/NewDoctorProfile_DoctorSpecialityTV" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:background="@android:color/darker_gray"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        />
 
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorNationalityTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/textView_DocNationality"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/NewDoctorProfile_DoctorEmailTV"
-        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorEmailTitle"
-        android:layout_alignStart="@+id/NewDoctorProfile_DoctorEmailTitle" />
-
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorNationalityTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/imageView45"
-        android:layout_toRightOf="@+id/NewDoctorProfile_DoctorCvTitle"
-        android:layout_toEndOf="@+id/NewDoctorProfile_DoctorCvTitle" />
-
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorCvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorNationalityTitle"
-        android:layout_alignStart="@+id/NewDoctorProfile_DoctorNationalityTitle"
-        android:layout_below="@+id/NewDoctorProfile_DoctorNationalityTV"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
         android:layout_marginTop="20dp"
-        android:text="@string/textView_DocCV"
-        android:textSize="18sp"
-        android:fontFamily="monospace"/>
+        >
 
-    <TextView
-        android:id="@+id/NewDoctorProfile_DoctorCvTV"
-        android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/spacialty"
+            />
+
+        <TextView
+            android:id="@+id/Specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="Specilty:"
+            android:textSize="14sp"
+            android:layout_weight="0.12"         />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView46"
-        android:layout_toEndOf="@+id/NewDoctorProfile_DoctorCvTitle"
-        android:layout_toRightOf="@+id/NewDoctorProfile_DoctorCvTitle"
-        android:fontFamily="monospace"
-        android:text="TextView"
-        android:textSize="14sp" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="70dp">
+
+        <TextView
+            android:id="@+id/NewDoctorProfile_DoctorSpecialityTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="Eye"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/email_2"
+            />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="Email:"
+            android:layout_weight="0.2"
+            android:textSize="14sp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="70dp">
+        <TextView
+            android:id="@+id/NewDoctorProfile_DoctorEmailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="example@gmail.com"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/flag"
+            />
+
+        <TextView
+            android:id="@+id/Nationality"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="Nationality:"
+            android:layout_weight="0.28"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="70dp">
+        <TextView
+            android:id="@+id/NewDoctorProfile_DoctorNationalityTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="Kuwaiti"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/analytics" />
+
+        <TextView
+            android:id="@+id/CV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="CV:"
+            android:layout_weight="0.5"
+            android:textSize="14sp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="70dp">
+        <TextView
+            android:id="@+id/NewDoctorProfile_DoctorCvTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="Link"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/NewDoctorProfile_SendRequestButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
         android:text="@string/buttonSend_DoctorRequest"
@@ -168,41 +233,5 @@
 
         />
 
-    <ImageView
-        android:id="@+id/imageView43"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/stethoscope"
-        android:layout_above="@+id/NewDoctorProfile_DoctorSpecialityTV"
-        android:layout_alignLeft="@+id/NewDoctorProfile_DoctorLogo"
-        android:layout_alignStart="@+id/NewDoctorProfile_DoctorLogo" />
 
-    <ImageView
-        android:id="@+id/imageView44"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/email"
-        android:layout_alignTop="@+id/NewDoctorProfile_DoctorEmailTitle"
-        android:layout_alignLeft="@+id/imageView43"
-        android:layout_alignStart="@+id/imageView43" />
-
-    <ImageView
-        android:id="@+id/imageView45"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignEnd="@+id/imageView44"
-        android:layout_alignRight="@+id/imageView44"
-        android:layout_alignTop="@+id/NewDoctorProfile_DoctorNationalityTitle"
-        app:srcCompat="@mipmap/big_flag_icon" />
-
-    <ImageView
-        android:id="@+id/imageView46"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignLeft="@+id/imageView45"
-        android:layout_alignStart="@+id/imageView45"
-        android:layout_alignTop="@+id/NewDoctorProfile_DoctorCvTitle"
-        app:srcCompat="@mipmap/medical_report_icon" />
-
-
-</RelativeLayout>
+</LinearLayout>

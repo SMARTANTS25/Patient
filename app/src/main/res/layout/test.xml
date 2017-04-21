@@ -7,66 +7,46 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/myToolbar"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Buttons">
+
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1"
-            >
         <ImageView
-            android:id="@+id/MyReport_Docimg"
+            android:id="@+id/MyDoctorProfile_doctorImage"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_marginLeft="15dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="40dp"
-            app:srcCompat="@mipmap/patiet2" />
-
-            <TextView
-                android:id="@+id/textViewEditImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:text=" Edit " />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1"
-            >
+            android:layout_marginTop="15dp"
+            app:srcCompat="@mipmap/doctor" />
 
         <TextView
-            android:id="@+id/ViewPatientProfile_PatientNameTV"
-            android:layout_width="175dp"
+            android:id="@+id/MyDoctorProfile_doctorNameTV"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="20dp"
+            android:layout_alignTop="@+id/NewDoctorProfile_DoctorLogo"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
-         />
-            <Button
-                android:id="@+id/ViewPatientProfile_editPersonalInfoButton"
-                android:layout_width="209dp"
-                android:layout_height="27dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="40dp"
-                android:background="@color/Buttons"
-                android:fontFamily="monospace"
-                android:text="@string/PatientProfile_EditProfile"
-                android:textColor="@color/md_white_1000"
-                android:textSize="14sp" />
-
-        </LinearLayout>
+            android:fontFamily="monospace"
+            android:text="Entisar AlAdwani"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -86,27 +66,25 @@
         android:layout_width="match_parent"
         android:layout_height="31dp"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         >
 
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
-        app:srcCompat="@mipmap/email_2"
-        />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/spacialty"
+            />
 
-    <TextView
-        android:id="@+id/Email"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:fontFamily="monospace"
-        android:text="Email:"
-        android:textSize="14sp"
-        android:layout_weight="0.12"         />
-
+        <TextView
+            android:id="@+id/Specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="Specilty:"
+            android:textSize="14sp"
+            android:layout_weight="0.12"         />
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -114,14 +92,15 @@
         android:layout_marginLeft="70dp">
 
         <TextView
-            android:id="@+id/ViewPatientProfile_emailVT"
+            android:id="@+id/MyDoctorProfile_doctorSpecialtyTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="Example@gmail.com"
+            android:text="Eye"
             android:textSize="14sp" />
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -133,18 +112,20 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@mipmap/gendersss"
-         />
+            app:srcCompat="@mipmap/email_2"
+            />
 
         <TextView
-            android:id="@+id/diabetes"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Gender:"
+            android:text="Email:"
             android:layout_weight="0.2"
             android:textSize="14sp"
             />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -152,14 +133,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="70dp">
-
         <TextView
-            android:id="@+id/ViewPatientProfile_GenderVT"
+            android:id="@+id/MyDoctorProfile_doctorEmailTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="Gender"
+            android:text="example@gmail.com"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -172,18 +152,19 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@mipmap/bday"
+            app:srcCompat="@mipmap/flag"
             />
 
         <TextView
-            android:id="@+id/asthma"
+            android:id="@+id/Nationality"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Birthdate:"
+            android:text="Nationality:"
             android:layout_weight="0.28"
             android:textSize="14sp" />
 
+
     </LinearLayout>
 
     <LinearLayout
@@ -191,17 +172,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="70dp">
-
         <TextView
-            android:id="@+id/ViewPatientProfile_BirthDateVT"
+            android:id="@+id/MyDoctorProfile_NationalityTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="15/11/1992"
+            android:text="Kuwaiti"
             android:textSize="14sp" />
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -213,17 +192,19 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@mipmap/telephone" />
+            app:srcCompat="@mipmap/analytics" />
 
         <TextView
-            android:id="@+id/Allergies"
+            android:id="@+id/CV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Phone Number:"
-            android:layout_weight="0.2"
+            android:text="CV:"
+            android:layout_weight="0.5"
             android:textSize="14sp"
             />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -231,66 +212,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="70dp">
-
         <TextView
-            android:id="@+id/ViewPatientProfile_phoneVT"
+            android:id="@+id/MyDoctorProfile_doctorCvTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="67700009"
+            android:text="Link"
             android:textSize="14sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp"
-
-        >
-
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@mipmap/telephone" />
-
-        <TextView
-            android:id="@+id/medication"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="monospace"
-            android:text="Emergency phone number:"
-            android:textSize="14sp"
-            android:layout_weight="0.2"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="70dp"
-        android:layout_marginBottom="15dp"
-        >
-
-        <TextView
-            android:id="@+id/ViewPatientProfile_emergencyNumberTV"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:fontFamily="monospace"
-            android:text="67733009"
-            android:textSize="14sp" />
-    </LinearLayout>
     <Button
-        android:id="@+id/ViewPatientProfile_medicalInfoViewButton"
+        android:id="@+id/myDrProfile_sendReportButton"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:fontFamily="monospace"
-        android:textSize="14dp"
-        android:textColor="@color/md_white_1000"
+        android:layout_height="wrap_content"
+   android:layout_marginTop="50dp"
         android:background="@color/Buttons"
-        android:text="@string/PatientProfile_MedicalInfo"
-      />
+        android:fontFamily="monospace"
+        android:text="Send report"
+        android:textColor="@color/md_white_1000"
+        android:textSize="14dp"
+
+        />
+
 
 </LinearLayout>

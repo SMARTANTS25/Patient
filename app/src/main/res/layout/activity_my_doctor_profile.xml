@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
     tools:context="com.pifss.patient.MyDoctorProfile">
 
 
-    <ImageView
-        android:id="@+id/MyDoctorProfile_doctorImage"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="14dp"
-        app:srcCompat="@mipmap/doctor"
-        android:layout_below="@+id/MyDoctorProfile_toolbar"
-        android:layout_alignLeft="@+id/imageView49"
-        android:layout_alignStart="@+id/imageView49" />
-
     <android.support.v7.widget.Toolbar
-        android:id="@+id/MyDoctorProfile_toolbar"
+        android:id="@+id/myToolbar"
         style="@style/AppTheme.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,176 +21,220 @@
 
     </android.support.v7.widget.Toolbar>
 
-
-    <TextView
-        android:id="@+id/MyDoctorProfile_doctorNameTV"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/MyDoctorProfile_doctorImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:fontFamily="monospace"
-        android:text="Doctor name"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/MyDoctorProfile_doctorImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@mipmap/doctor" />
+
+        <TextView
+            android:id="@+id/MyDoctorProfile_doctorNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/NewDoctorProfile_DoctorLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="monospace"
+            android:text="Entisar AlAdwani"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
 
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar7"
-        android:layout_width="281dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_margin="20dp"
         android:background="@android:color/darker_gray"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        android:layout_below="@+id/MyDoctorProfile_doctorNameTV"
-        android:layout_marginBottom="11dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentEnd="true"
-       />
+        />
 
-    <TextView
-        android:id="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/spacialty"
+            />
+
+        <TextView
+            android:id="@+id/Specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="Specilty:"
+            android:textSize="14sp"
+            android:layout_weight="0.12"         />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:text="Speciality:"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_below="@+id/toolbar7"
-        android:layout_toRightOf="@+id/imageView49"
-        android:layout_toEndOf="@+id/imageView49" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="70dp">
 
-    <TextView
-        android:id="@+id/MyDoctorProfile_doctorSpecialtyTV"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/MyDoctorProfile_doctorSpecialtyTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="Eye"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/email_2"
+            />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="Email:"
+            android:layout_weight="0.2"
+            android:textSize="14sp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="16sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/imageView49"
-        android:layout_alignRight="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
-        android:layout_alignEnd="@+id/MyDoctorProfile_DoctorSpecialtyTitle" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="70dp">
+        <TextView
+            android:id="@+id/MyDoctorProfile_doctorEmailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="example@gmail.com"
+            android:textSize="14sp" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/MyDoctorProfile_emailTITLE"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/flag"
+            />
+
+        <TextView
+            android:id="@+id/Nationality"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="Nationality:"
+            android:layout_weight="0.28"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email:"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
-        android:layout_alignStart="@+id/MyDoctorProfile_DoctorSpecialtyTitle" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="70dp">
+        <TextView
+            android:id="@+id/MyDoctorProfile_NationalityTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="Kuwaiti"
+            android:textSize="14sp" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/MyDoctorProfile_doctorEmailTV"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/analytics" />
+
+        <TextView
+            android:id="@+id/CV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:text="CV:"
+            android:layout_weight="0.5"
+            android:textSize="14sp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="16sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/imageView50"
-        android:layout_alignLeft="@+id/MyDoctorProfile_doctorSpecialtyTV"
-        android:layout_alignStart="@+id/MyDoctorProfile_doctorSpecialtyTV" />
-
-    <TextView
-        android:id="@+id/MyDoctorProfile_NationalityTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:text="Nationality:"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/MyDoctorProfile_doctorEmailTV"
-        android:layout_alignLeft="@+id/MyDoctorProfile_emailTITLE"
-        android:layout_alignStart="@+id/MyDoctorProfile_emailTITLE" />
-
-    <TextView
-        android:id="@+id/MyDoctorProfile_NationalityTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/imageView52"
-        android:layout_alignRight="@+id/MyDoctorProfile_doctorEmailTV"
-        android:layout_alignEnd="@+id/MyDoctorProfile_doctorEmailTV" />
-
-    <TextView
-        android:id="@+id/MyDoctorProfile_CvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CV:"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:layout_alignTop="@+id/imageView53"
-        android:layout_alignRight="@+id/MyDoctorProfile_doctorImage"
-        android:layout_alignEnd="@+id/MyDoctorProfile_doctorImage" />
-
-    <TextView
-        android:id="@+id/MyDoctorProfile_doctorCvTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="TextView"
-        android:textSize="14sp"
-        android:layout_marginBottom="41dp"
-        android:layout_above="@+id/myDrProfile_sendReportButton"
-        android:layout_alignRight="@+id/MyDoctorProfile_doctorSpecialtyTV"
-        android:layout_alignEnd="@+id/MyDoctorProfile_doctorSpecialtyTV" />
-
-    <ImageView
-        android:id="@+id/imageView49"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/spacialty"
-        android:layout_alignTop="@+id/MyDoctorProfile_DoctorSpecialtyTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp" />
-
-    <ImageView
-        android:id="@+id/imageView50"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/email_2"
-        android:layout_alignTop="@+id/MyDoctorProfile_emailTITLE"
-        android:layout_alignLeft="@+id/imageView49"
-        android:layout_alignStart="@+id/imageView49" />
-
-    <ImageView
-        android:id="@+id/imageView52"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/flag"
-        android:layout_alignTop="@+id/MyDoctorProfile_NationalityTitle"
-        android:layout_alignLeft="@+id/imageView50"
-        android:layout_alignStart="@+id/imageView50" />
-
-    <ImageView
-        android:id="@+id/imageView53"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@mipmap/analytics"
-        android:layout_above="@+id/MyDoctorProfile_doctorCvTV"
-        android:layout_alignLeft="@+id/imageView52"
-        android:layout_alignStart="@+id/imageView52" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="70dp">
+        <TextView
+            android:id="@+id/MyDoctorProfile_doctorCvTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:fontFamily="monospace"
+            android:text="Link"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/myDrProfile_sendReportButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
-        android:text="@string/buttonSend_DoctorRequest"
+        android:text="Send report"
         android:textColor="@color/md_white_1000"
-        android:textSize="14sp" />
+        android:textSize="14dp"
 
-</RelativeLayout>
+        />
+
+
+</LinearLayout>
