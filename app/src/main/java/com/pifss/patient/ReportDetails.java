@@ -103,7 +103,7 @@ public class ReportDetails extends AppCompatActivity {
             }
         });
         queue.add(jsonReq);
-        Toast.makeText(this, Dname+" doctor ID:"+dd, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, Dname+" doctor ID:"+dd, Toast.LENGTH_SHORT).show();
         Nauseous.setText(nouseous);
         if (pain)
         {

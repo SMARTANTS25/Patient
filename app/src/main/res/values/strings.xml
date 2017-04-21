@@ -130,4 +130,5 @@
     <string name="SearchHospital_Hospital">Hospitals</string>
     <string name="Yes">Yes</string>
     <string name="No">No</string>
+    <string name="Settings_ChooseLang">Choose Language</string>
 </resources>

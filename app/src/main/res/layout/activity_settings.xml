@@ -37,7 +37,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:fontFamily="monospace"
-        android:text="Choose language"
+        android:text="@string/Settings_ChooseLang"
         android:textAlignment="center"
         android:textSize="30sp" />
 
@@ -51,7 +51,9 @@
         android:layout_alignBaseline="@+id/Sitting_Arb"
         android:layout_alignBottom="@+id/Sitting_Arb"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        android:background="#ffffff"/>
 
     <Button
         android:id="@+id/Sitting_Arb"
@@ -63,5 +65,7 @@
         android:layout_marginTop="73dp"
         android:layout_below="@+id/imageView40"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"
+        android:background="#ffffff"/>
 </RelativeLayout>

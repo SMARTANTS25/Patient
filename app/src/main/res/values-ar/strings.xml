@@ -142,5 +142,7 @@
     <string name="SearchHospital_Hospital">المستشفيات</string>
     <string name="Yes">نعم</string>
     <string name="No">لا</string>
+    <string name="Sittings_language"></string>
+    <string name="Settings_ChooseLang">أختار اللغة</string>
 </resources>
 

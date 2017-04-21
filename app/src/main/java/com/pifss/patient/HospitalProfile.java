@@ -56,7 +56,7 @@ public class HospitalProfile extends AppCompatActivity {
         int specialtyId = intent.getIntExtra("specialityId",0);
         String logoURL = intent.getStringExtra("logoURL");
 
-        Toast.makeText(HospitalProfile.this, specialtyId+" ", Toast.LENGTH_LONG);
+       // Toast.makeText(HospitalProfile.this, specialtyId+" ", Toast.LENGTH_LONG);
         System.out.println(specialtyId);
 
         updateSpecialtyName(specialtyId);
