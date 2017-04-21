@@ -1,31 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.pifss.patient.RegistrationPage3">
-
-    <TextView
-        android:id="@+id/Reg3_BloodTypeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg3_BloodType"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_alignBottom="@+id/imageView26"
-        android:layout_toRightOf="@+id/imageView26"
-        android:layout_toEndOf="@+id/imageView26" />
-
-    <ImageView
-        android:id="@+id/imageView26"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-
-        app:srcCompat="@mipmap/blood_drop_icon"
-        android:layout_below="@+id/myToolbar"
-        android:layout_alignLeft="@+id/Reg3_AllergiesET"
-        android:layout_alignStart="@+id/Reg3_AllergiesET" />
 
 
     <android.support.v7.widget.Toolbar
@@ -40,250 +21,319 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <ImageButton
-        android:id="@+id/Reg3_aminImgButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:adjustViewBounds="false"
-        android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_a_minus"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/Reg3_BloodTypeTitle"
-        android:layout_alignLeft="@+id/imageView26"
-        android:layout_alignStart="@+id/imageView26" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/myToolbar"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:layout_above="@+id/Reg3_button"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
 
 
-    <ImageButton
-        android:id="@+id/Reg3_aplusImgButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_a_plus"
-        android:layout_alignTop="@+id/Reg3_aminImgButton"
-        android:layout_alignLeft="@+id/Reg3_bplusImageButton"
-        android:layout_alignStart="@+id/Reg3_bplusImageButton" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.9"
+                            android:fontFamily="monospace"
+                            android:text="Blood type:"
+                            android:textSize="19dp" />
+                    </LinearLayout>
 
 
-    <ImageButton
-        android:id="@+id/Reg3_abminImgButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_ab_minus"
-        android:layout_alignTop="@+id/Reg3_aplusImgButton"
-        android:layout_toLeftOf="@+id/Reg3_abplusImgButton"
-        android:layout_toStartOf="@+id/Reg3_abplusImgButton"
-        android:layout_marginRight="19dp"
-        android:layout_marginEnd="19dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/Reg3_aminImgButton"
+                            android:layout_width="70dp"
+                            android:layout_height="65dp"
+                            android:adjustViewBounds="false"
+                            android:layout_marginLeft="30dp"
+                            android:background="@color/material_drawer_background"
+                            app:srcCompat="@mipmap/ic_a_minus"
+                            android:layout_marginTop="11dp"
+                            />
 
 
-    <ImageButton
-        android:id="@+id/Reg3_abplusImgButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_ab_plus"
-        android:layout_alignTop="@+id/Reg3_abminImgButton"
-        android:layout_alignRight="@+id/Reg3_MedicationsET"
-        android:layout_alignEnd="@+id/Reg3_MedicationsET"
-        android:layout_marginRight="21dp"
-        android:layout_marginEnd="21dp" />
-
-    <ImageButton
-        android:id="@+id/Reg3_bminImageButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_b_minus"
-        android:layout_below="@+id/Reg3_aminImgButton"
-        android:layout_alignLeft="@+id/Reg3_aminImgButton"
-        android:layout_alignStart="@+id/Reg3_aminImgButton" />
-
-    <ImageButton
-        android:id="@+id/Reg3_bplusImageButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@mipmap/b_plus"
-        android:layout_above="@+id/Reg3_DiabetesTitle"
-        android:layout_alignRight="@+id/Reg3_MedicatoinsTitle"
-        android:layout_alignEnd="@+id/Reg3_MedicatoinsTitle" />
-
-    <ImageButton
-        android:id="@+id/Reg3_ominImageButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_o_minus"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_alignTop="@+id/Reg3_bplusImageButton"
-        android:layout_toRightOf="@+id/Reg3_aplusImgButton"
-        android:layout_toEndOf="@+id/Reg3_aplusImgButton" />
-
-    <ImageButton
-        android:id="@+id/Reg3_oplusImageButton"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:layout_alignLeft="@+id/Reg3_abplusImgButton"
-        android:layout_alignStart="@+id/Reg3_abplusImgButton"
-        android:layout_alignTop="@+id/Reg3_ominImageButton"
-        android:background="@color/material_drawer_background"
-        app:srcCompat="@mipmap/ic_o_plus" />
-
-    <TextView
-        android:id="@+id/Reg3_DiabetesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/Reg3_Diabetes"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/Reg3_bminImageButton"
-        android:layout_alignRight="@+id/Reg3_AllergiesTitle"
-        android:layout_alignEnd="@+id/Reg3_AllergiesTitle" />
-
-    <ImageView
-        android:id="@+id/imageView27"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        app:srcCompat="@mipmap/diabity_icon"
-        android:layout_alignBottom="@+id/Reg3_DiabetesTitle"
-        android:layout_alignLeft="@+id/Reg3_bminImageButton"
-        android:layout_alignStart="@+id/Reg3_bminImageButton" />
-<android.support.v7.widget.FitWindowsLinearLayout
+                        <ImageButton
+                            android:id="@+id/Reg3_aplusImgButton"
+                            android:layout_width="70dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="11dp"
+                            android:background="@color/material_drawer_background"
+                            app:srcCompat="@mipmap/ic_a_plus" />
 
 
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+                        <ImageButton
+                            android:id="@+id/Reg3_abminImgButton"
+                            android:layout_width="70dp"
+                            android:layout_marginTop="11dp"
+                            android:layout_height="65dp"
+                            android:background="@color/material_drawer_background"
+                            app:srcCompat="@mipmap/ic_ab_minus"
+                            />
 
 
-    android:layout_below="@id/Reg3_DiabetesTitle"
-    android:id="@+id/fitWindowsLinearLayout">
+                        <ImageButton
+                            android:id="@+id/Reg3_abplusImgButton"
+                            android:layout_width="70dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="11dp"
+                            android:background="@color/material_drawer_background"
+                            app:srcCompat="@mipmap/ic_ab_plus"
+                            />
 
-    <RadioButton
-        android:id="@+id/Reg3_NoDiabetesRB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView27"
-        android:layout_marginTop="11dp"
-        android:layout_toEndOf="@+id/imageView27"
-        android:layout_toRightOf="@+id/imageView27"
-        android:onClick="onRadioButtonClicked"
-        android:text="@string/Reg3_AllergiesNo" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/Reg3_bminImageButton"
+                            android:layout_width="70dp"
+                            android:layout_height="65dp"
+                            android:layout_marginLeft="30dp"
+                            android:background="@color/material_drawer_background"
+                            app:srcCompat="@mipmap/ic_b_minus"
+                            />
+
+                        <ImageButton
+                            android:id="@+id/Reg3_bplusImageButton"
+                            android:layout_width="70dp"
+                            android:layout_height="65dp"
+                            android:background="@android:color/transparent"
+                            app:srcCompat="@mipmap/b_plus"
+                            />
+
+                        <ImageButton
+                            android:id="@+id/Reg3_ominImageButton"
+                            android:layout_width="70dp"
+                            android:layout_height="65dp"
+                            android:background="@color/material_drawer_background"
+                            app:srcCompat="@mipmap/ic_o_minus"
+
+                            />
+
+                        <ImageButton
+                            android:id="@+id/Reg3_oplusImageButton"
+                            android:layout_width="70dp"
+                            android:layout_height="65dp"
+                            android:background="@color/material_drawer_background"
+                            app:srcCompat="@mipmap/ic_o_plus" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar5"
+                    android:layout_width="383dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="35dp"
+                    android:background="@android:color/darker_gray"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.9"
+                            android:fontFamily="monospace"
+                            android:text="Diabetes:"
+                            android:textSize="19dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <ImageView
+                            android:id="@+id/finger"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.2"
+                            app:srcCompat="@mipmap/finger" />
+                        <RadioGroup
+                            android:id="@+id/GroupRadioDiabetes"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RadioButton
+                                android:id="@+id/Reg3_NoDiabetesRB"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="No" />
+
+                            <RadioButton
+                                android:id="@+id/Reg3_TypeOneDiabetesRB"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Yes" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
 
 
-</android.support.v7.widget.FitWindowsLinearLayout>
-    <TextView
-        android:id="@+id/Reg3_AsthmaTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/PatientMedicalInfo_Asthma"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/fitWindowsLinearLayout"
-        android:layout_alignLeft="@+id/Reg3_DiabetesTitle"
-        android:layout_alignStart="@+id/Reg3_DiabetesTitle" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_weight="0.9"
+                    android:fontFamily="monospace"
+                    android:text="Asthma:"
+                    android:textSize="19dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    android:weightSum="2">
 
-    <ImageView
-        android:id="@+id/imageView28"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        app:srcCompat="@mipmap/asthma_icon"
-        android:layout_alignBottom="@+id/Reg3_AsthmaTitle"
-        android:layout_alignLeft="@+id/Reg3_AllergiesET"
-        android:layout_alignStart="@+id/Reg3_AllergiesET"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
+                    <ImageView
+                        android:id="@+id/asthma"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.2"
+                        app:srcCompat="@mipmap/asthma" />
 
-
-    <Switch
-        android:id="@+id/switchAsthma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg3_AllergiesYes"
-        tools:text="@string/Reg3_DiabetesNo"
-        android:layout_alignTop="@+id/imageView28"
-        android:layout_alignLeft="@+id/switchAllergies"
-        android:layout_alignStart="@+id/switchAllergies" />
+                    <Switch
+                        android:id="@+id/switchAsthma"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:text="@string/Reg3_AllergiesYes"
+                        tools:text="@string/Reg3_DiabetesNo"
+                        />
+                </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/Reg3_AllergiesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/Reg3_Allergies"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/switchAsthma"
-        android:layout_toRightOf="@+id/imageView29"
-        android:layout_toEndOf="@+id/imageView29" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:text="Allergies:"
+                    android:textSize="19sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_margin="10dp">
 
 
-    <ImageView
-        android:id="@+id/imageView29"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        android:layout_alignBottom="@+id/Reg3_AllergiesTitle"
-        android:layout_alignLeft="@+id/imageView28"
-        android:layout_alignStart="@+id/imageView28"
-        app:srcCompat="@mipmap/allergy_icon" />
-
-    <Switch
-        android:id="@+id/switchAllergies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg3_AllergiesYes"
-        tools:text="@string/Reg3_AllergiesNo"
-        android:layout_alignBottom="@+id/Reg3_AllergiesTitle"
-        android:layout_alignRight="@+id/Reg3_button"
-        android:layout_alignEnd="@+id/Reg3_button" />
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.2"
+                        app:srcCompat="@mipmap/allergies" />
 
 
-    <EditText
-        android:id="@+id/Reg3_AllergiesET"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="If so , please specify"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/Reg3_AllergiesTitle"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+                    <EditText
+                        android:id="@+id/Reg3_AllergiesET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="If so , please specify"
+                        android:layout_weight="0.3"
+                        android:ems="10" />
+
+                    <Switch
+                        android:id="@+id/switchAllergies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Reg3_AllergiesYes"
+                        tools:text="@string/Reg3_AllergiesNo"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtMed"
+                    android:layout_width="128dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="11dp"
+                    android:text="Medications:"
+                    android:textSize="19sp"
+                    android:layout_weight="0.26" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_margin="10dp">
 
 
-    <TextView
-        android:id="@+id/Reg3_MedicatoinsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Reg3_Medications"
-        android:textSize="18sp"
-        android:fontFamily="monospace"
-        android:layout_below="@+id/Reg3_AllergiesET"
-        android:layout_toRightOf="@+id/imageView29"
-        android:layout_toEndOf="@+id/imageView29" />
+                    <ImageView
+                        android:id="@+id/imageView16"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.2"
+                        android:layout_marginTop="9dp"
+                        app:srcCompat="@mipmap/medicine" />
 
-    <ImageView
-        android:id="@+id/imageView30"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        android:layout_alignBottom="@+id/Reg3_MedicatoinsTitle"
-        android:layout_toLeftOf="@+id/Reg3_MedicatoinsTitle"
-        android:layout_toStartOf="@+id/Reg3_MedicatoinsTitle"
-        app:srcCompat="@mipmap/medicine_icon" />
-
-
-    <EditText
-        android:id="@+id/Reg3_MedicationsET"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/Reg3_MedicatoinsTitle"
-        android:layout_centerHorizontal="true" />
-
+                    <EditText
+                        android:id="@+id/Reg3_MedicationsET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="0.30"
+                        android:ems="10" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/Reg3_button"
@@ -299,16 +349,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-    <RadioButton
-        android:id="@+id/Reg3_TypeOneDiabetesRB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/Reg3_AsthmaTitle"
-        android:layout_toLeftOf="@+id/Reg3_abminImgButton"
-        android:layout_toStartOf="@+id/Reg3_abminImgButton"
-        android:onClick="onRadioButtonClicked"
-        android:text="Yes" />
-
-
 </RelativeLayout>
+
+
