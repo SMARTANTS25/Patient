@@ -265,12 +265,12 @@
                     android:text="Allergies:"
                     android:textSize="19sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1"
-                    android:layout_margin="10dp">
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="1"-->
+                    <!--android:layout_margin="10dp">-->
 
 
                     <ImageView
@@ -281,7 +281,14 @@
                         app:srcCompat="@mipmap/allergies" />
 
 
-                    <EditText
+                <Switch
+                    android:id="@+id/switchAllergies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Reg3_AllergiesYes"
+                    tools:text="@string/Reg3_AllergiesNo" />
+
+                <EditText
                         android:id="@+id/Reg3_AllergiesET"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -289,50 +296,90 @@
                         android:layout_weight="0.3"
                         android:ems="10" />
 
-                    <Switch
-                        android:id="@+id/switchAllergies"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Reg3_AllergiesYes"
-                        tools:text="@string/Reg3_AllergiesNo"
-                        />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/txtMed"
-                    android:layout_width="128dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="11dp"
-                    android:text="Medications:"
-                    android:textSize="19sp"
-                    android:layout_weight="0.26" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="1"
-                    android:layout_margin="10dp">
-
-
-                    <ImageView
-                        android:id="@+id/imageView16"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="0.2"
-                        android:layout_marginTop="9dp"
-                        app:srcCompat="@mipmap/medicine" />
-
-                    <EditText
-                        android:id="@+id/Reg3_MedicationsET"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_weight="0.30"
-                        android:ems="10" />
-                </LinearLayout>
             </LinearLayout>
+
+            <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="1"-->
+                    <!--android:layout_margin="10dp">-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  "/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtMed"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:text="Medications:"
+                android:textSize="19sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  "/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="9dp"
+                app:srcCompat="@mipmap/medicine" />
+            <AbsoluteLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:id="@+id/Reg3_MedicationsET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.30"
+                    android:layout_x="-6dp"
+                    android:layout_y="-7dp"
+                    android:ems="10" />
+
+
+            </AbsoluteLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  "/>
+            </LinearLayout>  <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  "/>
+        </LinearLayout>  <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  "/>
         </LinearLayout>
+            <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+        </LinearLayout>
+
     </ScrollView>
 
     <Button
