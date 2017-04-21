@@ -7,7 +7,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/myToolbar"
         style="@style/AppTheme.Toolbar"
@@ -19,48 +18,54 @@
         android:background="@color/Buttons">
 
     </android.support.v7.widget.Toolbar>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_height="match_parent"
+        >
 
-        <ImageView
-            android:id="@+id/MyDoctorProfile_doctorImage"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            app:srcCompat="@mipmap/doctor" />
-
-        <TextView
-            android:id="@+id/MyDoctorProfile_doctorNameTV"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/NewDoctorProfile_DoctorLogo"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="monospace"
-            android:text="Entisar AlAdwani"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="vertical" >
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                >
 
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/doctor" />
 
+                <TextView
+                    android:id="@+id/DrName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Doctor name:"
+                    android:layout_weight="0.5"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar7"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_margin="20dp"
-        android:background="@android:color/darker_gray"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+                <TextView
+                    android:id="@+id/ReportDetails_DocNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Entisar"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,17 +77,17 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@mipmap/spacialty"
+            app:srcCompat="@mipmap/bpiconnn"
             />
 
         <TextView
-            android:id="@+id/Specialty"
+            android:id="@+id/BloodPressure"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Specilty:"
+            android:text="Blood Pressure:"
             android:textSize="14sp"
-            android:layout_weight="0.12"         />
+            android:layout_weight="0.12"/>
 
     </LinearLayout>
     <LinearLayout
@@ -92,15 +97,53 @@
         android:layout_marginLeft="70dp">
 
         <TextView
-            android:id="@+id/MyDoctorProfile_doctorSpecialtyTV"
+            android:id="@+id/ReportDetails_BloodTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="Eye"
+            android:text="High"
             android:textSize="14sp" />
     </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/heartlogo" />
+
+                <TextView
+                    android:id="@+id/Heartbeatrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Heartbeat rate:"
+                    android:layout_weight="0.5"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+                <TextView
+                    android:id="@+id/ReportDetails_HeartBeatTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Status"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -112,15 +155,15 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@mipmap/email_2"
+            app:srcCompat="@mipmap/finger"
             />
 
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/diabetes"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Email:"
+            android:text="Sugar level:"
             android:layout_weight="0.2"
             android:textSize="14sp"
             />
@@ -134,12 +177,12 @@
         android:orientation="horizontal"
         android:layout_marginLeft="70dp">
         <TextView
-            android:id="@+id/MyDoctorProfile_doctorEmailTV"
+            android:id="@+id/ReportDetails_SugarLevelTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="example@gmail.com"
+            android:text="Status"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -152,15 +195,15 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@mipmap/flag"
+            app:srcCompat="@mipmap/headache"
             />
 
         <TextView
-            android:id="@+id/Nationality"
+            android:id="@+id/Headache"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Nationality:"
+            android:text="Headache:"
             android:layout_weight="0.28"
             android:textSize="14sp" />
 
@@ -173,12 +216,12 @@
         android:orientation="horizontal"
         android:layout_marginLeft="70dp">
         <TextView
-            android:id="@+id/MyDoctorProfile_NationalityTV"
+            android:id="@+id/ReportDetails_HeadacheTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="Kuwaiti"
+            android:text="Status"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -192,19 +235,17 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@mipmap/analytics" />
+            app:srcCompat="@mipmap/cough" />
 
         <TextView
-            android:id="@+id/CV"
+            android:id="@+id/Coughing"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="CV:"
+            android:text="Coughing:"
             android:layout_weight="0.5"
             android:textSize="14sp"
             />
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -213,27 +254,179 @@
         android:orientation="horizontal"
         android:layout_marginLeft="70dp">
         <TextView
-            android:id="@+id/MyDoctorProfile_doctorCvTV"
+            android:id="@+id/ReportDetails_CoughingTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:fontFamily="monospace"
-            android:text="Link"
+            android:text="Status"
             android:textSize="14sp" />
+
     </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                >
 
-    <Button
-        android:id="@+id/myDrProfile_sendReportButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-   android:layout_marginTop="50dp"
-        android:background="@color/Buttons"
-        android:fontFamily="monospace"
-        android:text="Send report"
-        android:textColor="@color/md_white_1000"
-        android:textSize="14dp"
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/fever" />
 
-        />
+                <TextView
+                    android:id="@+id/Fever"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Fever:"
+                    android:layout_weight="0.5"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+                <TextView
+                    android:id="@+id/ReportDetails_FeverTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Status"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/nauseousss" />
+
+                <TextView
+                    android:id="@+id/Nauseous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Nauseous:"
+                    android:layout_weight="0.5"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+                <TextView
+                    android:id="@+id/ReportDetails_NauseousTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Status"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/painn" />
+
+                <TextView
+                    android:id="@+id/pain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Pain:"
+                    android:layout_weight="0.5"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+                <TextView
+                    android:id="@+id/ReportDetails_PainTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Status"
+                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/ReportDetails_PainLocationTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Location"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/message" />
+
+                <TextView
+                    android:id="@+id/Comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:text="Comments:"
+                    android:layout_weight="0.5"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="70dp">
+                <TextView
+                    android:id="@+id/ReportDetails_CommentsTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:fontFamily="monospace"
+                    android:text="Status"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

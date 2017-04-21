@@ -70,7 +70,7 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:srcCompat="@mipmap/heartlogo"
+            app:srcCompat="@mipmap/blooddrop"
             />
 
         <TextView
