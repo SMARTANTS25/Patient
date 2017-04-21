@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">-->
+
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pifss.patient.RegistrationPage2">
+    tools:context="com.pifss.patient.RegistrationPage3">
 
 
         <android.support.v7.widget.Toolbar
@@ -22,13 +20,23 @@
 
         </android.support.v7.widget.Toolbar>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/myToolbar"
+        >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:weightSum="1"
-        android:layout_above="@+id/saveChangesMedicalButton"
+        android:layout_above="@+id/Reg3_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
@@ -54,87 +62,95 @@
                     android:textSize="19dp" />
             </LinearLayout>
 
-            <RadioGroup
-                android:id="@+id/GroupRadioBloodType"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:orientation="vertical"
-                android:weightSum="4">
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
 
-                <LinearLayout
+                <ImageButton
+                    android:id="@+id/Reg3_aminImgButton"
+                    android:layout_width="70dp"
+                    android:layout_height="65dp"
+                    android:adjustViewBounds="false"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/material_drawer_background"
+                    app:srcCompat="@mipmap/ic_a_minus"
+                    android:layout_marginTop="11dp"
+                   />
+
+
+                <ImageButton
+                    android:id="@+id/Reg3_aplusImgButton"
+                    android:layout_width="70dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/material_drawer_background"
+                    app:srcCompat="@mipmap/ic_a_plus" />
+
+
+                <ImageButton
+                    android:id="@+id/Reg3_abminImgButton"
+                    android:layout_width="70dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_height="65dp"
+                    android:background="@color/material_drawer_background"
+                    app:srcCompat="@mipmap/ic_ab_minus"
+                    />
+
+
+                <ImageButton
+                    android:id="@+id/Reg3_abplusImgButton"
+                    android:layout_width="70dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/material_drawer_background"
+                    app:srcCompat="@mipmap/ic_ab_plus"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/radioButtonAP"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="A+" />
+                    <ImageButton
+                        android:id="@+id/Reg3_bminImageButton"
+                        android:layout_width="70dp"
+                        android:layout_height="65dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@color/material_drawer_background"
+                        app:srcCompat="@mipmap/ic_b_minus"
+                       />
 
-                    <RadioButton
-                        android:id="@+id/radioButtonAM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="A-" />
+                    <ImageButton
+                        android:id="@+id/Reg3_bplusImageButton"
+                        android:layout_width="70dp"
+                        android:layout_height="65dp"
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@mipmap/b_plus"
+                  />
 
-                    <RadioButton
-                        android:id="@+id/radioButtonBP"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="B+" />
+                    <ImageButton
+                        android:id="@+id/Reg3_ominImageButton"
+                        android:layout_width="70dp"
+                        android:layout_height="65dp"
+                        android:background="@color/material_drawer_background"
+                        app:srcCompat="@mipmap/ic_o_minus"
 
-                    <RadioButton
-                        android:id="@+id/radioButtonBM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="B-" />
+                 />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/radioButtonOP"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="O+" />
-
-                    <RadioButton
-                        android:id="@+id/radioButtonOM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="O-" />
-
-                    <RadioButton
-                        android:id="@+id/radioButtonABP"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="AB+" />
-
-                    <RadioButton
-                        android:id="@+id/radioButtonABM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="AB-" />
+                    <ImageButton
+                        android:id="@+id/Reg3_oplusImageButton"
+                        android:layout_width="70dp"
+                        android:layout_height="65dp"
+                        android:background="@color/material_drawer_background"
+                        app:srcCompat="@mipmap/ic_o_plus" />
 
                 </LinearLayout>
-
-            </RadioGroup>
 
         </LinearLayout>
 
@@ -168,7 +184,17 @@
                     android:text="Diabetes:"
                     android:textSize="19dp" />
             </LinearLayout>
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+            <ImageView
+                android:id="@+id/finger"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.2"
+                app:srcCompat="@mipmap/finger" />
             <RadioGroup
                 android:id="@+id/GroupRadioDiabetes"
                 android:layout_width="match_parent"
@@ -178,68 +204,57 @@
                 android:weightSum="2">
 
                 <RadioButton
-                    android:id="@+id/radioButtonDiabetesNO"
+                    android:id="@+id/Reg3_NoDiabetesRB"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="No" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonDiabetesYes"
+                    android:id="@+id/Reg3_TypeOneDiabetesRB"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Yes" />
             </RadioGroup>
-
+</LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:layout_weight="0.9"
+                android:fontFamily="monospace"
+                android:text="Asthma:"
+                android:textSize="19dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="1">
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.9"
-                    android:fontFamily="monospace"
-                    android:text="Asthma:"
-                    android:textSize="19dp" />
-            </LinearLayout>
-
-            <RadioGroup
-                android:id="@+id/GroupRadioAsthma"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
+                android:layout_margin="10dp"
                 android:weightSum="2">
 
-                <RadioButton
-                    android:id="@+id/radioButtonAsthmaNO"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="No" />
+                <ImageView
+                    android:id="@+id/asthma"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@mipmap/asthma" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonAsthmaYes"
-                    android:layout_width="match_parent"
+                <Switch
+                    android:id="@+id/switchAsthma"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Yes" />
-            </RadioGroup>
+                    android:layout_marginLeft="50dp"
+                    android:text="@string/Reg3_AllergiesYes"
+                    tools:text="@string/Reg3_DiabetesNo"
+                    />
+            </LinearLayout>
 
-        </LinearLayout>
+
 
         <TextView
             android:id="@+id/textView2"
@@ -266,11 +281,21 @@
 
 
             <EditText
-                android:id="@+id/editTextAllergies"
+                android:id="@+id/Reg3_AllergiesET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="If so , please specify"
                 android:layout_weight="0.3"
                 android:ems="10" />
+
+            <Switch
+                android:id="@+id/switchAllergies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Reg3_AllergiesYes"
+                tools:text="@string/Reg3_AllergiesNo"
+              />
+
         </LinearLayout>
 
         <TextView
@@ -295,19 +320,19 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="0.2"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="9dp"
                 app:srcCompat="@mipmap/medicine" />
 
             <EditText
-                android:id="@+id/editTextMedications"
+                android:id="@+id/Reg3_MedicationsET"
                 android:layout_width="wrap_content"
-                android:layout_height="74dp"
+                android:layout_height="50dp"
                 android:layout_weight="0.30"
                 android:ems="10" />
         </LinearLayout>
-
     </LinearLayout>
-
+    </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/Reg3_button"
