@@ -23,169 +23,306 @@
         </android.support.v7.widget.Toolbar>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_above="@+id/saveChangesMedicalButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_below="@+id/myToolbar"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_above="@+id/button">
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="50dp"
-                    android:weightSum="1">
-
-                    <ImageView
-                        android:id="@+id/imgPatient"
-                        android:layout_width="20dp"
-                        android:layout_height="32dp"
-                        android:layout_weight="0.34"
-                        android:layout_marginTop="5dp"
-                        app:srcCompat="@mipmap/patiet2" />
-
-                    <EditText
-                        android:id="@+id/Reg2_FirstNameTF"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.52"
-                        android:ems="10"
-                        android:hint="FirstName"
-                        android:inputType="textPersonName"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-                <EditText
-                    android:id="@+id/Reg2_LastNameTF"
-                    android:layout_width="287dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="75dp"
-                    android:ems="10"
-                    android:hint="last name"
-                    android:inputType="textPersonName" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="7dp"
-                    android:weightSum="1">
-
-
-                    <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="20dp"
-                        android:layout_height="32dp"
-                        android:layout_weight="0.35"
-                        android:ems="10"
-                        app:srcCompat="@mipmap/bday" />
-
-                    <TextView
-                        android:id="@+id/Reg2_BirthDateTF"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.50"
-                        android:layout_marginTop="4dp"
-                        android:ems="10"
-                        android:text="1991-11-1"
-                        android:textAlignment="center"
-                        android:textSize="28sp"
-                        />
-
-                </LinearLayout>
-
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar5"
-                    android:layout_width="281dp"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="35dp"
-                    android:background="@android:color/darker_gray"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="?attr/actionBarTheme"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="20dp"
-                        android:layout_height="32dp"
-                        android:layout_weight="0.34"
-                        app:srcCompat="@mipmap/idd_card" />
-
-
-
-                    <EditText
-                        android:id="@+id/Reg2_CivilIDTF"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.52"
-                        android:ems="10"
-                        android:hint="civil ID"
-                        android:inputType="textPersonName|number" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="32dp"
-                        android:layout_weight="0.34"
-                        app:srcCompat="@mipmap/telephone" />
-
-                    <EditText
-                        android:id="@+id/Reg2_PhoneNumberTF"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.52"
-                        android:ems="10"
-                        android:hint="number"
-                        android:inputType="textPersonName|number" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="32dp"
-                        android:layout_weight="0.34"
-                        app:srcCompat="@mipmap/telephone" />
-
-                    <EditText
-                        android:id="@+id/Reg2_EmergencyNumberTF"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.52"
-                        android:ems="10"
-                        android:hint="Emergency number"
-                        android:inputType="textPersonName|number" />
-                </LinearLayout>
-
-
+                    android:layout_weight="0.9"
+                    android:fontFamily="monospace"
+                    android:text="Blood type:"
+                    android:textSize="19dp" />
             </LinearLayout>
 
+            <RadioGroup
+                android:id="@+id/GroupRadioBloodType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonAP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="A+" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonAM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="A-" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonBP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="B+" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonBM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="B-" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="O+" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonOM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="O-" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonABP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="AB+" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonABM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="AB-" />
+
+                </LinearLayout>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar5"
+            android:layout_width="383dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="35dp"
+            android:background="@android:color/darker_gray"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:fontFamily="monospace"
+                    android:text="Diabetes:"
+                    android:textSize="19dp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/GroupRadioDiabetes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/radioButtonDiabetesNO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="No" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDiabetesYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:fontFamily="monospace"
+                    android:text="Asthma:"
+                    android:textSize="19dp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/GroupRadioAsthma"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/radioButtonAsthmaNO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="No" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAsthmaYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:text="Allergies:"
+            android:textSize="19sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_margin="10dp">
 
 
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.2"
+                app:srcCompat="@mipmap/allergies" />
+
+
+            <EditText
+                android:id="@+id/editTextAllergies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:ems="10" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtMed"
+            android:layout_width="128dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="11dp"
+            android:text="Medications:"
+            android:textSize="19sp"
+            android:layout_weight="0.26" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_margin="10dp">
+
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.2"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@mipmap/medicine" />
+
+            <EditText
+                android:id="@+id/editTextMedications"
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:layout_weight="0.30"
+                android:ems="10" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/Reg3_button"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:background="@color/Buttons"
+        android:text="@string/Reg3_RegisterButton"
+        android:textColor="@color/md_white_1000"
+        android:fontFamily="monospace"
+        android:textSize="14sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
 
 

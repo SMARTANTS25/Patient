@@ -22,7 +22,7 @@
         android:layout_width="30dp"
         android:layout_height="25dp"
 
-        app:srcCompat="@mipmap/blood_drop_icon"
+        app:srcCompat="@mipmap/blooddrop"
         android:layout_below="@+id/myToolbar"
         android:layout_alignLeft="@+id/Reg3_AllergiesET"
         android:layout_alignStart="@+id/Reg3_AllergiesET" />
@@ -147,7 +147,7 @@
         android:id="@+id/imageView27"
         android:layout_width="30dp"
         android:layout_height="25dp"
-        app:srcCompat="@mipmap/diabity_icon"
+        app:srcCompat="@mipmap/finger"
         android:layout_alignBottom="@+id/Reg3_DiabetesTitle"
         android:layout_alignLeft="@+id/Reg3_bminImageButton"
         android:layout_alignStart="@+id/Reg3_bminImageButton" />
@@ -171,8 +171,6 @@
         android:layout_toRightOf="@+id/imageView27"
         android:onClick="onRadioButtonClicked"
         android:text="@string/Reg3_AllergiesNo" />
-
-
 </android.support.v7.widget.FitWindowsLinearLayout>
     <TextView
         android:id="@+id/Reg3_AsthmaTitle"
@@ -272,7 +270,7 @@
         android:layout_alignBottom="@+id/Reg3_MedicatoinsTitle"
         android:layout_toLeftOf="@+id/Reg3_MedicatoinsTitle"
         android:layout_toStartOf="@+id/Reg3_MedicatoinsTitle"
-        app:srcCompat="@mipmap/medicine_icon" />
+        app:srcCompat="@mipmap/medicine" />
 
 
     <EditText
