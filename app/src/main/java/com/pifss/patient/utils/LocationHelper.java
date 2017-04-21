@@ -9,7 +9,6 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -65,7 +64,7 @@ public class LocationHelper {
                 System.out.print(location);
 
 
-                Toast.makeText(activity, location.getAltitude()+"AAA"+location.getLatitude(), Toast.LENGTH_SHORT).show();
+          //      Toast.makeText(activity, location.getAltitude()+"AAA"+location.getLatitude(), Toast.LENGTH_SHORT).show();
                 currentLocation = location;
             }
 

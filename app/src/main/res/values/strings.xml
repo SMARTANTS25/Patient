@@ -127,4 +127,8 @@
     <string name="HospitalTypePublic">Public</string>
     <string name="DoctorProfile">Doctor Profile</string>
     <string name="SendReport_Send">Send Report</string>
+    <string name="SearchHospital_Hospital">Hospitals</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="Settings_ChooseLang">Choose Language</string>
 </resources>

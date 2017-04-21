@@ -238,7 +238,7 @@ public class ViewPatientProfile extends AppCompatActivity {
                 System.out.println(jsonBody.toString());
 
                 final Bitmap finalImageBitmap = imageBitmap;
-                String url =  "http://34.196.107.188:8081/MhealthWeb/addimg";
+                String url =  "http://34.196.107.188:8081/MhealthWeb/addimgtogallery";
 
                 StringRequest jsonObjRequest = new StringRequest(Request.Method.POST,url,
                         new Response.Listener<String>() {
@@ -361,7 +361,7 @@ public class ViewPatientProfile extends AppCompatActivity {
 
 
             if (!isNetworkAvailable()){
-                Toast.makeText(ViewPatientProfile.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewPatientProfile.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
             }
 
         progressDialog.setMessage("Updating Profile...");

@@ -72,6 +72,7 @@ public class DoctorAdapter extends BaseAdapter {
             docGender.setText(R.string.MaleReg_RadioButton);
         }
 
+
         docName.setText(m.getFirstName() + " " + m.getMiddleName() + " " +m.getLastName());
 
 

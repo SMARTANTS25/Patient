@@ -83,7 +83,7 @@ public class MyDoctors extends AppCompatActivity {
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
                 intent.putExtra("drId",m.getDrId());
-                Toast.makeText(MyDoctors.this, m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(MyDoctors.this, m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
 
                 startActivity(intent);
 
@@ -161,7 +161,7 @@ public class MyDoctors extends AppCompatActivity {
                 intent.putExtra("cvURL", m.getCvUrl());
                 intent.putExtra("imageURL", m.getImageUrl());
                 intent.putExtra("drId",m.getDrId());
-                Toast.makeText(MyDoctors.this, ""+m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
+        //        Toast.makeText(MyDoctors.this, ""+m.getFirstName()+"  "+m.getDrId(), Toast.LENGTH_SHORT).show();
                // Toast.makeText(MyDoctors.this, m.getDrId()+"", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
 
@@ -218,7 +218,7 @@ public class MyDoctors extends AppCompatActivity {
                     }
                 });
         if (!isNetworkAvailable()){
-            Toast.makeText(MyDoctors.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MyDoctors.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
         }
 
         progressDialog.setMessage("Connecting...");

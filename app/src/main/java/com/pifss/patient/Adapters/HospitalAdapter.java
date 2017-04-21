@@ -126,14 +126,12 @@ public class HospitalAdapter extends BaseAdapter {
        double alt = Double.parseDouble(pos.getHospitalAlt());
         double lang = Double.parseDouble(pos.getHospitalLang());
        double dis =  distance(deviceLant,deviceAlt,alt,lang , "km");
-    //    Toast.makeText(context, dis+"", Toast.LENGTH_SHORT).show();
+
 
         tvHospitalTitle.setText(pos.getHospitalName());
 //        if (distance >= 0) {
             tvHospitalDistance.setText(dis+" km");
-//        } else {
-//            tvHospitalDistance.setText("N/A");
- //       }
+
         if (pos.getType().equals("public"))
         tvHospitalType.setText(R.string.HospitalTypePublic);
         else if (pos.getType().equals("private"))

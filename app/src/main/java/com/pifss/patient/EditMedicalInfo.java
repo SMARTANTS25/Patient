@@ -319,7 +319,7 @@ String bloodType = "AB-";
                     });
 
                     if (!isNetworkAvailable()){
-                        Toast.makeText(EditMedicalInfo.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditMedicalInfo.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
                     }
 
                     progressDialog.setMessage("Connecting...");

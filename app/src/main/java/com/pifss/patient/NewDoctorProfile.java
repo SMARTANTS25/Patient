@@ -95,7 +95,7 @@ public class NewDoctorProfile extends AppCompatActivity {
         }
 
 
-        Toast.makeText(this, pID+" pid  "+dID , Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, pID+" pid  "+dID , Toast.LENGTH_SHORT).show();
         final JSONObject obj = new JSONObject();
         try {
             obj.put("drId",dID);
@@ -194,7 +194,7 @@ public class NewDoctorProfile extends AppCompatActivity {
 
 
                 if (!isNetworkAvailable()){
-                    Toast.makeText(NewDoctorProfile.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewDoctorProfile.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
                 }
 
                 progressDialog.setMessage("Connecting...");

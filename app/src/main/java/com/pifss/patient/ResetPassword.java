@@ -114,7 +114,7 @@ public class ResetPassword extends AppCompatActivity {
 
 
                if (!isNetworkAvailable()){
-                   Toast.makeText(ResetPassword.this, ""+R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
+                   Toast.makeText(ResetPassword.this, R.string.NoInternetConnection, Toast.LENGTH_SHORT).show();
                }
 
                progressDialog.setMessage("Loading...");

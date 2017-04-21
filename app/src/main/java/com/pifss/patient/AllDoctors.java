@@ -159,7 +159,7 @@ public class AllDoctors extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
 progressDialog.hide();
-                        Toast.makeText(AllDoctors.this, response, Toast.LENGTH_LONG);
+                    //    Toast.makeText(AllDoctors.this, response, Toast.LENGTH_LONG);
                         model = new Gson().fromJson(response, new TypeToken<ArrayList<Doctor>>(){}.getType());
 
                         ListView lv = (ListView) findViewById(R.id.AllDoctorList);

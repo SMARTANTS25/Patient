@@ -95,7 +95,7 @@ public class ReportAdapter extends BaseAdapter {
 //                });
 
      //   queue.add(jsonReq);
-
+        
         heart.setText(reports.getHeartbeatRate());
         Headache.setText(reports.getHeadache());
 

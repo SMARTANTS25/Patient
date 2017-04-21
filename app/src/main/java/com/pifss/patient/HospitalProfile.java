@@ -56,7 +56,7 @@ public class HospitalProfile extends AppCompatActivity {
         int specialtyId = intent.getIntExtra("specialityId",0);
         String logoURL = intent.getStringExtra("logoURL");
 
-        Toast.makeText(HospitalProfile.this, specialtyId+" ", Toast.LENGTH_LONG);
+       // Toast.makeText(HospitalProfile.this, specialtyId+" ", Toast.LENGTH_LONG);
         System.out.println(specialtyId);
 
         updateSpecialtyName(specialtyId);
@@ -92,7 +92,7 @@ public class HospitalProfile extends AppCompatActivity {
 
         textViewAddress.setText(address);
 
-        Toast.makeText(this, logoURL, Toast.LENGTH_LONG);
+     //   Toast.makeText(this, logoURL, Toast.LENGTH_LONG);
 
         /*if (!logoURL.isEmpty() && logoURL.length() >= 4 && logoURL != null) {
             try {
