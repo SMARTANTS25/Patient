@@ -87,6 +87,7 @@ public class ReportDetails extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 JSONObject obj;
+                progressDialog.hide();
             try{
                 obj = new JSONObject(response);
 

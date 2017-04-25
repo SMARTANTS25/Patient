@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Specilty:"
+            android:text="@string/textView_DocSpeciality"
             android:textSize="14sp"
             android:layout_weight="0.12"         />
 
@@ -121,7 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Email:"
+            android:text="@string/textView_DocEmail"
             android:layout_weight="0.2"
             android:textSize="14sp"
             />
@@ -161,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Nationality:"
+            android:text="@string/textView_DocNationality"
             android:layout_weight="0.28"
             android:textSize="14sp" />
 
@@ -200,7 +200,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="CV:"
+            android:text="@string/CV"
             android:layout_weight="0.5"
             android:textSize="14sp"
             />
@@ -220,6 +220,7 @@
             android:layout_weight="0.5"
             android:fontFamily="monospace"
             android:text="Link"
+            android:autoLink="web"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -230,7 +231,7 @@
         android:layout_marginTop="50dp"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
-        android:text="Send report"
+        android:text="@string/buttonSend_DoctorRequest"
         android:textColor="@color/md_white_1000"
         android:textSize="14dp"
 

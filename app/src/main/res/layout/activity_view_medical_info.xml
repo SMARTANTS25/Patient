@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Blood type:"
+            android:text="@string/Reg3_BloodType"
             android:textSize="14sp"
             android:layout_weight="0.12"         />
 
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Diabetes:"
+            android:text="@string/Reg3_Diabetes"
             android:layout_weight="0.2"
             android:textSize="14sp"
             />
@@ -158,7 +158,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Asthma:"
+            android:text="@string/PatientMedicalInfo_Asthma"
             android:layout_weight="0.28"
             android:textSize="14sp" />
 
@@ -197,7 +197,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Allergies:"
+            android:text="@string/PatientMedicalInfo_Allergies"
             android:layout_weight="0.5"
             android:textSize="14sp"
             />
@@ -240,7 +240,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="Medication:"
+            android:text="@string/PatientMedicalInfo_Medications"
             android:textSize="14sp"
             android:layout_weight="0.2"
             />

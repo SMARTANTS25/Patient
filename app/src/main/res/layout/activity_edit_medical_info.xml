@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
                     android:fontFamily="monospace"
-                    android:text="Blood type:"
+                    android:text="@string/Reg3_BloodType"
                     android:textSize="19dp" />
             </LinearLayout>
 
@@ -161,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
                     android:fontFamily="monospace"
-                    android:text="Diabetes:"
+                    android:text="@string/Reg3_Diabetes"
                     android:textSize="19dp" />
             </LinearLayout>
 
@@ -178,14 +178,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="No" />
+                    android:text="@string/Reg3_DiabetesNo" />
 
                 <RadioButton
                     android:id="@+id/radioButtonDiabetesYes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Yes" />
+                    android:text="@string/Yes" />
             </RadioGroup>
 
         </LinearLayout>
@@ -208,7 +208,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
                     android:fontFamily="monospace"
-                    android:text="Asthma:"
+                    android:text="@string/PatientMedicalInfo_Asthma"
                     android:textSize="19dp" />
             </LinearLayout>
 
@@ -225,14 +225,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="No" />
+                    android:text="@string/No" />
 
                 <RadioButton
                     android:id="@+id/radioButtonAsthmaYes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Yes" />
+                    android:text="@string/Yes" />
             </RadioGroup>
 
         </LinearLayout>
@@ -242,7 +242,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="11dp"
-            android:text="Allergies:"
+            android:text="@string/Reg3_Allergies"
             android:textSize="19sp" />
 
         <LinearLayout
@@ -274,7 +274,7 @@
             android:layout_width="128dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="11dp"
-            android:text="Medications:"
+            android:text="@string/Reg3_Medications"
             android:textSize="19sp"
             android:layout_weight="0.26" />
 
@@ -310,7 +310,7 @@
         android:layout_height="wrap_content"
         android:background="@color/Buttons"
         android:fontFamily="monospace"
-        android:text="Save Changes"
+        android:text="@string/SaveChanges"
         android:textColor="@color/md_white_1000"
         android:textSize="14dp"
         android:layout_alignParentBottom="true"

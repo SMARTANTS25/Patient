@@ -135,4 +135,12 @@
     <string name="nauseous_No">No</string>
     <string name="nauseous_Yes">Yes</string>
     <string name="EditPic">Edit picture</string>
+    <string name="Middlename">Middle Name</string>
+    <string name="Country">Country</string>
+    <string name="Password">Password</string>
+    <string name="NewPassword">New Password</string>
+    <string name="SaveChanges">Save Changes</string>
+    <string name="Nationality">Nationality</string>
+    <string name="CV">CV</string>
+    <string name="SendRequest">Send Request</string>
 </resources>

@@ -53,7 +53,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_weight="0.52"
                 android:ems="10"
-                android:hint="FirstName"
+                android:hint="@string/Reg2_FirstName"
                 android:inputType="textPersonName"
                 android:textSize="18sp" />
 
@@ -71,7 +71,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:layout_marginLeft="75dp"
-                android:hint="middle name"
+                android:hint="@string/Middlename"
                 android:inputType="textPersonName" />
 
 
@@ -89,7 +89,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="75dp"
                 android:ems="10"
-                android:hint="last name"
+                android:hint="@string/Reg2_LastName"
                 android:inputType="textPersonName" />
 
         <!--</LinearLayout>-->
@@ -119,13 +119,13 @@ android:layout_height="match_parent">
                     android:id="@+id/radioButtonMale"
                     android:layout_width="91dp"
                     android:layout_height="wrap_content"
-                    android:text="Male"/>
+                    android:text="@string/MaleReg_RadioButton"/>
 
                 <RadioButton
                     android:id="@+id/radioButtonFemale"
                     android:layout_width="98dp"
                     android:layout_height="wrap_content"
-                    android:text="Female" />
+                    android:text="@string/FemaleReg_RadioButton" />
 
             </RadioGroup>
 
@@ -212,7 +212,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_weight="0.52"
                 android:ems="10"
-                android:hint="civil ID"
+                android:hint="@string/Reg2_CivilID"
                 android:inputType="textPersonName|number" />
         </LinearLayout>
 
@@ -235,7 +235,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_weight="0.52"
                 android:ems="10"
-                android:hint="number"
+                android:hint="@string/Reg2_Phone"
                 android:inputType="textPersonName|number" />
         </LinearLayout>
 
@@ -258,7 +258,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_weight="0.52"
                 android:ems="10"
-                android:hint="Emergency number"
+                android:hint="@string/Reg2_EmergencyPhone"
                 android:inputType="textPersonName|number" />
         </LinearLayout>
 
@@ -281,7 +281,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_weight="0.52"
                 android:ems="10"
-                android:hint="Country name" />
+                android:hint="@string/Country" />
         </LinearLayout>
 
         <LinearLayout
@@ -303,7 +303,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_weight="0.52"
                 android:ems="10"
-                android:hint="Password" />
+                android:hint="@string/Password" />
         </LinearLayout>
 
         <LinearLayout
@@ -325,7 +325,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_weight="0.52"
                 android:ems="10"
-                android:hint="New Password" />
+                android:hint="@string/NewPassword" />
         </LinearLayout>
 
 
@@ -341,7 +341,7 @@ android:layout_height="match_parent">
     android:background="@color/Buttons"
 
     android:fontFamily="monospace"
-    android:text="Save Changes"
+    android:text="@string/SaveChanges"
     android:textColor="@color/md_white_1000"
     android:textSize="14dp"
     android:layout_alignParentBottom="true"
